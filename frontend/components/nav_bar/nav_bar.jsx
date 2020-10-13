@@ -19,7 +19,7 @@ export default ({ currentUser, logout }) => {
   );
   return (
     <header className="nav-bar">
-      <h1 className="logo">Path</h1>
+      <h1>Path</h1>
       <div>{display}</div>
     </header>
   );

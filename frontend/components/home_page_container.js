@@ -1,8 +1,13 @@
-import { connect } from "react-redux";
-import { logout } from "../actions/session_actions";
-import HomePage from "./home_page"
+// import { connect } from "react-redux";
+// import { logout } from "../actions/session_actions";
+// import HomePage from "./home_page"
 
-// const mSTP = (state) => {
+// // const mSTP = (state) => {
+// //   return {
+// //     currentUser: state.entities.users[state.session.id],
+// //   };
+// // };
+
 // const mSTP = ({ session, entities: { users } }) => {
 //   return {
 //     currentUser: users[session.id],
@@ -13,6 +18,6 @@ import HomePage from "./home_page"
 //     return {
 //         logoutUser: () => dispatch(logoutUser())
 //     }
-}
+// }
 
 // export default connect(mSTP, mDTP)(HomePage)

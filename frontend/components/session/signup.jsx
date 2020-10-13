@@ -30,7 +30,7 @@ class Signup extends React.Component {
         // b/c default action of button sends post request and causes re-render
     
         this.props.createNewUser(this.state)
-            // .then( () => this.props.history.push(`/users/${user.id?}`))
+            .then( () => this.props.history.push('/'))
             // we want to go to user show page ?
     }
 
@@ -46,7 +46,7 @@ class Signup extends React.Component {
                 <input
                   type="test"
                   value={this.state.first_name}
-                  onChange={this.handleInput("firstName")}
+                  onChange={this.handleInput("first_name")}
                 />
               </label>
               <label>
@@ -54,7 +54,7 @@ class Signup extends React.Component {
                 <input
                   type="text"
                   value={this.state.last_name}
-                  onChange={this.handleInput("lastName")}
+                  onChange={this.handleInput("last_name")}
                 />
               </label>
               <label>
@@ -78,7 +78,7 @@ class Signup extends React.Component {
                 <input
                   type="text"
                   value={this.state.about_me}
-                  onChange={this.handleInput("aboutMe")}
+                  onChange={this.handleInput("about_me")}
                 />
               </label>
               <label>
