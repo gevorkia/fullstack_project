@@ -1,4 +1,5 @@
 import React from 'react';
+import HomePage from "../home_page/home_page"
 
 class Signup extends React.Component {
     constructor(props) {
@@ -92,6 +93,7 @@ class Signup extends React.Component {
               </label>
               <button onClick={this.handleSubmit}>Sign Up</button>
             </form>
+            <HomePage/>
           </div>
         );
     }

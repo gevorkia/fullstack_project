@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
             params[:user][:password]
             )
         
-        debugger
+        # debugger
 
         if @user
             login!(@user)
