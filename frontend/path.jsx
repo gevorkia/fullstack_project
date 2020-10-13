@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.logout = logoutUser;
 
   // 3. state tests
-//   window.getState = store.getState;
-//   window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 });
 
 // to reset the primary key sequence for the seeds file
@@ -46,7 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // }}}).then(response => console.log(response));
 
 // use line 5 to test user authentication 
-// const user = {username: "test4", password: "password"}
+// const user = {
+//      first_name: "Lili", 
+//      last_name: "Gevorkian", 
+//      email:  "banana@gmail.com",
+//      about_me: '',
+//      location: '',
+//      privacy: true,
+//      password: "password"
+// }
 // signup(user)
 // signup(user).then(success => console.log(success), errors => console.log(errors)); 
 
@@ -54,3 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // const user = { username: "test11", password: "password" };
 // dispatch(login(user));
 // dispatch(logout());
+
+// dispatch(login(user2)).then(
+//   (success) => console.log(success),
+//   (errors) => console.log(errors)
+// ); 
