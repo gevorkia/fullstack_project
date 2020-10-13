@@ -1,3 +1,17 @@
 <main id="root">
     <h2>React is broken</h2>
 </main>
+
+<% if current_user %>
+    <script>
+    window.currentUser = {
+        "id": <%= current_user.id %>,
+        "firstName": "<%= currentUser.firstName %>",
+        "lastName": "<%= currentUser.lastName %>",
+        "email": "<%= currentUser.email %>",
+        "aboutMe": "<%= currentUser.aboutMe %>",
+        "location": "<%= currentUser.location %>",
+        "privacy": "<%= currentUser.privacy %>",
+    };
+    </script>
+<% end %>

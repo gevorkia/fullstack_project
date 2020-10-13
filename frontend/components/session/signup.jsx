@@ -6,10 +6,10 @@ class Signup extends React.Component {
         //create location state to keep track of all fields of form we'll be building
         
         this.state = {
-            firstName: '', 
-            lastName: '', 
+            first_name: '', 
+            last_name: '', 
             email: '', 
-            aboutMe: '', 
+            about_me: '', 
             location: '', 
             privacy: false,  //boolean default: false
             password: '',
@@ -45,7 +45,7 @@ class Signup extends React.Component {
                 First Name:
                 <input
                   type="test"
-                  value={this.state.firstName}
+                  value={this.state.first_name}
                   onChange={this.handleInput("firstName")}
                 />
               </label>
@@ -53,7 +53,7 @@ class Signup extends React.Component {
                 Last Name:
                 <input
                   type="text"
-                  value={this.state.lastName}
+                  value={this.state.last_name}
                   onChange={this.handleInput("lastName")}
                 />
               </label>
@@ -77,7 +77,7 @@ class Signup extends React.Component {
                 About Me:
                 <input
                   type="text"
-                  value={this.state.aboutMe}
+                  value={this.state.about_me}
                   onChange={this.handleInput("aboutMe")}
                 />
               </label>
@@ -87,6 +87,7 @@ class Signup extends React.Component {
                   type="radio"
                   value={this.state.privacy}
                   onChange={this.handleInput("privacy")}
+                  id={this.state.privacy.toString()}
                 />
               </label>
               <button onClick={this.handleSubmit}>Sign Up</button>

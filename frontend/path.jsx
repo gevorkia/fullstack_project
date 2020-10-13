@@ -45,16 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
 //      password: "password"
 // }}}).then(response => console.log(response));
 
+
+
+
 // use line 5 to test user authentication 
-// const user = {
+// const sampleUser = {
 //      first_name: "Lili", 
 //      last_name: "Gevorkian", 
-//      email:  "banana@gmail.com",
+//      email:  "banana3@gmail.com",
 //      about_me: '',
 //      location: '',
 //      privacy: true,
 //      password: "password"
 // }
+
+// $.ajax({method: "POST", url: "/api/users", data: { user: { sampleUser }}}.then(response => console.log(response)));
+
 // signup(user)
 // signup(user).then(success => console.log(success), errors => console.log(errors)); 
 

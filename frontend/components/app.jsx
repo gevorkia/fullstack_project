@@ -9,6 +9,7 @@ const App = () => (
       <h1>We are in App.jsx!</h1>
       {/* <Route path="/" component={HomePageContainer}/> */}
       <Route path="/signup" component={SignupContainer} />
+      {/* <AuthRoute path="/login" component={LoginContainer} /> */}
     </header>
   </div>
 );
