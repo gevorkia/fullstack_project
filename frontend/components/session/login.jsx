@@ -25,6 +25,15 @@ class Login extends React.Component {
 
   render() {
     // console.log(this.props);
+    const errors = this.props.errors.map((error, idx) => {
+      return (
+        <ul>
+          {error}
+          <ul key={idx}>{error}</ul>
+        </ul>
+      )
+    })
+
     return (
       <div className="session-form">
         <h2>Log In!</h2>
@@ -48,6 +57,7 @@ class Login extends React.Component {
             <button onClick={this.handleSubmit}>Log In!</button>
           </label>
         </form>
+        {errors}
       </div>
     );
   }

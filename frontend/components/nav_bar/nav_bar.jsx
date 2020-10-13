@@ -19,7 +19,7 @@ const NavBar = ({ currentUser, logout }) => {
   );
   return (
     <header className="nav-bar">
-      <h1>Path</h1>
+      <h1>Trails</h1>
       <div>{display}</div>
     </header>
   );

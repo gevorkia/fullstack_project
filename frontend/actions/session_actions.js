@@ -2,7 +2,8 @@ import * as SessionAPIUtil from "../utils/session_api_util";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
-// export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_CLEAR_SESSION_ERRORS = "RECEIVE_CLEAR_SESSION_ERRORS"
 
 // action creators 
 
@@ -18,10 +19,15 @@ export const logoutCurrentUser = () => ({
 });
 
 // takes in an array
-// export const receiveSessionErrors = (errors) => ({
-//   type: RECEIVE_SESSION_ERRORS,
-//   errors
-// });
+export const receiveSessionErrors = (errors) => ({
+  type: RECEIVE_SESSION_ERRORS,
+  errors
+  // errors: errors
+});
+
+export const receiveClearSessionErrors = () => ({
+    type: RECEIVE_CLEAR_SESSION_ERRORS
+});
 
 // thunk action creators 
 export const loginUser = (user) => {
@@ -29,6 +35,9 @@ export const loginUser = (user) => {
         return SessionAPIUtil.login(user)
             .then( user => {
                 return dispatch(receiveCurrentUser(user))
+            })
+            .fail ( errors => {
+                return dispatch(receiveSessionErrors(errors.responseJSON))
             })
     }
 }
@@ -49,5 +58,9 @@ export const createNewUser = (user) => {
             .then(user => {
                 return dispatch(receiveCurrentUser(user))
             })
+            .fail(errors => {
+                return dispatch(receiveSessionErrors(errors.responseJSON))
+            })
     }
 }
+

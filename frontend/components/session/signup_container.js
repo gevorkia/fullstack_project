@@ -3,12 +3,18 @@ import { createNewUser } from "../../actions/session_actions";
 import Signup from "./signup"
 
 
-// don't need to map state for signup
+
+const mSTP = state => {
+    return {
+        errors: state.errors.session
+    }
+}
 
 const mDTP = (dispatch) => {
     return {
         createNewUser: formUser => dispatch(createNewUser(formUser))
+        
     }
 }
 
-export default connect(null, mDTP)(Signup)
+export default connect(mSTP, mDTP)(Signup)

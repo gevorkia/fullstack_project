@@ -17,6 +17,7 @@ class Signup extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoUserLogin = this.demoUserLogin.bind(this)
     }
 
     // any keys that match our state will get updated
@@ -33,11 +34,27 @@ class Signup extends React.Component {
         this.props.createNewUser(this.state)
             .then( () => this.props.history.push('/'))
             // we want to go to user show page ?
+        
+    }
+
+    demoUserLogin(e) {
+      e.preventDefault()
+
+      const demoUser = 
+      this.setState = ({
+        
+      })
     }
 
     render() {
         // how to do email and password on first sign-up? and then 
         // privacy input, radio-button?
+        const errors = this.props.errors.map((error, idx) => {
+          return (
+            <ul key={idx}>{error}</ul>
+          )
+        })
+
         return (
           <div className="session-form">
             <h2>Sign Up!</h2>
@@ -92,7 +109,10 @@ class Signup extends React.Component {
                 />
               </label>
               <button onClick={this.handleSubmit}>Sign Up</button>
+              <br></br>
+              <button onClick={this.demoUserLogin}>Log in as demo user</button>
             </form>
+            {errors}
             <HomePage/>
           </div>
         );
