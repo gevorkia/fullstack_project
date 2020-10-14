@@ -7,7 +7,6 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import HomePage from "./home_page/home_page"
 import ErrorPage from "./error_page/error_page"
 import { AuthRoute, ProtectedRoute } from "../utils/route_utils"
-import NavBar from "./nav_bar/nav_bar"
 
 const App = () => (
   <div>
