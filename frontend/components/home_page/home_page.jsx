@@ -6,10 +6,10 @@ import Layout from "../layout/layout"
 const HomePage = () => (
   // <Layout>
     <div>
-      <img
+      {/* <img
         className="home-page-img"
         src="https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554"
-      />
+      /> */}
       
     </div>
    // </Layout> 
@@ -30,18 +30,6 @@ const HomePage = () => (
       src="https://bookatrekking.com/data/images/2018/09/w-trek-patagonia-torres-del-paine-trekking-hiking__header.jpg"
        />
         */}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default HomePage

@@ -9,19 +9,25 @@ const NavBar = ({ currentUser, logout }) => {
     </div>
   ) : (
     <div>
-      <Link className="nav-bar-btn" to="/signup">
-        Sign Up
-      </Link>
-      <Link className="nav-bar-btn" to="/login">
-        Log In
-      </Link>
+      <div className="nav-bar-sign-up-ctn">
+        <Link className="nav-bar-sign-up" to="/signup">
+          Sign Up
+        </Link>
+      </div>
+      <div className="nav-bar-log-in-ctn"></div>
+        <Link className="nav-bar-log-in" to="/login">
+          Log In
+        </Link>
+      </div>  
     </div>
   );
   return (
-    <header className="nav-bar">
-      <h1>Trails</h1>
-      <div>{display}</div>
-    </header>
+    <div className="nav-bar"> 
+      <header className="nav-bar-title">
+        <h1>Trails</h1>
+        <div>{display}</div>
+      </header>
+    </div>
   );
 };
 
