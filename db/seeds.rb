@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-demo_user = User.create(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "trails890")
+demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "trails890")

@@ -11,11 +11,24 @@ const HomePage = () => (
       src="https://thumbs-prod.si-cdn.com/t4UH6V0BQbLz3Rj1d0c8H0hUO10=/fit-in/1072x0/https://public-media.si-cdn.com/filer/d7/57/d757a1c8-2f57-4c4a-9567-6acf9364d24a/istock-578121210.jpg"
     />
     <div className="centered-text">Find your next favorite trail</div>
-      {/* <div class="inputs-holder-border"></div>
-      <div class="inputs-holder"></div> */}
+
     <div className="search-bar"></div>
-        <input id="home-search-bar" type="text" placeholder="Enter a park or trail name" autocomplete="off" aria-label="text search input"></input>
-        <button>Search</button>
+    <input
+      id="home-search-bar"
+      type="text"
+      placeholder="Enter a park or trail name"
+      autoComplete="off"
+      aria-label="text search input"
+    ></input>
+    <button>Search</button>
+
+    <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
+    <p>
+      The beauty of nature doesn’t need to be hard to find. Our goal is simple -
+      build the largest collection of hand-curated trail guides, so you can
+      explore the outdoors with confidence. Anytime. Anywhere.
+    </p>
+    <Link to="/signup">Sign up for free</Link>
   </div>
   // </Layout>
 );

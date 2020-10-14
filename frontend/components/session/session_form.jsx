@@ -14,24 +14,33 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.demoUserLogin = this.demoUserLogin.bind(this);
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
   componentWillUnmount() {
     this.props.clearErrors();
   }
 
-    handleInput(type) {
-        return (e) => {
-            this.setState({ [type]: e.target.value })
-        }
-    }
+  handleInput(type) {
+    return (e) => {
+      this.setState({ [type]: e.target.value });
+    };
+  }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.processForm(this.state)
-      .then(() => this.props.history.push("/"));
+    this.props.processForm(this.state).then(() => this.props.history.push("/"));
+  }
+
+  demoUserLogin() {
+    const demoUser = {
+      first_name: "demo",
+      last_name: "user",
+      email: "demouser@trails.com",
+      password: "trails890",
+    };
+    this.setState(demoUser);
   }
 
   //this.setState
@@ -46,7 +55,6 @@ class SessionForm extends React.Component {
         return <ul key={idx}>{error}</ul>;
       });
     }
-
 
     return (
       <div className="session-form">
@@ -71,8 +79,7 @@ class SessionForm extends React.Component {
                 />
               </label>
             </>
-          )
-           : null}
+          ) : null}
 
           <label>
             Email:
@@ -93,7 +100,7 @@ class SessionForm extends React.Component {
           <button onClick={this.handleSubmit}>Sign Up</button>
           <br></br>
           {this.props.navLink}
-          {/* <button onClick={this.demoUserLogin}>Log in as demo user</button> */}
+          <button onClick={this.demoUserLogin}>Log in as demo user</button>
         </form>
         {errors}
       </div>
