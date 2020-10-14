@@ -14,7 +14,7 @@ const NavBar = ({ currentUser, logout }) => {
           Sign Up
         </Link>
       </div>
-      <div className="nav-bar-log-in-ctn"></div>
+      <div className="nav-bar-log-in-ctn">
         <Link className="nav-bar-log-in" to="/login">
           Log In
         </Link>

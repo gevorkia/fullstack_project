@@ -3,7 +3,7 @@ import * as SessionAPIUtil from "../utils/session_api_util";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-export const RECEIVE_CLEAR_SESSION_ERRORS = "RECEIVE_CLEAR_SESSION_ERRORS"
+export const RECEIVE_CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS"
 
 // action creators 
 
@@ -25,7 +25,7 @@ export const receiveSessionErrors = (errors) => ({
   // errors: errors
 });
 
-export const receiveClearSessionErrors = () => ({
+export const clearSessionErrors = () => ({
     type: RECEIVE_CLEAR_SESSION_ERRORS
 });
 
@@ -64,3 +64,6 @@ export const createNewUser = (user) => {
     }
 }
 
+export const clearErrors = () => dispatch => {
+    return dispatch(clearSessionErrors());
+}
