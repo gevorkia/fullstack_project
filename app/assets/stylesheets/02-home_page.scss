@@ -1,4 +1,4 @@
-
+@import "variables.scss";
 
 .home-page-img {
     width: 100%;
@@ -6,6 +6,7 @@
 }
 
 .centered-text {
+  font: $bodyFont;
   position: absolute;
   top: 50%;
   left: 50%;

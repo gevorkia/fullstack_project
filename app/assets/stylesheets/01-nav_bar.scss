@@ -1,0 +1,77 @@
+@import "variables.scss";
+
+header {
+  font-family: $navFont;
+}
+
+.nav-bar {
+  height: 60px;
+  margin: 0px 8px;
+  display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+}
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-logo-title {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+  margin-right: 8px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 25px;
+  color: #808080;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-bar-sign-up {
+    text-decoration: none;
+    background-color:  #219ad8;
+    color: white;
+    font-size: 13px;
+    font-weight: 580;
+    text-align: center;
+    padding: 13px 17px;
+    border-radius: 8px;
+    // font-family: "proxima nova," Arial, sans-serif;
+    margin-right: 6px;
+    font-family: $navFont;
+}
+
+
+.nav-bar-log-in {
+    text-decoration: none;
+    background-color: white;
+    color: #219ad8;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    padding: 10px 17px;
+    border-radius: 8px;
+    border: 2px solid #219ad8;
+    color: #219ad8;
+    margin-right: 6px;
+}
+
+
+
