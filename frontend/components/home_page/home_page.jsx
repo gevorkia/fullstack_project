@@ -1,35 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Layout from "../layout/layout"
+// import Layout from "../layout/layout"
 
 
 const HomePage = () => (
   // <Layout>
-  <div className="home-page-background">
-    <img
-      className="home-page-img"
-      src="https://thumbs-prod.si-cdn.com/t4UH6V0BQbLz3Rj1d0c8H0hUO10=/fit-in/1072x0/https://public-media.si-cdn.com/filer/d7/57/d757a1c8-2f57-4c4a-9567-6acf9364d24a/istock-578121210.jpg"
-    />
-    <div className="centered-text">Find your next favorite trail</div>
+  <>
+    <div className="content">
+      {/* <div className="home-page"> */}
+      <div className="home-page-background">
+        <div className="banner-container">
+          <div className="banner-text">Find your next favorite trail</div>
+          {/* <div className="input-holder-border"> */}
+            <div className="input-holder">
+              <div className="magnifying-glass">
+                <img
+                  alt="logo"
+                  src="https://rainbowpiecollective.files.wordpress.com/2013/12/1462599_10201858095712591_1476539769_o.jpg"
+                />
+              </div>
+              <input
+                className="home-search-bar"
+                type="text"
+                placeholder="Enter a park or trail name"
+                autoComplete="off"
+                aria-label="text search input"
+              ></input>
+              <button className="search-button">Search</button>
+            </div>
+          {/* </div> */}
+        </div>
+      </div>
+      <div className="text-body">
+        <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
+        <p>
+          The beauty of nature doesn’t need to be hard to find. Our goal is
+          simple - build the largest collection of hand-curated trail guides, so
+          you can explore the outdoors with confidence. Anytime. Anywhere.
+        </p>
+        <Link className="bottom-signup" to="/signup">
+          Sign up for free
+        </Link>
+      </div>
+      {/* </div> */}
+    </div>
 
-    <div className="search-bar"></div>
-    <input
-      id="home-search-bar"
-      type="text"
-      placeholder="Enter a park or trail name"
-      autoComplete="off"
-      aria-label="text search input"
-    ></input>
-    <button>Search</button>
-
-    <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
-    <p>
-      The beauty of nature doesn’t need to be hard to find. Our goal is simple -
-      build the largest collection of hand-curated trail guides, so you can
-      explore the outdoors with confidence. Anytime. Anywhere.
-    </p>
-    <Link to="/signup">Sign up for free</Link>
-  </div>
+    {/* </div> */}
+  </>
+  //{" "}
   // </Layout>
 );
 
