@@ -1,0 +1,39 @@
+.session-form {
+    background: url(https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554);
+//   font-size: 50px;
+    background-size: cover;
+    height: 800px;
+    background-position: bottom;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-login-popup {
+    // background-color: white;
+    flex: 1;
+    // text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    padding: 20px 60px;
+    border: red;
+    border-radius: 7px;
+    // flex-direction: column;
+    margin-left: 500px;
+    width: 200px;
+    background-color: red;
+    height: 120px;
+    text-align: center;
+    // max-width: 480px;
+    padding: 24px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+}
+
+// .signup-popup {
+//     flex: 1;
+//     text-align: center;
+//     margin-top: 100px;
+//     padding: 20px 100px;
+//     border: red;
+//     border-radius: 7px;
+// }

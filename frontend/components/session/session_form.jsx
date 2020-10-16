@@ -58,50 +58,59 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form">
-        <form>
-          {this.props.formType === "signup" ? (
-            <>
-              <label>
-                First Name:
-                <input
-                  type="test"
-                  value={this.state.first_name}
-                  onChange={this.handleInput("first_name")}
-                />
-              </label>
-              <label>
-                Last Name:
-                <input
-                  type="text"
-                  value={this.state.last_name}
-                  onChange={this.handleInput("last_name")}
-                />
-              </label>
-            </>
-          ) : null}
+        <div className="signup-login-popup">
+          <form className="signup-popup">
+            {this.props.formType === "Sign Up" ? (
+              <>
+                {/* <label>
+                  First Name: */}
+                  <input
+                    type="test"
+                    placeholder="First name"
+                    value={this.state.first_name}
+                    onChange={this.handleInput("first_name")}
+                  />
+                {/* </label>
+                {/* <br/> */}
+                {/* <label>
+                  Last Name: */}
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    value={this.state.last_name}
+                    onChange={this.handleInput("last_name")}
+                  />
+                {/* </label> */}
+              </>
+            ) : (
+              <></>
+            )}
 
-          <label>
-            Email:
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput("email")}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>{this.props.formType}</button>
-          <br></br>
-          {this.props.navLink}
-          <button onClick={this.demoUserLogin}>Log in as demo user</button>
-        </form>
-        {errors}
+            {/* <label>
+              Email: */}
+              <input
+                type="text"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleInput("email")}
+              />
+            {/* </label> */}
+            {/* <label>
+              Password: */}
+              <input
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleInput("password")}
+              />
+            {/* </label> */}
+            <button onClick={this.handleSubmit}>{this.props.formType}</button>
+            <br></br>
+            {this.props.navLink}
+            <button onClick={this.demoUserLogin}>Log in as demo user</button>
+          </form>
+          {errors}
+        </div>
       </div>
     );
   }
