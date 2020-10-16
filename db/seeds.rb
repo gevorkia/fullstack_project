@@ -7,4 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+
+# to reset primary_key Ids
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
 demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "trails890")
