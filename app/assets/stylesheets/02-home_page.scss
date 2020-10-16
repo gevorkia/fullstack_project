@@ -82,10 +82,6 @@
   background-color: white;
   width: 60px;
   height: 100%;
-
-  // & > * {
-  //   height: 50%;
-  // }
 }
 
 .magnifying-glass > * {
@@ -112,10 +108,6 @@
   color: white;
   font-size: 24px;
   border: 0;
-  // padding: 0px 10px;
-  // border-radius: 7px;
-  // width: 40px;
-  
   padding: 15px 30px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -143,8 +135,9 @@
   text-decoration: none;
   color: white;
   background-color: #219ad8;
-  padding: 10px 20px;
+  padding: 15px 40px;
   border-radius: 8px;
+  text-align: center;
 }
 
 p {
@@ -155,21 +148,13 @@ p {
   font-weight: 400;
   width: 625px;
   margin: auto;
-  padding: 30px 50px;
+  padding: 5px 50px;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
 
 
-h2 {
-  // display: block;
-  // font-size: 1.5em;
-  // margin-block-start: 0.83em;
-  // margin-block-end: 0.83em;
-  // margin-inline-start: 0px;
-  // margin-inline-end: 0px;
-  // font-weight: bold;
-  // // flex: 1;
-  // text-align: center;
+.text-body > h2 {
   padding: 30px 50px;
   font-family: Museo Sans Rounded, Arial, sans-serif;
   font-weight: 500;
@@ -177,15 +162,3 @@ h2 {
   line-height: 1.2;
   width: 600;
 }
-
-
-
-  // .search-text {
-  //   border-color: white;
-  //   border-radius: 10px;
-  //   color: #414141;
-  //   font-size: 24px;
-  //   background: #fff;
-  //    url(https://cdn-assets.alltrails.com/assets/icons/search-gray-086ffad….svg) no-repeat 16px;
-  //   padding-left: 50px;
-  // }

@@ -24,7 +24,7 @@ const App = () => (
           {/* <ProtectedRoute path="/users" component={ProfileContainer} /> */}
           {/* if not logged in, don't allow user to see a profile page */}
         </Switch>
-      {/* <Footer/> */}
+      <Footer/>
   </div>
 );
 

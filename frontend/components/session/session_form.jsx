@@ -58,7 +58,6 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form">
-        <h2>Find your next favorite trail</h2>
         <form>
           {this.props.formType === "signup" ? (
             <>
