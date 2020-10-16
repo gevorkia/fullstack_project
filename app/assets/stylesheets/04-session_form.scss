@@ -1,8 +1,10 @@
+@import "variables.scss";
+
 .session-form {
     background: url(https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554);
 //   font-size: 50px;
     background-size: cover;
-    height: 800px;
+    height: 836px;
     background-position: bottom;
     position: relative;
     display: flex;
@@ -14,26 +16,78 @@
     flex: 1;
     // text-align: center;
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 260px;
     padding: 20px 60px;
-    border: red;
-    border-radius: 7px;
-    // flex-direction: column;
-    margin-left: 500px;
-    width: 200px;
-    background-color: red;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+   
+    background-color: white;
     height: 120px;
     text-align: center;
     // max-width: 480px;
+    width: 400px;
+    // margin-left: -240px;
     padding: 24px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
 }
 
-// .signup-popup {
-//     flex: 1;
-//     text-align: center;
-//     margin-top: 100px;
-//     padding: 20px 100px;
-//     border: red;
-//     border-radius: 7px;
-// }
+.signup-popup {
+    display: flex;
+    flex-direction: column;
+    // flex: 1;
+    // text-align: center;
+    // margin-top: 100px;
+    // padding: 20px 100px;
+    // border: red;
+    // border-radius: 7px;
+}
+
+.signup-popup > div {
+    font-size: 24px;
+    font-family: "Proxima Nova", Arial, sans-serif;
+    // padding: 10px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-weight: 565;
+    color: #414141;
+    border-width: 10px;
+}
+
+.input-text {
+    // padding: 10px 10px;
+    //     color: #414141;
+    margin: 4px 0px;
+    padding: 10px 16px;
+    // font-family: Proxima Nova, Arial, sans-serif !important;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    cursor: text;
+    // border-width: 10px;
+    margin-bottom: 20px;
+    height: 26px;
+}
+
+.popup-button {
+  font-family: $bodyFont;
+  background-color: $green;
+  color: white;
+  font-size: 24px;
+  border: 0;
+  padding: 15px 30px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.demo-user-text {
+    font-size: 13px;
+    color: #808080;
+    margin-bottom: 30px;
+    padding: 10px 10x;
+    text-align: center;
+    width: 200px;
+}
+
+.demo-user-text > a {
+    color: $green;
+}

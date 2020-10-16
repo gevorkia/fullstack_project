@@ -60,54 +60,56 @@ class SessionForm extends React.Component {
       <div className="session-form">
         <div className="signup-login-popup">
           <form className="signup-popup">
+            <div className="popup-header">Create your free account</div>
             {this.props.formType === "Sign Up" ? (
               <>
-                {/* <label>
-                  First Name: */}
-                  <input
-                    type="test"
-                    placeholder="First name"
-                    value={this.state.first_name}
-                    onChange={this.handleInput("first_name")}
-                  />
-                {/* </label>
-                {/* <br/> */}
-                {/* <label>
-                  Last Name: */}
-                  <input
-                    type="text"
-                    placeholder="Last name"
-                    value={this.state.last_name}
-                    onChange={this.handleInput("last_name")}
-                  />
-                {/* </label> */}
+                <input
+                  className="input-text"
+                  type="test"
+                  placeholder="First name"
+                  value={this.state.first_name}
+                  onChange={this.handleInput("first_name")}
+                />
+
+                <input
+                  className="input-text"
+                  type="text"
+                  placeholder="Last name"
+                  value={this.state.last_name}
+                  onChange={this.handleInput("last_name")}
+                />
               </>
             ) : (
               <></>
             )}
 
-            {/* <label>
-              Email: */}
-              <input
-                type="text"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.handleInput("email")}
-              />
-            {/* </label> */}
-            {/* <label>
-              Password: */}
-              <input
-                type="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.handleInput("password")}
-              />
-            {/* </label> */}
-            <button onClick={this.handleSubmit}>{this.props.formType}</button>
-            <br></br>
+            <input
+              className="input-text"
+              type="text"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleInput("email")}
+            />
+
+            <input
+              className="input-text"
+              type="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleInput("password")}
+            />
+
+            <button className="popup-button" onClick={this.handleSubmit}>
+              {this.props.formType}
+            </button>
+            <br />
             {this.props.navLink}
-            <button onClick={this.demoUserLogin}>Log in as demo user</button>
+            {/* <div className="demo-user-text">Explore the trails as a  */}
+            <p className="demo-user-text">
+              Explore the trails as a
+              <a onClick={this.demoUserLogin}> demo user</a>
+            </p>
+            {/* </div> */}
           </form>
           {errors}
         </div>
