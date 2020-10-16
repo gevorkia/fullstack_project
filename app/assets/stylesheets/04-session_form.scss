@@ -1,14 +1,17 @@
 @import "variables.scss";
 
 .session-form {
-    background: url(https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554);
+    // background: url(https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554);
 //   font-size: 50px;
+    background: url(https://www.geoex.com/app/uploads/2019/10/chile-patagonia-mirador-cuernos-hikers-path.jpg);
+    // background: url(https://outsider.ie/wp-content/uploads/2017/08/Image-REI.jpeg);
     background-size: cover;
     height: 836px;
     background-position: bottom;
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-bottom: -140px;
 }
 
 .signup-login-popup {
@@ -16,7 +19,7 @@
     flex: 1;
     // text-align: center;
     margin-top: 100px;
-    margin-bottom: 260px;
+    margin-bottom: 150px;
     padding: 20px 60px;
     border-radius: 10px;
     margin-left: auto;
@@ -64,7 +67,7 @@
     border: 1px solid #999999;
     cursor: text;
     // border-width: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     height: 26px;
 }
 
@@ -75,8 +78,9 @@
   font-size: 24px;
   border: 0;
   padding: 15px 30px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .demo-user-text {
@@ -90,4 +94,24 @@
 
 .demo-user-text > a {
     color: $green;
+    cursor: pointer;
 }
+
+.popup-errors {
+    color: red !important;
+    font-family: Proxima Nova, Arial, sans-serif !important;
+    text-align: left;
+    font-size: 12px;
+    // padding: 2px;
+    padding-left: 10px;
+}
+
+.bottom-links div {
+    color: $green;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// .popup-errors input, .popup-errors select{ 
+//   border: 1px solid #c51244 !important; 
+// }

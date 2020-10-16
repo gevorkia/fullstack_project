@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     let errors = null;
     if (this.props.errors) {
       errors = this.props.errors.map((error, idx) => {
-        return <ul key={idx}>{error}</ul>;
+        return <ul className="popup-errors" key={idx}>{error}</ul>;
       });
     }
 
@@ -67,17 +67,20 @@ class SessionForm extends React.Component {
                   className="input-text"
                   type="test"
                   placeholder="First name"
+                  // required value
                   value={this.state.first_name}
                   onChange={this.handleInput("first_name")}
                 />
-
+                {errors[0]}
                 <input
                   className="input-text"
                   type="text"
                   placeholder="Last name"
+                  // required value
                   value={this.state.last_name}
                   onChange={this.handleInput("last_name")}
                 />
+                {errors[1]}
               </>
             ) : (
               <></>
@@ -90,7 +93,7 @@ class SessionForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-
+            {errors[2]}
             <input
               className="input-text"
               type="password"
@@ -98,20 +101,22 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.handleInput("password")}
             />
-
+            {errors[3]}
             <button className="popup-button" onClick={this.handleSubmit}>
               {this.props.formType}
             </button>
             <br />
-            {this.props.navLink}
-            {/* <div className="demo-user-text">Explore the trails as a  */}
+              
+            <div classname="opp-button">
+              <p>{this.props.navLink}</p>
+            </div>
+
             <p className="demo-user-text">
               Explore the trails as a
               <a onClick={this.demoUserLogin}> demo user</a>
             </p>
-            {/* </div> */}
+
           </form>
-          {errors}
         </div>
       </div>
     );
