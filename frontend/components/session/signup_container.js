@@ -19,4 +19,4 @@ const mDTP = (dispatch) => {
     };
 }
 
-export default connect(mSTP, mDTP)(SessionForm)
+export default connect(mSTP, mDTP)(SessionForm);

@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoUserLogin = this.demoUserLogin.bind(this);
+    this.linkToggle = this.linkToggle.bind(this)
   }
 
   componentWillUnmount() {
@@ -43,17 +44,45 @@ class SessionForm extends React.Component {
     this.setState(demoUser);
   }
 
-  //this.setState
+
+   linkToggle() {
+      if (this.props.formType === "Sign Up") {
+        return "Already have an account?"
+      } else {
+        return "Don't have an account?"
+      }
+    }
+ 
 
   render() {
-    // how to do email and password on first sign-up? and then
-    // privacy input, radio-button?
+   
     // console.log(this.props)
+
+    // const linkToggle = () => {
+    //   if (this.props.formType === "Sign Up") {
+    //     return "Already have an account?"
+    //   } else {
+    //     return "Don't have an account?"
+    //   }
+    // }
+
     let errors = null;
     if (this.props.errors) {
       errors = this.props.errors.map((error, idx) => {
         return <ul className="popup-errors" key={idx}>{error}</ul>;
       });
+    }
+
+    const printErrors = (error) => {
+      // debugger
+      if (this.props.errors.includes(error)) {
+        // debugger
+        return (
+          <ul className="popup-errors">
+            {error}
+          </ul>
+        );
+      }
     }
 
     return (
@@ -67,20 +96,20 @@ class SessionForm extends React.Component {
                   className="input-text"
                   type="test"
                   placeholder="First name"
-                  // required value
+                  required
                   value={this.state.first_name}
                   onChange={this.handleInput("first_name")}
                 />
-                {errors[0]}
+                {printErrors("First name can't be blank")}
                 <input
                   className="input-text"
                   type="text"
                   placeholder="Last name"
-                  // required value
+                  required
                   value={this.state.last_name}
                   onChange={this.handleInput("last_name")}
                 />
-                {errors[1]}
+                {printErrors("Last name can't be blank")}
               </>
             ) : (
               <></>
@@ -90,32 +119,35 @@ class SessionForm extends React.Component {
               className="input-text"
               type="text"
               placeholder="Email"
+              required
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-            {errors[2]}
+            {printErrors("Email can't be blank")}
             <input
               className="input-text"
               type="password"
               placeholder="Password"
+              required
               value={this.state.password}
               onChange={this.handleInput("password")}
             />
-            {errors[3]}
+            {printErrors("Password is too short (minimum is 6 characters)")}
+            {printErrors("Invalid username/password combination")}
+
             <button className="popup-button" onClick={this.handleSubmit}>
               {this.props.formType}
             </button>
             <br />
-              
-            <div classname="opp-button">
+            <span className="opp-button">
+              {this.linkToggle()}
               <p>{this.props.navLink}</p>
-            </div>
+            </span>
 
             <p className="demo-user-text">
               Explore the trails as a
               <a onClick={this.demoUserLogin}> demo user</a>
             </p>
-
           </form>
         </div>
       </div>
@@ -123,4 +155,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm
+export default SessionForm;

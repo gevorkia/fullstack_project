@@ -75,7 +75,8 @@
   font-family: $bodyFont;
   background-color: $green;
   color: white;
-  font-size: 24px;
+  font-size: 14px;
+  font-weight: 480;
   border: 0;
   padding: 15px 30px;
   border-radius: 8px;
@@ -106,11 +107,13 @@
     padding-left: 10px;
 }
 
-.bottom-links div {
+.opp-button > p {
     color: $green;
     cursor: pointer;
     text-decoration: none;
 }
+
+
 
 // .popup-errors input, .popup-errors select{ 
 //   border: 1px solid #c51244 !important; 
