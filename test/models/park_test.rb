@@ -4,7 +4,6 @@
 #
 #  id          :bigint           not null, primary key
 #  name        :string           not null
-#  type        :string           not null
 #  summary     :text             not null
 #  description :text             not null
 #  location    :string           not null

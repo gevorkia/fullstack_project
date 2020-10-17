@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import SessionForm from "./session_form"
-import { createNewUser, clearErrors } from "../../actions/session_actions";
+import { createNewUser, clearErrors, loginUser } from "../../actions/session_actions";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const mSTP = state => {
 const mDTP = (dispatch) => {
     return {
       processForm: (formUser) => dispatch(createNewUser(formUser)),
+      processDemo: (formUser) => dispatch(loginUser(formUser)),
       clearErrors: () => dispatch(clearErrors()),
     };
 }

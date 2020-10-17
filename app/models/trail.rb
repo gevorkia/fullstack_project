@@ -22,8 +22,8 @@ class Trail < ApplicationRecord
     validates :elevation_gain, :route_type, :park_id, :lat, :lng, presence: true
 
     validates :difficulty, inclusion: { in: ["easy", "moderate", "strenuous"] }
-    validates :route_type, inclusion: { in: ["Out-and-Back", "Loop", "Point-to-Point"] }
-    validates :usage, inclusion: { in: ["light", "moderate", "heavy", "heavily trafficked"] }
+    validates :route_type, inclusion: { in: ["Out & Back", "Loop", "Point-to-Point"] }
+    validates :usage, inclusion: { in: ["light", "moderate", "heavy"] }
 
     belongs_to :park,
         foreign_key: :park_id,

@@ -36,12 +36,10 @@ class SessionForm extends React.Component {
 
   demoUserLogin() {
     const demoUser = {
-      first_name: "demo",
-      last_name: "user",
       email: "demouser@trails.com",
       password: "trails890",
     };
-    this.setState(demoUser);
+    this.props.processDemo(demoUser);
   }
 
 
@@ -88,67 +86,71 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form">
         <div className="signup-login-popup">
-          <form className="signup-popup">
-            <div className="popup-header">Create your free account</div>
-            {this.props.formType === "Sign Up" ? (
-              <>
-                <input
-                  className="input-text"
-                  type="test"
-                  placeholder="First name"
-                  required
-                  value={this.state.first_name}
-                  onChange={this.handleInput("first_name")}
-                />
-                {printErrors("First name can't be blank")}
-                <input
-                  className="input-text"
-                  type="text"
-                  placeholder="Last name"
-                  required
-                  value={this.state.last_name}
-                  onChange={this.handleInput("last_name")}
-                />
-                {printErrors("Last name can't be blank")}
-              </>
-            ) : (
-              <></>
-            )}
+          <div className="popup-wrapper">
+            <form className="signup-popup">
+              <div className="popup-header">Create your free account</div>
+              {this.props.formType === "Sign Up" ? (
+                <>
+                  <input
+                    className="input-text"
+                    type="test"
+                    placeholder="First name"
+                    required
+                    value={this.state.first_name}
+                    onChange={this.handleInput("first_name")}
+                  />
+                  {printErrors("First name can't be blank")}
+                  <input
+                    className="input-text"
+                    type="text"
+                    placeholder="Last name"
+                    required
+                    value={this.state.last_name}
+                    onChange={this.handleInput("last_name")}
+                  />
+                  {printErrors("Last name can't be blank")}
+                </>
+              ) : (
+                <></>
+              )}
 
-            <input
-              className="input-text"
-              type="text"
-              placeholder="Email"
-              required
-              value={this.state.email}
-              onChange={this.handleInput("email")}
-            />
-            {printErrors("Email can't be blank")}
-            <input
-              className="input-text"
-              type="password"
-              placeholder="Password"
-              required
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-            {printErrors("Password is too short (minimum is 6 characters)")}
-            {printErrors("Invalid username/password combination")}
+              <input
+                className="input-text"
+                type="text"
+                placeholder="Email"
+                required
+                value={this.state.email}
+                onChange={this.handleInput("email")}
+              />
+              {printErrors("Email can't be blank")}
+              <input
+                className="input-text"
+                type="password"
+                placeholder="Password"
+                required
+                value={this.state.password}
+                onChange={this.handleInput("password")}
+              />
+              {printErrors("Password is too short (minimum is 6 characters)")}
+              {printErrors("Invalid username/password combination")}
 
-            <button className="popup-button" onClick={this.handleSubmit}>
-              {this.props.formType}
-            </button>
-            <br />
-            <span className="opp-button">
-              {this.linkToggle()}
-              <p>{this.props.navLink}</p>
-            </span>
+              <button className="popup-button" onClick={this.handleSubmit}>
+                {this.props.formType}
+              </button>
+              <br />
+              <span className="opp-button">
+                <p className="navlink">
+                  {this.linkToggle()} {this.props.navLink}
+                </p>
+              </span>
 
-            <p className="demo-user-text">
-              Explore the trails as a
-              <a onClick={this.demoUserLogin}> demo user</a>
-            </p>
+              <p className="navlink">
+                Explore the trails as a
+                <a onClick={this.demoUserLogin}> demo user</a>
+              </p>
+              <div className="pop-up-bottom"></div>
           </form>
+          </div>
         </div>
       </div>
     );

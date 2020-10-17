@@ -9,7 +9,9 @@
 #  updated_at :datetime         not null
 #
 class Tag < ApplicationRecord
+
     has_many :taggables,
         foreign_key: :tag_id,
         class_name: "Taggable"
+        
 end

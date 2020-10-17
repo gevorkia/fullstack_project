@@ -12,9 +12,9 @@
 class Taggable < ApplicationRecord
 
     belongs_to :taggable,
+        polymorphic: true
         # foreign_key: :taggable_id,
         # class_name: "Taggable",
-        polymorphic: true
 
     belongs_to :tag,
         foreign_key: :tag_id,
