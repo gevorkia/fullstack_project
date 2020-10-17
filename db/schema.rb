@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_230341) do
+ActiveRecord::Schema.define(version: 2020_10_17_002421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "parks", force: :cascade do |t|
     t.string "name", null: false
-    t.string "type", null: false
     t.text "summary", null: false
     t.text "description", null: false
     t.string "location", null: false
@@ -26,6 +25,24 @@ ActiveRecord::Schema.define(version: 2020_10_16_230341) do
     t.string "website", null: false
     t.float "lat", null: false
     t.float "lng", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggables", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "taggable_id", null: false
+    t.string "taggable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id", "taggable_id", "taggable_type"], name: "index_taggables_on_tag_id_and_taggable_id_and_taggable_type", unique: true
+    t.index ["tag_id"], name: "index_taggables_on_tag_id"
+    t.index ["taggable_id"], name: "index_taggables_on_taggable_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "tag_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

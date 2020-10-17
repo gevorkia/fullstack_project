@@ -17,10 +17,12 @@
 #  updated_at  :datetime         not null
 #
 class Park < ApplicationRecord
-    validates :name, :type, :summary, :description, :location, presence: true
-    validates :acreage, :contact, :website, :lat, :lang, presence: true
+    validates :name, :summary, :description, :location, presence: true
+    validates :acreage, :contact, :website, :lat, :lng, presence: true
 
     has_many :trails,
         foreign_key: :park_id,
         class_name: "Trail"
+
+    has_many :tags, as: :taggable
 end

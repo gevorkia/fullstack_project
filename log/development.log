@@ -18059,3 +18059,959 @@ Migrating to CreateParks (20201016230341)
   ↳ bin/rails:9
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/lili/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTags (20201016232517)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying NOT NULL, "tag_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201016232517_create_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201016232517"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTaggables (20201016232614)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "taggables" ("id" bigserial primary key, "tag_id" integer NOT NULL, "taggable_id" integer NOT NULL, "taggable_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201016232614_create_taggables.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_taggables_on_tag_id" ON "taggables"  ("tag_id")[0m
+  ↳ db/migrate/20201016232614_create_taggables.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_taggables_on_taggable_id" ON "taggables"  ("taggable_id")[0m
+  ↳ db/migrate/20201016232614_create_taggables.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_taggables_on_tag_id_and_taggable_id_and_taggable_type" ON "taggables"  ("tag_id", "taggable_id", "taggable_type")[0m
+  ↳ db/migrate/20201016232614_create_taggables.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201016232614"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lili/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lili/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Create (2.0ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:05:51.408508"], ["updated_at", "2020-10-17 00:05:51.408508"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:06:37.837170"], ["updated_at", "2020-10-17 00:06:37.837170"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (1.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZGAQ5Xu0LqRIZOVx1MeZHA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$wCaAigMyegVFVAbISCtXruyF5m3e6G.68jsRFe7hwFLnPDGvpeRH."], ["session_token", "ZGAQ5Xu0LqRIZOVx1MeZHA"], ["created_at", "2020-10-17 00:14:09.274874"], ["updated_at", "2020-10-17 00:14:09.274874"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (1.1ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (1.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e3PvM6GnY2uEX_o8b0cEaA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$DHQPYfp4m0NXZ06QEvCoQeIajA28Hr64sN0iYMSIm31EE6aXAS34O"], ["session_token", "e3PvM6GnY2uEX_o8b0cEaA"], ["created_at", "2020-10-17 00:14:24.678569"], ["updated_at", "2020-10-17 00:14:24.678569"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:14:24.727696"], ["updated_at", "2020-10-17 00:14:24.727696"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:14:24.730011"], ["updated_at", "2020-10-17 00:14:24.730011"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qGVG2gYQSMRCE4_pgLhSWg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$5geYJDpEd0wwYipAobV2LeTMHxEAuhkKoQC1kYwTZ6ZrsPLQ29mBy"], ["session_token", "qGVG2gYQSMRCE4_pgLhSWg"], ["created_at", "2020-10-17 00:14:59.849834"], ["updated_at", "2020-10-17 00:14:59.849834"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:14:59.893448"], ["updated_at", "2020-10-17 00:14:59.893448"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:14:59.895119"], ["updated_at", "2020-10-17 00:14:59.895119"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VGSfIpJMjE5dzrFblGpYng"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$LcvX815sSJx5peKj7RdvZOzH1vmZ7NUE1pGH81MAW1Fkgrvgj2UHe"], ["session_token", "VGSfIpJMjE5dzrFblGpYng"], ["created_at", "2020-10-17 00:15:46.816925"], ["updated_at", "2020-10-17 00:15:46.816925"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.6ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:15:46.863315"], ["updated_at", "2020-10-17 00:15:46.863315"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:15:46.865438"], ["updated_at", "2020-10-17 00:15:46.865438"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:83
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mTaggable Load (3.3ms)[0m  [1m[34mSELECT "taggables".* FROM "taggables"[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTaggable Load (0.3ms)[0m  [1m[34mSELECT "taggables".* FROM "taggables" WHERE "taggables"."tag_id" = $1[0m  [["tag_id", 7]]
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" ORDER BY "parks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-zNKA8x7dEzio77ZnAq1aQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$HzesjddkywW1x138u2qafuOn35MtaQPbqRlEBITGy06rcpfbNrQw."], ["session_token", "-zNKA8x7dEzio77ZnAq1aQ"], ["created_at", "2020-10-17 00:18:24.729084"], ["updated_at", "2020-10-17 00:18:24.729084"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.7ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:18:24.777200"], ["updated_at", "2020-10-17 00:18:24.777200"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:18:24.779041"], ["updated_at", "2020-10-17 00:18:24.779041"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0TVAjViZGyrA7U6tJVuyyw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$41NtHI5xQk4wxvt/1w0g1useU5s/.duXzUM0Z81/936bi/z6LMpku"], ["session_token", "0TVAjViZGyrA7U6tJVuyyw"], ["created_at", "2020-10-17 00:19:20.936619"], ["updated_at", "2020-10-17 00:19:20.936619"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:19:20.988528"], ["updated_at", "2020-10-17 00:19:20.988528"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:19:20.990691"], ["updated_at", "2020-10-17 00:19:20.990691"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y6OKBIlFTjN_m1sn-p5nkQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$GsOR2lAoJDtFwPBYlykcJeY527cDrkReA.kanL8mJmpcNVwMjfQqC"], ["session_token", "Y6OKBIlFTjN_m1sn-p5nkQ"], ["created_at", "2020-10-17 00:20:44.748892"], ["updated_at", "2020-10-17 00:20:44.748892"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.5ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:20:44.791123"], ["updated_at", "2020-10-17 00:20:44.791123"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:20:44.793217"], ["updated_at", "2020-10-17 00:20:44.793217"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aT9ZKxpbb0vLId-2ZcJuGg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$hxDORlqu12OBfNisGMK2N.07E91jP3IvzVz.Kjyf05kMObriUrjY2"], ["session_token", "aT9ZKxpbb0vLId-2ZcJuGg"], ["created_at", "2020-10-17 00:21:19.555944"], ["updated_at", "2020-10-17 00:21:19.555944"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:21:19.597908"], ["updated_at", "2020-10-17 00:21:19.597908"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:21:19.599736"], ["updated_at", "2020-10-17 00:21:19.599736"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ahvr7DtvLYRCo7Es_l_4Mw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$Lo6DDUFLjyMunnMvcAgtQuqf5TT0lqffZ2Tk3fzVtUs9ZGNFk8U8m"], ["session_token", "ahvr7DtvLYRCo7Es_l_4Mw"], ["created_at", "2020-10-17 00:22:50.379467"], ["updated_at", "2020-10-17 00:22:50.379467"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:22:50.425903"], ["updated_at", "2020-10-17 00:22:50.425903"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:22:50.428061"], ["updated_at", "2020-10-17 00:22:50.428061"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Wc1DTF2NmbGWuhf8aD1Vtw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$z67e/nXinvtMLuF2/f7kuu3TNovp6s0iGbzL4BpurVYIDHIHv/lKi"], ["session_token", "Wc1DTF2NmbGWuhf8aD1Vtw"], ["created_at", "2020-10-17 00:23:55.685800"], ["updated_at", "2020-10-17 00:23:55.685800"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:23:55.730448"], ["updated_at", "2020-10-17 00:23:55.730448"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:23:55.732376"], ["updated_at", "2020-10-17 00:23:55.732376"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeleteParkColumn (20201017002421)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[35mALTER TABLE "parks" DROP COLUMN "type"[0m
+  ↳ db/migrate/20201017002421_delete_park_column.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201017002421"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774347015679974285)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "M1qQpGaYF0wEt9tAKgVgGg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$n6WhNHF5SRBdGCykNKuLXe98/M45ah2LlbFX2a2vN7dhxHGj3D.Q."], ["session_token", "M1qQpGaYF0wEt9tAKgVgGg"], ["created_at", "2020-10-17 00:25:22.769447"], ["updated_at", "2020-10-17 00:25:22.769447"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (1.0ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:25:22.810550"], ["updated_at", "2020-10-17 00:25:22.810550"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:25:22.814052"], ["updated_at", "2020-10-17 00:25:22.814052"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Create (1.2ms)[0m  [1m[32mINSERT INTO "parks" ("name", "summary", "description", "location", "acreage", "contact", "website", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Pfeiffer Big Sur State Park"], ["summary", "Looking for a great trail in Pfeiffer Big Sur State Park, \n                         California? AllTrails has 10 great hiking trails, forest \n                         trails, river trails and more, with hand-curated trail \n                         maps and driving directions as well as detailed reviews \n                         and photos from hikers, campers, and nature lovers like \n                         you. Just looking to take a quick stroll? We've got 5 easy \n                         trails in Pfeiffer Big Sur State Park ranging from 0.8 to \n                         2.5 miles and from 216 to 616 feet above sea level. Start \n                         checking them out and you'll be out on the trail in no \n                         time!"], ["description", "Three are many scenic trails in Pfeiffer Big Sur \n                             State Park. Enjoy the wildlife and many different \n                             trees in the park."], ["location", "Big Sur, CA"], ["acreage", 1006], ["contact", "831-667-1112"], ["website", "https://www.parks.ca.gov/?page_id=570"], ["lat", 36.379839], ["lng", -121.756157], ["created_at", "2020-10-17 00:25:22.828366"], ["updated_at", "2020-10-17 00:25:22.828366"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mPark Load (1.1ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mTrail Create (1.0ms)[0m  [1m[32mINSERT INTO "trails" ("name", "difficulty", "summary", "description", "length", "elevation_gain", "route_type", "usage", "park_id", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "Sykes Hot Springs via Pine Ridge Trail"], ["difficulty", "strenuous"], ["summary", "Sykes Hot Springs via Pine Ridge Trail is a 19.5 mile heavily \n                 trafficked out and back trail located near Big Sur, California \n                 that features hot springs and is rated as difficult. The trail \n                 offers a number of activity options and is accessible year- \n                 round. Dogs are also able to use this trail."], ["description", "Big Sur has many great destinations, but Sykes Hot \n                     Springs is definitely near the top of the list for anyone \n                     who has been there.  It is roughly 9-10 miles to the Skyes \n                     campground, and limited climbing after the first 2 hours \n                     (which can be steep at times, and tiring in the direct \n                     sun).  It is possible to treat it as a day hike, but it is \n                     recommended to take some time for the hike, as there are \n                     rolling green hills, several waterfalls, and wildflowers \n                     throughout the trail, none of which should be missed.\n\n                     The hot springs is about 8 feet across and a couple of \n                     feet deep--about the size for 4 adults, and it stays \n                     around 100 degrees depending on rain.\n\n                     Start by parking at the Ventana Wilderness area ranger \n                     station and heading towards the back parking lot. Parking \n                     is also available for $10.00 per calendar day Pine Ridge \n                     Trailhead Parking Lot."], ["length", 19.5], ["elevation_gain", 5646], ["route_type", "Out-and-Back"], ["usage", "heavily trafficked"], ["park_id", 1], ["lat", -36.341476], ["lng", -121.811816], ["created_at", "2020-10-17 00:25:22.852949"], ["updated_at", "2020-10-17 00:25:22.852949"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTaggable Create (1.7ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 21], ["taggable_id", 1], ["taggable_type", "Trail"], ["created_at", "2020-10-17 00:25:22.872503"], ["updated_at", "2020-10-17 00:25:22.872503"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:84
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTaggable Create (0.5ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 22], ["taggable_id", 1], ["taggable_type", "Park"], ["created_at", "2020-10-17 00:25:22.879155"], ["updated_at", "2020-10-17 00:25:22.879155"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:84
+  [1m[36mPark Load (1.2ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" ORDER BY "parks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" ORDER BY "parks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" ORDER BY "parks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPark Load (0.7ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" ORDER BY "parks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (1.0ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."taggable_id" = $1 AND "taggables"."taggable_type" = $2[0m  [["taggable_id", 1], ["taggable_type", "Trail"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VHtP_EYHUxpHF15Qnzh4Kw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$etlzqqsUBFObwz8mEbB.ouJ.FS4.ldiOGLT1C82iA51POZd9H82.e"], ["session_token", "VHtP_EYHUxpHF15Qnzh4Kw"], ["created_at", "2020-10-17 00:34:21.491368"], ["updated_at", "2020-10-17 00:34:21.491368"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (1.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTrail Destroy (0.3ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:34:21.564333"], ["updated_at", "2020-10-17 00:34:21.564333"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:34:21.565976"], ["updated_at", "2020-10-17 00:34:21.565976"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Create (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("name", "summary", "description", "location", "acreage", "contact", "website", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Pfeiffer Big Sur State Park"], ["summary", "Looking for a great trail in Pfeiffer Big Sur State Park, \n                         California? AllTrails has 10 great hiking trails, forest \n                         trails, river trails and more, with hand-curated trail \n                         maps and driving directions as well as detailed reviews \n                         and photos from hikers, campers, and nature lovers like \n                         you. Just looking to take a quick stroll? We've got 5 easy \n                         trails in Pfeiffer Big Sur State Park ranging from 0.8 to \n                         2.5 miles and from 216 to 616 feet above sea level. Start \n                         checking them out and you'll be out on the trail in no \n                         time!"], ["description", "Three are many scenic trails in Pfeiffer Big Sur \n                             State Park. Enjoy the wildlife and many different \n                             trees in the park."], ["location", "Big Sur, CA"], ["acreage", 1006], ["contact", "831-667-1112"], ["website", "https://www.parks.ca.gov/?page_id=570"], ["lat", 36.379839], ["lng", -121.756157], ["created_at", "2020-10-17 00:34:21.567569"], ["updated_at", "2020-10-17 00:34:21.567569"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mTrail Create (0.4ms)[0m  [1m[32mINSERT INTO "trails" ("name", "difficulty", "summary", "description", "length", "elevation_gain", "route_type", "usage", "park_id", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "Sykes Hot Springs via Pine Ridge Trail"], ["difficulty", "strenuous"], ["summary", "Sykes Hot Springs via Pine Ridge Trail is a 19.5 mile heavily \n                 trafficked out and back trail located near Big Sur, California \n                 that features hot springs and is rated as difficult. The trail \n                 offers a number of activity options and is accessible year- \n                 round. Dogs are also able to use this trail."], ["description", "Big Sur has many great destinations, but Sykes Hot \n                     Springs is definitely near the top of the list for anyone \n                     who has been there.  It is roughly 9-10 miles to the Skyes \n                     campground, and limited climbing after the first 2 hours \n                     (which can be steep at times, and tiring in the direct \n                     sun).  It is possible to treat it as a day hike, but it is \n                     recommended to take some time for the hike, as there are \n                     rolling green hills, several waterfalls, and wildflowers \n                     throughout the trail, none of which should be missed.\n\n                     The hot springs is about 8 feet across and a couple of \n                     feet deep--about the size for 4 adults, and it stays \n                     around 100 degrees depending on rain.\n\n                     Start by parking at the Ventana Wilderness area ranger \n                     station and heading towards the back parking lot. Parking \n                     is also available for $10.00 per calendar day Pine Ridge \n                     Trailhead Parking Lot."], ["length", 19.5], ["elevation_gain", 5646], ["route_type", "Out-and-Back"], ["usage", "heavily trafficked"], ["park_id", 2], ["lat", -36.341476], ["lng", -121.811816], ["created_at", "2020-10-17 00:34:21.577463"], ["updated_at", "2020-10-17 00:34:21.577463"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTaggable Create (0.5ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 24], ["taggable_id", 2], ["taggable_type", "Trail"], ["created_at", "2020-10-17 00:34:21.596552"], ["updated_at", "2020-10-17 00:34:21.596552"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:84
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTaggable Create (0.3ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 23], ["taggable_id", 2], ["taggable_type", "Park"], ["created_at", "2020-10-17 00:34:21.600374"], ["updated_at", "2020-10-17 00:34:21.600374"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:84
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."taggable_id" = $1 AND "taggables"."taggable_type" = $2[0m  [["taggable_id", 2], ["taggable_type", "Trail"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KqwS5nkFnedLlwsRs8JOxg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "demo"], ["last_name", "user"], ["email", "demouser@trails.com"], ["password_digest", "$2a$12$OKpw1dUxtQsplc14NwYeCOCHkZpdLtGKL4D3vXXOcrcohtykGFGBG"], ["session_token", "KqwS5nkFnedLlwsRs8JOxg"], ["created_at", "2020-10-17 00:37:05.177916"], ["updated_at", "2020-10-17 00:37:05.177916"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTrail Destroy (0.4ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTag Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "forest"], ["tag_type", "park"], ["created_at", "2020-10-17 00:37:05.249659"], ["updated_at", "2020-10-17 00:37:05.249659"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "tag_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hot spring"], ["tag_type", "trail"], ["created_at", "2020-10-17 00:37:05.251756"], ["updated_at", "2020-10-17 00:37:05.251756"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPark Create (0.5ms)[0m  [1m[32mINSERT INTO "parks" ("name", "summary", "description", "location", "acreage", "contact", "website", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Pfeiffer Big Sur State Park"], ["summary", "Looking for a great trail in Pfeiffer Big Sur State Park, \n                         California? AllTrails has 10 great hiking trails, forest \n                         trails, river trails and more, with hand-curated trail \n                         maps and driving directions as well as detailed reviews \n                         and photos from hikers, campers, and nature lovers like \n                         you. Just looking to take a quick stroll? We've got 5 easy \n                         trails in Pfeiffer Big Sur State Park ranging from 0.8 to \n                         2.5 miles and from 216 to 616 feet above sea level. Start \n                         checking them out and you'll be out on the trail in no \n                         time!"], ["description", "Three are many scenic trails in Pfeiffer Big Sur \n                             State Park. Enjoy the wildlife and many different \n                             trees in the park."], ["location", "Big Sur, CA"], ["acreage", 1006], ["contact", "831-667-1112"], ["website", "https://www.parks.ca.gov/?page_id=570"], ["lat", 36.379839], ["lng", -121.756157], ["created_at", "2020-10-17 00:37:05.254986"], ["updated_at", "2020-10-17 00:37:05.254986"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mTrail Create (0.5ms)[0m  [1m[32mINSERT INTO "trails" ("name", "difficulty", "summary", "description", "length", "elevation_gain", "route_type", "usage", "park_id", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "Sykes Hot Springs via Pine Ridge Trail"], ["difficulty", "strenuous"], ["summary", "Sykes Hot Springs via Pine Ridge Trail is a 19.5 mile heavily \n                 trafficked out and back trail located near Big Sur, California \n                 that features hot springs and is rated as difficult. The trail \n                 offers a number of activity options and is accessible year- \n                 round. Dogs are also able to use this trail."], ["description", "Big Sur has many great destinations, but Sykes Hot \n                     Springs is definitely near the top of the list for anyone \n                     who has been there.  It is roughly 9-10 miles to the Skyes \n                     campground, and limited climbing after the first 2 hours \n                     (which can be steep at times, and tiring in the direct \n                     sun).  It is possible to treat it as a day hike, but it is \n                     recommended to take some time for the hike, as there are \n                     rolling green hills, several waterfalls, and wildflowers \n                     throughout the trail, none of which should be missed.\n\n                     The hot springs is about 8 feet across and a couple of \n                     feet deep--about the size for 4 adults, and it stays \n                     around 100 degrees depending on rain.\n\n                     Start by parking at the Ventana Wilderness area ranger \n                     station and heading towards the back parking lot. Parking \n                     is also available for $10.00 per calendar day Pine Ridge \n                     Trailhead Parking Lot."], ["length", 19.5], ["elevation_gain", 5646], ["route_type", "Out-and-Back"], ["usage", "heavily trafficked"], ["park_id", 3], ["lat", -36.341476], ["lng", -121.811816], ["created_at", "2020-10-17 00:37:05.266123"], ["updated_at", "2020-10-17 00:37:05.266123"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mTaggable Create (1.1ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 26], ["taggable_id", 3], ["taggable_type", "Trail"], ["created_at", "2020-10-17 00:37:05.283945"], ["updated_at", "2020-10-17 00:37:05.283945"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:84
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mTaggable Create (0.3ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 25], ["taggable_id", 3], ["taggable_type", "Park"], ["created_at", "2020-10-17 00:37:05.290155"], ["updated_at", "2020-10-17 00:37:05.290155"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:84
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:85
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:85
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:85
+  [1m[36mTaggable Create (0.3ms)[0m  [1m[32mINSERT INTO "taggables" ("tag_id", "taggable_id", "taggable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 25], ["taggable_id", 3], ["taggable_type", "Trail"], ["created_at", "2020-10-17 00:37:05.293494"], ["updated_at", "2020-10-17 00:37:05.293494"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:85
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" ORDER BY "trails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."taggable_id" = $1 AND "taggables"."taggable_type" = $2[0m  [["taggable_id", 3], ["taggable_type", "Trail"]]

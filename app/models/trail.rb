@@ -23,12 +23,26 @@ class Trail < ApplicationRecord
 
     validates :difficulty, inclusion: { in: ["easy", "moderate", "strenuous"] }
     validates :route_type, inclusion: { in: ["Out-and-Back", "Loop", "Point-to-Point"] }
-    validates :usage, inclusion: { in: ["light", "moderate", "heavy", "extra heavy"] }
+    validates :usage, inclusion: { in: ["light", "moderate", "heavy", "heavily trafficked"] }
 
     belongs_to :park,
         foreign_key: :park_id,
         class_name: "Park"
 
+    has_many :taggables, as: :taggable
+    has_many :tags,
+        through: :taggables,
+        source: :tag
+
+end
+
+
+
+
+
+
+
+    
     # has_many :reviews,
     #     foreign_key: :review_id,
     #     class_name: "Review"   
@@ -36,4 +50,3 @@ class Trail < ApplicationRecord
     # has_many :photos,
     #     foreign_key: ,
     #     class_name: ""
-end
