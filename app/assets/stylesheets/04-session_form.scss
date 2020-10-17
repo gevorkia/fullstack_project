@@ -15,25 +15,43 @@
     margin-bottom: -140px;
 }
 
-.signup-login-popup {
-    // background-color: white;
+.popup-wrapper {
     flex: 1;
     // text-align: center;
     margin-top: 100px;
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     padding: 20px 60px;
     border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
    
     background-color: white;
-    height: 120px;
+    // height: 120px;
     text-align: center;
     // max-width: 480px;
     width: 400px;
     // margin-left: -240px;
     padding: 24px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+}
+
+.signup-login-popup {
+    // background-color: white;
+    flex: 1;
+    // text-align: center;
+    // margin-top: 100px;
+    // margin-bottom: 150px;
+    padding: 20px 60px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+   
+    // background-color: white;
+    // height: 120px;
+    // text-align: center;
+    // max-width: 480px;
+    // width: 400px;
+    // margin-left: -240px;
+    // padding: 24px;
+    // box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
 }
 
 .signup-popup {
@@ -85,7 +103,7 @@
   margin-top: 20px;
 }
 
-.demo-user-text {
+.navlink {
     font-size: 13px;
     color: #808080;
     margin-bottom: 30px;
@@ -94,7 +112,7 @@
     width: 200px;
 }
 
-.demo-user-text > a {
+.navlink > a {
     color: $green;
     cursor: pointer;
 }
@@ -108,12 +126,18 @@
     padding-left: 10px;
 }
 
-.opp-button > p {
+.opp-button a {
     color: $green;
     cursor: pointer;
     text-decoration: none;
 }
 
+// .pop-up-bottom {
+//     padding: 200px;
+// }
+// find what's pushing the pop-up container down to footer
+
+// #root > div > div.session-form > div > form > span > p > a
 
 
 // .popup-errors input, .popup-errors select{ 
