@@ -1,0 +1,122 @@
+@import "variables.scss";
+
+.sec-nav {
+    display: flex;
+    // justify-content: space-around;
+    background: pink;
+}
+
+.left-wrapper {
+    background: green;
+    flex: 2.5;
+    justify-content: flex-start;
+}
+
+.right-wrapper {
+    background: yellow;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+// .park-content-wrapper {
+//     background: red;
+// }
+
+.park-content {
+    // background: blue;
+    width: 70%;
+    margin: auto;
+}
+
+.photo-carousel {
+    background: purple;
+}
+
+.title-wrapper {
+    // background: blue;
+}
+
+.ratings-wrapper {
+    // width: 20px;
+    background: red;
+}
+
+// .park-content {
+//     // height: max-content;
+//     height:1000px;
+//     background: pink;
+// }
+
+// .park-content-wrapper {
+//     background: blue;
+//     height: 200px;
+// }
+
+// .sec-nav {
+//     width: 75%;
+//     background: green;
+//     margin: auto;
+//     display:flex;
+//     justify-content: space-around;
+// }
+
+// .sec-nav-location-left-wrapper {
+//     background: red;
+//     // flex: 1;
+//     // display: flex;
+//     // justify-content: flex-start;
+// }
+
+// .sec-nav-search-right-wrapper {
+//     background: purple;
+// }
+
+// .text-search-right {
+//     background: yellow;
+//     // flex: 1;
+//     // display: flex;
+//     // justify-content: flex-end;
+// }
+
+// .sec-nav-input-holder {
+//   border: 1px solid #e6e6e6;
+//   border-radius: 7px;
+//   width: 742px;
+//   height: 55px;
+//   margin: auto;
+//   display: flex;
+//   cursor: text;
+// }
+
+// .sec-nav-magnifying-glass {
+//   background-color: white;
+//   width: 60px;
+//   height: 100%;
+// }
+
+// .sec-nav-magnifying-glass > * {
+//   height: 70%;
+// }
+
+// .sec-nav-home-search-bar {
+//   flex: 1;
+//   height: 55px;
+//   height: 100%;
+//   border: 1px solid #e6e6e6;
+//   padding: 0;
+//   border-radius: 10px;
+//   color: #414141;
+//   font-size: 24px;
+//   background: #fff;
+// }
+
+// .sec-nav-search-button {
+//   font-family: $bodyFont;
+//   background-color: $green;
+//   color: white;
+//   font-size: 24px;
+//   border: 0;
+//   padding: 15px 30px;
+//   border-top-right-radius: 6px;
+//   border-bottom-right-radius: 6px;
+// }

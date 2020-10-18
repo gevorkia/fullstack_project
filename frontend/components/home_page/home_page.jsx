@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => (
   // <Layout>
   <>
-    <div className="content">
+    <div className="home-content">
       {/* <div className="home-page"> */}
       <div className="home-page-background">
         <div className="banner-container">
