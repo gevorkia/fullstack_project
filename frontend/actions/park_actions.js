@@ -1,7 +1,7 @@
 import * as ParkAPIUtil from "../utils/park_api_util";
 
 export const RECEIVE_PARK = "RECEIVE_PARK";
-export const RECEIVE_PARK_TRAILS = "RECEIVE_PARK_TRAILS";
+// export const RECEIVE_PARK_TRAILS = "RECEIVE_PARK_TRAILS";
 
 const receivePark = park => {
     return {

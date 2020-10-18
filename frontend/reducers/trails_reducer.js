@@ -6,6 +6,7 @@ const trailReducer = (state= {}, action) => {
 
     switch (action.type) {
         case RECEIVE_TRAIL:
+            // debugger
             nextState[action.trail.id] = action.trail
             return nextState;
         default:

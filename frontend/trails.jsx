@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
-import Root from "./components/root"
-import { signup, login, logout } from "./utils/session_api_util.js";
+import Root from "./components/root";
+// import { signup, login, logout } from "./utils/session_api_util.js";
+// import { fetchPark } from "./utils/park_api_util";
+// import { fetchTrail } from "./utils/trail_api_util";
+import { fetchPark } from "./actions/park_actions";
+import { fetchTrail } from "./actions/trail_actions";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,17 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // testing on window
 
-  // 1. auth tests
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  // 1. thunk action creators
+  window.fetchPark = fetchPark;
+  window.fetchTrail = fetchTrail;
 
-  // 2. thunk action creator tests
-  // window.signup = signupUser;
-  // window.login = loginUser;
-  // window.logout = logoutUser;
-
-  // 3. state tests
+  // 2. state tests
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 });
@@ -87,3 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
 //   (success) => console.log(success),
 //   (errors) => console.log(errors)
 // ); 
+
+  // 1. auth tests
+  // window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
+
+  // 2. thunk action creator tests
+  // window.signup = signupUser;
+  // window.login = loginUser;
+  // window.logout = logoutUser;

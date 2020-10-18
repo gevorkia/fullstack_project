@@ -21843,3 +21843,929 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 345ms (Views: 342.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2020-10-17 17:23:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:11:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 347ms (Views: 342.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:15:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 308ms (Views: 305.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:19:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 336ms (Views: 333.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 18:19:18 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (28.2ms)
+Completed 200 OK in 62ms (Views: 31.0ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/api/parks/2" for ::1 at 2020-10-17 18:19:46 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 2]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.8ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:20:16 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.8ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/4" for ::1 at 2020-10-17 18:21:56 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:40:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 342ms (Views: 339.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:40:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:41:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 520ms (Views: 517.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:41:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 345ms (Views: 342.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:41:51 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.3ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:42:53 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:49:40 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:50:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:50:13 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:50:23 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.8ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:51:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:51:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:51:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:51:12 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:51:45 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:54:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 340ms (Views: 337.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:54:10 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:54:12 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:54:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 310ms (Views: 307.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:54:30 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.3ms)
+  Rendered api/trails/show.json.jbuilder (1.4ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:54:31 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.5ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:54:49 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.5ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:55:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 341ms (Views: 339.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:55:47 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:57:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 334ms (Views: 332.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:57:08 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:57:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:57:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:57:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:57:51 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/show.json.jbuilder (2.4ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:58:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:58:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:58:19 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 18:59:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 18:59:56 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.7ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:00:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 331ms (Views: 328.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 19:00:30 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:01:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 386ms (Views: 383.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 19:01:57 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/show.json.jbuilder (1.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:02:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 293ms (Views: 291.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 19:02:10 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/show.json.jbuilder (1.8ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:02:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trails/1" for ::1 at 2020-10-17 19:02:43 -0700
+Processing by Api::TrailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.2ms)[0m  [1m[34mSELECT  "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/trails_controller.rb:4
+  Rendering api/trails/show.json.jbuilder
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/show.json.jbuilder (2.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 19:03:42 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.6ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:11:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 150ms (Views: 146.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 19:12:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-10-17 19:12:14 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@trails.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@trails.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@trails.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["updated_at", "2020-10-18 02:12:14.366243"], ["id", 1]]
+  ↳ app/models/user.rb:52
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:52
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 230ms (Views: 10.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:17:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 352ms (Views: 348.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:18:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 337ms (Views: 333.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:18:57 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (7.5ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:22:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 298ms (Views: 294.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:22:16 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.1ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:44:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 63ms (Views: 59.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:45:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 303ms (Views: 300.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:46:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 315ms (Views: 312.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:48:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 342ms (Views: 339.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:48:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:48:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 358ms (Views: 355.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/parks/undefined" for ::1 at 2020-10-17 20:48:53 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Park with 'id'=undefined:
+  app/controllers/api/parks_controller.rb:4:in `show'
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:00 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.3ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:23 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/parks/show.json.jbuilder (8.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:31 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/trails/_trail.json.jbuilder (0.3ms)
+  Rendered api/parks/show.json.jbuilder (8.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:38 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.7ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:44 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (1.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.5ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (8.9ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:49 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (8.1ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:49:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:49:54 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.2ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (5.9ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:56:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:56:16 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (7.8ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:57:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:57:28 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.4ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/trails/_trail.json.jbuilder (0.1ms)
+  Rendered api/parks/show.json.jbuilder (6.2ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-10-17 20:57:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NH8p-4rpcGhdavquNHITTQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/parks/1" for ::1 at 2020-10-17 20:57:36 -0700
+Processing by Api::ParksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/parks_controller.rb:4
+  Rendering api/parks/show.json.jbuilder
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."park_id" = $1[0m  [["park_id", 1]]
+  ↳ app/views/api/parks/show.json.jbuilder:6
+  Rendered api/trails/_trail.json.jbuilder (0.6ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/trails/_trail.json.jbuilder (0.2ms)
+  Rendered api/parks/show.json.jbuilder (8.8ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.9ms)
+
+
