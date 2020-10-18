@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoUserLogin = this.demoUserLogin.bind(this);
     this.linkToggle = this.linkToggle.bind(this)
+    this.popupToggle = this.popupToggle.bind(this)
   }
 
   componentWillUnmount() {
@@ -51,6 +52,13 @@ class SessionForm extends React.Component {
       }
     }
  
+    popupToggle() {
+      if (this.props.formType === "Sign Up") {
+        return "Create your free account"
+      } else {
+        return "Log in and let's get going"
+      }
+    }
 
   render() {
    
@@ -88,7 +96,7 @@ class SessionForm extends React.Component {
         <div className="signup-login-popup">
           <div className="popup-wrapper">
             <form className="signup-popup">
-              <div className="popup-header">Create your free account</div>
+              <div className="popup-header">{this.popupToggle()}</div>
               {this.props.formType === "Sign Up" ? (
                 <>
                   <input

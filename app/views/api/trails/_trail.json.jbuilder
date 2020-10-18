@@ -1,0 +1,1 @@
+json.extract! trail, :name, :difficulty, :summary, :description, :length, :elevation_gain, :route_type, :usage, :park_id, :lat, :lng
