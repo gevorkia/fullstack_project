@@ -7,7 +7,7 @@ const parksReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PARK:
             // debugger
-            nextState[action.park.id] = action.park;
+            nextState[action.payload.park.id] = action.payload.park;
             return nextState;
         default:
             return state;

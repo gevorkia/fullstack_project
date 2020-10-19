@@ -1,5 +1,5 @@
 json.park do
-    json.extract! @park, :name, :summary, :description, :location, :acreage, :contact, :website, :lat, :lng         
+    json.extract! @park, :id, :name, :summary, :description, :location, :acreage, :contact, :website, :lat, :lng         
 end
 # debugger
 json.trails do 

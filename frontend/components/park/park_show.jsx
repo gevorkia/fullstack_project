@@ -4,19 +4,21 @@ import React from "react";
 class ParkShow extends React.Component {
     constructor(props) {
         super(props)
+        // this.props.fetchPark(this.props.match.params.parkId);
     }
 
     componentDidMount() {
       // debugger
       this.props.fetchPark(this.props.match.params.parkId);
       
-      // // debugger;
+      
+      // debugger;
       // console.log(this.props)
       
     }
 
     render() {
-      // debugger
+      debugger
       // console.log(this.props)
 
       // const { pokemon, loading } = this.props;
@@ -36,7 +38,7 @@ class ParkShow extends React.Component {
       // } else {
       //   toRender = <h1>loading</h1>;
       // }
-        // if (!this.props.park) return "loading";
+        if (!this.props.park) return null;
 
         const tagsArr = ["hiking", "forest", "nature-trips", "river"]
 
@@ -97,8 +99,8 @@ class ParkShow extends React.Component {
                 </div>
                 <div className="title-wrapper">
                   <div className="title">
-                    <h1>Best Trails in Pfeiffer Big Sur State Park</h1>
-                    {/* <h1>Best Trails in {this.props.park.name}</h1> */}
+                    {/* <h1>Best Trails in Pfeiffer Big Sur State Park</h1> */}
+                    <h1>Best Trails in {this.props.park.name}</h1>
                     {/* {toRender} */}
                     {/* {this.props.park ? (
                       <h1>Best Trails in {this.props.park.name}</h1>

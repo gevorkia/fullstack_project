@@ -24,4 +24,6 @@ class Park < ApplicationRecord
         class_name: "Trail"
 
     has_many :tags, as: :taggable
+
+    has_one_attached :photo
 end

@@ -9,7 +9,7 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import HomePage from "./home_page/home_page"
 import Footer from "./footer/footer"
 
-import ParkContainer from "./park/park_show_container"
+import ParkShowContainer from "./park/park_show_container"
 import TrailContainer from "./trail/trail_index_container"
 
 
@@ -21,7 +21,7 @@ const App = () => (
         <Switch>
           <AuthRoute exact path="/login" component={LoginContainer} />
           <AuthRoute exact path="/signup" component={SignupContainer} />
-          <Route exact path='/parks/:parkId'component={ParkContainer}/>
+          <Route exact path='/parks/:parkId'component={ParkShowContainer}/>
           <Route exact path='/trails/:trailId'component={TrailContainer}/>
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
