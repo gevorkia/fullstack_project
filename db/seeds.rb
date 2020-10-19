@@ -42,7 +42,7 @@ park1 = Park.create!(
                 2.5 miles and from 216 to 616 feet above sea level. Start 
                 checking them out and you'll be out on the trail in no 
                 time!",
-    description: "Three are many scenic trails in Pfeiffer Big Sur 
+    description: "There are many scenic trails in Pfeiffer Big Sur 
                     State Park. Enjoy the wildlife and many different 
                     trees in the park.",
     location: "Big Sur, CA",

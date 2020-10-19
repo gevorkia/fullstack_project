@@ -4,8 +4,11 @@ import ParkShow from "./park_show";
 import { fetchPark } from "../../actions/park_actions"
 
 const mSTP = (state, ownProps) => {
+    // debugger
+
     return {
-        park: state.entities.parks[ownProps.match.params.parkId]
+      park: state.entities.parks[ownProps.match.params.parkId],
+    //   loading: state.ui.loading.indexLoading,
     };
 }
 
