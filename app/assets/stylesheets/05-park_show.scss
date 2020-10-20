@@ -5,7 +5,6 @@
     // justify-content: space-around;
     // background: pink;
     height: 45px;
-
 }
 
 .left-wrapper {
@@ -19,8 +18,6 @@
     flex: 1;
     justify-content: flex-end;
 }
-
-
 
 .secNav-input-holder {
     flex: 1;
@@ -77,14 +74,34 @@
 //PARK
 .park-content {
     // background: blue;
-    width: 70%;
+    width: 58%;
     margin: auto;
-    font-family: 'Montserrat', Arial, sans-serif;
+    // font-family: 'Montserrat', Arial, sans-serif;
+    font-family: $headerFont;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    color:  #676767;
+
+    h1 {
+        font-size: 1.75rem;
+        padding-bottom: 12px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
 }
 
 .photo-carousel {
-    background: rgb(230, 230, 230);
-    height: 180px;
+    // background: rgb(230, 230, 230);
+    height: 240px;
+    display: flex;
+}
+.park-photo {
+    border-radius: 8px;
+    height: 220px;
+    width: 330px;
+    margin-right: 5px;
 }
 
 .title-wrapper {
@@ -118,11 +135,12 @@
 }
 
 .park-summary {
-    height: 100px;
-    // height: max-content;
+    // height: 100px;
+    height: max-content;
+    width: 800px;
     font-size: 1rem;
     padding: 12px 0;
-    font-family: $navFont;
+    font-family: $headerFont;
 }
 
 .park-desc-header {
@@ -142,18 +160,35 @@
     // flex-wrap: wrap;
 }
 
-.park-map {
-    height: 250px;
+.park-static-map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+    // height: 240px;
+    // margin: auto;
+    border-radius: 8px;
+    // display: flex;
+    // -o-object-fit: cover!important;
+    // object-fit: cover!important;
+    // max-width: 100%;
+    // width: 100%;
+    
 }
 
 .park-links-wrapper {
     height: 80px;
 }
 
-.park-info-titles {
+.park-info-wrapper {
+    border-top: 1px solid  rgb(187, 187, 187);
+    border-bottom: 1px solid  rgb(187, 187, 187);
+}
+
+.park-info-header {
     // display: block;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
 }
 
 .park-info-title {
@@ -164,7 +199,7 @@
 
 .park-info-results {
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
 }
 
 .filter-trails-list {

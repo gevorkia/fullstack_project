@@ -24,6 +24,7 @@ export const fetchPark = parkId => {
         // debugger
         return ParkAPIUtil.fetchPark(parkId)
             .then(park => {
+                // debugger
                 return dispatch(receivePark(park))
             });
     };

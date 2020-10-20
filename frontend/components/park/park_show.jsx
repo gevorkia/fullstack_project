@@ -4,7 +4,6 @@ import React from "react";
 class ParkShow extends React.Component {
     constructor(props) {
         super(props)
-        // this.props.fetchPark(this.props.match.params.parkId);
     }
 
     componentDidMount() {
@@ -18,51 +17,42 @@ class ParkShow extends React.Component {
     }
 
     render() {
-      debugger
-      // console.log(this.props)
+      // debugger
+      console.log(this.props.park)
 
-      // const { pokemon, loading } = this.props;
 
-      // if (loading) {
-        // return <LoadingIcon />;
-      // }
-
-      // const { park } = this.props;
       
+      const { park } = this.props;
 
-      // let toRender;
-
-      // if (this.props.parks) {
-      //   toRender = this.props.park;
-      //   // toRender = this.props.parks.map((park) => (<h1>my park is {park.name}</h1>));
-      // } else {
-      //   toRender = <h1>loading</h1>;
-      // }
+     
         if (!this.props.park) return null;
 
-        const tagsArr = ["hiking", "forest", "nature-trips", "river"]
+        // const tagsArr = ["hiking", "forest", "nature-trips", "river"]
 
-        const tags = tagsArr.map((tag,idx) => {
-          return <ul className="park-tag" key={idx}>{tag}</ul>
-        })   
+        // const tags = tagsArr.map((tag,idx) => {
+        //   return <ul className="park-tag" key={idx}>{tag}</ul>
+        // })   
 
-        const parkInfoTitlesArr = ["Acreage", "Contact", "Link"]
-        const parkInfoResArr = ["1,006 acres", "831-667-1112", "website"]
+        // const parkInfoTitlesArr = ["Acreage", "Contact", "Link"]
+        
 
         
-        const parkInfoTitles = parkInfoTitlesArr.map((title, idx) => {
-          return <ul className="park-info-title" key={idx}>{title}</ul>
+        // const parkInfoTitles = parkInfoTitlesArr.map((title, idx) => {
+        //   return <ul className="park-info-title" key={idx}>{title}</ul>
+        // })
+        // const staticMapWidth = window.innerWidth < 400 ? 355 : 750;
+        
+        
+        // const parkInfoRes = park..map((res, idx) => {
+        //   return <ul className="park-info-res" key={idx}>{res}</ul>
+        // })
+
+        const parkPhotos = this.props.park.photoUrls.map((url, i) => {
+          return <img src={url} className="park-photo" key="{i}"></img>
         })
-        
-        
-        const parkInfoRes = parkInfoResArr.map((res, idx) => {
-          return <ul className="park-info-res" key={idx}>{res}</ul>
-        })
-        
 
         return (
           <>
-            {/* {toRender} */}
             <section className="sec-nav-wrapper">
               <div className="sec-nav">
                 <div className="left-wrapper">
@@ -95,19 +85,14 @@ class ParkShow extends React.Component {
             <div className="park-content-wrapper">
               <section className="park-content">
                 <div className="photo-carousel-wrapper">
-                  <div className="photo-carousel">PHOTO CAROUSEL</div>
+                  <div className="photo-carousel">
+                    {/* PHOTO CAROUSEL */}
+                    {parkPhotos}
+                  </div>
                 </div>
                 <div className="title-wrapper">
                   <div className="title">
-                    {/* <h1>Best Trails in Pfeiffer Big Sur State Park</h1> */}
-                    <h1>Best Trails in {this.props.park.name}</h1>
-                    {/* {toRender} */}
-                    {/* {this.props.park ? (
-                      <h1>Best Trails in {this.props.park.name}</h1>
-                    ) : (
-                      <h1>Loading</h1>
-                      // ""
-                    )} */}
+                    <h1>Best Trails in {park.name}</h1>
                   </div>
                 </div>
                 <div className="ratings-wrapper">
@@ -115,35 +100,54 @@ class ParkShow extends React.Component {
                   <div className="ratings-num">1,045 Reviews</div>
                 </div>
                 <div className="park-text-wrapper">
-                  <div className="park-summary">
-                    Looking for a great trail in Pfeiffer Big Sur State Park,
-                    California? AllTrails has 10 great hiking trails, forest
-                    trails, river trails and more, with hand-curated trail maps
-                    and driving directions as well as detailed reviews and
-                    photos from hikers, campers, and nature lovers like you.
-                    Just looking to take a quick stroll? We've got 5 easy trails
-                    in Pfeiffer Big Sur State Park ranging from 0.8 to 2.5 miles
-                    and from 216 to 616 feet above sea level. Start checking
-                    them out and you'll be out on the trail in no time!
-                  </div>
+                  <div className="park-summary">{park.summary}</div>
                   <div className="park-desc-header">Description</div>
-                  <div className="park-desc">
-                    There are many scenic trails in Pfeiffer Big Sur State Park.
-                    Enjoy the wildlife and many different trees in the park.
-                  </div>
+                  <div className="park-desc">{park.description}</div>
                 </div>
-                <section className="park-tags">{tags}</section>
-                <div className="park-map">MAP</div>
+                <section className="park-tags">tags</section>
+                <div className="park-static-map">
+                  <img
+                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${park.lng},${park.lat},13.55,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    alt="park-map-preview"
+                  />
+                  {/* <img
+                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-121.7825,36.2456,14.55,0/500x200?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    alt="park-map-preview"
+                  /> */}
+                  {/* <img
+                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticMapPinStr}/${park.lng},${park.lat},8,0/${staticMapWidth}x240@2x?access_token=${window.mapboxAPIKey}`}
+                    alt="map-preview"
+                  /> */}
+                </div>
                 <div className="park-links-wrapper">
-                  <h3 className="park-links">DIRECTIONS</h3>
+                  <h3 className="park-links">
+                    Directions
+                    <div
+                      className="directions-link"
+                      data-bg="https://cdn-assets.alltrails.com/assets/packs/media/icons/direction_icon-aa4d3776.svg"
+                      style='background-image: url("https://cdn-assets.alltrails.com/assets/packs/media/icons/direction_icon-aa4d3776.svg");'
+                    ></div>
+                  </h3>
                 </div>
-                <div className="park-info-wrapper">
-                  <h3 className="park-info-header">Park Information</h3>
-                  <div className="park-info">
-                    <div className="park-info-titles">{parkInfoTitles}</div>
-                    <div className="park-info-results">{parkInfoRes}</div>
+                <section className="park-info-wrapper">
+                  <h2 className="park-info-header">Park Information</h2>
+                  <div className="park-info-details">
+                    <div>
+                      <article>
+                        <h3 className="park-info-header">Acreage</h3>
+                        <p>{park.acreage} acres</p>
+                      </article>
+                      <article>
+                        <h3 className="park-info-header">Contact</h3>
+                        <p>{park.contact}</p>
+                      </article>
+                      <article>
+                        <h3 className="park-info-header">Website</h3>
+                        <a href={`${park.website}`}>link</a>
+                      </article>
+                    </div>
                   </div>
-                </div>
+                </section>
               </section>
               <section className="filters-trails-list-wrapper">
                 <div className="filters-trails-list">
@@ -154,37 +158,6 @@ class ParkShow extends React.Component {
               </section>
             </div>
           </>
-
-          //   <>
-          //     <div className="park-content">
-          //       <div className="park-content-wrapper">
-          //         <div className="sec-nav">
-          //           <div className="sec-nav-location-left-wrapper">
-          //             <div className="sec-nav-search-right-wrapper">
-          //           {/* <form className="text-search-right">
-          //             <div className="sec-nav-input-holder">
-          //               <div className="sec-nav-magnifying-glass">
-          //                 <img
-          //                   alt="logo"
-          //                   src="https://rainbowpiecollective.files.wordpress.com/2013/12/1462599_10201858095712591_1476539769_o.jpg"
-          //                 />
-          //               </div>
-          //               <input
-          //                 className="sec-nav-home-search-bar"
-          //                 type="text"
-          //                 placeholder="Enter a park or trail name"
-          //                 autoComplete="off"
-          //                 aria-label="text search input"
-          //               ></input>
-          //               <button className="sec-nav-search-button">Search</button>
-          //             </div>
-          //           </form>  */}
-          //           </div>
-          //         </div>
-          //         </div>
-          //       </div>
-          //     </div>
-          //   </>
         );
     }
 }

@@ -4,7 +4,7 @@ import ParkShow from "./park_show";
 import { fetchPark } from "../../actions/park_actions"
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     return {
       park: state.entities.parks[ownProps.match.params.parkId],

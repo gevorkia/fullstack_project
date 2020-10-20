@@ -24,7 +24,8 @@ class Api::TrailsController < ApplicationController
             :usage,
             :park_id,
             :lat,
-            :lng
+            :lng,
+            photos: []
         )
     end
 

@@ -34,7 +34,8 @@ class Trail < ApplicationRecord
         through: :taggables,
         source: :tag
 
-    has_one_attached :photo
+    has_many_attached :photos
+    has_one_attached :coverPhoto
 end
 
 

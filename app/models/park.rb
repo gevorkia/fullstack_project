@@ -25,5 +25,6 @@ class Park < ApplicationRecord
 
     has_many :tags, as: :taggable
 
-    has_one_attached :photo
+    has_many_attached :photos
+    
 end

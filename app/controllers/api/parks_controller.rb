@@ -24,7 +24,8 @@ class Api::ParksController < ApplicationController
             :contact,
             :website,
             :lat,
-            :lng
+            :lng, 
+            photos: []
         )
     end
 

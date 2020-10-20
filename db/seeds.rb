@@ -33,11 +33,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!('parks')
 park1 = Park.create!(
     name: "Pfeiffer Big Sur State Park",
     summary: "Looking for a great trail in Pfeiffer Big Sur State Park, 
-                California? AllTrails has 10 great hiking trails, forest 
+                California? MyTrails has great hiking trails, forest 
                 trails, river trails and more, with hand-curated trail 
                 maps and driving directions as well as detailed reviews 
                 and photos from hikers, campers, and nature lovers like 
-                you. Just looking to take a quick stroll? We've got 5 easy 
+                you. Just looking to take a quick stroll? We've got easy 
                 trails in Pfeiffer Big Sur State Park ranging from 0.8 to 
                 2.5 miles and from 216 to 616 feet above sea level. Start 
                 checking them out and you'll be out on the trail in no 
@@ -49,8 +49,8 @@ park1 = Park.create!(
     acreage: 1006,
     contact: "831-667-1112",
     website: "https://www.parks.ca.gov/?page_id=570",
-    lat: 36.379839,
-    lng: -121.756157
+    lat: 36.2456,
+    lng: -121.7825
     )
 # tags: hiking, forest, nature-trips, river, views, dogs-no, birding, kids, 
 # wild-flowers, wildlife
@@ -59,7 +59,7 @@ park1 = Park.create!(
 # https://www.alltrails.com/parks/us/california/sequoia-national-park
 park2 = Park.create!(
     name: "Sequoia National Park",
-    summary: "Looking for a great trail in Sequoia National Park, California? AllTrails has 101 great hiking trails, trail running trails, views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Gearing up for a challenge? There are 47 hard trails in Sequoia National Park ranging from 6.4 to 74.9 miles and from 2,700 to 14,478 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
+    summary: "Looking for a great trail in Sequoia National Park, California? MyTrails has 101 great hiking trails, trail running trails, views trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Gearing up for a challenge? There are 47 hard trails in Sequoia National Park ranging from 6.4 to 74.9 miles and from 2,700 to 14,478 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
     description: "The beautiful Sequoia National Park features the tallest peak in the continental United States and the largest trees on the planet. Covering an impressive 404,063 acres, there is so much to explore including the Giant Forest. There you will find the world's largest tree, General Sherman, and many of the world's other largest trees. There are numerous caves, Mount Whitney, and the granite dome Moro Rock. 
 
                 The park is open 24 hours a day, all year round. There will be closures, however, depending on weather conditions. 
@@ -272,3 +272,18 @@ Taggable.destroy_all
 # picture1 = Picture.create!(name: "Jack's picture", pictureable_id: employee1.id, pictureable_type: "Employee")
 
 # in rails c: Trail.first.tags
+
+
+
+# photos
+
+park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_1.jpg"), filename: "big_sur_1.jpg")
+park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_2.jpg"), filename: "big_sur_2.jpg")
+park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_3.png"), filename: "big_sur_3.png")
+
+trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
+trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
+trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_2.jpg"), filename: "sykes_2.jpg")
+trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_3.jpg"), filename: "sykes_3.jpg")
+trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_4.jpg"), filename: "sykes_4.jpg")
+trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_5.jpg"), filename: "sykes_5.jpg")
