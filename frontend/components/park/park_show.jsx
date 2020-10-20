@@ -1,5 +1,5 @@
 import React from "react";
-
+import SearchBar from "../search/search_suggestions";
 
 class ParkShow extends React.Component {
     constructor(props) {
@@ -120,15 +120,18 @@ class ParkShow extends React.Component {
                   /> */}
                 </div>
                 <div className="park-links-wrapper">
-                  <h3 className="park-links">
-                    Directions
-                    <div
-                      className="directions-link"
-                      data-bg="https://cdn-assets.alltrails.com/assets/packs/media/icons/direction_icon-aa4d3776.svg"
-                      style='background-image: url("https://cdn-assets.alltrails.com/assets/packs/media/icons/direction_icon-aa4d3776.svg");'
-                    ></div>
-                  </h3>
+                  <div className="park-links">
+                  <a
+                    href={`https://www.google.com/maps/dir/Current+Location/${park.lat},${park.lng}`}
+                    className="park-action"
+                  >
+                    <div className="directions-btn"></div>
+                    <p>Directions</p>
+                  </a>
+                  </div>
                 </div>
+                
+                
                 <section className="park-info-wrapper">
                   <h2 className="park-info-header">Park Information</h2>
                   <div className="park-info-details">

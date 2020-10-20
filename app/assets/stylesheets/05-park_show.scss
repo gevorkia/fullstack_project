@@ -161,23 +161,49 @@
 }
 
 .park-static-map {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-    // height: 240px;
-    // margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     border-radius: 8px;
-    // display: flex;
-    // -o-object-fit: cover!important;
-    // object-fit: cover!important;
-    // max-width: 100%;
-    // width: 100%;
-    
 }
 
 .park-links-wrapper {
     height: 80px;
+}
+
+.park-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.park-links > p {
+    font-family: $headerFont;
+    // color: $green;
+    // font-size: 1.2rem;
+    color: #428a13;
+    font-size: 16px;
+    line-height: 1.38;
+}
+
+.directions-btn {
+    background: url("https://cdn-assets.alltrails.com/assets/packs/media/icons/direction_icon-aa4d3776.svg");
+    background-repeat: no-repeat;
+    align-items: center;
+    background-color: #fff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+    display: flex;
+    justify-content: center;
+    outline: none;
+    position: relative;
+    transition: .2s ease-in-out;
+    z-index: 99;
+    height: 60px;
+    width: 60px;
 }
 
 .park-info-wrapper {
@@ -205,4 +231,3 @@
 .filter-trails-list {
     height: 100px;
 }
-

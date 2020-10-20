@@ -6,6 +6,11 @@ class Api::ParksController < ApplicationController
         render 'api/parks/show'
     end
 
+    def index
+        @parks = Park.all
+        render 'api/parks/index'
+    end
+
     # def index
     #     # @park = Park.find_by(id: params[:id]).trails
     #     @trails = Trail.all.where(park_id: params[:id])

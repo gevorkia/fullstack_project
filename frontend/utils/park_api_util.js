@@ -1,9 +1,17 @@
-export const fetchPark = (parkId) => {
+export const fetchParks = () => {
     return $.ajax({
         method: "GET",
-        url: `/api/parks/${parkId}`
+        url: `/api/parks`
     })
 }
+
+export const fetchPark = (parkId) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/parks/${parkId}`,
+  });
+};
+
 
 // nested route, fetch all trails(index) for a specific park 
 // export const fetchParkTrails = (parkId) => {

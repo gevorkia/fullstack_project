@@ -1,6 +1,7 @@
 import * as ParkAPIUtil from "../utils/park_api_util";
 
 export const RECEIVE_PARK = "RECEIVE_PARK";
+export const RECEIVE_PARKS = "RECEIVE_PARKS";
 // export const RECEIVE_PARK_TRAILS = "RECEIVE_PARK_TRAILS";
 
 const receivePark = payload => {
@@ -9,6 +10,13 @@ const receivePark = payload => {
         payload
     }
 }
+
+const receiveParks = (payload) => {
+  return {
+    type: RECEIVE_PARKS,
+    payload
+  };
+};
 
 // const receiveParkTrails = trails => {
 //     return {
@@ -26,6 +34,17 @@ export const fetchPark = parkId => {
             .then(park => {
                 // debugger
                 return dispatch(receivePark(park))
+            });
+    };
+};
+
+export const fetchParks = () => {
+    return dispatch => {
+        // debugger
+        return ParkAPIUtil.fetchParks()
+            .then(parks => {
+                // debugger
+                return dispatch(receiveParks(parks))
             });
     };
 };
