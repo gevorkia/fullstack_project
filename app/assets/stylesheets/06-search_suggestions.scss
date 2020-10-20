@@ -1,0 +1,31 @@
+.suggestions-list {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.suggestions-list-wrapper {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 280px;
+}
+
+ul {
+    border: 3px solid red;
+}
+
+li {
+    border-bottom: 2px solid green;   
+    margin: 0px;
+    padding: 0px;
+}
+
+li:last-child {
+    border:none;
+}
+
+li:hover {
+    background-color: pink;
+}

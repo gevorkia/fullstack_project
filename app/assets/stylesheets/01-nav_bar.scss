@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 header {
-  font-family: $navFont;
+  font-family: $headerFont;
 }
 
 .nav-bar {
@@ -55,7 +55,7 @@ h2 {
     border-radius: 8px;
     // font-family: "proxima nova," Arial, sans-serif;
     margin-right: 6px;
-    font-family: $navFont;
+    font-family: $headerFont;
 }
 
 

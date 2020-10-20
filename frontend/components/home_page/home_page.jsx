@@ -1,33 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchSuggestionsContainer from "../search/search_suggestions_container";
 // import Layout from "../layout/layout"
 
 
 const HomePage = () => (
   // <Layout>
   <>
-    <div className="content">
+    <div className="home-content">
       {/* <div className="home-page"> */}
       <div className="home-page-background">
         <div className="banner-container">
           <div className="banner-text">Find your next favorite trail</div>
           {/* <div className="input-holder-border"> */}
-            <div className="input-holder">
-              <div className="magnifying-glass">
-                <img
-                  alt="logo"
-                  src="https://rainbowpiecollective.files.wordpress.com/2013/12/1462599_10201858095712591_1476539769_o.jpg"
-                />
-              </div>
-              <input
-                className="home-search-bar"
-                type="text"
-                placeholder="Enter a park or trail name"
-                autoComplete="off"
-                aria-label="text search input"
-              ></input>
-              <button className="search-button">Search</button>
+          <div className="input-holder">
+            <div className="magnifying-glass">
+              <img
+                alt="logo"
+                src="https://rainbowpiecollective.files.wordpress.com/2013/12/1462599_10201858095712591_1476539769_o.jpg"
+              />
             </div>
+            <input
+              className="home-search-bar"
+              type="text"
+              placeholder="Enter a park or trail name"
+              autoComplete="off"
+              aria-label="text search input"
+            />
+            <SearchSuggestionsContainer />
+            <button className="search-button">Search</button>
+          </div>
           {/* </div> */}
         </div>
       </div>

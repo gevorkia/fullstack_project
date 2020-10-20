@@ -1,13 +1,17 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { AuthRoute, ProtectedRoute } from "../utils/route_utils"
+
 import SignupContainer from "./session/signup_container"
 import LoginContainer from "./session/login_container"
 
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import HomePage from "./home_page/home_page"
-import ErrorPage from "./error_page/error_page"
 import Footer from "./footer/footer"
-import { AuthRoute, ProtectedRoute } from "../utils/route_utils"
+
+import ParkShowContainer from "./park/park_show_container"
+import TrailContainer from "./trail/trail_index_container"
+
 
 const App = () => (
   <div>
@@ -15,17 +19,20 @@ const App = () => (
         {/* <h1>app</h1> */}
         {/* <Route path="/" component={div} /> */}
         <Switch>
+          <AuthRoute exact path="/login" component={LoginContainer} />
+          <AuthRoute exact path="/signup" component={SignupContainer} />
+          <Route exact path='/parks/:parkId'component={ParkShowContainer}/>
+          <Route exact path='/trails/:trailId'component={TrailContainer}/>
           <Route exact path="/" component={HomePage} />
-          <AuthRoute path="/signup" component={SignupContainer} />
-          <AuthRoute path="/login" component={LoginContainer} />
-          {/* <AuthRoute path="/login" component={LoginContainer} /> */}
-
-          <Route component={ErrorPage} />
+          <Redirect to="/" />
+         
           {/* <ProtectedRoute path="/users" component={ProfileContainer} /> */}
-          {/* if not logged in, don't allow user to see a profile page */}
         </Switch>
       <Footer/>
   </div>
 );
 
 export default App;
+
+// exact path will render a component only to that exact path
+// protected route will not allow a user to see that page (ex: profile page)

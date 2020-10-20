@@ -3,6 +3,7 @@
 .session-form {
     // background: url(https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554);
 //   font-size: 50px;
+    // background: url(https://thumbs-prod.si-cdn.com/t4UH6V0BQbLz3Rj1d0c8H0hUO10=/fit-in/1072x0/https://public-media.si-cdn.com/filer/d7/57/d757a1c8-2f57-4c4a-9567-6acf9364d24a/istock-578121210.jpg);
     background: url(https://www.geoex.com/app/uploads/2019/10/chile-patagonia-mirador-cuernos-hikers-path.jpg);
     // background: url(https://outsider.ie/wp-content/uploads/2017/08/Image-REI.jpeg);
     background-size: cover;
@@ -14,25 +15,43 @@
     margin-bottom: -140px;
 }
 
-.signup-login-popup {
-    // background-color: white;
+.popup-wrapper {
     flex: 1;
     // text-align: center;
     margin-top: 100px;
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     padding: 20px 60px;
     border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
    
     background-color: white;
-    height: 120px;
+    // height: 120px;
     text-align: center;
     // max-width: 480px;
     width: 400px;
     // margin-left: -240px;
     padding: 24px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+}
+
+.signup-login-popup {
+    // background-color: white;
+    flex: 1;
+    // text-align: center;
+    // margin-top: 100px;
+    // margin-bottom: 150px;
+    padding: 20px 60px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+   
+    // background-color: white;
+    // height: 120px;
+    // text-align: center;
+    // max-width: 480px;
+    // width: 400px;
+    // margin-left: -240px;
+    // padding: 24px;
+    // box-shadow: 0 8px 16px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
 }
 
 .signup-popup {
@@ -84,7 +103,7 @@
   margin-top: 20px;
 }
 
-.demo-user-text {
+.navlink {
     font-size: 13px;
     color: #808080;
     margin-bottom: 30px;
@@ -93,7 +112,7 @@
     width: 200px;
 }
 
-.demo-user-text > a {
+.navlink > a {
     color: $green;
     cursor: pointer;
 }
@@ -107,12 +126,18 @@
     padding-left: 10px;
 }
 
-.opp-button > p {
+.opp-button a {
     color: $green;
     cursor: pointer;
     text-decoration: none;
 }
 
+// .pop-up-bottom {
+//     padding: 200px;
+// }
+// find what's pushing the pop-up container down to footer
+
+// #root > div > div.session-form > div > form > span > p > a
 
 
 // .popup-errors input, .popup-errors select{ 

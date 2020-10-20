@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-.content {
+.home-content {
   font-family: $bodyFont;
   // display: flex;
 }
@@ -47,25 +47,6 @@
   font-family: $MuseoFont;
 }
 
-// .inputs-holder-border {
-//   // background-color: red;
-//   display: flex;
-//   background-color: red;
-//   background-clip: padding-box;
-//   width: 742px;
-//   margin: auto;
-// }
-
-// .inputs-holder-border {
-//   z-index: 1;
-//   // position: absolute;
-//   height: 97px;
-//   width: 742px;
-//   background-color: white;
-//   opacity: 0.4;
-//   border-radius: 10px;
-//   box-shadow: 0 0 6px rgba(65,65,65,0.4);
-// }
 
 .input-holder {
   border-width: 14px;
@@ -77,6 +58,8 @@
   margin: auto;
   display: flex;
   cursor: text;
+
+  position: relative;
 }
 
 .magnifying-glass {
