@@ -9,7 +9,7 @@
 
 # to reset primary_key Ids
 
-
+require 'open-uri'
 
 
 User.destroy_all
@@ -294,7 +294,7 @@ Taggable.destroy_all
 # trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
 # trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
 
-require 'open-uri'
+
 
 bigsur1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_1.jpg")
 bigsur2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_2.jpg")
@@ -318,7 +318,7 @@ sykes3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_3.jpg")
 sykes4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_4.jpg")
 
 trail1.coverPhoto.attach(io: sykes1, filename: "sykes_1.jpg")
-trail1.photos.attach(io: sykes1, filename: "sykes_1.jpg")
+# trail1.photos.attach(io: sykes1, filename: "sykes_1.jpg")
 trail1.photos.attach(io: sykes2, filename: "sykes_2.jpg")
 trail1.photos.attach(io: sykes3, filename: "sykes_3.jpg")
 trail1.photos.attach(io: sykes4, filename: "sykes_4.jpg")
@@ -327,7 +327,7 @@ river_gorge1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/river_gor
 trail2.coverPhoto.attach(io: river_gorge1, filename: "river_gorge_1.jpg")
 
 nature_trail1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/nature_trail_1.png")
-trail3.coverPhoto.attach(io: nature_trail, filename: "nature_trail_1.png")
+trail3.coverPhoto.attach(io: nature_trail1, filename: "nature_trail_1.png")
 
 mount_langley1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_1.png")
 mount_langley2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_2.png")
@@ -335,7 +335,7 @@ mount_langley3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_l
 mount_langley4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_4.png")
 
 trail4.coverPhoto.attach(io: mount_langley1, filename: "mount_langley_1.png")
-trail4.photos.attach(io: mount_langley1, filename: "mount_langley_1.png")
+# trail4.photos.attach(io: mount_langley1, filename: "mount_langley_1.png")
 trail4.photos.attach(io: mount_langley2, filename: "mount_langley_2.png")
 trail4.photos.attach(io: mount_langley3, filename: "mount_langley_3.png")
 trail4.photos.attach(io: mount_langley4, filename: "mount_langley_4.png")

@@ -18,9 +18,25 @@
     color: black;
 }
 
-// #park-suggestions {
-//     background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-area-a1a4d8a4150b8b5c662e654e3c9c6cd3.png)
-// }
+.park-suggestions {
+    background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-area-a1a4d8a4150b8b5c662e654e3c9c6cd3.png);
+    background-repeat: no-repeat; 
+}
+
+.park-suggestions:hover {
+    background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-area-selected-da428772083f22bc605f9bbe842a2291.png);
+    background-repeat: no-repeat; 
+}
+
+.trail-suggestions {
+    background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-trail-selected-414971dec0e7e3297af0c0a585df06f2.png);
+    background-repeat: no-repeat;
+}
+
+.trail-suggestions:hover {
+    background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-trail-selected-414971dec0e7e3297af0c0a585df06f2.png);
+    background-repeat: no-repeat;
+}
 
 ul {
     border: 3px solid rgb(187, 187, 187);

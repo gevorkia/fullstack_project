@@ -17,7 +17,7 @@ class SearchSuggestions extends React.Component {
 
     parks.forEach((park) => {
       suggestions.push(
-        <li key={`park-${park.id}`}>
+        <li key={`park-${park.id}`} className="park-suggestions">
           <a href={`#/parks/${park.id}`} className="suggestions-list">
             {park.name}
           </a>
@@ -27,7 +27,7 @@ class SearchSuggestions extends React.Component {
 
     trails.forEach((trail) => {
       suggestions.push(
-        <li key={`trail-${trail.id}`}>
+        <li key={`trail-${trail.id}`} className="trail-suggestions">
           <a href={`#/trails/${trail.id}`} className="suggestions-list">
             {trail.name}
           </a>
