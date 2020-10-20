@@ -6,4 +6,4 @@ bundle.js.map
 npm-debug.log
 /public/assets
 tmp/
-tmp/cache/
+tmp/cache/assets
