@@ -19,11 +19,24 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "trails890")
 user1 = User.create!(first_name: "Henry", last_name: "Thoreau", email: "HenryThoreau@walden.com", password: "Walden789")
 user2 = User.create!(first_name: "Jane", last_name: "Goodall", email: "JaneGoodall@primatologist.com", password: "37Goodall")
-user3 = User.create!(first_name: "Robert", last_name: "Frost", email: "RobertFrost@poetry.com", password: "Poet333")
+user3 = User.create!(first_name: "Monte", last_name: "Melkonian", email: "MonteMelkonian@undefeated.com", password: "Duxov!2020")
 user4 = User.create!(first_name: "William", last_name: "Saroyan", email: "WilliamSaroyan@playwright.com", password: "Hayastan!")
 user5 = User.create!(first_name: "Diana", last_name: "Der Hovanessian", email: "DianaDerHovanessian@poetry.com", password: "Diaspora!")
-user6 = User.create!(first_name: "Monte", last_name: "Melkonian", email: "MonteMelkonian@undefeated.com", password: "Duxov!2020")
 
+henry = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/henry_thoreau.jpg")
+user1.profilePicture.attach(io: henry, filename: "henry_thoreau.jpg")
+
+jane = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/jane_goodall.jpg")
+user2.profilePicture.attach(io: jane, filename: "jane_goodall.jpg")
+
+monte = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/monte_melkonian.jpg")
+user3.profilePicture.attach(io: monte, filename: "monte_melkonian.jpg")
+
+william = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/william_saroyan.jpg")
+user4.profilePicture.attach(io: william, filename: "william_saroyan.jpg")
+
+diana = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/diana_hovanessian.jpg")
+user5.profilePicture.attach(io: diana, filename: "diana_hovanessian.jpg")
 
 
 Park.destroy_all
@@ -274,16 +287,67 @@ Taggable.destroy_all
 # in rails c: Trail.first.tags
 
 
-
 # photos
+# attachments through console. only works in development, not production
+# park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_1.jpg"), filename: "big_sur_1.jpg")
 
-park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_1.jpg"), filename: "big_sur_1.jpg")
-park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_2.jpg"), filename: "big_sur_2.jpg")
-park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_3.png"), filename: "big_sur_3.png")
+# trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
+# trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
 
-trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
-trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
-trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_2.jpg"), filename: "sykes_2.jpg")
-trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_3.jpg"), filename: "sykes_3.jpg")
-trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_4.jpg"), filename: "sykes_4.jpg")
-trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_5.jpg"), filename: "sykes_5.jpg")
+require 'open-uri'
+
+bigsur1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_1.jpg")
+bigsur2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_2.jpg")
+bigsur3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_3.png")
+
+park1.photos.attach(io: bigsur1, filename: "big_sur_1.jpg")
+park1.photos.attach(io: bigsur2, filename: "big_sur_2.jpg")
+park1.photos.attach(io: bigsur3, filename: "big_sur_3.png")
+
+sequoia1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sequoia_1.png")
+sequoia2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sequoia_2.png")
+sequoia3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sequoia_3.jpg")
+
+park2.photos.attach(io: sequoia1, filename: "sequoia_1.png")
+park2.photos.attach(io: sequoia2, filename: "sequoia_2.png")
+park2.photos.attach(io: sequoia3, filename: "sequoia_3.jpg")
+
+sykes1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_1.jpg")
+sykes2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_2.jpg")
+sykes3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_3.jpg")
+sykes4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_4.jpg")
+
+trail1.coverPhoto.attach(io: sykes1, filename: "sykes_1.jpg")
+trail1.photos.attach(io: sykes1, filename: "sykes_1.jpg")
+trail1.photos.attach(io: sykes2, filename: "sykes_2.jpg")
+trail1.photos.attach(io: sykes3, filename: "sykes_3.jpg")
+trail1.photos.attach(io: sykes4, filename: "sykes_4.jpg")
+
+river_gorge1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/river_gorge_1.jpg")
+trail2.coverPhoto.attach(io: river_gorge1, filename: "river_gorge_1.jpg")
+
+nature_trail1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/nature_trail_1.png")
+trail3.coverPhoto.attach(io: nature_trail, filename: "nature_trail_1.png")
+
+mount_langley1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_1.png")
+mount_langley2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_2.png")
+mount_langley3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_3.png")
+mount_langley4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_4.png")
+
+trail4.coverPhoto.attach(io: mount_langley1, filename: "mount_langley_1.png")
+trail4.photos.attach(io: mount_langley1, filename: "mount_langley_1.png")
+trail4.photos.attach(io: mount_langley2, filename: "mount_langley_2.png")
+trail4.photos.attach(io: mount_langley3, filename: "mount_langley_3.png")
+trail4.photos.attach(io: mount_langley4, filename: "mount_langley_4.png")
+
+marble_falls1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/marble_falls_1.png")
+trail5.coverPhoto.attach(io: marble_falls1, filename: "marble_falls_1.png") 
+
+hst1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/hst_1.jpg")
+trail6.coverPhoto.attach(io: hst1, filename: "hst_1.jpg")
+
+giant_forest1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/giant_forest_1.png")
+trail7.coverPhoto.attach(io: giant_forest1, filename: "giant_forest_1.png") 
+
+
+
