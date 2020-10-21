@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import TrailIndex from "./trail_index";
-import { fetchPark } from "../../actions/park_actions";
+import TrailIndex from "./trail_index_item";
+import { fetchParkTrails } from "../../actions/park_actions";
 
 const mSTP = (state, ownProps) => {
     debugger
@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-      fetchPark: (parkId) => dispatch(fetchPark(parkId))
+      fetchParkTrails: (parkId) => dispatch(fetchParkTrails(parkId))
     };
 }
 

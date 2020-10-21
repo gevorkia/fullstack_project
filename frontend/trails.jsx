@@ -5,7 +5,7 @@ import Root from "./components/root";
 // import { signup, login, logout } from "./utils/session_api_util.js";
 // import { fetchPark } from "./utils/park_api_util";
 // import { fetchTrail } from "./utils/trail_api_util";
-import { fetchPark } from "./actions/park_actions";
+import { fetchPark, fetchParkTrails } from "./actions/park_actions";
 import { fetchTrail } from "./actions/trail_actions";
 
 
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. thunk action creators
   window.fetchPark = fetchPark;
   window.fetchTrail = fetchTrail;
+  window.fetchParkTrails = fetchParkTrails;
 
   // 2. state tests
   window.getState = store.getState;

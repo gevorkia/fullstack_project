@@ -244,9 +244,6 @@ trail6 = Trail.create!(
     lng: -118.74879
     )
 
-# tags: Backpacking, Camping, Fishing, Hiking, Nature trips, Forest, Lake, Hot springs,
-# River, Views, Wild flowers, Wildlife, Rocky, Scramble, Snow, No dogs 
-
 
 # https://www.alltrails.com/trail/us/california/giant-forest-loop-trail
 trail7 = Trail.create!(
@@ -270,13 +267,125 @@ trail7 = Trail.create!(
 # tags: Kid friendly, Hiking, Forest, Partially paved, Views, Wild flowers, Wildlife, No dogs
 
 
-
 Tag.destroy_all
 
-# tag1 = Tag.create!(name: "forest", tag_type: "park")
-# tag2 = Tag.create!(name: "hot spring", tag_type: "trail")
+a1 = Tag.create(name: "hiking", tag_type: "activity")
+a2 = Tag.create(name: "nature trips", tag_type: "activity")
+a3 = Tag.create(name: "snow-shoeing", tag_type: "activity")
+a4 = Tag.create(name: "camping", tag_type: "activity")
+a5 = Tag.create(name: "backpacking", tag_type: "activity")
+a6 = Tag.create(name: "fishing", tag_type: "activity")
+a8 = Tag.create(name: "running", tag_type: "activity")
+a9 = Tag.create(name: "walking", tag_type: "activity")
+a10 = Tag.create(name: "bird watching", tag_type: "activity")
+a11 = Tag.create(name: "horseback-riding", tag_type: "activity")
+a12 = Tag.create(name: "trail-running", tag_type: "activity")
+
+
+f1 = Tag.create(name: "river", tag_type: "feature")
+f2 = Tag.create(name: "views", tag_type: "feature")
+f3 = Tag.create(name: "forest", tag_type: "feature")
+f4 = Tag.create(name: "wildlife", tag_type: "feature")
+f5 = Tag.create(name: "wild flowers", tag_type: "feature")
+f6 = Tag.create(name: "hot spring", tag_type: "feature")
+f7 = Tag.create(name: "lake", tag_type: "feature")
+f8 = Tag.create(name: "waterfall", tag_type: "feature")
+f9 = Tag.create(name: "snow", tag_type: "feature")
+f10 = Tag.create(name: "partially paved", tag_type: "feature")
+f11 = Tag.create(name: "kid friendly", tag_type: "feature")
+f12 = Tag.create(name: "dog friendly", tag_type: "feature")
+
+
+o1 = Tag.create(name: "overgrown", tag_type: "obstacle")
+o2 = Tag.create(name: "rocky", tag_type: "obstacle")
+o3 = Tag.create(name: "scramble", tag_type: "obstacle")
+o4 = Tag.create(name: "fee", tag_type: "obstacle")
+o5 = Tag.create(name: "bugs", tag_type: "obstacle")
+o6 = Tag.create(name: "off trail", tag_type: "obstacle")
 
 Taggable.destroy_all
+
+Taggable.create(tag_id: f12.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a5.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a4.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a6.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a2.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a10.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: a8.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f6.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f1.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f2.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f5.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: o1.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail1.id, taggable_type: "trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail1.id, taggable_type: "trail")
+
+Taggable.create(tag_id: f11.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: a2.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: a9.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: a10.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: f1.id, taggable_id: trail2.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail2.id, taggable_type: "trail")
+
+Taggable.create(tag_id: f11.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: a2.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: a9.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: a10.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: f1.id, taggable_id: trail3.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail3.id, taggable_type: "trail")
+
+
+Taggable.create(tag_id: a5.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: a4.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: f7.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: f1.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: f2.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail4.id, taggable_type: "trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail4.id, taggable_type: "trail")
+
+Taggable.create(tag_id: a4.id, taggable_id: trail5.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail5.id, taggable_type: "trail")
+Taggable.create(tag_id: a2.id, taggable_id: trail5.id, taggable_type: "trail")
+Taggable.create(tag_id: a9.id, taggable_id: trail5.id, taggable_type: "trail")
+Taggable.create(tag_id: f5.id, taggable_id: trail5.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail5.id, taggable_type: "trail")
+
+Taggable.create(tag_id: a5.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: a4.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: a6.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: a2.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f7.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f6.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f1.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f2.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f5.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail6.id, taggable_type: "trail")
+Taggable.create(tag_id: f9.id, taggable_id: trail6.id, taggable_type: "trail")
+
+Taggable.create(tag_id: f11.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: a1.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: f3.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: f10.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: f2.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: f5.id, taggable_id: trail7.id, taggable_type: "trail")
+Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "trail")
 
 # taggable1 = Taggable.create!(taggable_type: "Trail", tag_id: tag2.id, taggable_id: trail1.id )
 # taggable2 = Taggable.create!(taggable_type: "Park", tag_id: tag1.id, taggable_id: park1.id )

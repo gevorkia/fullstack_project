@@ -2,7 +2,7 @@ import * as ParkAPIUtil from "../utils/park_api_util";
 
 export const RECEIVE_PARK = "RECEIVE_PARK";
 export const RECEIVE_PARKS = "RECEIVE_PARKS";
-// export const RECEIVE_PARK_TRAILS = "RECEIVE_PARK_TRAILS";
+export const RECEIVE_PARK_TRAILS = "RECEIVE_PARK_TRAILS";
 
 const receivePark = payload => {
     return {
@@ -18,12 +18,12 @@ const receiveParks = (payload) => {
   };
 };
 
-// const receiveParkTrails = trails => {
-//     return {
-//         type: RECEIVE_PARK_TRAILS,
-//         trails
-//     }
-// }
+const receiveParkTrails = trails => {
+    return {
+        type: RECEIVE_PARK_TRAILS,
+        trails
+    }
+}
 
 // thunk action creators
 
@@ -49,12 +49,14 @@ export const fetchParks = () => {
     };
 };
 
-// export const fetchParkTrails = parkId => {
-//     return dispatch => {
-//         return ParkAPIUtil.fetchParkTrails(parkId)
-//             .then(trails => {
-//                 return dispatch(receiveParkTrails(trails))
-//             })
-//     }
-// }
+export const fetchParkTrails = parkId => {
+    return dispatch => {
+        debugger
+        return ParkAPIUtil.fetchParkTrails(parkId)
+            .then(trails => {
+                debugger
+                return dispatch(receiveParkTrails(trails))
+            })
+    }
+}
 

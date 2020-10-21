@@ -1,6 +1,7 @@
 import React from "react";
 import SearchSuggestions from "../search/search_suggestions";
 import TrailIndex from "../trail/trail_index"
+import TrailIndexItem from "../trail/trail_index_item"
 
 
 class ParkShow extends React.Component {
@@ -11,6 +12,7 @@ class ParkShow extends React.Component {
     componentDidMount() {
       // debugger
       this.props.fetchPark(this.props.match.params.parkId);
+      // this.props.fetchParkTrails(this.props.match.params.parkId);
       
       
       // debugger;
@@ -173,8 +175,9 @@ class ParkShow extends React.Component {
                       {/* Top Trails ({Object.keys(park.trails).length}) */}
                       Top Trails in Big Sur
                     </h2>
-                    {/* <TrailIndex trails={park.trails} parkName={park.name} /> */}
-                    <TrailIndex />
+                    {/* <TrailIndex trails={trails} parkName={park.name} /> */}
+                    {/* <TrailIndex /> */}
+                    <TrailIndexItem/>
                   </div>
                 </div>
               </section>

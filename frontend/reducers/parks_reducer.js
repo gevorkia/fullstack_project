@@ -1,4 +1,8 @@
-import { RECEIVE_PARK, RECEIVE_PARKS } from "../actions/park_actions";
+import { 
+  RECEIVE_PARK, 
+  RECEIVE_PARKS, 
+  RECEIVE_PARK_TRAILS 
+} from "../actions/park_actions";
 
 // const state = {
 //   parks: [],
@@ -15,8 +19,12 @@ const parksReducer = (state = {}, action) => {
         // debugger
         nextState[action.payload.park.id] = action.payload.park;
         return nextState;
+      case RECEIVE_PARK_TRAILS:
+        debugger
+        nextState[action.payload.park.id] = action.payload.park.trails
+        return nextState;
       case RECEIVE_PARKS:
-        
+
         let trails = [];
         action.payload.parks.forEach((park) => {
           trails = trails.concat(park.trails);

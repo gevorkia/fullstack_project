@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ParkShow from "./park_show";
-import { fetchPark } from "../../actions/park_actions"
+import { fetchPark, fetchParkTrails } from "../../actions/park_actions"
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchPark: parkId => dispatch(fetchPark(parkId))
+        fetchPark: parkId => dispatch(fetchPark(parkId)),
+        fetchParkTrails: parkId => dispatch(fetchParkTrails(parkId))
     }
 }
 
