@@ -23,7 +23,7 @@ class ParkShow extends React.Component {
 
     render() {
       // debugger
-      console.log(this.props.park)
+      // console.log(this.props.park)
 
 
       

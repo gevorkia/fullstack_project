@@ -1,0 +1,121 @@
+.trail-index-item-detail-wrapper{
+    // flex: 1 0 auto;
+    
+}
+
+.trail-index-item-detail {
+    height: 1000px;
+    display: flex;
+    margin-left: 421px;
+    margin-right: 421px;
+    margin-bottom: 30px;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+    background-color: #E6E6E6;
+    
+}
+
+.trail-photo-header {
+    height: 325px;
+    position: relative;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: white;
+}
+
+.trail-photo-header-content {
+    margin: 0 20px;
+    position: absolute;
+    bottom: 18%;
+    z-index: 1;
+    // display: flex;
+    // flex-direction: column;
+    // position: absolute;
+    // bottom: 32px;
+    // margin: 0 24px;
+}
+
+.trail-name-header {
+    color: #fff;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin: 0 0 6px;
+}
+
+.trail-summary-info {
+    display: flex;
+}
+
+.trail-difficulty {
+    width: 72px;
+    height: 18px;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    line-height: 1.42;
+}
+
+
+.review-stars {
+
+}
+
+.num-reviews {
+    color: #fff;
+    width: 24px;
+    height: 18px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 5px;
+    padding-top: 4px;
+}
+
+.park-name {
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.trail-photo-wrapper {
+
+}
+
+.trail-photo-sub-bar {
+
+}
+
+.trail-photo-wrapper img {
+    object-fit: cover;
+    object-position: 50% 70%;
+    // margin: auto;
+    width: 100%;
+    height: 325px;
+    background-color: rgba(123,164,216,1);
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7)), url(https://cdn-assets.alltrails.com/uploads/photo/image/22911176/extra_large_0356940….jpg);
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    // background-size: cover;
+}
+
+.trail-action {
+
+}
