@@ -17,7 +17,7 @@ const HomePage = () => (
             <div className="magnifying-glass">
               <img
                 alt="logo"
-                src="https://rainbowpiecollective.files.wordpress.com/2013/12/1462599_10201858095712591_1476539769_o.jpg"
+                src="https://cdn-assets.alltrails.com/assets/icons/search-gray-086ffadf121a7eb1f0487dcd1d7279b4.svg"
               />
             </div>
             <input

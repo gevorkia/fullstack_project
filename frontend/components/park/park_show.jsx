@@ -42,23 +42,34 @@ class ParkShow extends React.Component {
         // const parkInfoTitles = parkInfoTitlesArr.map((title, idx) => {
         //   return <ul className="park-info-title" key={idx}>{title}</ul>
         // })
-        // const staticMapWidth = window.innerWidth < 400 ? 355 : 750;
         
         
         // const parkInfoRes = park..map((res, idx) => {
         //   return <ul className="park-info-res" key={idx}>{res}</ul>
         // })
 
-        const parkPhotos = this.props.park.photoUrls.map((url, i) => {
-          return <img src={url} className="park-photo" key="{i}"></img>
+        const parkPhotos = this.props.park.photoUrls.map((url) => {
+          return <img src={url} className="park-photo"></img>
         })
+
+        const reviewStars = [];
+        for (let i = 1; i < 6; i++) {
+            reviewStars.push(<span key={i}>
+              <img className="star" src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"></img>
+            </span>)
+        }
+
 
         return (
           <>
             <section className="sec-nav-wrapper">
               <div className="sec-nav">
                 <div className="left-wrapper">
-                  <div className="left-content">NAV LINKS</div>
+                  <div className="left-content">
+                    <div className="location">United States of America</div>
+                    <div className="location">California</div>
+                    <div className="location">{park.name}</div>
+                  </div>
                 </div>
                 <div className="right-wrapper">
                   <div className="right-content">
@@ -72,12 +83,7 @@ class ParkShow extends React.Component {
                         aria-label="text search input"
                       ></input>
                       <button className="secNav-search-button">
-                        <div className="secNav-magnifying-glass">
-                          <img
-                            alt="logo"
-                            src="https://toppng.com/public/uploads/preview/search-magnifying-glass-icon-png-grey-1156361611872u4ycd60h.png"
-                          />
-                        </div>
+                        <div className="secNav-magnifying-glass"></div>
                       </button>
                     </div>
                   </div>
@@ -98,7 +104,7 @@ class ParkShow extends React.Component {
                   </div>
                 </div>
                 <div className="ratings-wrapper">
-                  <div className="ratings-star">Ratings</div>
+                  <div className="ratings-star">{reviewStars}</div>
                   <div className="ratings-num">1,045 Reviews</div>
                 </div>
                 <div className="park-text-wrapper">
@@ -163,7 +169,12 @@ class ParkShow extends React.Component {
               <section>
                 <div className="trails-index-wrapper">
                   <div className="trails-index">
-                    {/* <TrailsIndex/> */}
+                    <h2 className="trails-header-text">
+                      {/* Top Trails ({Object.keys(park.trails).length}) */}
+                      Top Trails in Big Sur
+                    </h2>
+                    {/* <TrailIndex trails={park.trails} parkName={park.name} /> */}
+                    <TrailIndex />
                   </div>
                 </div>
               </section>

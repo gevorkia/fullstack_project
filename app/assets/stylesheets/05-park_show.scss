@@ -5,23 +5,48 @@
     // justify-content: space-around;
     // background: pink;
     height: 45px;
+    font-family: Proxima Nova, Arial, sans-serif;
+    min-height: 40px;
+    height: fit-content;
+    // background-color: #F2F2F2;
+    color: #000000;
+    line-height: 40px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .left-wrapper {
     // background: green;
-    flex: 2.5;
+    flex: 0.5;
     justify-content: flex-start;
+}
+
+.left-content {
+    display:flex;
+    font-size: 12px;
+    color: #414141;
+    margin-left: 300px;
+
+}
+
+
+.location {
+    // padding: 10px 10px;
+    // flex: 1;
+    // margin-left: 200px;
+    // padding-left: 
 }
 
 .right-wrapper {
     // background: yellow;
     flex: 1;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .secNav-input-holder {
     flex: 1;
-    justify-content: flex-end;
+    // justify-content: flex-start;
 //   border-width: 14px;
 //   border-style: solid;
 //   border-color: rgba(165,165,165,0.7);
@@ -29,15 +54,20 @@
   border-radius: 7px;
 //   width: 500px;
   height: 45px;
-  margin: auto;
+  width: 200px;
+//   margin: auto;
   display: flex;
   cursor: text;
+  margin-left: 500px;
 }
 
 .secNav-magnifying-glass {
   background-color: $green;
-  width: 60px;
   height: 100%;
+    width: 40px;
+    background-image: url(https://cdn-assets.alltrails.com/assets/packs/media/icons/search-white-828dabbd.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
 
 .secNav-magnifying-glass > * {
@@ -55,6 +85,16 @@
   color: #414141;
   font-size: 24px;
 //   background: #fff;
+    width: 250px;
+
+    // width: 100%;
+    
+    padding: 0 8px;
+    border: 1px solid #e6e6e6;
+    border-right: none;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    color: #414141;
 }
 
 
@@ -62,12 +102,27 @@
   font-family: $bodyFont;
   background-color: $green;
   color: $green;
-  border: 0;
-  width: 80px;
-  padding: 15px 30px;
+//   border: 0;
+//   width: 80px;
+//   padding: 15px 30px;
+
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   font-size: 14px;
+
+//   font-size: inherit;
+//     line-height: inherit;
+    // min-height: 100%;
+    // display: inline-block;
+    // color: #fff;
+    // font-weight: 700;
+    // // padding: 0 12px;
+    // background: #428a13;
+    // border: 1px solid #428a13;
+    // border-top-left-radius: 0;
+    // // border-top-right-radius: inherit;
+    // border-bottom-left-radius: 0;
+    // // border-bottom-right-radius: inherit;
 }
 
 
@@ -125,9 +180,21 @@
 }
 
 .ratings-star {
-    background: rgb(247, 247, 173);
-    display: flex;
-    align-items: center;
+    // background: rgb(247, 247, 173);
+    // display: flex;
+    // align-items: center;
+        color: #ffb400;
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    font-size: 80%;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
 }
 
 .ratings-num {
@@ -231,3 +298,15 @@
 .filter-trails-list {
     height: 100px;
 }
+
+.trails-header-text {
+    margin-left: 400px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: -.2px;
+    color: #414141;
+    padding: 15px 0px 15px 0px;
+}
+

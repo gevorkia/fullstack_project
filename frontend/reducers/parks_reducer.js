@@ -16,6 +16,7 @@ const parksReducer = (state = {}, action) => {
         nextState[action.payload.park.id] = action.payload.park;
         return nextState;
       case RECEIVE_PARKS:
+        
         let trails = [];
         action.payload.parks.forEach((park) => {
           trails = trails.concat(park.trails);

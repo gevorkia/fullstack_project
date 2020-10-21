@@ -1,0 +1,119 @@
+.trail-el-wrapper {
+    // flex: 1 0 auto;
+    // background: papayawhip;
+    height: 1000px;
+    // margin-top: 15px;
+    width: 58%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.trail-info {
+    padding: 20px;
+    max-height: 224px;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.trail-cover-photo {
+    padding: 15px;
+    padding-right: 0;
+    height: auto;
+}
+
+.trail-cover-photo img {
+    // border-color: black;
+    height: 194px;
+    width: 280px;
+    border-radius: 8px;
+}
+
+.trail-el {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 300px;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24), 0 0 8px 0 rgba(0,0,0,0.08);
+    border-radius: 8px;
+    background-color: white;
+}
+
+.trail-name {
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #414141;
+    font-weight: 600;
+}
+
+.trail-park-name {
+    display: flex;
+    align-items: center;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    height: 21px;
+    line-height: 21px;
+    letter-spacing: normal;
+    color: #767676;
+}
+
+.trail-info-sub {
+    margin-top: 6px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.trail-difficulty {
+    background-color: #4bafe1;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0;
+    width: 100px;
+    text-align: center;
+}
+
+.review-stars {
+    margin-left: 8px;
+}
+
+.review-count {
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+.trail-length {
+    margin-top: 6px;
+    font-size: 12.8px;
+    margin: 5px 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+// .trail-summary {
+//     display: block;
+//     margin-block-start: 1em;
+//     margin-block-end: 1em;
+//     margin-inline-start: 0px;
+//     margin-inline-end: 0px;
+// }
+
+.show-more {
+    color: #428a13;
+    position: absolute;
+    right: 2px;
+    bottom: -1px;
+    background-color: white;
+    box-shadow: -10px 0px 15px rgba(255,255,255,0.8);
+}
