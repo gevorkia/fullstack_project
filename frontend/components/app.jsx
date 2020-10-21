@@ -22,7 +22,7 @@ const App = () => (
           <AuthRoute exact path="/login" component={LoginContainer} />
           <AuthRoute exact path="/signup" component={SignupContainer} />
           <Route exact path='/parks/:parkId'component={ParkShowContainer}/>
-          <Route exact path='/trails/:trailId/map'component={TrailIndexContainer}/>
+          {/* <Route exact path='/trails/:trailId/map'component={TrailIndexDetailContainer}/> */}
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
          

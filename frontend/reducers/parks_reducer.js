@@ -1,7 +1,7 @@
 import { 
   RECEIVE_PARK, 
   RECEIVE_PARKS, 
-  RECEIVE_PARK_TRAILS 
+  // RECEIVE_PARK_TRAILS 
 } from "../actions/park_actions";
 
 // const state = {
@@ -19,10 +19,8 @@ const parksReducer = (state = {}, action) => {
         // debugger
         nextState[action.payload.park.id] = action.payload.park;
         return nextState;
-      case RECEIVE_PARK_TRAILS:
-        debugger
-        nextState[action.payload.park.id] = action.payload.park.trails
-        return nextState;
+
+
       case RECEIVE_PARKS:
 
         let trails = [];
@@ -33,6 +31,7 @@ const parksReducer = (state = {}, action) => {
         nextState['parks'] = action.payload.parks;
         nextState["trails"] = trails;
         return nextState;
+
       default:
         return state;
     }

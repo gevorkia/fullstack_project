@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import TrailIndex from "./trail_index_item";
+import TrailIndex from "./trail_index";
 import { fetchParkTrails } from "../../actions/park_actions";
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
-      trails: state.entities.parks
+      parkId: ownProps.parkId,
+      parkName: ownProps.parkName,
+      trails: Object.values(state.entities.trails)
     };
 }
 

@@ -1,7 +1,12 @@
+.trail-index-item-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .trail-el-wrapper {
     // flex: 1 0 auto;
     // background: papayawhip;
-    height: 1000px;
+    // height: 1000px;
     // margin-top: 15px;
     width: 58%;
     margin: auto;
@@ -144,23 +149,28 @@
     margin-top: 15px;
 }
 
-.show-more {
-    // color: #428a13;
-    position: absolute;
-    // right: 3px;
-    // bottom: -1px;
-    right: 100px;
-    top: 40px;
-    // background-color: white;
-    // box-shadow: -10px 0px 15px rgba(255,255,255,0.8);
+// .show-more {
+//     // color: #428a13;
+//     // position: absolute;
+//     // right: 3px;
+//     // bottom: -1px;
+//     // right: 100px;
+//     // top: 40px;
+//     // background-color: white;
+//     // box-shadow: -10px 0px 15px rgba(255,255,255,0.8);
 
-    color: #428a13;
-    cursor: pointer;
-    font-family: Proxima Nova,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
+//     color: #428a13;
+//     cursor: pointer;
+//     font-family: Proxima Nova,Arial,sans-serif;
+//     font-size: 16px;
+//     font-weight: 400;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 1.44;
+//     letter-spacing: normal;
+// }
+
+.trail-index {
+    border: 0px;
 }
+

@@ -1,6 +1,6 @@
 @trails.each do |trail|
     json.set! trail.id do
-        json.partial! 'api/trails/trail', trail: trail
+        json.extract! trail, :id, :name, :difficulty, :summary, :description, :length, :elevation_gain, :route_type, :usage, :park_id, :lat, :lng
     end
 end
 

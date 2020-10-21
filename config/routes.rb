@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :trails, only: [:show]
 
     resources :parks, only: [:show, :index] do
-      # resources :trails, only: [:index]
+      resources :trails, only: [:index]
     end
 
   end

@@ -18,10 +18,10 @@ const receiveParks = (payload) => {
   };
 };
 
-const receiveParkTrails = trails => {
+const receiveParkTrails = payload => {
     return {
         type: RECEIVE_PARK_TRAILS,
-        trails
+        payload
     }
 }
 
@@ -51,10 +51,10 @@ export const fetchParks = () => {
 
 export const fetchParkTrails = parkId => {
     return dispatch => {
-        debugger
+        // debugger
         return ParkAPIUtil.fetchParkTrails(parkId)
             .then(trails => {
-                debugger
+                // debugger
                 return dispatch(receiveParkTrails(trails))
             })
     }

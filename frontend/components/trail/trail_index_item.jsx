@@ -1,18 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TrailIndexItem extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  // componentDidMount() {
-  //   this.props.fetchParkTrails(this.props.match.params.parkId);
-  // }
-
   render() {
     if (!this.props.trail) return null;
     
-    const {trail} = this.props;
+    const {trail, idx, parkName} = this.props;
     console.log(trail);
 
     const reviewStars = [];
@@ -54,35 +51,32 @@ class TrailIndexItem extends React.Component {
     return (
       <>
         <div className="trail-el-wrapper">
-          <div className="trail-el">
-            <div className="trail-cover-photo">
-              <img
-                src="https://cdn-assets.alltrails.com/uploads/photo/image/14098180/extra_large_9e205f73af5a6ed7c42a1a19d29a80e1.jpg"
-                alt=""
-              ></img>
-            </div>
-            <div className="trail-info-wrapper">
-              <div className="trail-info">
-                <h2 className="trail-name">#1 - Sykes Hot Springs</h2>
+          <Link to={`/trails/${trail.id}`} className="trail-index-item-link">
+            <div className="trail-el">
+              <div className="trail-cover-photo">
+                <img src={trail.coverPhotoUrl} alt={trail.name} />
+              </div>
+              <div className="trail-info-wrapper">
+                <div className="trail-info">
+                  <h2 className="trail-name">
+                    #{idx + 1} - {trail.name}
+                  </h2>
 
-                <div className="trail-park-name">Big Sur</div>
-                <div className="trail-info-sub">
-                  <div className="trail-difficulty">moderate</div>
-                  <div className="review-stars">{reviewStars}</div>
+                  <div className="trail-park-name">{parkName}</div>
+                  <div className="trail-info-sub">
+                    <div className="trail-difficulty">{trail.difficulty}</div>
+                    <div className="review-stars">{reviewStars}</div>
 
-                  <div className="review-count">(102)</div>
+                    <div className="review-count">{/* (102) */}</div>
+                  </div>
+                  <div className="trail-length">Length: {trail.length} mi</div>
+
+                  <p className="trail-summary">{trail.summary}</p>
+                  {/* <span className="show-more">Show more</span> */}
                 </div>
-                <div className="trail-length">Length: 10.2 mi</div>
-
-                <p className="trail-summary">
-                  Sykes Hot Springs via Pine Ridge Trail is a 19.5 mile heavily
-                  trafficked out and back trail located near Big Sur, California
-                  that features hot springs and is rated as difficult.
-                </p>
-                <span className="show-more">Show more</span>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </>
     );

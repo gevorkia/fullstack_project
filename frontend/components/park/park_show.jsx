@@ -115,7 +115,7 @@ class ParkShow extends React.Component {
                   <div className="park-desc-header">Description</div>
                   <div className="park-desc">{park.description}</div>
                 </div>
-                <section className="park-tags">tags</section>
+                <section className="park-tags"><></></section>
                 <div className="park-static-map">
                   <img
                     src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${park.lng},${park.lat},13.55,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
@@ -137,26 +137,33 @@ class ParkShow extends React.Component {
                       className="park-action"
                     >
                       <div className="directions-btn"></div>
-                      <p>Directions</p>
+                      <p className="direction-btn-text">Directions</p>
                     </a>
                   </div>
                 </div>
 
                 <section className="park-info-wrapper">
-                  <h2 className="park-info-header">Park Information</h2>
+                  <h2 className="park-info-main-header">Park Information</h2>
                   <div className="park-info-details">
                     <div>
-                      <article>
+                      <article className="park-info-pairs">
                         <h3 className="park-info-header">Acreage</h3>
-                        <p>{park.acreage} acres</p>
+                        <p className="park-info-subheader">
+                          {park.acreage} acres
+                        </p>
                       </article>
                       <article>
                         <h3 className="park-info-header">Contact</h3>
-                        <p>{park.contact}</p>
+                        <p className="park-info-subheader">{park.contact}</p>
                       </article>
                       <article>
                         <h3 className="park-info-header">Website</h3>
-                        <a href={`${park.website}`}>link</a>
+                        <a
+                          href={`${park.website}`}
+                          className="park-info-subheader"
+                        >
+                          link
+                        </a>
                       </article>
                     </div>
                   </div>
@@ -177,7 +184,10 @@ class ParkShow extends React.Component {
                       Top Trails in Big Sur
                     </h2>
                     {/* <TrailIndex trails={trails} parkName={park.name} /> */}
-                    <TrailIndexContainer />
+                    <TrailIndexContainer
+                      parkId={park.id}
+                      parkName={park.name}
+                    />
                     {/* <TrailIndexItem/> */}
                   </div>
                 </div>
