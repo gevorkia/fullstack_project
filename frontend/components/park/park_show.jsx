@@ -1,6 +1,7 @@
 import React from "react";
 import SearchSuggestions from "../search/search_suggestions";
 import TrailIndex from "../trail/trail_index"
+import TrailIndexContainer from "../trail/trail_index_container"
 import TrailIndexItem from "../trail/trail_index_item"
 
 
@@ -176,8 +177,8 @@ class ParkShow extends React.Component {
                       Top Trails in Big Sur
                     </h2>
                     {/* <TrailIndex trails={trails} parkName={park.name} /> */}
-                    {/* <TrailIndex /> */}
-                    <TrailIndexItem/>
+                    <TrailIndexContainer />
+                    {/* <TrailIndexItem/> */}
                   </div>
                 </div>
               </section>

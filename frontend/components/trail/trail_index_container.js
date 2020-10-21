@@ -6,7 +6,7 @@ import { fetchParkTrails } from "../../actions/park_actions";
 const mSTP = (state, ownProps) => {
     debugger
     return {
-      trails: state.entities.parks[ownProps.match.params.parkId],
+      trails: state.entities.parks
     };
 }
 

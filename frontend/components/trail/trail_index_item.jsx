@@ -5,14 +5,15 @@ class TrailIndexItem extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    // this.props.fetchPark(this.props.match.params.parkId);
-  }
+  // componentDidMount() {
+  //   this.props.fetchParkTrails(this.props.match.params.parkId);
+  // }
 
   render() {
-    // if (!this.props.park) return null;
-
-    // const {park} = this.props
+    if (!this.props.trail) return null;
+    
+    const {trail} = this.props;
+    console.log(trail);
 
     const reviewStars = [];
     for (let i = 1; i < 6; i++) {

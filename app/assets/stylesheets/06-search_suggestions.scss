@@ -8,6 +8,7 @@
     max-height: 280px;
     width: 742px;
     // padding: 3.5px 7px 3.5px 7px;
+    // display:block;
 }
 
 .suggestions-list {
@@ -16,6 +17,11 @@
     // text-align: left;
     padding: 3.5px 7px 3.5px 7px;
     color: black;
+    // display: none;
+}
+
+.suggestion-list:hover {
+    // display:block;
 }
 
 .park-suggestions {

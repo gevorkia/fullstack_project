@@ -10,7 +10,7 @@ import HomePage from "./home_page/home_page"
 import Footer from "./footer/footer"
 
 import ParkShowContainer from "./park/park_show_container"
-import TrailContainer from "./trail/trail_index_container"
+import TrailIndexContainer from "./trail/trail_index_container"
 
 
 const App = () => (
@@ -22,7 +22,7 @@ const App = () => (
           <AuthRoute exact path="/login" component={LoginContainer} />
           <AuthRoute exact path="/signup" component={SignupContainer} />
           <Route exact path='/parks/:parkId'component={ParkShowContainer}/>
-          <Route exact path='/trails/:trailId/map'component={TrailMapContainer}/>
+          <Route exact path='/trails/:trailId/map'component={TrailIndexContainer}/>
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
          
