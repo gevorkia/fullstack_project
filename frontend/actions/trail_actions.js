@@ -2,11 +2,11 @@ import * as TrailAPIUtil from "../utils/trail_api_util";
 
 export const RECEIVE_TRAIL = "RECEIVE_TRAIL";
 
-const receiveTrail = (trail) => {
+const receiveTrail = (payload) => {
     // debugger
     return {
         type: RECEIVE_TRAIL,
-        trail
+        payload
     }
 }
 

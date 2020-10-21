@@ -1,8 +1,8 @@
 import React from "react";
 import SearchSuggestions from "../search/search_suggestions";
-import TrailIndex from "../trail/trail_index"
+
 import TrailIndexContainer from "../trail/trail_index_container"
-import TrailIndexItem from "../trail/trail_index_item"
+
 
 
 class ParkShow extends React.Component {
@@ -69,8 +69,8 @@ class ParkShow extends React.Component {
               <div className="sec-nav">
                 <div className="left-wrapper">
                   <div className="left-content">
-                    <div className="location">United States of America</div>
-                    <div className="location">California</div>
+                    <div className="location">United States of America ></div>
+                    <div className="location">California ></div>
                     <div className="location">{park.name}</div>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ const trailReducer = (state= {}, action) => {
     switch (action.type) {
       case RECEIVE_TRAIL:
         // debugger
-        nextState[action.trail.id] = action.trail;
+        nextState[action.payload.trail.id] = action.payload.trail;
         return nextState;
       case RECEIVE_PARK_TRAILS:
         // debugger

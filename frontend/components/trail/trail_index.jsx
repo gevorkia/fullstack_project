@@ -7,7 +7,7 @@ class TrailIndex extends React.Component {
         super(props)
     }
 
-     componentDidMount() {
+    componentDidMount() {
         // debugger
         this.props.fetchParkTrails(this.props.parkId);
     }
