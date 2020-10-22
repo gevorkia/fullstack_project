@@ -1,5 +1,6 @@
 .trail-index-item-detail-wrapper{
     // flex: 1 0 auto;  
+    background:#F2F2F2;
 }
 
 .trail-index-item-detail {
@@ -18,6 +19,7 @@
     position: relative;
     font-family: "Montserrat", Arial, sans-serif;
     color: white;
+    // border: none;
 }
 
 .trail-photo-header-content {
@@ -270,6 +272,9 @@
     font-size: 17px;
     font-weight: 300;
     line-height: 1.5;
+    // margin: 0 24px;
+    // padding: 24px 0px;
+    font-family: Proxima Nova, Arial, sans-serif;
 }
 
 .trail-summary-detail {
@@ -309,7 +314,7 @@
 
 .distance-wrapper {
     // padding-right: 40px;
-    padding-left: 20px;
+    padding-left: 25px;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 32%;
@@ -334,8 +339,6 @@
     display: inline-block;
 }
 
-
-
 .stats-label-data {
     font-size: 16px;
     font-weight: bold;
@@ -344,6 +347,85 @@
     width: auto;
     color: #414141;
 }
+
+.tag-cloud {
+    margin: 0 24px;
+    padding: 24px 0px;
+}
+
+.tag {
+    margin-right: 7px;
+    margin-bottom: 0px;
+}
+
+.tag span {
+    font-size: 14px;
+    cursor: default;
+    margin: 5px 0;
+    display: inline-block;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    color: #428A13;
+    white-space: nowrap;
+    // -webkit-border-radius: 8px;
+    // -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: solid 1px #428A13;
+    padding: 5.5px 12px;
+}
+
+.trail-subcontent {
+    // display: flex;
+    // height: 60px;
+    align-items: center;
+    // border: solid 2px green;
+}
+
+.trail-subcontent-tabs {
+    display: flex;
+    background-color: #E6E6E6;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Proxima Nova,Arial,sans-serif;
+    padding-left: 15px;
+    display: flex;
+    height: 45px;
+    align-items: center;
+
+    //need to make color green on click with green underline
+    color: #414141;
+    // color: #428A13;
+
+}
+
+.trail-subcontent-desc {
+    background: #f2f2f2;
+    padding: 6px 0;
+    margin-right: 48px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    min-width: 0
+}
+
+.trail-subcontent-description {
+    // border: solid 2px blue;
+    font-family: Proxima Nova,Arial,sans-serif;
+    color: #414141;
+    font-size: 16px;
+    padding: 24px;
+}
+
+.weather {
+    margin-right: 40px;
+}
+.uv-index {
+    margin-right: 40px;
+}
+.weather-widget {
+    // border: solid 2px blue;
+}
+
+// sidebar
 
 .trail-sidebar {
     width: 325px;

@@ -11,6 +11,8 @@
 #
 class Taggable < ApplicationRecord
 
+    validates :tag_id, uniqueness: { scope: [:taggable_id, :taggable_type] }
+
     belongs_to :taggable,
         polymorphic: true
         # foreign_key: :taggable_id,

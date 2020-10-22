@@ -12,6 +12,7 @@ class TrailIndexItemDetail extends React.Component {
         // debugger
         this.props.fetchTrail(this.props.match.params.trailId);
         // this.props.fetchPark(this.props.trail.parkId);
+        window.scrollTo(0, 0);
     }
     
     componentDidUpdate() {
@@ -39,6 +40,16 @@ class TrailIndexItemDetail extends React.Component {
         );
     }
 
+    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers", `Nature+{ }+trips`]
+
+    // tags.name.map(tag => {
+    //   return (
+    //     <span className="tag">
+    //       <span className="big-rounded-active">tag</span>
+    //     </span>
+    //   );
+    // })
+
     return (
       <>
         {/* secondary nav */}
@@ -50,7 +61,7 @@ class TrailIndexItemDetail extends React.Component {
                 <div className="trail-summary-info">
                   <span className="trail-difficulty">{trail.difficulty}</span>
                   <div className="review-stars">{reviewStars}</div>
-                  <p className="num-reviews">(102)</p>
+                  <p className="num-reviews">(2)</p>
                 </div>
                 <div className="park-name-wrapper">
                   <Link to={`/parks/${park.id}`} className="park-name">
@@ -68,8 +79,9 @@ class TrailIndexItemDetail extends React.Component {
                 <li className="trail-directions">
                   <a
                     href={`https://www.google.com/maps/dir/Current+Location/${trail.lat},${trail.lng}`}
-                    className="directions-btn-link">
-                  <div className="direction-btn-nav-text">Directions</div>
+                    className="directions-btn-link"
+                  >
+                    <div className="direction-btn-nav-text">Directions</div>
                   </a>
                 </li>
               </ul>
@@ -81,27 +93,81 @@ class TrailIndexItemDetail extends React.Component {
                   <>
                     <div className="distance-wrapper">
                       <span className="stats-label">Length</span>
-                      <span className="stats-label-data">{trail.length} mi</span>
+                      <span className="stats-label-data">
+                        {trail.length} mi
+                      </span>
                     </div>
                     <div className="elevation-wrapper">
                       <span className="stats-label">Elevation</span>
-                      <span className="stats-label-data">{trail.elevationGain} ft</span>
+                      <span className="stats-label-data">
+                        {trail.elevationGain} ft
+                      </span>
                     </div>
                     <div className="route-type-wrapper">
                       <span className="stats-label">Route type</span>
-                      <span className="stats-label-data">{trail.routeType}</span>
+                      <span className="stats-label-data">
+                        {trail.routeType}
+                      </span>
                     </div>
                   </>
                 </section>
                 <section className="tag-cloud">
+                  {/* {tags} */}
                   <span className="tag">
-                    <span className="big-rounded-active"></span>
+                    <span className="big-rounded-active">Camping</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Hiking</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Backpacking</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">River</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Forest</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Wildflowers</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Nature Trips</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Walking</span>
+                  </span>
+                  <span className="tag">
+                    <span className="big-rounded-active">Wildlife</span>
                   </span>
                 </section>
+                <section className="trail-subcontent">
+                  <div className="trail-subcontent-tabs">
+                    <div className="trail-subcontent-tabs-desc">
+                      Description
+                    </div>
+                  </div>
+                  <div className="trail-subcontent-description">
+                    {trail.description}
+                  </div>
+                  <div className="trail-subcontent-tabs">
+                    <div className="weather">Weather</div>
+                    <div className="uv-index">UV Index</div>
+                    <div className="daylight">Daylight</div>
+                  </div>
+                  <div className="weather-widget">
+                    Weather widget goes here!
+                  </div>
+                </section>
+                <section>
+                  <div className="trail-subcontent-tabs">
+                    <div className="trail-reviews">
+                      Reviews
+                    </div>
+                  </div>
+                </section>
               </article>
-              <article className="trail-sidebar">
-                sidebar
-              </article>
+              <article className="trail-sidebar">sidebar</article>
             </div>
           </div>
         </div>
