@@ -30,13 +30,12 @@
 
 }
 
-
 .location {
     // padding: 10px 10px;
     // flex: 1;
     // margin-left: 200px;
     // padding-left: 
-    padding-right: 5px;
+    padding-right: 4px;
 }
 
 .right-wrapper {
@@ -258,6 +257,7 @@
     margin-left: 10px;
     margin-bottom: 15px;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 
 .park-links {
@@ -293,7 +293,7 @@
     z-index: 99;
     height: 60px;
     width: 60px;
-    cursor: pointer;
+    // cursor: pointer;
     margin-right: 0px;
 }
 
@@ -306,6 +306,7 @@
     padding: 0px;
     // margin-bottom: 10px;
     // margin-left: 4px;
+    cursor: pointer;
 }
 
 .park-info-wrapper {

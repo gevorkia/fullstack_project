@@ -1,11 +1,9 @@
 .trail-index-item-detail-wrapper{
-    // flex: 1 0 auto;
-    
+    // flex: 1 0 auto;  
 }
 
 .trail-index-item-detail {
-    height: 1000px;
-    display: flex;
+    // height: 1000px;
     margin-left: 421px;
     margin-right: 421px;
     margin-bottom: 30px;
@@ -116,6 +114,17 @@
     // background-size: cover;
 }
 
-.trail-action {
+.trail-action-bar {
+    height: 55px !important;
+    margin-bottom: 0px !important;
+    border-top: none !important;
+    // display: flex;
+    // width: 100px;
+    // bottom: 8px;
+    // margin-left: -50px;
+    background-color: #428A13;
+}
 
+.directions-btn-action {
+    text-decoration: none;
 }

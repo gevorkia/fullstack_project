@@ -81,7 +81,7 @@ class ParkShow extends React.Component {
                       <input
                         className="secNav-home-search-bar"
                         type="text"
-                        placeholder="Enter a park or trail name"
+                        placeholder="Enter a park or trail"
                         autoComplete="off"
                         aria-label="text search input"
                       ></input>
@@ -108,7 +108,7 @@ class ParkShow extends React.Component {
                 </div>
                 <div className="ratings-wrapper">
                   <div className="ratings-star">{reviewStars}</div>
-                  <div className="ratings-num">1,045 Reviews</div>
+                  <div className="ratings-num">12 Reviews</div>
                 </div>
                 <div className="park-text-wrapper">
                   <div className="park-summary">{park.summary}</div>

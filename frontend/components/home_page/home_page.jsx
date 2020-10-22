@@ -27,7 +27,9 @@ const HomePage = () => (
               autoComplete="off"
               aria-label="text search input"
             />
-            <SearchSuggestionsContainer />
+            <div className="search-suggestions">
+              <SearchSuggestionsContainer />
+            </div>
             <button className="search-button">Search</button>
           </div>
           {/* </div> */}

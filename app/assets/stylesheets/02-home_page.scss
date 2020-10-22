@@ -62,6 +62,15 @@
   position: relative;
 }
 
+.home-search-bar:focus ~ .search-suggestions {
+  display: block;
+
+}
+
+.search-suggestions {
+  display: none;
+}
+
 .magnifying-glass {
   background-color: white;
   width: 60px;
