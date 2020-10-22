@@ -3,57 +3,67 @@ import { Link } from "react-router-dom";
 import SearchSuggestionsContainer from "../search/search_suggestions_container";
 // import Layout from "../layout/layout"
 
+const HomePage = () => {
+  // react hook for functional components only
+  // array destructuring assignment similar to object destructuring
+  // searchText is a getter (like this.state), setSearchText is a setter (like this.setState)
+  // React.useState is a react state hook for a single piece of state
+  const [searchText, setSearchText] = React.useState('');
 
-const HomePage = () => (
-  // <Layout>
-  <>
-    <div className="home-content">
-      {/* <div className="home-page"> */}
-      <div className="home-page-background">
-        <div className="banner-container">
-          <div className="banner-text">Find your next favorite trail</div>
-          {/* <div className="input-holder-border"> */}
-          <div className="input-holder">
-            <div className="magnifying-glass">
-              <img
-                alt="logo"
-                src="https://cdn-assets.alltrails.com/assets/icons/search-gray-086ffadf121a7eb1f0487dcd1d7279b4.svg"
+  return (
+    // <Layout>
+    <>
+      <div className="home-content">
+        {/* <div className="home-page"> */}
+        <div className="home-page-background">
+          <div className="banner-container">
+            <div className="banner-text">Find your next favorite trail</div>
+            {/* <div className="input-holder-border"> */}
+            <div className="input-holder">
+              <div className="magnifying-glass">
+                <img
+                  alt="logo"
+                  src="https://cdn-assets.alltrails.com/assets/icons/search-gray-086ffadf121a7eb1f0487dcd1d7279b4.svg"
+                />
+              </div>
+              <input
+                className="home-search-bar"
+                type="text"
+                placeholder="Enter a park or trail name"
+                autoComplete="off"
+                aria-label="text search input"
+                onChange={(e) => setSearchText(e.target.value)}
+                // event handler that sets state to whatever user enters
               />
+              <div className="search-suggestions">
+                {/* passing in the value of the state as a prop */}
+                <SearchSuggestionsContainer searchText={searchText} />
+              </div>
+              <button className="search-button">Search</button>
             </div>
-            <input
-              className="home-search-bar"
-              type="text"
-              placeholder="Enter a park or trail name"
-              autoComplete="off"
-              aria-label="text search input"
-            />
-            <div className="search-suggestions">
-              <SearchSuggestionsContainer />
-            </div>
-            <button className="search-button">Search</button>
+            {/* </div> */}
           </div>
-          {/* </div> */}
         </div>
+        <div className="text-body">
+          <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
+          <p>
+            The beauty of nature doesn’t need to be hard to find. Our goal is
+            simple - build the largest collection of hand-curated trail guides,
+            so you can explore the outdoors with confidence. Anytime. Anywhere.
+          </p>
+          <Link className="bottom-signup" to="/signup">
+            Sign up for free
+          </Link>
+        </div>
+        {/* </div> */}
       </div>
-      <div className="text-body">
-        <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
-        <p>
-          The beauty of nature doesn’t need to be hard to find. Our goal is
-          simple - build the largest collection of hand-curated trail guides, so
-          you can explore the outdoors with confidence. Anytime. Anywhere.
-        </p>
-        <Link className="bottom-signup" to="/signup">
-          Sign up for free
-        </Link>
-      </div>
-      {/* </div> */}
-    </div>
 
-    {/* </div> */}
-  </>
-  //{" "}
-  // </Layout>
-);
+      {/* </div> */}
+    </>
+    //{" "}
+    // </Layout>
+  );
+};
 
 
 // images

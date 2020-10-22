@@ -14,7 +14,7 @@ class ParkShow extends React.Component {
       // debugger
       this.props.fetchPark(this.props.match.params.parkId);
       // this.props.fetchParkTrails(this.props.match.params.parkId);
-      
+      this.props.fetchParkTrails(this.props.parkId);
       
       // debugger;
       // console.log(this.props)
@@ -23,14 +23,14 @@ class ParkShow extends React.Component {
 
     render() {
       // debugger
-      // console.log(this.props.park)
+      console.log(this.props.park)
 
 
       
-      const { park } = this.props;
+      const { park, trails } = this.props;
 
      
-        if (!this.props.park) return null;
+        if (!this.props.park || !this.props.trails) return null;
 
         // const tagsArr = ["hiking", "forest", "nature-trips", "river"]
 
@@ -121,14 +121,6 @@ class ParkShow extends React.Component {
                     src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${park.lng},${park.lat},13.55,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
                     alt="park-map-preview"
                   />
-                  {/* <img
-                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-121.7825,36.2456,14.55,0/500x200?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
-                    alt="park-map-preview"
-                  /> */}
-                  {/* <img
-                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticMapPinStr}/${park.lng},${park.lat},8,0/${staticMapWidth}x240@2x?access_token=${window.mapboxAPIKey}`}
-                    alt="map-preview"
-                  /> */}
                 </div>
                 <div className="park-links-wrapper">
                   <div className="park-links">
@@ -180,15 +172,13 @@ class ParkShow extends React.Component {
                 <div className="trails-index-wrapper">
                   <div className="trails-index">
                     <h2 className="trails-header-text">
-                      {/* Top Trails ({Object.keys(park.trails).length}) */}
-                      Top Trails in Big Sur
+                      Top Trails ({trails.length})
                     </h2>
                     {/* <TrailIndex trails={trails} parkName={park.name} /> */}
                     <TrailIndexContainer
                       parkId={park.id}
                       parkName={park.name}
                     />
-                    {/* <TrailIndexItem/> */}
                   </div>
                 </div>
               </section>

@@ -51,11 +51,11 @@ class TrailIndexItemDetail extends React.Component {
                   <span className="trail-difficulty">{trail.difficulty}</span>
                   <div className="review-stars">{reviewStars}</div>
                   <p className="num-reviews">(102)</p>
-                  <div>
-                    <Link to={`/parks/${park.id}`} className="park-name">
-                      {park.name}
-                    </Link>
-                  </div>
+                </div>
+                <div className="park-name-wrapper">
+                  <Link to={`/parks/${park.id}`} className="park-name">
+                    {park.name}
+                  </Link>
                 </div>
               </div>
               <div className="trail-photo-wrapper">
@@ -64,15 +64,44 @@ class TrailIndexItemDetail extends React.Component {
             </div>
             <div></div>
             <div className="trail-action-bar">
-                <ul className="trail-action-bar-items">
-                    <li className="trail-directions">
-                        <a href={`https://www.google.com/maps/dir/Current+Location/${trail.lat},${trail.lng}`}
-                           className="directions-btn-action"
-                        ></a>
-                    </li>
-                </ul>
-                <div className="directions-btn"></div>
-                <p className="direction-btn-text">Directions</p>
+              <ul className="trail-action-bar-items">
+                <li className="trail-directions">
+                  <a
+                    href={`https://www.google.com/maps/dir/Current+Location/${trail.lat},${trail.lng}`}
+                    className="directions-btn-link">
+                  <div className="direction-btn-nav-text">Directions</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="trail-content-wrapper">
+              <article className="trail-content">
+                <div className="trail-summary-detail">{trail.summary}</div>
+                <section className="trail-stats">
+                  <>
+                    <div className="distance-wrapper">
+                      <span className="stats-label">Length</span>
+                      <span className="stats-label-data">{trail.length} mi</span>
+                    </div>
+                    <div className="elevation-wrapper">
+                      <span className="stats-label">Elevation</span>
+                      <span className="stats-label-data">{trail.elevationGain} ft</span>
+                    </div>
+                    <div className="route-type-wrapper">
+                      <span className="stats-label">Route type</span>
+                      <span className="stats-label-data">{trail.routeType}</span>
+                    </div>
+                  </>
+                </section>
+                <section className="tag-cloud">
+                  <span className="tag">
+                    <span className="big-rounded-active"></span>
+                  </span>
+                </section>
+              </article>
+              <article className="trail-sidebar">
+                sidebar
+              </article>
             </div>
           </div>
         </div>

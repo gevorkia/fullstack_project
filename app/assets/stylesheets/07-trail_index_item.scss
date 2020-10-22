@@ -10,7 +10,6 @@
     // margin-top: 15px;
     width: 58%;
     margin: auto;
-    padding-top: 20px;
 }
 
 .trail-info {
@@ -134,16 +133,16 @@
     height: 48px;
     // overflow: hidden;
     // text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 2;
+    // -webkit-box-orient: vertical;
     line-height: 1em;
     font-size: 16px;
     line-height: 1.5;
     color: #5a5a5a;
     // margin-top: 20px;
     // overflow: hidden;
-    // word-break: break-word;
+    word-break: break-word;
     position: relative;
     margin: 0px;
     padding: 0px;

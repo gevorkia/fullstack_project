@@ -11,6 +11,7 @@
     // display:block;
    
     // display: none;
+
     
 }
 
@@ -20,14 +21,20 @@
     // text-align: left;
     padding: 3.5px 7px 3.5px 7px;
     color: #414141;
+    height: 100%;
+    width: 100%;
     
+    display: flex;
+    align-items: center;
+
     // display: none;
     // display: flex;
     // align-content: center;
 }
 
 .suggestions-list:hover {
-    color: #fff;
+    // color: #fff;
+
 }
 
 .park-suggestions {
@@ -53,8 +60,13 @@
     background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-area-selected-da428772083f22bc605f9bbe842a2291.png);
     background-repeat: no-repeat; 
     background-size: 30px 30px;
-    color: #fff;
+    // & > a {
+    //     color: #fff;
+    // }
+}
 
+.park-suggestions:hover > a {
+    color: #fff;
 }
 
 .trail-suggestions {
@@ -74,6 +86,10 @@
     background-image: url(https://cdn-assets.alltrails.com/assets/icons/search/icon-search-trail-selected-414971dec0e7e3297af0c0a585df06f2.png);
     background-repeat: no-repeat;
     background-size: 30px 30px;
+}
+
+.trail-suggestions:hover > a {
+    color: #fff;
 }
 
 ul {

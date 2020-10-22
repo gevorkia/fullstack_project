@@ -67,8 +67,16 @@
 
 }
 
+.search-suggestions:hover {
+  // display: block;
+  // visibility: visible;
+  opacity: 1;
+}
+
 .search-suggestions {
-  display: none;
+  // display: none;
+  // visibility: hidden;
+  opacity: 0;
 }
 
 .magnifying-glass {
@@ -92,8 +100,12 @@
   color: #414141;
   font-size: 24px;
   background: #fff;
+  
 }
 
+.home-search-bar:focus {
+  outline: none;
+}
 
 .search-button {
   font-family: $bodyFont;

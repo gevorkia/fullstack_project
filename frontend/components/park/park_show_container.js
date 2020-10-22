@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => {
 
     return {
       park: state.entities.parks[ownProps.match.params.parkId],
-    //   loading: state.ui.loading.indexLoading,
+      trails: Object.values(state.entities.trails)
+      //   loading: state.ui.loading.indexLoading,
     };
 }
 
