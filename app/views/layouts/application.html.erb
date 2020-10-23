@@ -7,7 +7,16 @@
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     
-    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <script type="text/javascript">
+      window.github = "<%= image_url('github.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.linkedin = "<%= image_url('linkedin.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.favicon = "<%= image_url('favicon.ico') %>";
+    </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 

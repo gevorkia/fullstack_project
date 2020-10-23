@@ -159,7 +159,7 @@ class TrailIndexItemDetail extends React.Component {
                   </div>
                   <div className="trail-subcontent-tabs">
                     <div className="weather">Weather</div>
-                    <div className="uv-index">UV Index</div>
+                    {/* <div className="uv-index">UV Index</div> */}
                     <div className="daylight">Daylight</div>
                   </div>
                   <div className="weather-widget">

@@ -12,9 +12,11 @@ class SearchSuggestions extends React.Component {
   render() {
     // console.log(this.props.searchText);
     const { parks, trails, searchText } = this.props;
+    console.log(searchText);
     if (!parks || !trails ) return null;
 
     const suggestions = [];
+    
 
     parks
       .filter((park) => park.name.toLowerCase().includes(searchText))

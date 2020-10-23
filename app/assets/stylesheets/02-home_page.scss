@@ -62,23 +62,13 @@
   position: relative;
 }
 
-.home-search-bar:focus ~ .search-suggestions {
+#dont-display-list {
+  display: none;
+}
+
+#display-search-list {
   display: block;
-
 }
-
-.search-suggestions:hover {
-  // display: block;
-  // visibility: visible;
-  opacity: 1;
-}
-
-.search-suggestions {
-  // display: none;
-  // visibility: hidden;
-  opacity: 0;
-}
-
 
 .suggestions-list-wrapper {
     position: absolute;
@@ -90,8 +80,7 @@
     // max-height: 200px;
     width: 742px;
     // padding: 3.5px 7px 3.5px 7px;
-    // display:block;
-   
+    // display:block;  
     // display: none;
 }
 
@@ -188,15 +177,3 @@ p {
   line-height: 1.2;
   width: 600;
 }
-
-// .suggestions-list-wrapper {
-//   display: none;
-// }
-
-// .home-search-bar:hover > .suggestions-list-wrapper {
-//   display: block
-// }
-
-// .suggestions-list-wrapper > li:hover {
-//   display: block;
-// }
