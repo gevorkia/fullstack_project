@@ -45,7 +45,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('parks')
 # https://www.alltrails.com/parks/us/california/pfeiffer-big-sur-state-park
 park1 = Park.create!(
     name: "Pfeiffer Big Sur State Park",
-    summary: "Looking for a great trail in Pfeiffer Big Sur State Park, California? AllTrails has 10 great hiking trails, forest trails, river trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Just looking to take a quick stroll? We've got 5 easy trails in Pfeiffer Big Sur State Park ranging from 0.8 to 2.5 miles and from 216 to 616 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
+    summary: "Looking for a great trail in Pfeiffer Big Sur State Park, California? MyTrails has 10 great hiking trails, forest trails, river trails and more, with hand-curated trail maps and driving directions as well as detailed reviews and photos from hikers, campers, and nature lovers like you. Just looking to take a quick stroll? We've got 5 easy trails in Pfeiffer Big Sur State Park ranging from 0.8 to 2.5 miles and from 216 to 616 feet above sea level. Start checking them out and you'll be out on the trail in no time!",
     description: "There are many scenic trails in Pfeiffer Big Sur State Park. Enjoy the wildlife and many different trees in the park. ",
     location: "Big Sur, CA",
     acreage: 1006,

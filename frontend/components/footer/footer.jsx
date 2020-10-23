@@ -17,7 +17,31 @@ const Footer = () => {
             <span className="footer-trails">MyTrails</span>
           </a>
         </div>
-        <div className="footer-holder-right"></div>
+        <div className="footer-holder-right">
+          {/* <div className="stay-connected">
+            Stay connected!
+          </div> */}
+          <div className="prof-links">
+            <a href="https://github.com/gevorkia/trails">
+              <img
+                height="50"
+                width="50"
+                alt="github"
+                className="github"
+                src="https://p1.hiclipart.com/preview/347/293/202/cat-icon-github-github-pages-user-computer-share-icon-source-code-black-png-clipart.jpg"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/liligevorkian/">
+              <img
+                height="50"
+                width="50"
+                alt="linkedin"
+                className="linkedin"
+                src="https://banner2.cleanpng.com/20180518/yk/kisspng-computer-icons-linkedin-5aff0283a31f04.0344839015266617636682.jpg"
+              />
+            </a>
+          </div>
+        </div>
       </div>
       //{" "}
       //   </div>

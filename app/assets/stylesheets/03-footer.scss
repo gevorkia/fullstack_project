@@ -19,7 +19,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 420px;
     text-decoration: none;
 }
 
@@ -40,4 +40,34 @@
 
 .footer-logo-title {
     text-decoration: none;
+}
+
+.logo {
+    padding-top: 15px;
+}
+
+.footer-holder-right {
+    display: flex;
+    margin-right: 420px;
+}
+
+// .stay-connected {
+//     font-weight: 700;
+//     color: #767676;
+//     font-size: 1rem;
+// }
+
+.prof-links {
+    margin-right: 30px;
+    background-color: #E6E6E6;
+}
+
+.github {
+    background-color: #E6E6E6 !important;
+    // background: #E6E6E6 !important;
+    margin-right: 20px;
+}
+
+.linked {
+    margin-right: 20px;
 }
