@@ -27,9 +27,6 @@ class HomePage extends React.Component {
       searchText: e.target.value,
       id: "display-search-list"
     });
-    // this.setState = {
-    //   id: "display-search-list"
-    // }
   }
 
   

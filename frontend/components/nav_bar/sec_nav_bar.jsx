@@ -7,9 +7,9 @@ class SecNavBar extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        //  this.props.fetchPark(this.props.match.params.parkId);
-    }
+    // componentDidMount() {
+    //     //  this.props.fetchPark(this.props.match.params.parkId);
+    // }
 
     render() {
         const { park } = this.props;
