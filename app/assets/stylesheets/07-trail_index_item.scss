@@ -80,13 +80,38 @@
     line-height: 18px;
 }
 
-.trail-difficulty {
-    background-color: #4bafe1;
+.trail-difficulty-easy {
+    background-color:#69a041;
+    font-size: 12px;
+    font-weight: 300;
     color: #fff;
     border-radius: 8px;
     padding: 0;
     width: 100px;
     text-align: center;
+    font-family: Proxima Nova,Arial,sans-serif;
+}
+.trail-difficulty-moderate {
+    background-color: #4bafe1;
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0;
+    width: 100px;
+    text-align: center;
+    font-family: Proxima Nova,Arial,sans-serif;
+}
+.trail-difficulty-strenuous {
+    background-color: #676767;
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0;
+    width: 100px;
+    text-align: center;
+    font-family: Proxima Nova,Arial,sans-serif;
 }
 
 .review-stars {

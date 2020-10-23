@@ -54,7 +54,38 @@
     display: flex;
 }
 
-.trail-difficulty {
+.trail-diff-easy {
+    background-color:#69a041;
+    width: 72px;
+    height: 18px;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    line-height: 1.42;
+}
+.trail-diff-moderate {
+    background-color: #4bafe1;
+    width: 72px;
+    height: 18px;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    line-height: 1.42;
+}
+.trail-diff-strenuous {
+    background-color: #676767;
     width: 72px;
     height: 18px;
     border-radius: 6px;
@@ -350,6 +381,7 @@
     display: block;
     width: auto;
     color: #414141;
+    
 }
 
 .tag-cloud {
