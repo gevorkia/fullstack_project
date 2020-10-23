@@ -163,6 +163,7 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="daylight">Daylight</div>
                   </div>
                   <div className="weather-widget">
+                    .
                     {/* {`https://api.openweathermap.org/data/2.5/weather?lat=${trail.lat}&lon=${trail.lng}&appid={API-KEY}`}
                     {`https://api.openweathermap.org/data/2.5/weather?lat=35&lon={API-KEY}`} */}
                   </div>
@@ -181,9 +182,9 @@ class TrailIndexItemDetail extends React.Component {
                     alt="map-preview"
                   />
 
-                  <span>View Full Map</span>
+                  {/* <span>View Full Map</span> */}
                 </div>
-                <TrailIndexContainer park={park.id} />
+                {/* <TrailIndexContainer park={park.id} /> */}
               </article>
             </div>
           </div>
