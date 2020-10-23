@@ -41,9 +41,9 @@ class SearchSuggestions extends React.Component {
       });
 
     return (
-      <div className="suggestions-list-wrapper">
+      // <div className="suggestions-list-wrapper">
         <ul>{suggestions}</ul>
-      </div>
+      // </div>
     );
   }
 }

@@ -2,7 +2,8 @@ import React from "react";
 import SearchSuggestions from "../search/search_suggestions";
 
 import TrailIndexContainer from "../trail/trail_index_container"
-
+// import SecNavBarContainer from "../nav_bar/sec_nav_bar_container"
+import SecNavBar from "../nav_bar/sec_nav_bar"
 
 
 class ParkShow extends React.Component {
@@ -13,8 +14,7 @@ class ParkShow extends React.Component {
     componentDidMount() {
       // debugger
       this.props.fetchPark(this.props.match.params.parkId);
-      // this.props.fetchParkTrails(this.props.match.params.parkId);
-      this.props.fetchParkTrails(this.props.parkId);
+      this.props.fetchParkTrails(this.props.match.params.parkId);
       
       // debugger;
       // console.log(this.props)
@@ -23,7 +23,7 @@ class ParkShow extends React.Component {
 
     render() {
       // debugger
-      console.log(this.props.park)
+      // console.log(this.props.park)
 
 
       
@@ -51,8 +51,8 @@ class ParkShow extends React.Component {
         //   return <ul className="park-info-res" key={idx}>{res}</ul>
         // })
 
-        const parkPhotos = this.props.park.photoUrls.map((url) => {
-          return <img src={url} className="park-photo"></img>
+        const parkPhotos = this.props.park.photoUrls.map((url, idx) => {
+          return <img key={`${this.props.park.id}-${idx}`} src={url} className="park-photo"></img>
         })
 
         const reviewStars = [];
@@ -62,10 +62,11 @@ class ParkShow extends React.Component {
             </span>)
         }
 
-
         return (
           <>
-            <section className="sec-nav-wrapper">
+            {/* <SecNavBarContainer parkId={park.id}/> */}
+            <SecNavBar park={park} />
+            {/* <section className="sec-nav-wrapper">
               <div className="sec-nav">
                 <div className="left-wrapper">
                   <div className="left-content">
@@ -77,7 +78,7 @@ class ParkShow extends React.Component {
                 <div className="right-wrapper">
                   <div className="right-content">
                     {/* <SearchSuggestions/> */}
-                    <div className="secNav-input-holder">
+            {/* <div className="secNav-input-holder">
                       <input
                         className="secNav-home-search-bar"
                         type="text"
@@ -92,8 +93,8 @@ class ParkShow extends React.Component {
                   </div>
                 </div>
               </div>
-            </section>
-            <div className="park-content-wrapper">
+            </section> */}
+            <section className="park-content-wrapper">
               <section className="park-content">
                 <div className="photo-carousel-wrapper">
                   <div className="photo-carousel">
@@ -115,10 +116,13 @@ class ParkShow extends React.Component {
                   <div className="park-desc-header">Description</div>
                   <div className="park-desc">{park.description}</div>
                 </div>
-                <section className="park-tags"><></></section>
+                <section className="park-tags">
+                  <></>
+                </section>
                 <div className="park-static-map">
                   <img
                     src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${park.lng},${park.lat},13.55,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    // src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/pin-s+4D9709(${park.lng},${park.lat})/${park.lng},${park.lat},12,0/400x130@2x?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
                     alt="park-map-preview"
                   />
                 </div>
@@ -182,7 +186,7 @@ class ParkShow extends React.Component {
                   </div>
                 </div>
               </section>
-            </div>
+            </section>
           </>
         );
     }

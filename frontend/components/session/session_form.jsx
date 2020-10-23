@@ -19,6 +19,10 @@ class SessionForm extends React.Component {
     this.popupToggle = this.popupToggle.bind(this)
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
   }
@@ -156,7 +160,7 @@ class SessionForm extends React.Component {
                 Explore the trails as a
                 <a onClick={this.demoUserLogin}> demo user</a>
               </p>
-              <div className="pop-up-bottom"></div>
+              {/* <div className="pop-up-bottom"></div> */}
           </form>
           </div>
         </div>

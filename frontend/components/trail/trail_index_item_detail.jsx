@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TrailIndexItemDetailMapContainer from "./trail_index_item_detail_map_container";
+import TrailIndexContainer from "./trail_index_container"
+import TrailIndex from "./trail_index"
+import SecNavBar from "../nav_bar/sec_nav_bar";
+
 
 class TrailIndexItemDetail extends React.Component {
   constructor(props) {
@@ -54,6 +58,7 @@ class TrailIndexItemDetail extends React.Component {
       <>
         {/* secondary nav */}
         <div className="trail-index-item-detail-wrapper">
+          <SecNavBar park={park} />
           <div className="trail-index-item-detail">
             <div className="trail-photo-header">
               <div className="trail-photo-header-content">
@@ -156,20 +161,39 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="daylight">Daylight</div>
                   </div>
                   <div className="weather-widget">
-                    Weather widget goes here!
+                    .
+                    {/* <img
+                      // src={`https://api.openweathermap.org/data/2.5/weather?lat=${trail.lat}&lon=${trail.lng}&appid=b4ba786ade14efef737737abc317f55e`}
+                      // src={`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b4ba786ade14efef737737abc317f55e`}
+                      alt="weather-widget"
+                    /> */}
                   </div>
                 </section>
                 <section>
                   <div className="trail-subcontent-tabs">
-                    <div className="trail-reviews">
-                      Reviews
-                    </div>
+                    <div className="trail-reviews">Reviews</div>
                   </div>
                 </section>
               </article>
-              <article className="trail-sidebar">sidebar</article>
+              <article className="trail-sidebar">
+                <div className="map-preview">
+                  <img
+                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/pin-s+4D9709(${trail.lng},${trail.lat})/${trail.lng},${trail.lat},12,0/150x150@2x?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    // src={`"https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s-l+000(${trail.lng},${trail.lat})/${trail.lng},${trail.lat},12/150x150?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    alt="map-preview"
+                  />
+
+                  <span>View Full Map</span>
+                </div>
+              <TrailIndexContainer park={park.id}/>
+              </article>
             </div>
           </div>
+          <article className="trail-sidebar">
+            <div className="nearby-trails-wrapper">
+              <h2 className="nearby-trails-header"></h2>
+            </div>
+          </article>
         </div>
       </>
     );

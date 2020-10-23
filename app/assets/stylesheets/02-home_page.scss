@@ -79,6 +79,23 @@
   opacity: 0;
 }
 
+
+.suggestions-list-wrapper {
+    position: absolute;
+    top: 57px;
+    left: 0px;
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 280px;
+    width: 742px;
+    // padding: 3.5px 7px 3.5px 7px;
+    // display:block;
+   
+    // display: none;
+
+    
+}
+
 .magnifying-glass {
   background-color: white;
   width: 60px;

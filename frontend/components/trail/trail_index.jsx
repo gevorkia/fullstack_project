@@ -19,10 +19,10 @@ class TrailIndex extends React.Component {
           <ul className="trail-index">
             {trails.map((trail, idx) => (
                 <TrailIndexItem
-                //   key={trail.id}
-                trail={trail}
-                idx={idx}
-                parkName={parkName}
+                    key={trail.id}
+                    trail={trail}
+                    idx={idx}
+                    parkName={parkName}
                 />
             ))}
           </ul>

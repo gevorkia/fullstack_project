@@ -37,7 +37,9 @@ const HomePage = () => {
               />
               <div className="search-suggestions">
                 {/* passing in the value of the state as a prop */}
-                <SearchSuggestionsContainer searchText={searchText} />
+                <div className="suggestions-list-wrapper">
+                  <SearchSuggestionsContainer searchText={searchText} />
+                </div>
               </div>
               <button className="search-button">Search</button>
             </div>

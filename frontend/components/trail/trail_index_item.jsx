@@ -67,7 +67,7 @@ class TrailIndexItem extends React.Component {
                     <div className="trail-difficulty">{trail.difficulty}</div>
                     <div className="review-stars">{reviewStars}</div>
 
-                    <div className="review-count">{/* (102) */}</div>
+                    <div className="review-count">(2)</div>
                   </div>
                   <div className="trail-length">Length: {trail.length} mi</div>
 
