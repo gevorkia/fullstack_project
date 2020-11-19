@@ -14,10 +14,14 @@
 #
 class Review < ApplicationRecord
     validates :activity_date, :rating, :review, :activity, presence: true
-    validates :user_id, :trail_id, presence: true
+    validates :activity_date, uniqueness: { scope: [:trail_id, :user_id], message: "only one review allowed for this trail on this date"}
 
-    belongs_to :user,
+    belongs_to :reviewer,
         foreign_key: :user_id,
         class_name: "User"
+
+    belongs_to :trail,
+        foreign_key: :trail_id,
+        class_name: "Trail"
 
 end

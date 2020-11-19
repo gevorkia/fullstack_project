@@ -29,6 +29,10 @@ class Trail < ApplicationRecord
         foreign_key: :park_id,
         class_name: "Park"
 
+    has_many :reviews,
+        foreign_key: :trail_id,
+        class_name: "Review"
+
     has_many :taggables, as: :taggable
     has_many :tags,
         through: :taggables,
@@ -38,13 +42,6 @@ class Trail < ApplicationRecord
     has_one_attached :coverPhoto
 end
 
-
-
-
-
-
-
-    
     # has_many :reviews,
     #     foreign_key: :review_id,
     #     class_name: "Review"   
