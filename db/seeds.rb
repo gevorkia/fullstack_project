@@ -367,6 +367,10 @@ Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "Trail")
 
 # in rails c: Trail.first.tags
 
+# Review.destroy_all
+
+# r1 = Review.create()
+
 
 # photos
 # attachments through console. only works in development, not production
