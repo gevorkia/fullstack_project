@@ -240,6 +240,7 @@ trail7 = Trail.create!(
 
 
 Tag.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('tags')
 
 a1 = Tag.create(name: "hiking", tag_type: "activity")
 a2 = Tag.create(name: "nature trips", tag_type: "activity")
@@ -367,9 +368,28 @@ Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "Trail")
 
 # in rails c: Trail.first.tags
 
-# Review.destroy_all
+Review.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('trails')
 
-# r1 = Review.create()
+
+r1 = Review.create(
+    activity_date: "2020-09-13", 
+    rating: 5, 
+    review: "Sad to hear it is now closed. This is a fantastic overnight hike that takes you into the hills to view a great cross section of the flora and fauna Big Sur has to offer. A glass of wine, a dip in the water and conversation with others was a great cap the day. I hope the restoration efforts are successful, and that the trail can reopen in a more sustainable manner.", 
+    tag_ids: [a5.id, a4.id, a1.id], 
+    user_id: user2.id, 
+    trail_id: trail1.id
+)
+
+r2 = Review.create(
+    activity_date: "2020-09-13", 
+    rating: 5, 
+    review: "Such a shame to hear of the overcrowding. I camped there in 1984, then again in 1992, very few people. I was hoping to go back, so it's sad to hear of the long term closure and the overcrowding there. In terms of the trail itself, it can be tough due to the switchbacks and inclines. You're apt to see fauna once it re-opens. Ahh, nature will recover!",
+    tag_ids: [f4.id, a4.id, a10.id], 
+    user_id: user4.id, 
+    trail_id: trail1.id
+)
+
 
 
 # photos
