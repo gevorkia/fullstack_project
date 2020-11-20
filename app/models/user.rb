@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
     has_one_attached :profilePicture
 
-    has_many :reviews
+    has_many :reviews,
         foreign_key: :user_id,
         class_name: "Review",
         dependent: :destroy
