@@ -13,7 +13,7 @@
 #  updated_at    :datetime         not null
 #
 class Review < ApplicationRecord
-    validates :activity_date, :rating, :review, :activity, presence: true
+    validates :activity_date, :rating, :review, presence: true
     validates :activity_date, uniqueness: { scope: [:trail_id, :user_id], message: "only one review allowed for this trail on this date"}
 
     belongs_to :reviewer,
