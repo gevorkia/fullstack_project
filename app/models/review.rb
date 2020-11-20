@@ -24,4 +24,9 @@ class Review < ApplicationRecord
         foreign_key: :trail_id,
         class_name: "Trail"
 
+    has_many :taggables, as: :taggable
+
+    has_many :tags,
+        through: :taggables,
+        source: :tag
 end
