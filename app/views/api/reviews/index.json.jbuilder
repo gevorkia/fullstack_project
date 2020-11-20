@@ -1,14 +1,14 @@
 json.reviews do
     @reviews.each do |review|
-        json.set! @review.id do
-            json.extract! @review, :id, :activity_date, :rating, :review, :user_id, :trail_id         
+        json.set! review.id do
+            json.extract! review, :id, :activity_date, :rating, :review, :user_id, :trail_id         
         end
     end
 end
 
 json.taggable do
     @reviews.each do |review|
-        @review.taggables.each do |taggable|
+        review.taggables.each do |taggable|
             json.set! taggable.id do 
                 json.extract! taggable, :id, :tag_id, :taggable_id, :taggable_type
             end 

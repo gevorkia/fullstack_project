@@ -369,7 +369,7 @@ Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "Trail")
 # in rails c: Trail.first.tags
 
 Review.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('trails')
+ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
 
 
 r1 = Review.create(
