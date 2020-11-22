@@ -29,10 +29,10 @@ const removeReview = (payload) => {
 };
 
 // payload = errors
-const receiveReviewErrors = (payload) => {
+const receiveReviewErrors = (errors) => {
   return {
     type: RECEIVE_REVIEW_ERRORS,
-    payload
+    errors
   };
 };
 
