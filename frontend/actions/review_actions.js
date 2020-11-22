@@ -1,4 +1,4 @@
-import * as ReviewAPIUtil from "../util/review_api_util";
+import * as ReviewAPIUtil from "../utils/review_api_util";
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "CREATE_REVIEW";
@@ -36,7 +36,7 @@ const receiveReviewErrors = (errors) => {
   };
 };
 
-export const clearReviewErrors = () => {
+const receiveClearReviewErrors = () => {
   return {
     type: CLEAR_REVIEW_ERRORS,
   };
@@ -74,5 +74,5 @@ export const deleteReview = reviewId => dispatch => {
 }
 
 export const clearReviewErrors = () => (dispatch) => {
-  return dispatch(clearReviewErrors());
+  return dispatch(receiveClearReviewErrors());
 };

@@ -7,6 +7,7 @@ import {
 //   deleteReview,
 } from "../../actions/review_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
+import ReviewModal from "./review_modal"
 
 const mSTP = (state) => {
     return {

@@ -4,7 +4,7 @@ import TrailIndexItemDetailMapContainer from "./trail_index_item_detail_map_cont
 import TrailIndexContainer from "./trail_index_container"
 import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
-
+import ReviewModalContainer from "../reviews/review_modal_container";
 
 class TrailIndexItemDetail extends React.Component {
   constructor(props) {
@@ -156,16 +156,6 @@ class TrailIndexItemDetail extends React.Component {
                   </div>
                   <div className="trail-subcontent-description">
                     {trail.description}
-                  </div>
-                  <div className="trail-subcontent-tabs">
-                    <div className="weather">Weather</div>
-                    {/* <div className="uv-index">UV Index</div> */}
-                    <div className="daylight">Daylight</div>
-                  </div>
-                  <div className="weather-widget">
-                    .
-                    {/* {`https://api.openweathermap.org/data/2.5/weather?lat=${trail.lat}&lon=${trail.lng}&appid={API-KEY}`}
-                    {`https://api.openweathermap.org/data/2.5/weather?lat=35&lon={API-KEY}`} */}
                   </div>
                 </section>
                 <section>
