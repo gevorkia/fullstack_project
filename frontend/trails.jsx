@@ -5,8 +5,20 @@ import Root from "./components/root";
 // import { signup, login, logout } from "./utils/session_api_util.js";
 // import { fetchPark } from "./utils/park_api_util";
 // import { fetchTrail } from "./utils/trail_api_util";
+// import { 
+//   fetchReviews, 
+//   createReview, 
+//   updateReview, 
+//   deleteReview 
+// } from "./utils/review_api_util";
 import { fetchPark, fetchParkTrails } from "./actions/park_actions";
-import { fetchTrail } from "./actions/trail_actions";
+// import { fetchTrail } from "./actions/trail_actions";
+import {
+  fetchReviews,
+  createReview,
+  updateReview,
+  deleteReview,
+} from "./actions/review_actions";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,10 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // testing on window
 
+  // // 1. thunk action creators
+  // window.fetchPark = fetchPark;
+  // window.fetchParkTrails = fetchParkTrails;
+
   // 1. thunk action creators
-  window.fetchPark = fetchPark;
-  window.fetchTrail = fetchTrail;
-  window.fetchParkTrails = fetchParkTrails;
+  window.fetchReviews = fetchReviews;
+  window.createReview = createReview;
+  window.updateReview = updateReview;
+  window.deleteReview = deleteReview;
 
   // 2. state tests
   window.getState = store.getState;
