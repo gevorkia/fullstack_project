@@ -36,8 +36,43 @@ const receiveReviewErrors = (payload) => {
   };
 };
 
-export const removeReviewErrors = () => {
+export const clearReviewErrors = () => {
   return {
     type: CLEAR_REVIEW_ERRORS,
   };
+};
+
+
+// thunk action creators
+// functions that return other functions. the 1st function, provide parameters needed to make AJAX request
+// inner (2nd) function parameter will always be dispatch
+// thunk middleware will capture these fxns before they hit our store, see that they're fxns and invoke them with store's dispatch fxn
+
+export const fetchReviews = (id) => dispatch => {
+  return ReviewAPIUtil.fetchReviews(id)
+    .then((reviews) => dispatch(receiveReviews(reviews))
+    // dispatch (regular) action to the store that's gna send these reviews along
+    // returns an action with all the reviews in it
+  );
+};
+
+export const createReview = review => dispatch => {
+    return ReviewAPIUtil.createReview(review)
+        .then(review => dispatch(receiveReview(review)))
+        .fail(errors => dispatch(receiveReviewErrors(errors.responseJSON)))
+};
+
+export const updateReview = review => dispatch => {
+    return ReviewAPIUtil.updateReview(review)
+        .then((review) => dispatch(receiveReview(review)))
+        .fail((errors) => dispatch(receiveReviewErrors(errors.responseJSON)));
+}
+
+export const deleteReview = reviewId => dispatch => {
+    return ReviewAPIUtil.deleteReview(reviewId)
+        .then((reviewId) => dispatch(removeReview(reviewId)))
+}
+
+export const clearReviewErrors = () => (dispatch) => {
+  return dispatch(clearReviewErrors());
 };
