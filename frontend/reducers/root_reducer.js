@@ -5,10 +5,11 @@ import errorsReducer from "./errors_reducer"
 
 
 const rootReducer = combineReducers({
-    entities: entitiesReducer,
-    session: sessionReducer,
-    errors: errorsReducer
-})
+  entities: entitiesReducer,
+  session: sessionReducer,
+  errors: errorsReducer,
+  ui: UiReducer,
+});
 
 export default rootReducer;
 
