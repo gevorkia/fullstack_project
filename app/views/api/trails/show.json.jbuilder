@@ -2,3 +2,11 @@ json.trail do
     json.extract! @trail, :id, :name, :difficulty, :summary, :description, :length, :elevation_gain, :route_type, :usage, :park_id, :lat, :lng
     json.coverPhotoUrl url_for(@trail.coverPhoto)
 end
+
+json.tags do 
+    @tags.each do |tag|
+        json.set! tag.id do
+            json.extract! tag, :id, :name, :tag_type
+        end
+    end
+end

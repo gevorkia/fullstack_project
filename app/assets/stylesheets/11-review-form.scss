@@ -109,3 +109,26 @@ input:checked ~ .review-star::before {
     color: #414141;
     width: 33%;
 }
+
+.activity-dropdown {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 14px 42px 14px 15px;
+    max-width: 160px;
+    width: 160px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    outline: none;
+}
+
+.activity-date {
+    border: 1px solid #e6e6e6;
+    font-family: Proxima Nova,Arial,sans-serif!important;
+    border-radius: 8px;
+    padding: 7px 7px 7px 15px;
+    margin: 0;
+    color: #414141;
+    background: #fff;
+    width: 100%;
+    outline: none;
+}

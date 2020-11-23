@@ -3,6 +3,7 @@ class Api::TrailsController < ApplicationController
     def show
         @trail = Trail.find_by(id: params[:id])
         # debugger
+        @tags = Tag.all
         render 'api/trails/show'
     end
 

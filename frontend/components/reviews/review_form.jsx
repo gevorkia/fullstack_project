@@ -1,4 +1,32 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createReview, clearReviewErrors } from "../../actions/review_actions";
+import { closeModal } from "../../actions/modal_actions";
+
+import {
+  defaultActivity,
+  filteredTagsByType,
+} from "../../reducers/selectors/selectors";
+
+const mSTP = (state, ownProps) => {
+  console.log(filteredTagsByType(state, "activity"));
+//   debugger;
+  return {
+    userId: state.session.currentUser.id,
+    trailId: ownProps.trailId,
+    selectedActivity: defaultActivity(state),
+    activities: filteredTagsByType(state, "activity"),
+  };
+};
+
+const mDTP = (dispatch) => {
+  return {
+    createReview: (review) => dispatch(createReview(review)),
+    clearReviewErrors: () => dispatch(clearReviewErrors()),
+    closeModal: () => dispatch(closeModal()),
+  };
+};
+
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -7,7 +35,7 @@ class ReviewForm extends React.Component {
         this.state = {
           rating: "",
           reviewText: "",
-          activity_date: "",
+          activityDate: "",
           tagIds: [],
           userId: this.props.userId,
           trailId: this.props.trailId,
@@ -18,7 +46,7 @@ class ReviewForm extends React.Component {
 
     render() {
         return (
-          <div className="review-form-modal">
+          <form className="review-form-modal">
             {/* <div className="review-form-modal" onClick={}> */}
             <div className="review-form-x-wrapper">
               <button className="review-form-x">
@@ -98,18 +126,24 @@ class ReviewForm extends React.Component {
                   <div className="activity-date-wrapper">
                     <div className="review-form-subheader">Activity</div>
                     <select
-                      id="activity"
+                      className="activity-dropdown"
                       value={this.state.selectedActivity}
                       required
-                    //   onChange={this.handleInput("selectedActivity")}
+                      //   onChange={this.handleInput("selectedActivity")}
                     >
                       {this.props.activities.map((activity) => (
-                        <option key={activity.id} value={activity.id}>
+                        <div className="activity-tags" key={activity.id}>
                           {activity.name}
-                        </option>
+                        </div>
                       ))}
                     </select>
-                    <div className="activity-dropdown"></div>
+                    <input
+                      type="date"
+                      className="activity-date"
+                      value={this.state.activityDate}
+                      required
+                    //   onChange={this.handleInput("activity_date")}
+                    />
                   </div>
                   <div className="trail-conditions-wrapper">
                     <div className="review-form-subheader">
@@ -121,11 +155,12 @@ class ReviewForm extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         );
     }
 }
 
-export default ReviewForm;
+// export default ReviewForm;
+export default connect(mSTP, mDTP)(ReviewForm);
 
 

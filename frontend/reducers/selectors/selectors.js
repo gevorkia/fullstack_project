@@ -7,10 +7,11 @@ export const defaultActivity = (state) => {
 };
 
 export const filteredTagsByType = (state, tagType) => {
-  const tags = Object.values(state.entities.tags)
+  const tags = Object.values(state.entities.tags);
   const filteredTags = tags.filter((tag) => {
     tag.tagType === tagType;
   });
 
-  return filteredTags
+  return filteredTags;
+  // like so [ { id: 2, name: 'nature', tagType: 'feature' } ]
 };
