@@ -10,7 +10,7 @@ const entitiesReducer = combineReducers({
   trails: trailsReducer,
   parks: parksReducer,
   reviews: reviewsReducer,
-  tags: tagsReducer;
+  tags: tagsReducer
 });
 
 export default entitiesReducer;
