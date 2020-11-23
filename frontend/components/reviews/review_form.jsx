@@ -6,11 +6,11 @@ import { closeModal } from "../../actions/modal_actions";
 import {
   defaultActivity,
   filteredTagsByType,
+  trailConditions
 } from "../../reducers/selectors/selectors";
 
 const mSTP = (state, ownProps) => {
-  console.log('OKASDOKASD', state);
-//   debugger;
+
   return {
     userId: state.session.currentUser.id,
     trailId: ownProps.trailId,
@@ -18,6 +18,7 @@ const mSTP = (state, ownProps) => {
     errors: state.errors.review,
     activity: defaultActivity(state),
     activities: filteredTagsByType(state, "activity"),
+    trailConditions: filteredTagsByType(state, "obstacle"),
   };
 };
 
@@ -46,6 +47,7 @@ class ReviewForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.postReview = this.postReview.bind(this);
+    this.handleTagSelection = this.handleTagSelection.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -75,21 +77,54 @@ class ReviewForm extends React.Component {
       .then(() => this.props.clearReviewErrors());
   }
 
+  handleTagSelection(e) {
+    e.preventDefault();
+    // console.log("handlemethod")
+
+    const newTag = e.currentTarget.value;
+
+    this.setState = {
+      tag_ids: [
+        ...this.state.tag_ids, 
+        newTag
+      ],
+    };
+  }
+
   renderErrors() {
-    console.log('OKSDFOASKD');
+    console.log("OKSDFOASKD");
     console.log(this.props.errors);
     if (this.props.errors) {
-        return (
+      return (
         <ul className="review-errors">
-            {this.props.errors.map((error, idx) => {
-                return (<li key={idx}>{error}</li>);
-            })}
+          {this.props.errors.map((error, idx) => {
+            return <li key={idx}>{error}</li>;
+          })}
         </ul>
-        );
+      );
     }
   }
 
   render() {
+    const trailConditionsTags = (
+      <>
+        {this.props.trailConditions.map((trailConditions) => (
+          <span
+            key={trailConditions.id}
+            // data-tagid={trailConditions.id}
+            className={
+              this.state.tag_ids.includes(trailConditions.id)
+                ? "review-form-tag-selected"
+                : "review-form-tag"
+            }
+          >
+            {console.log(this.state.tag_ids)}
+            {trailConditions.name}
+          </span>
+        ))}
+      </>
+    );
+
     return (
       <form className="review-form-modal">
         {/* <div className="review-form-modal" onClick={}> */}
@@ -186,7 +221,12 @@ class ReviewForm extends React.Component {
             </div>
             <div className="trail-conditions-wrapper">
               <div className="review-form-subheader">Trail Conditions</div>
-              {/* {trailConditionsTags} */}
+              <div
+                className="review-form-tag-wrapper"
+                onClick={this.handleTagSelection}
+              >
+                {trailConditionsTags}
+              </div>
             </div>
             <div className="review-form-btn-wrapper">
               <div className="cancel-btn">Cancel</div>
@@ -202,7 +242,6 @@ class ReviewForm extends React.Component {
   }
 }
 
-// export default ReviewForm;
 export default connect(mSTP, mDTP)(ReviewForm);
 
 

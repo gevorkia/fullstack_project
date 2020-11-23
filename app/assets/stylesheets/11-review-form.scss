@@ -5,7 +5,6 @@
     border-radius: 16px;
     box-shadow: 0 16px 32px 0 rgba(0,0,0,.16);
     width: 660px;
-    height: 583px;
     cursor: auto;
     // display: flex;
     // flex-direction: column;
@@ -217,4 +216,31 @@ input[type="date"] {
 
 select {
     cursor: pointer;
+}
+
+.review-form-tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 0 0;
+    margin: auto 0;
+}
+
+.review-form-tag {
+    font-size: 14px;
+    padding: 7px 12px;
+    border: 1px solid #e6e6e6;
+    color: #414141;
+    font-family: Proxima Nova,Arial,sans-serif;
+    border-radius: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    background: #fff;
+    margin-bottom: 0;
+    margin-right: 8px;  
+}
+
+
+.review-form-tag-selected {
+   outline:  #428a13;
+   color: #428a13;
 }
