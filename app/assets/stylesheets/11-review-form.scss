@@ -241,6 +241,15 @@ select {
 
 
 .review-form-tag-selected {
-   outline:  #428a13;
-   color: #428a13;
+    font-size: 14px;
+    padding: 7px 12px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    border-radius: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    background: #fff;
+    margin-bottom: 0;
+    margin-right: 8px;  
+    border: 1px solid #428a13;
+    color: #428a13;
 }

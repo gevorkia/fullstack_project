@@ -79,21 +79,24 @@ class ReviewForm extends React.Component {
 
   handleTagSelection(e) {
     e.preventDefault();
-    // console.log("handlemethod")
 
-    const newTag = e.currentTarget.value;
+    const newTagName = e.currentTarget.textContent;
 
-    this.setState = {
-      tag_ids: [
-        ...this.state.tag_ids, 
-        newTag
-      ],
-    };
+    if (!this.state.tag_ids.includes(newTagName)) {
+      this.setState({
+        tag_ids: [...this.state.tag_ids, newTagName],
+      });
+    } else {
+      const filtered = this.state.tag_ids.filter(tagName => tagName !== newTagName)
+      this.setState({
+        tag_ids: filtered
+      })
+      // e.currentTarget.classList.toggle("review-form-tag");
+    }
   }
 
   renderErrors() {
-    console.log("OKSDFOASKD");
-    console.log(this.props.errors);
+
     if (this.props.errors) {
       return (
         <ul className="review-errors">
@@ -111,9 +114,9 @@ class ReviewForm extends React.Component {
         {this.props.trailConditions.map((trailConditions) => (
           <span
             key={trailConditions.id}
-            // data-tagid={trailConditions.id}
+            onClick={this.handleTagSelection}
             className={
-              this.state.tag_ids.includes(trailConditions.id)
+              this.state.tag_ids.includes(trailConditions.name)
                 ? "review-form-tag-selected"
                 : "review-form-tag"
             }
@@ -223,7 +226,6 @@ class ReviewForm extends React.Component {
               <div className="review-form-subheader">Trail Conditions</div>
               <div
                 className="review-form-tag-wrapper"
-                onClick={this.handleTagSelection}
               >
                 {trailConditionsTags}
               </div>
@@ -243,5 +245,4 @@ class ReviewForm extends React.Component {
 }
 
 export default connect(mSTP, mDTP)(ReviewForm);
-
 
