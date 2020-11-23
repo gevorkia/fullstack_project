@@ -37,9 +37,10 @@
 }
 
 .review-trail-name {
+    margin-left: 5%;
     font-family: Proxima Nova,Arial,sans-serif;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 650;
     color: #414141;
     line-height: 1.13;
     letter-spacing: -.3px;
@@ -53,8 +54,8 @@
 }
 
 .review-form-body {
-    border: 2px solid blue;
-        display: flex;
+    // border: 2px solid blue;
+    display: flex;
     flex-direction: column;
 }
 
@@ -64,7 +65,9 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     font-size: 35px;
-    margin-top: 2%;
+    margin-top: 3%;
+    
+    margin-left: 5%;
 }
 
 .review-star::before {
@@ -90,9 +93,10 @@ input:checked ~ .review-star::before {
 
 .review-text {
     margin-top: 2%;
+    margin-left: 5%;
     border-radius: 8px;
     border: 1px solid #e6e6e6;
-    width: 80%;
+    width: 84%;
     height: 100%;
     font-size: 16px;
     font-family: Proxima Nova,Arial,sans-serif;
@@ -110,15 +114,32 @@ input:checked ~ .review-star::before {
     width: 33%;
 }
 
+.activity-date-wrapper {
+    // border: 2px red solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 24px;
+    margin-top: 30px;
+    margin-left: 32px;
+    margin-right: 32px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+
 .activity-dropdown {
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     padding: 14px 42px 14px 15px;
-    max-width: 160px;
-    width: 160px;
+    // max-width: 160px;
+    width: 40%;
     font-family: Proxima Nova,Arial,sans-serif;
     outline: none;
+}
+
+.activity-space {
+    width: 20px;
 }
 
 .activity-date {
@@ -129,6 +150,71 @@ input:checked ~ .review-star::before {
     margin: 0;
     color: #414141;
     background: #fff;
-    width: 100%;
+    // height: 100%;
+    height: 31px;
+    width: 35%;
     outline: none;
+}
+
+.trail-conditions-wrapper {
+    padding: 0 32px;
+    // margin: auto 0;
+    margin: 20px 0;
+}
+
+.review-form-btn-wrapper {
+    // border: 2px red solid;
+    padding: 24px 32px 32px;
+    text-align: right;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+}
+
+.cancel-btn {
+    font-size: 16px;
+    color: #428a13;
+    font-weight: 600;
+    width: 168px;
+    border: none;
+    outline: none;
+    padding-right: 70px;
+    height: 100%;
+    background: transparent;
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+    color: #69a041;
+    background: transparent;
+}
+
+.post-btn {
+    width: 168px;
+    margin: 0;
+    height: 40px;
+    padding-bottom: 3px;
+    background-color: #428a13;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-btn:hover {
+    cursor: pointer;
+    background-color: #69a041;
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+select {
+    cursor: pointer;
 }

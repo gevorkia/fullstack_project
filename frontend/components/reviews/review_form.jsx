@@ -114,44 +114,49 @@ class ReviewForm extends React.Component {
                     />
                     <label htmlFor="one" className="review-star"></label>
                   </div>
+                </div>
+                <textarea
+                  className="review-text"
+                  placeholder="Share your thoughts."
+                  required
+                  value={this.state.reviewText}
+                  // onChange={this.handleInput("review")}
+                ></textarea>
 
-                  <textarea
-                    className="review-text"
-                    placeholder="Share your thoughts."
+                <div className="activity-date-wrapper">
+                  <div className="review-form-subheader">Activity</div>
+                  <select
+                    className="activity-dropdown"
+                    value={this.state.selectedActivity}
                     required
-                    value={this.state.reviewText}
-                    // onChange={this.handleInput("review")}
-                  ></textarea>
-
-                  <div className="activity-date-wrapper">
-                    <div className="review-form-subheader">Activity</div>
-                    <select
-                      className="activity-dropdown"
-                      value={this.state.selectedActivity}
-                      required
-                      //   onChange={this.handleInput("selectedActivity")}
-                    >
-                      {this.props.activities.map((activity) => (
-                        <div className="activity-tags" key={activity.id}>
-                          {activity.name}
-                        </div>
-                      ))}
-                    </select>
-                    <input
-                      type="date"
-                      className="activity-date"
-                      value={this.state.activityDate}
-                      required
+                    //   onChange={this.handleInput("selectedActivity")}
+                  >
+                    {this.props.activities.map((activity) => (
+                      <div className="activity-tags" key={activity.id}>
+                        {activity.name}
+                      </div>
+                    ))}
+                  </select>
+                  <div className="activity-space"></div>
+                  <input
+                    type="date"
+                    className="activity-date"
+                    value={this.state.activityDate}
+                    required
                     //   onChange={this.handleInput("activity_date")}
-                    />
-                  </div>
-                  <div className="trail-conditions-wrapper">
-                    <div className="review-form-subheader">
-                      Trail Conditions
+                  />
+                </div>
+                <div className="trail-conditions-wrapper">
+                  <div className="review-form-subheader">Trail Conditions</div>
+                  {/* {trailConditionsTags} */}
+                </div>
+                <div className="review-form-btn-wrapper">
+                    <div className="cancel-btn">
+                        Cancel
                     </div>
-                    {/* {trailConditionsTags} */}
-                  </div>
-                  <div className="review-form-submit"></div>
+                    <div className="post-btn">
+                        Post
+                    </div>
                 </div>
               </div>
             </div>
