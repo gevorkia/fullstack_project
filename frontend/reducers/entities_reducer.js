@@ -3,12 +3,14 @@ import usersReducer from "./users_reducer";
 import trailsReducer from "./trails_reducer";
 import parksReducer from "./parks_reducer";
 import reviewsReducer from "./reviews_reducer";
+import tagsReducer from "./tags_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
   trails: trailsReducer,
   parks: parksReducer,
   reviews: reviewsReducer,
+  tags: tagsReducer;
 });
 
 export default entitiesReducer;

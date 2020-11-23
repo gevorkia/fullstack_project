@@ -163,16 +163,26 @@ class TrailIndexItemDetail extends React.Component {
                   <div className="trail-subcontent-tabs">
                     <div className="trail-reviews">Reviews</div>
                   </div>
-                  <div className="trail-review-btn-wrapper">
-                    <button className="trail-review-btn" onClick={this.props.openModal}>
-                        Write Review 
-                    </button>
+                  <div className="reviews-subheader-wrapper">
+                    <div className="avg-rating">Reviewstars</div>
+                    <div className="trail-review-btn-wrapper">
+                      <div className="review-blurb">
+                        Share your thoughts about
+                        the trail so others know what to expect.
+                      </div>
+                      <button
+                        className="trail-review-btn"
+                        onClick={this.props.openModal}
+                      >
+                        Write Review
+                      </button>
+                    </div>
                   </div>
                 </section>
                 <section className="review-idx-wrapper">
-                    <div className="review-idx">
-                      <ReviewForm trailName={trail.name}/>
-                    </div>
+                  <div className="review-idx">
+                    <ReviewForm trailName={trail.name} />
+                  </div>
                 </section>
               </article>
               <article className="trail-sidebar">

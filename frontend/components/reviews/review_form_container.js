@@ -4,9 +4,18 @@ import { createReview, clearReviewErrors } from "../../actions/review_actions";
 import { closeModal } from "../../actions/modal_actions";
 import ReviewForm from "./review_form";
 
-const mSTP = (state) => {
+import {
+  defaultActivity,
+  filteredTagsByType,
+} from "../../reducers/selectors/selectors";
+
+const mSTP = (state, ownProps) => {
+    debugger
   return {
     userId: state.session.currentUser.id,
+    trailId: ownProps.trailId,
+    selectedActivity: defaultActivity(state),
+    activities: filteredTagsByType(state, "activity")
   };
 };
 

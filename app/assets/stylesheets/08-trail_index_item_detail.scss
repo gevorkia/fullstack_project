@@ -453,12 +453,34 @@
     padding: 24px;
 }
 
-.trail-review-btn-wrapper {
+.reviews-subheader-wrapper {
+    display: flex;
+}
+
+.avg-rating {
+    display: flex;
+    flex: 0.8;
     // border: solid 2px red;
+}
+
+.trail-review-btn-wrapper {
+    // border: solid 2px green;
     height: 166px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    // justify-content: center;
+    flex: 1;
     // vertical-align: middle;
+}
+
+.review-blurb {
+    margin: auto;
+    width: 60%;
+    font-family: Proxima Nova,Arial,sans-serif;
+    color: #414141;
+    font-size: 14px;
+    // border: 2px solid red;
+    margin-top: 10%;
 }
 
 .trail-review-btn {
@@ -477,7 +499,8 @@
     border: none;
     font-weight: 200;
     outline: none;
-    margin-top: 8%;
+    // margin-bottom: 8%;
+    margin: auto;
 }
 
 .trail-review-btn:hover {
