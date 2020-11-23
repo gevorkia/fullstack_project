@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .trail-index-item-detail-wrapper{
     // flex: 1 0 auto;  
     background:#F2F2F2;
@@ -451,14 +453,40 @@
     padding: 24px;
 }
 
-.weather {
-    margin-right: 40px;
+.trail-review-btn-wrapper {
+    // border: solid 2px red;
+    height: 166px;
+    display: flex;
+    justify-content: center;
+    // vertical-align: middle;
 }
-.uv-index {
-    margin-right: 40px;
+
+.trail-review-btn {
+    background-color: $green;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 188px;
+    height: 40px;
+    text-align: center;
+    padding: 5px;
+    min-width: 110px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    font-weight: 200;
+    outline: none;
+    margin-top: 8%;
 }
-.weather-widget {
-    // border: solid 2px blue;
+
+.trail-review-btn:hover {
+
+}
+
+.review-idx {
+    border: solid 2px red;
+    height: 500px;
 }
 
 // sidebar

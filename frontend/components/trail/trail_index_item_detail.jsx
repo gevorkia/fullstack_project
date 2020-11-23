@@ -5,6 +5,7 @@ import TrailIndexContainer from "./trail_index_container"
 import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
 import ReviewModalContainer from "../reviews/review_modal_container";
+import ReviewForm from "../reviews/review_form";
 
 class TrailIndexItemDetail extends React.Component {
   constructor(props) {
@@ -162,6 +163,16 @@ class TrailIndexItemDetail extends React.Component {
                   <div className="trail-subcontent-tabs">
                     <div className="trail-reviews">Reviews</div>
                   </div>
+                  <div className="trail-review-btn-wrapper">
+                    <button className="trail-review-btn" onClick={this.props.openModal}>
+                        Write Review 
+                    </button>
+                  </div>
+                </section>
+                <section className="review-idx-wrapper">
+                    <div className="review-idx">
+                      <ReviewForm trailName={trail.name}/>
+                    </div>
                 </section>
               </article>
               <article className="trail-sidebar">
