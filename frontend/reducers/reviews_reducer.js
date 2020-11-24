@@ -14,7 +14,7 @@ const reviewsReducer = (state = {}, action) => {
         nextState["reviews"] = action.payload.reviews
         return nextState
       case RECEIVE_REVIEW:
-        nextState[action.payload.review.id] = action.payload.review
+        nextState[action.payload.review.id] = action.payload.review;
         return nextState;
       case REMOVE_REVIEW:
           delete nextState[action.reviewId]

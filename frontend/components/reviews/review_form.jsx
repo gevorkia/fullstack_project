@@ -45,12 +45,19 @@ class ReviewForm extends React.Component {
     this.handleTagSelection = this.handleTagSelection.bind(this);
   }
 
+  // componentDidUpdate() {
+  //   if (this.props.errors) {
+  //     this.props.clearReviewErrors();
+
+  //   }
+  // }
+
   update(field) {
+    // this.props.clearReviewErrors();
     return (e) =>
     this.setState({
       [field]: e.target.value,
     });
-    
   }
 
   postReview(e) {
@@ -67,7 +74,7 @@ class ReviewForm extends React.Component {
 
     this.props
       .createReview(newReview)
-      .then(() => this.props.clearReviewErrors());
+      // .then(() => this.props.clearReviewErrors());
   }
 
   handleTagSelection(e) {

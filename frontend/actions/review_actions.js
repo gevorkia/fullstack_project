@@ -4,7 +4,7 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "CREATE_REVIEW";
 export const REMOVE_REVIEW = "DELETE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
-export const CLEAR_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+// export const CLEAR_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 
 const receiveReviews = (payload) => {
   return {
@@ -36,11 +36,11 @@ const receiveReviewErrors = (errors) => {
   };
 };
 
-const receiveClearReviewErrors = () => {
-  return {
-    type: CLEAR_REVIEW_ERRORS,
-  };
-};
+// const receiveClearReviewErrors = () => {
+//   return {
+//     type: CLEAR_REVIEW_ERRORS,
+//   };
+// };
 
 
 // thunk action creators
@@ -73,6 +73,6 @@ export const deleteReview = reviewId => dispatch => {
         .then((reviewId) => dispatch(removeReview(reviewId)))
 }
 
-export const clearReviewErrors = () => (dispatch) => {
-  return dispatch(receiveClearReviewErrors());
-};
+// export const clearReviewErrors = () => (dispatch) => {
+//   return dispatch(receiveClearReviewErrors());
+// };
