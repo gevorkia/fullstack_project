@@ -181,7 +181,7 @@ class TrailIndexItemDetail extends React.Component {
                 </section>
                 <section className="review-idx-wrapper">
                   <div className="review-idx">
-                    <ReviewForm trailName={trail.name} />
+                    <ReviewForm trail={trail} />
                   </div>
                 </section>
               </article>
