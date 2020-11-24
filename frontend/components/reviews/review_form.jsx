@@ -140,7 +140,7 @@ class ReviewForm extends React.Component {
             </svg>
           </button>
           <div className="review-trail-name">{this.props.trailName}</div>
-          
+
           <div className="review-form-body">
             <div className="rating-select-wrapper">
               <div className="rating-select" onChange={this.update("rating")}>
@@ -220,6 +220,7 @@ class ReviewForm extends React.Component {
               />
             </div>
             {printErrors("Activity date can't be blank")}
+            {printErrors("Activity date - only one review allowed for this trail on this date")}
             <div className="trail-conditions-wrapper">
               <div className="review-form-subheader">
                 Trail Conditions
