@@ -47,9 +47,10 @@ class ReviewForm extends React.Component {
 
   update(field) {
     return (e) =>
-      this.setState({
-        [field]: e.currentTarget.value,
-      });
+    this.setState({
+      [field]: e.target.value,
+    });
+    
   }
 
   postReview(e) {
@@ -86,19 +87,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-  // renderErrors() {
-
-  //   if (this.props.errors !== undefined ) {
-  //     return (
-  //       <ul className="review-errors">
-  //         {this.props.errors.map((error, idx) => {
-  //           return <li key={idx}>{error}</li>;
-  //         })}
-  //       </ul>
-  //     );
-  //   }
-  // }
-
   render() {
 
     let errors = null;
@@ -113,9 +101,7 @@ class ReviewForm extends React.Component {
     }
 
     const printErrors = (error) => {
-      // debugger
       if (this.props.errors.includes(error)) {
-        // debugger
         return <ul className="review-errors">{error}</ul>;
       }
     };
@@ -132,7 +118,7 @@ class ReviewForm extends React.Component {
                 : "review-form-tag"
             }
           >
-            {console.log(this.state.tag_ids)}
+            {/* {console.log(this.state.tag_ids)} */}
             {trailConditions.name}
           </span>
         ))}
@@ -154,8 +140,7 @@ class ReviewForm extends React.Component {
             </svg>
           </button>
           <div className="review-trail-name">{this.props.trailName}</div>
-
-          {/* <label htmlFor="rating">Rating</label> */}
+          
           <div className="review-form-body">
             <div className="rating-select-wrapper">
               <div className="rating-select" onChange={this.update("rating")}>
