@@ -12,7 +12,6 @@ import {
 const mSTP = (state, ownProps) => {
   return {
     userId: state.session.currentUser.id,
-    // errors: Object.values(state.errors.review),
     errors: state.errors.review,
     activity: defaultActivity(state),
     activities: filteredTagsByType(state, "activity"),
@@ -44,7 +43,6 @@ class ReviewForm extends React.Component {
     this.update = this.update.bind(this);
     this.postReview = this.postReview.bind(this);
     this.handleTagSelection = this.handleTagSelection.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field) {
@@ -85,22 +83,21 @@ class ReviewForm extends React.Component {
       this.setState({
         tag_ids: filtered
       })
-      // e.currentTarget.classList.toggle("review-form-tag");
     }
   }
 
-  renderErrors() {
+  // renderErrors() {
 
-    if (this.props.errors !== undefined ) {
-      return (
-        <ul className="review-errors">
-          {this.props.errors.map((error, idx) => {
-            return <li key={idx}>{error}</li>;
-          })}
-        </ul>
-      );
-    }
-  }
+  //   if (this.props.errors !== undefined ) {
+  //     return (
+  //       <ul className="review-errors">
+  //         {this.props.errors.map((error, idx) => {
+  //           return <li key={idx}>{error}</li>;
+  //         })}
+  //       </ul>
+  //     );
+  //   }
+  // }
 
   render() {
 
@@ -115,13 +112,13 @@ class ReviewForm extends React.Component {
       });
     }
 
-    // const printErrors = (error) => {
-    //   // debugger
-    //   if (this.props.errors.includes(error)) {
-    //     // debugger
-    //     return <ul className="review-errors">{error}</ul>;
-    //   }
-    // };
+    const printErrors = (error) => {
+      // debugger
+      if (this.props.errors.includes(error)) {
+        // debugger
+        return <ul className="review-errors">{error}</ul>;
+      }
+    };
 
     const trailConditionsTags = (
       <>
@@ -204,7 +201,7 @@ class ReviewForm extends React.Component {
                 />
                 <label htmlFor="one" className="review-star"></label>
               </div>
-              {/* {printErrors("Rating can't be blank")} */}
+              {printErrors("Rating can't be blank")}
             </div>
             <textarea
               onChange={this.update("review")}
@@ -213,7 +210,7 @@ class ReviewForm extends React.Component {
               required
               value={this.state.review}
             ></textarea>
-            {/* {printErrors("Review can't be blank")} */}
+            {printErrors("Review can't be blank")}
             <div className="activity-date-wrapper">
               <div className="review-form-subheader">Activity</div>
               <select
@@ -237,21 +234,22 @@ class ReviewForm extends React.Component {
                 required
               />
             </div>
-              {/* {printErrors("Activity date can't be blank")} */}
+            {printErrors("Activity date can't be blank")}
             <div className="trail-conditions-wrapper">
-              <div className="review-form-subheader">Trail Conditions (optional)</div>
+              <div className="review-form-subheader">
+                Trail Conditions
+                <div className="optional">&nbsp; &nbsp;(optional)</div>
+              </div>
               <div className="review-form-tag-wrapper">
                 {trailConditionsTags}
               </div>
             </div>
-            {errors}
             <div className="review-form-btn-wrapper">
               <div className="cancel-btn">Cancel</div>
               <div className="post-btn" onClick={this.postReview}>
                 Post
               </div>
             </div>
-            {/* <div>{this.renderErrors()}</div> */}
           </div>
         </div>
       </form>
