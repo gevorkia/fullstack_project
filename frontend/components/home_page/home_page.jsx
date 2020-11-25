@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchSuggestionsContainer from "../search/search_suggestions_container";
+import SearchSuggestions from "../search/search_suggestions";
 // import Layout from "../layout/layout"
 
 // const HomePage = () => {
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
                   <div className="suggestions-list-wrapper" id={this.state.id}>
 
                   {/* passing in the value of the state as a prop */}
-                    <SearchSuggestionsContainer searchText={this.state.searchText} />
+                    <SearchSuggestions searchText={this.state.searchText} />
                   </div>
                 </div>
                 <button className="search-button">Search</button>

@@ -1,4 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/session_actions";
+
+const mSTP = (state) => ({
+  currentUser: state.session.currentUser,
+});
+
+const mDTP = (dispatch) => ({
+  logout: () => dispatch(logoutUser()),
+});
+
+
 import { Link } from "react-router-dom";
 
 const NavBar = ({ currentUser, logout }) => {
@@ -44,4 +56,4 @@ const NavBar = ({ currentUser, logout }) => {
   );
 };
 
-export default NavBar;
+export default connect(mSTP, mDTP)(NavBar);

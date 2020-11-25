@@ -22,7 +22,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     createReview: (review) => dispatch(createReview(review)),
-    clearReviewErrors: () => dispatch(clearReviewErrors()),
     closeModal: () => dispatch(closeModal()),
   };
 };
@@ -45,15 +44,7 @@ class ReviewForm extends React.Component {
     this.handleTagSelection = this.handleTagSelection.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   if (this.props.errors) {
-  //     this.props.clearReviewErrors();
-
-  //   }
-  // }
-
   update(field) {
-    // this.props.clearReviewErrors();
     return (e) =>
     this.setState({
       [field]: e.target.value,

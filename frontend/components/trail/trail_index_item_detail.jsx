@@ -1,11 +1,36 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchTrail } from "../../actions/trail_actions";
+import { fetchPark } from "../../actions/park_actions";
+import { openModal } from "../../actions/modal_actions";
+
+const mSTP = (state, ownProps) => {
+  const trail = state.entities.trails[ownProps.match.params.trailId];
+  // debugger
+  return {
+    trail,
+    park: trail ? state.entities.parks[trail.parkId] : null,
+    modal: state.ui.modal,
+    //   park: state.entities.parks[trail.parkId]
+    //   park: state.entities.parks[state.entities.trails[ownProps.match.params.trailId.park_id]]
+  };
+};
+
+const mDTP = (dispatch) => {
+  return {
+    fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
+    fetchPark: (parkId) => dispatch(fetchPark(parkId)),
+    openModal: (modalType) => dispatch(openModal(modalType)),
+  };
+};
+
+
 import { Link } from "react-router-dom";
-import TrailIndexItemDetailMapContainer from "./trail_index_item_detail_map_container";
-import TrailIndexContainer from "./trail_index_container"
+// import TrailIndexItemDetailMap from "./trail_index_item_detail_map";
 import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
-// import ReviewForm from "../reviews/review_form";
 import ReviewModal from "../reviews/review_modal";
+import ReviewIndex from "../reviews/review_index";
 
 
 class TrailIndexItemDetail extends React.Component {
@@ -160,6 +185,9 @@ class TrailIndexItemDetail extends React.Component {
                       ) : null}
                     </div>
                   </div>
+                  <div className="review-index-wrapper">
+                    <ReviewIndex trail={trail}/>
+                  </div>
                 </section>
               </article>
               <article className="trail-sidebar">
@@ -187,4 +215,4 @@ class TrailIndexItemDetail extends React.Component {
   }
 }
 
-export default TrailIndexItemDetail;
+export default connect(mSTP, mDTP)(TrailIndexItemDetail);

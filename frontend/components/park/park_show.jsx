@@ -1,10 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchPark, fetchParkTrails } from "../../actions/park_actions";
+
+const mSTP = (state, ownProps) => {
+  // debugger
+
+  return {
+    park: state.entities.parks[ownProps.match.params.parkId],
+    trails: Object.values(state.entities.trails),
+    //   loading: state.ui.loading.indexLoading,
+  };
+};
+
+const mDTP = (dispatch) => {
+  return {
+    fetchPark: (parkId) => dispatch(fetchPark(parkId)),
+    fetchParkTrails: (parkId) => dispatch(fetchParkTrails(parkId)),
+  };
+};
+
+
 import SearchSuggestions from "../search/search_suggestions";
-
-import TrailIndexContainer from "../trail/trail_index_container"
-// import SecNavBarContainer from "../nav_bar/sec_nav_bar_container"
-import SecNavBar from "../nav_bar/sec_nav_bar"
-
+import TrailIndex from "../trail/trail_index";
+import SecNavBar from "../nav_bar/sec_nav_bar";
 
 class ParkShow extends React.Component {
     constructor(props) {
@@ -192,4 +210,4 @@ class ParkShow extends React.Component {
     }
 }
 
-export default ParkShow;
+export default connect(mSTP, mDTP)(ParkShow);

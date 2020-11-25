@@ -5,13 +5,13 @@ import { AuthRoute, ProtectedRoute } from "../utils/route_utils"
 import SignupContainer from "./session/signup_container"
 import LoginContainer from "./session/login_container"
 
-import NavBarContainer from "./nav_bar/nav_bar_container";
+import NavBar from "./nav_bar/nav_bar";
 import HomePage from "./home_page/home_page"
 import Footer from "./footer/footer"
 
-import ParkShowContainer from "./park/park_show_container"
-import TrailIndexItemDetailMapContainer from "./trail/trail_index_item_detail_map_container"
-import TrailIndexItemDetailContainer from "./trail/trail_index_item_detail_container"
+import ParkShow from "./park/park_show"
+// import TrailIndexItemDetailMap from "./trail/trail_index_item_detail_map"
+import TrailIndexItemDetail from "./trail/trail_index_item_detail"
 
 const App = () => (
   <div>
@@ -21,13 +21,13 @@ const App = () => (
         <Switch>
           <AuthRoute exact path="/login" component={LoginContainer} />
           <AuthRoute exact path="/signup" component={SignupContainer} />
-          <Route exact path='/parks/:parkId'component={ParkShowContainer}/>
-          <Route exact path='/trails/:trailId/' component={TrailIndexItemDetailContainer}/>
-          {/* <Route exact path='/trails/:trailId/map'component={TrailIndexItemDetailMapContainer}/> */}
+          <Route exact path='/parks/:parkId'component={ParkShow}/>
+          <Route exact path='/trails/:trailId/' component={TrailIndexItemDetail}/>
+          {/* <Route exact path='/trails/:trailId/map'component={TrailIndexItemDetailMap}/> */}
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
          
-          {/* <ProtectedRoute path="/users" component={ProfileContainer} /> */}
+          {/* <ProtectedRoute path="/users" component={Profile} /> */}
         </Switch>
       <Footer/>
   </div>

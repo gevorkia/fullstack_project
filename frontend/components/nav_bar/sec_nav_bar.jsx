@@ -1,5 +1,5 @@
 import React from "react";
-import SearchSuggestionsContainer from '../search/search_suggestions_container'
+import SearchSuggestions from '../search/search_suggestions'
 import { Link } from "react-router-dom";
 
 class SecNavBar extends React.Component {
@@ -48,7 +48,7 @@ class SecNavBar extends React.Component {
                     </button>
                     <div className="secNav-search-suggestions">
                       <div className="secNav-suggestions-list-wrapper">
-                        <SearchSuggestionsContainer />
+                        <SearchSuggestions />
                       </div>
                     </div>
                   </div>
