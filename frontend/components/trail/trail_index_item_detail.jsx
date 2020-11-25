@@ -31,7 +31,7 @@ class TrailIndexItemDetail extends React.Component {
     if (!this.props.trail || !this.props.park) return null;
     // if (!this.props.trail) return null;
     
-    const {trail, park, tags} = this.props;
+    const {trail, park} = this.props;
     // const {trail} = this.props;
     console.log(this.props);
 
@@ -47,7 +47,7 @@ class TrailIndexItemDetail extends React.Component {
         );
     }
 
-    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
+    const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
 
     const trailTags = tags.map(tag => {
       return (
