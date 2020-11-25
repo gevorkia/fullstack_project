@@ -13,11 +13,8 @@ import ParkShowContainer from "./park/park_show_container"
 import TrailIndexItemDetailMapContainer from "./trail/trail_index_item_detail_map_container"
 import TrailIndexItemDetailContainer from "./trail/trail_index_item_detail_container"
 
-import ReviewModalContainer from "./reviews/review_modal_container"
-
 const App = () => (
   <div>
-      <ReviewModalContainer/>
       <NavBarContainer />
         {/* <h1>app</h1> */}
         {/* <Route path="/" component={div} /> */}

@@ -4,8 +4,9 @@ import TrailIndexItemDetailMapContainer from "./trail_index_item_detail_map_cont
 import TrailIndexContainer from "./trail_index_container"
 import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
-import ReviewModalContainer from "../reviews/review_modal_container";
-import ReviewForm from "../reviews/review_form";
+// import ReviewForm from "../reviews/review_form";
+import ReviewModal from "../reviews/review_modal";
+
 
 class TrailIndexItemDetail extends React.Component {
   constructor(props) {
@@ -167,23 +168,32 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="avg-rating">Reviewstars</div>
                     <div className="trail-review-btn-wrapper">
                       <div className="review-blurb">
-                        Share your thoughts about
-                        the trail so others know what to expect.
+                        Share your thoughts about the trail so others know what
+                        to expect.
                       </div>
                       <button
                         className="trail-review-btn"
-                        onClick={this.props.openModal}
+                        onClick={() => this.props.openModal("create_review")}
                       >
                         Write Review
                       </button>
+                      {/* only render review modal if modal state is set to "create_review" modal type */}
+                      {this.props.modal === "create_review" ? (
+                        <section className="review-idx-wrapper">
+                          <div className="review-idx">
+                            <ReviewModal trail={trail} />
+                            {/* <ReviewForm trail={trail} /> */}
+                          </div>
+                        </section>
+                      ) : null}
                     </div>
                   </div>
                 </section>
-                <section className="review-idx-wrapper">
+                {/* <section className="review-idx-wrapper">
                   <div className="review-idx">
                     <ReviewForm trail={trail} />
                   </div>
-                </section>
+                </section> */}
               </article>
               <article className="trail-sidebar">
                 <div className="map-preview">

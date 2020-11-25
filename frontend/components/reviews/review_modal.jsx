@@ -1,27 +1,42 @@
 import React from "react";
-import { closeModal } from "../../actions/modal_actions";
+import { connect } from "react-redux";
+import {
+  //   fetchReviews,
+  createReview,
+  updateReview,
+  //   deleteReview,
+} from "../../actions/review_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import ReviewForm from "./review_form";
 
+const mSTP = (state, ownProps) => {
+  return {
+    
+  };
+};
+
+const mDTP = (dispatch) => {
+  return {
+    closeModal: () => dispatch(closeModal()),
+    submitReview: (review) => dispatch(createReview(review)),
+    editReview: (review) => dispatch(updateReview(review)),
+  };
+};
+
+
+
 const ReviewModal = (props) => {
-  return props.modal !== "upload" ? null : (
+  return(
     <div className="modal-background" onClick={props.closeModal}>
       <div
-        id="upload-modal"
+        id="review-modal"
         className="modal-child"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-form">
-          <div className="x">
-            <div onClick={props.closeModal}>&#10006;</div>
-          </div>
-          <h2 id="modal-header" className="ui header">
-            Write a Review
-          </h2>
-          <ReviewForm />
-        </div>
+          <ReviewForm trail={props.trail}/>
       </div>
     </div>
   );
 };
 
-export default ReviewModal;
+export default connect(mSTP, mDTP)(ReviewModal);

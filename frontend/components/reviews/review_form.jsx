@@ -74,7 +74,7 @@ class ReviewForm extends React.Component {
 
     this.props
       .createReview(newReview)
-      // .then(() => this.props.clearReviewErrors());
+      .then(() => this.props.closeModal());
   }
 
   handleTagSelection(e) {
@@ -142,11 +142,12 @@ class ReviewForm extends React.Component {
               focusable="false"
               viewBox="0 0 24 24"
               aria-hidden="true"
+              onClick={this.props.closeModal}
             >
               <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
             </svg>
           </button>
-          <div className="review-trail-name">{this.props.trailName}</div>
+          <div className="review-trail-name">{this.props.trail.name}</div>
 
           <div className="review-form-body">
             <div className="rating-select-wrapper">
@@ -188,7 +189,7 @@ class ReviewForm extends React.Component {
                   id="one"
                   name="rating"
                   value="1"
-                  required
+                  // required
                   defaultChecked={this.state.rating === 1}
                 />
                 <label htmlFor="one" className="review-star"></label>
@@ -199,7 +200,7 @@ class ReviewForm extends React.Component {
               onChange={this.update("review")}
               className="review-text"
               placeholder="Share your thoughts."
-              required
+              // required
               value={this.state.review}
             ></textarea>
             {printErrors("Review can't be blank")}
@@ -209,7 +210,7 @@ class ReviewForm extends React.Component {
                 onChange={this.update("activity")}
                 className="activity-dropdown"
                 value={this.state.activity}
-                required
+                // required
               >
                 {this.props.activities.map((activity) => (
                   <option className="activity-tags" key={activity.id}>
@@ -223,11 +224,13 @@ class ReviewForm extends React.Component {
                 type="date"
                 className="activity-date"
                 value={this.state.activity_date}
-                required
+                // required
               />
             </div>
             {printErrors("Activity date can't be blank")}
-            {printErrors("Activity date - only one review allowed for this trail on this date")}
+            {printErrors(
+              "Activity date - only one review allowed for this trail on this date"
+            )}
             <div className="trail-conditions-wrapper">
               <div className="review-form-subheader">
                 Trail Conditions
@@ -238,8 +241,13 @@ class ReviewForm extends React.Component {
               </div>
             </div>
             <div className="review-form-btn-wrapper">
-              <div className="cancel-btn">Cancel</div>
-              <div className="post-btn" onClick={this.postReview}>
+              <div className="cancel-btn" onClick={this.props.closeModal}>
+                Cancel
+              </div>
+              <div
+                className="post-btn"
+                onClick={this.postReview}
+              >
                 Post
               </div>
             </div>
