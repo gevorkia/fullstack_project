@@ -1,10 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  //   fetchReviews,
   createReview,
   updateReview,
-  //   deleteReview,
 } from "../../actions/review_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import ReviewForm from "./review_form";
@@ -18,8 +16,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    submitReview: (review) => dispatch(createReview(review)),
-    editReview: (review) => dispatch(updateReview(review)),
+    // submitReview: (review) => dispatch(createReview(review)),
+    // editReview: (review) => dispatch(updateReview(review)),
   };
 };
 

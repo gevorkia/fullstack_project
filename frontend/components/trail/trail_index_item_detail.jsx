@@ -31,8 +31,9 @@ class TrailIndexItemDetail extends React.Component {
     if (!this.props.trail || !this.props.park) return null;
     // if (!this.props.trail) return null;
     
-    const {trail, park} = this.props;
+    const {trail, park, tags} = this.props;
     // const {trail} = this.props;
+    console.log(this.props);
 
     const reviewStars = [];
     for (let i = 1; i < 6; i++) {
@@ -46,19 +47,18 @@ class TrailIndexItemDetail extends React.Component {
         );
     }
 
-    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers", `Nature+{ }+trips`]
+    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
 
-    // tags.name.map(tag => {
-    //   return (
-    //     <span className="tag">
-    //       <span className="big-rounded-active">tag</span>
-    //     </span>
-    //   );
-    // })
+    const trailTags = tags.map(tag => {
+      return (
+        <span className="tag">
+          <span className="big-rounded-active">{tag}</span>
+        </span>
+      );
+    })
 
     return (
       <>
-        {/* secondary nav */}
         <div className="trail-index-item-detail-wrapper">
           <SecNavBar park={park} />
           <div className="trail-index-item-detail">
@@ -121,34 +121,7 @@ class TrailIndexItemDetail extends React.Component {
                   </>
                 </section>
                 <section className="tag-cloud">
-                  {/* {tags} */}
-                  <span className="tag">
-                    <span className="big-rounded-active">Camping</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Hiking</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Backpacking</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">River</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Forest</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Wildflowers</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Nature Trips</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Walking</span>
-                  </span>
-                  <span className="tag">
-                    <span className="big-rounded-active">Wildlife</span>
-                  </span>
+                  {trailTags}
                 </section>
                 <section className="trail-subcontent">
                   <div className="trail-subcontent-tabs">
@@ -182,18 +155,12 @@ class TrailIndexItemDetail extends React.Component {
                         <section className="review-idx-wrapper">
                           <div className="review-idx">
                             <ReviewModal trail={trail} />
-                            {/* <ReviewForm trail={trail} /> */}
                           </div>
                         </section>
                       ) : null}
                     </div>
                   </div>
                 </section>
-                {/* <section className="review-idx-wrapper">
-                  <div className="review-idx">
-                    <ReviewForm trail={trail} />
-                  </div>
-                </section> */}
               </article>
               <article className="trail-sidebar">
                 <div className="map-preview">

@@ -10,3 +10,11 @@ json.tags do
         end
     end
 end
+
+json.taggable do
+    @trail.taggables.each do |taggable|
+        json.set! taggable.id do 
+            json.extract! taggable, :id, :tag_id, :taggable_id, :taggable_type
+        end
+    end
+end
