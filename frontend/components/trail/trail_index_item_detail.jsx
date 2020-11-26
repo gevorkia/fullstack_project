@@ -7,13 +7,11 @@ import { openModal } from "../../actions/modal_actions";
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
   // debugger
-  console.log('okokllkl', state.entities);
-  console.log("okokllk ggggggl", Object.values(state.entities.reviews));
   return {
     trail,
-    reviews: Object.values(state.entities.reviews),
-    // reviews: trail ? Object.values(trail.reviews) : null,
     park: trail ? state.entities.parks[trail.parkId] : null,
+    reviews: Object.values(state.entities.reviews),
+    trailTags: Object.values(state.entities.tags),
     modal: state.ui.modal,
     //   park: state.entities.parks[trail.parkId]
     //   park: state.entities.parks[state.entities.trails[ownProps.match.params.trailId.park_id]]
@@ -64,13 +62,13 @@ class TrailIndexItemDetail extends React.Component {
     if (!this.props.trail || !this.props.park || !this.props.reviews) return null;
 
 
-console.log('my reviews are ', this.props.reviews);
+    // console.log('my reviews are ', this.props.reviews);
 
     // if (!this.props.trail) return null;
     
-    const {trail, park} = this.props;
+    const {trail, park, reviews, trailTags} = this.props;
     // const {trail} = this.props;
-    // console.log(this.props);
+    console.log("trail item detail", this.props);
 
     const reviewStars = [];
     for (let i = 1; i < 6; i++) {
@@ -84,12 +82,12 @@ console.log('my reviews are ', this.props.reviews);
         );
     }
 
-    const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
-
-    const trailTags = tags.map((tag, idx) => {
+    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
+    // console.log(trailTags)
+    const mappedTrailTags = trailTags.map((tag, idx) => {
       return (
         <span className="tag" key={`trailTag-${idx}`}>
-          <span className="big-rounded-active">{tag}</span>
+          <span className="big-rounded-active">{tag.name}</span>
         </span>
       );
     })
@@ -158,7 +156,7 @@ console.log('my reviews are ', this.props.reviews);
                   </>
                 </section>
                 <section className="tag-cloud">
-                  {trailTags}
+                  {mappedTrailTags}
                 </section>
                 <section className="trail-subcontent">
                   <div className="trail-subcontent-tabs">
@@ -198,7 +196,7 @@ console.log('my reviews are ', this.props.reviews);
                     </div>
                   </div>
                   <div className="review-index-wrapper">
-                    <ReviewIndex trail={trail}/>
+                    <ReviewIndex trail={trail} reviews={reviews}/>
                   </div>
                 </section>
               </article>
@@ -212,7 +210,7 @@ console.log('my reviews are ', this.props.reviews);
 
                   {/* <span>View Full Map</span> */}
                 </div>
-                {/* <TrailIndexContainer park={park.id} /> */}
+                {/* <TrailIndex park={park.id} /> */}
               </article>
             </div>
           </div>

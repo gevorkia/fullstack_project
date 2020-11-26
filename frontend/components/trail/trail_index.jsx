@@ -23,33 +23,40 @@ const mDTP = (dispatch) => {
 import TrailIndexItem from "./trail_index_item";
 
 class TrailIndex extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    componentDidMount() {
-        // debugger
-        this.props.fetchParkTrails(this.props.parkId);
-        this.props.fetchTrail(this.props.match.params.trailId);
-    }
+  componentDidMount() {
+    // debugger
+    this.props.fetchParkTrails(this.props.parkId);
+}
 
-    render() {
-        // debugger
-        // console.log(this.props.trail)
-        const { trails, parkName } = this.props
-        return (
-          <ul className="trail-index">
-            {trails.map((trail, idx) => (
-                <TrailIndexItem
-                    key={trail.id}
-                    trail={trail}
-                    idx={idx}
-                    parkName={parkName}
-                />
-            ))}
-          </ul>
-        );
+componentDidUpdate() {
+    // if (!this.props.park) {
+        if (this.props.park) {
+            this.props.fetchTrail(this.props.match.params.trailId);
+    //   this.props.fetchPark(this.props.trail.parkId);
     }
+  }
+
+  render() {
+    // debugger
+    console.log(this.props);
+    const { trails, parkName } = this.props;
+    return (
+      <ul className="trail-index">
+        {trails.map((trail, idx) => (
+          <TrailIndexItem
+            key={trail.id}
+            trail={trail}
+            idx={idx}
+            parkName={parkName}
+          />
+        ))}
+      </ul>
+    );
+  }
 }
 
 export default connect(mSTP, mDTP)(TrailIndex);

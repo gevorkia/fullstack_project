@@ -6,7 +6,7 @@ class ReviewIndex extends React.Component {
     }
     
     render() {
-        // console.log(this.props)
+        console.log("review index", this.props)
         return (
             <div className="review-idx-wrapper">
 

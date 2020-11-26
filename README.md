@@ -39,7 +39,7 @@ setSearchText(e) {
     />
     <div className="search-suggestions">
         <div className="suggestions-list-wrapper" id={this.state.id}>
-        <SearchSuggestionsContainer searchText={this.state.searchText} />
+        <SearchSuggestions searchText={this.state.searchText} />
         </div>
     </div>
 ```

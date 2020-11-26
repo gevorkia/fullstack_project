@@ -82,7 +82,7 @@ class ParkShow extends React.Component {
 
         return (
           <>
-            {/* <SecNavBarContainer parkId={park.id}/> */}
+            {/* <SecNavBar parkId={park.id}/> */}
             <SecNavBar park={park} />
             {/* <section className="sec-nav-wrapper">
               <div className="sec-nav">
@@ -197,7 +197,7 @@ class ParkShow extends React.Component {
                       Top Trails ({trails.length})
                     </h2>
                     {/* <TrailIndex trails={trails} parkName={park.name} /> */}
-                    <TrailIndexContainer
+                    <TrailIndex
                       parkId={park.id}
                       parkName={park.name}
                     />

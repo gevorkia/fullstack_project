@@ -15,6 +15,7 @@ const mSTP = (state, ownProps) => {
     errors: state.errors.review,
     activity: defaultActivity(state),
     activities: filteredTagsByType(state, "activity"),
+    // allTags:
     trailConditions: filteredTagsByType(state, "obstacle"),
   };
 };

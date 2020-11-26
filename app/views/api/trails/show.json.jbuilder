@@ -4,7 +4,7 @@ json.trail do
 end
 
 json.tags do 
-    @tags.each do |tag|
+    @trail.tags.each do |tag|
         json.set! tag.id do
             json.extract! tag, :id, :name, :tag_type
         end
