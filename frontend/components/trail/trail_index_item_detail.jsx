@@ -7,9 +7,11 @@ import { openModal } from "../../actions/modal_actions";
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
   // debugger
+  console.log('okokllkl', state.entities);
+  console.log("okokllk ggggggl", Object.values(state.entities.reviews));
   return {
     trail,
-    // reviews: Object.values(state.entities.reviews),
+    reviews: Object.values(state.entities.reviews),
     // reviews: trail ? Object.values(trail.reviews) : null,
     park: trail ? state.entities.parks[trail.parkId] : null,
     modal: state.ui.modal,
@@ -40,7 +42,6 @@ class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
     this.trailId = this.props.match.params.trailId;
-    // console.log(this.trailId)
   }
 
 
@@ -53,13 +54,18 @@ class TrailIndexItemDetail extends React.Component {
     }
     
     componentDidUpdate() {
-        if (!this.props.park) {
-            this.props.fetchPark(this.props.trail.parkId);
+        // if (!this.props.park) {
+        if (!this.props.park && this.props.trail) {
+          this.props.fetchPark(this.props.trail.parkId);
         }
     }
 
   render() {
-    if (!this.props.trail || !this.props.park) return null;
+    if (!this.props.trail || !this.props.park || !this.props.reviews) return null;
+
+
+console.log('my reviews are ', this.props.reviews);
+
     // if (!this.props.trail) return null;
     
     const {trail, park} = this.props;

@@ -1,10 +1,3 @@
-json.trailReviews do
-    @trailReviews.each do |review|
-        json.set! review.id do
-            json.extract! review, :id, :activity_date, :rating, :review, :user_id, :trail_id         
-        end
-    end
-end
 
 json.taggable do
     @reviews.each do |review|

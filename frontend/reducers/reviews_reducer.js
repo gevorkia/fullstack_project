@@ -1,23 +1,24 @@
 import {
     // RECEIVE_REVIEWS,
-    RECEIVE_TRAIL_REVIEWS,
     RECEIVE_REVIEW,
     REMOVE_REVIEW,
     // RECEIVE_REVIEW_ERRORS
 } from "../actions/review_actions";
+import { RECEIVE_TRAIL_REVIEWS } from "../actions/trail_actions"
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
-    const nextState = Object.assign({}, state);
+    let nextState = Object.assign({}, state);
 
     switch (action.type) {
       // case RECEIVE_REVIEWS:
       //   nextState["reviews"] = action.payload.reviews
       //   return nextState
       case RECEIVE_TRAIL_REVIEWS:
-        console.log('receive trail reviews', action.payload)
-        nextState = action.payload.reviews
-        return nextState
+        // console.log('receive trail reviews', action.payload)
+        // console.log('receive trail reviews', action.payload.reviews)
+        nextState = action.payload.reviews;
+        return nextState;
       case RECEIVE_REVIEW:
         nextState[action.payload.review.id] = action.payload.review;
         return nextState;

@@ -7,9 +7,9 @@ class Api::ReviewsController < ApplicationController
         # @trailReviews = Review.includes(:taggables, :tags, :trail).where(trail_id: params[:trail_id])
         # debugger
         @trail = Trail.find_by(id: params[:trail_id])
-        @reviews = Review.where(trail_id: params[:trail_id])
+        # @reviews = Review.where(trail_id: params[:trail_id])
         # debugger
-        # @tags = Tag.all
+        @tags = Tag.all
         render 'api/trails/show'
     end
 
