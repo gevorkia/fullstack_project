@@ -1,0 +1,119 @@
+.review-idx-item-wrapper {
+    // border: 2px solid red;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.review-idx-item-header {
+    border: 2px solid red;
+
+    position: relative;
+    height: 102px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.review-idx-item-header {
+    border: 2px solid green;
+    
+}
+
+.r-user-photo {
+    border: 2px solid red;
+
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    border-radius: 48px;
+    // height: 100%;
+    // width: 100%;
+    // border-radius: 50%;
+    // position: relative;
+}
+
+.r-user-name-wrapper {
+    border: 2px solid blue;
+
+    position: absolute;
+    top: 0;
+    left: 32px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.r-user-name {
+    border: 2px solid red;
+
+    position: absolute;
+    top: 0;
+    left: 32px;
+    font-size: 16px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.r-star-date-wrapper {
+    position: absolute;
+    top: 28px;
+    left: 64px;
+}
+
+.r-stars {
+    color: #ffb400;
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    font-size: 1.5rem;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.r-activity-date {
+        font-size: 14px;
+    color: #767676;
+    position: relative;
+    top: -3px;
+    margin-left: 8px;
+}
+
+.r-tag-wrapper {
+    margin-top: 12px;
+}
+
+.r-tag {
+    padding: 3px 13px;
+    border-radius: 6px;
+    border: 1px solid #428a13;
+    background-color: #fff;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #428a13;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.r-review-txt-wrapper {
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.r-review-txt {
+        display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

@@ -1,5 +1,5 @@
 import {
-    // RECEIVE_REVIEWS,
+    RECEIVE_REVIEWS,
     RECEIVE_REVIEW,
     REMOVE_REVIEW,
     // RECEIVE_REVIEW_ERRORS
@@ -11,9 +11,9 @@ const reviewsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
 
     switch (action.type) {
-      // case RECEIVE_REVIEWS:
-      //   nextState["reviews"] = action.payload.reviews
-      //   return nextState
+      case RECEIVE_REVIEWS:
+        nextState["reviews"] = action.payload.reviews
+        return nextState
       case RECEIVE_TRAIL_REVIEWS:
         // console.log('receive trail reviews', action.payload)
         // console.log('receive trail reviews', action.payload.reviews)

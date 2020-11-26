@@ -155,9 +155,7 @@ class TrailIndexItemDetail extends React.Component {
                     </div>
                   </>
                 </section>
-                <section className="tag-cloud">
-                  {mappedTrailTags}
-                </section>
+                <section className="tag-cloud">{mappedTrailTags}</section>
                 <section className="trail-subcontent">
                   <div className="trail-subcontent-tabs">
                     <div className="trail-subcontent-tabs-desc">
@@ -196,7 +194,11 @@ class TrailIndexItemDetail extends React.Component {
                     </div>
                   </div>
                   <div className="review-index-wrapper">
-                    <ReviewIndex trail={trail} reviews={reviews}/>
+                    <ReviewIndex
+                      trail={trail}
+                      reviews={reviews}
+                      reviewStars={reviewStars}
+                    />
                   </div>
                 </section>
               </article>
