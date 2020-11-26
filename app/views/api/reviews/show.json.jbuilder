@@ -1,5 +1,12 @@
 json.review do
-    json.extract! @review, :id, :activity_date, :rating, :review, :activity, :user_id, :trail_id         
+    json.extract! @review, :id, :activity_date, :rating, :review, :activity, :user_id, :trail_id
+    json.tags do 
+        @review.tags.each do |tag|
+            json.set! tag.id do 
+                json.extract! tag, :id, :name, :tag_type
+            end
+        end
+    end         
 end
 
 json.taggable do

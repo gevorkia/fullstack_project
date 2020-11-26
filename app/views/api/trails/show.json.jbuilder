@@ -23,6 +23,13 @@ json.reviews do
     @trail.reviews.each do |review|
         json.set! review.id do 
             json.extract! review, :id, :rating, :review, :activity_date, :user_id, :trail_id 
+            json.tags do 
+                review.tags.each do |tag|
+                    json.set! tag.id do 
+                        json.extract! tag, :id, :name, :tag_type
+                    end
+                end
+            end
         end
     end
 end
