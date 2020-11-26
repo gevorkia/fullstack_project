@@ -9,8 +9,8 @@ class Api::TrailsController < ApplicationController
 
     def index 
         # debugger
-        @trails = Trail.where(park_id: params[:park_id])
         @park = Park.find_by(id: params[:park_id])
+        @trails = Trail.where(park_id: params[:park_id])
         # render `api/trails/index`
         render 'api/parks/show'
     end

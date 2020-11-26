@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchTrail } from "../../actions/trail_actions";
+import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
 import { openModal } from "../../actions/modal_actions";
 
@@ -9,6 +9,8 @@ const mSTP = (state, ownProps) => {
   // debugger
   return {
     trail,
+    // reviews: Object.values(state.entities.reviews),
+    // reviews: trail ? Object.values(trail.reviews) : null,
     park: trail ? state.entities.parks[trail.parkId] : null,
     modal: state.ui.modal,
     //   park: state.entities.parks[trail.parkId]
@@ -19,6 +21,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
+    fetchTrailReviews: (trailId) => dispatch(fetchTrailReviews(trailId)),
     fetchPark: (parkId) => dispatch(fetchPark(parkId)),
     openModal: (modalType) => dispatch(openModal(modalType)),
   };
@@ -36,13 +39,16 @@ import ReviewIndex from "../reviews/review_index";
 class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
+    this.trailId = this.props.match.params.trailId;
+    // console.log(this.trailId)
   }
 
 
     componentDidMount() {
         // debugger
-        this.props.fetchTrail(this.props.match.params.trailId);
-        // this.props.fetchPark(this.props.trail.parkId);
+        this.props.fetchTrail(this.trailId);
+        this.props.fetchTrailReviews(this.trailId);
+
         window.scrollTo(0, 0);
     }
     
@@ -58,7 +64,7 @@ class TrailIndexItemDetail extends React.Component {
     
     const {trail, park} = this.props;
     // const {trail} = this.props;
-    console.log(this.props);
+    // console.log(this.props);
 
     const reviewStars = [];
     for (let i = 1; i < 6; i++) {
@@ -74,9 +80,9 @@ class TrailIndexItemDetail extends React.Component {
 
     const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
 
-    const trailTags = tags.map(tag => {
+    const trailTags = tags.map((tag, idx) => {
       return (
-        <span className="tag">
+        <span className="tag" key={`trailTag-${idx}`}>
           <span className="big-rounded-active">{tag}</span>
         </span>
       );

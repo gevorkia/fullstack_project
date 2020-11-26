@@ -15,7 +15,7 @@ import TrailIndexItemDetail from "./trail/trail_index_item_detail"
 
 const App = () => (
   <div>
-      <NavBarContainer />
+      <NavBar/>
         {/* <h1>app</h1> */}
         {/* <Route path="/" component={div} /> */}
         <Switch>

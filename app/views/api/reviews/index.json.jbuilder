@@ -1,5 +1,5 @@
-json.reviews do
-    @reviews.each do |review|
+json.trailReviews do
+    @trailReviews.each do |review|
         json.set! review.id do
             json.extract! review, :id, :activity_date, :rating, :review, :user_id, :trail_id         
         end

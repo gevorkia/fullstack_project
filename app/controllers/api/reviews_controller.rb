@@ -3,9 +3,14 @@ class Api::ReviewsController < ApplicationController
 
     def index
         # find all reviews associated with a specific user
-        @reviews = Review.includes(:taggables, :tags, :reviewer).where(user_id: params[:user_id])
-        @tags = Tag.all
-        render :index
+        # @userReviews = Review.includes(:taggables, :tags, :reviewer).where(user_id: params[:user_id])
+        # @trailReviews = Review.includes(:taggables, :tags, :trail).where(trail_id: params[:trail_id])
+        # debugger
+        @trail = Trail.find_by(id: params[:trail_id])
+        @reviews = Review.where(trail_id: params[:trail_id])
+        # debugger
+        # @tags = Tag.all
+        render 'api/trails/show'
     end
 
     def create
