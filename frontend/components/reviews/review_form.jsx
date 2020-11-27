@@ -201,7 +201,7 @@ class ReviewForm extends React.Component {
               <select
                 onChange={this.update("activity")}
                 className="activity-dropdown"
-                value={this.state.activity}
+                value={this.state.selectedActivity}
                 // required
               >
                 {this.props.activities.map((activity) => (

@@ -1,4 +1,19 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteReview } from "../../actions/review_actions";
+
+const mSTP = (state, ownProps) => {
+    return {
+        
+    };
+};
+
+const mDTP = (dispatch) => {
+
+    return {
+        deleteReview: reviewId => dispatch(deleteReview(reviewId))
+    };
+};
 
 class ReviewIndexItem extends React.Component {
     constructor(props) {
@@ -6,8 +21,16 @@ class ReviewIndexItem extends React.Component {
     }
 
     render() {
-        console.log("review_index_item", this.props)
+        // console.log("review_index_item", this.props)
         const {review, reviewStars} = this.props;
+        // const kekw = review[review.userId].profilePicture;
+        {
+          /* {review.rating}
+                    {review.activityDate}
+                    {review.tags}
+                    {review.review} */
+        }
+
         return (
             <>
                 <div className="review-idx-item-wrapper"></div>
@@ -15,8 +38,7 @@ class ReviewIndexItem extends React.Component {
                 <div className="r-user-photo">
                     {/* <img src={user.profilePicture} alt={`${user.firstName} ${user.lastName}`}></img> */}
                 </div>
-                <div className="r-user-name-wrapper">
-                    <div className="r-user-name">Lili Gevorkian</div>
+                <div className="r-user-name-wrapper"> <div className="r-user-name">Lili Gevorkian</div>
                 </div>
                 <div className="r-star-date-wrapper">
                     <span className="r-stars">{reviewStars}</span>
@@ -35,4 +57,4 @@ class ReviewIndexItem extends React.Component {
     
 }
 
-export default ReviewIndexItem
+export default connect(mSTP, mDTP)(ReviewIndexItem);

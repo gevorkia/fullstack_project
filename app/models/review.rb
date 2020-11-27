@@ -6,7 +6,6 @@
 #  activity_date :date             not null
 #  rating        :integer          not null
 #  review        :text             not null
-#  activity      :string           not null
 #  user_id       :integer          not null
 #  trail_id      :integer          not null
 #  created_at    :datetime         not null

@@ -19,10 +19,6 @@ class ReviewIndex extends React.Component {
                         reviewStars={reviewStars} 
                         key={review.id}
                     />
-                    {/* {review.rating}
-                    {review.activityDate}
-                    {review.tags}
-                    {review.review} */}
                 </>
             )
         })

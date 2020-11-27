@@ -8,7 +8,11 @@ const reviewErrorsReducer = (state = [], action) => {
 
   switch (action.type) {
     case RECEIVE_REVIEW_ERRORS:
-      return action.errors;
+      if (action.errors !== undefined) {
+        return action.errors;
+      } else {
+        return state;
+      }
     // case CLEAR_REVIEW_ERRORS:
     //   return [];
     default:
