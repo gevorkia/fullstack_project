@@ -3,15 +3,18 @@ import { connect } from "react-redux";
 import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
 import { openModal } from "../../actions/modal_actions";
+import { avgTrailRating } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
+  const reviews = Object.values(state.entities.reviews);
   // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
     reviews: Object.values(state.entities.reviews),
     trailTags: Object.values(state.entities.tags),
+    avgRating: avgTrailRating(reviews),
     modal: state.ui.modal,
     //   park: state.entities.parks[trail.parkId]
     //   park: state.entities.parks[state.entities.trails[ownProps.match.params.trailId.park_id]]
@@ -66,21 +69,34 @@ class TrailIndexItemDetail extends React.Component {
 
     // if (!this.props.trail) return null;
     
-    const {trail, park, reviews, trailTags} = this.props;
+    const {trail, park, reviews, trailTags, avgRating} = this.props;
     // const {trail} = this.props;
     console.log("trail item detail", this.props);
 
     const reviewStars = [];
+
     for (let i = 1; i < 6; i++) {
-        reviewStars.push(
-        <span key={i}>
-            <img
-            className="star"
-            src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"
-            ></img>
-        </span>
-        );
+      const starCSS = avgRating >= i ? "filled" : "unfilled";
+      reviewStars.push(
+        <span
+          key={`r-stars-${i}`}
+          className={`r-stars-${starCSS}`}
+        ></span>
+      );
     }
+
+
+    // const reviewStars = [];
+    // for (let i = 1; i < 6; i++) {
+    //     reviewStars.push(
+    //     <span key={i}>
+    //         <img
+    //         className="star"
+    //         src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"
+    //         ></img>
+    //     </span>
+    //     );
+    // }
 
     // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
     // console.log(trailTags)
@@ -171,11 +187,11 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="trail-reviews">Reviews</div>
                   </div>
                   <div className="reviews-subheader-wrapper">
-                    <div className="avg-rating">Reviewstars</div>
+                    {/* <div className="avg-rating">Reviewstars</div> */}
                     <div className="trail-review-btn-wrapper">
                       <div className="review-blurb">
                         Share your thoughts about the trail so others know what
-                        to expect.
+                        to expect!
                       </div>
                       <button
                         className="trail-review-btn"
@@ -197,7 +213,6 @@ class TrailIndexItemDetail extends React.Component {
                     <ReviewIndex
                       trail={trail}
                       reviews={reviews}
-                      reviewStars={reviewStars}
                     />
                   </div>
                 </section>
