@@ -33,6 +33,7 @@ export const fetchTrail = trailId => {
 };
 
 export const fetchTrailReviews = (trailId) => (dispatch) => {
+  console.log("hiihihi okk actionss");
   return TrailAPIUtil.fetchTrailReviews(trailId).then((reviews) =>
     dispatch(receiveTrailReviews(reviews))
   );

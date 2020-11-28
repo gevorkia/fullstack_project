@@ -21,7 +21,19 @@ export const filteredTagsByType = (state, tagType) => {
 export const avgTrailRating = (reviews) => {
   if (!reviews) return 0;
   // console.log(reviews)
-  const sumRatings = reviews.reduce((acc, review) => acc + review.rating, 0);
+  let sumRatings = 0;
+  
+  reviews.forEach(review => (sumRatings += review.rating));
+  
+  const avg = sumRatings/(reviews.length)
+  return avg
+}
+
+export const avgParkRating = (reviews) => {
+  if (!reviews) return 0;
+  // console.log(reviews)
+  let sumRatings = 0;
+  reviews.forEach(review => (sumRatings += review.rating));
   const avg = sumRatings/(reviews.length)
   return avg
 }

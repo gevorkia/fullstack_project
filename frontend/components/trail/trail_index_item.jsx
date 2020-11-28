@@ -9,14 +9,16 @@ class TrailIndexItem extends React.Component {
   render() {
     if (!this.props.trail) return null;
     
-    const {trail, idx, parkName} = this.props;
+    const {trail, idx, parkName, avgRating, reviews} = this.props;
     console.log(this.props);
     // debugger
     const reviewStars = [];
+
     for (let i = 1; i < 6; i++) {
-        reviewStars.push(<span key={i}>
-          <img className="star" src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"></img>
-        </span>)
+      const starCSS = avgRating >= i ? "filled" : "unfilled";
+      reviewStars.push(
+        <span key={`stars-${i}`} className={`r-stars-${starCSS}`}></span>
+      );
     }
 
     return (
@@ -38,7 +40,7 @@ class TrailIndexItem extends React.Component {
                     <div className={`trail-difficulty-${trail.difficulty}`}>{trail.difficulty}</div>
                     <div className="review-stars">{reviewStars}</div>
 
-                    <div className="review-count">(3)</div>
+                    <div className="review-count">({reviews.length})</div>
                   </div>
                   <div className="trail-length">Length: {trail.length} mi</div>
 

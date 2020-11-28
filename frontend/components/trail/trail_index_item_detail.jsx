@@ -3,18 +3,15 @@ import { connect } from "react-redux";
 import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
 import { openModal } from "../../actions/modal_actions";
-import { avgTrailRating } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
-  const reviews = Object.values(state.entities.reviews);
   // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
     reviews: Object.values(state.entities.reviews),
     trailTags: Object.values(state.entities.tags),
-    avgRating: avgTrailRating(reviews),
     modal: state.ui.modal,
     //   park: state.entities.parks[trail.parkId]
     //   park: state.entities.parks[state.entities.trails[ownProps.match.params.trailId.park_id]]
@@ -79,8 +76,8 @@ class TrailIndexItemDetail extends React.Component {
       const starCSS = avgRating >= i ? "filled" : "unfilled";
       reviewStars.push(
         <span
-          key={`r-stars-${i}`}
-          className={`r-stars-${starCSS}`}
+          key={`stars-${i}`}
+          className={`stars-${starCSS}`}
         ></span>
       );
     }

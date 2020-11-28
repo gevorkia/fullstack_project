@@ -12,19 +12,24 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
       case RECEIVE_REVIEWS:
-        nextState["reviews"] = action.payload.reviews
-        return nextState
+        nextState["reviews"] = action.payload.reviews;
+        return nextState;
       case RECEIVE_TRAIL_REVIEWS:
         // console.log('receive trail reviews', action.payload)
         // console.log('receive trail reviews', action.payload.reviews)
+        // if ('reviews' in action.payload) { 
+        //   nextState = action.payload.reviews;
+        // }
+        console.log("BADDd", action.payload);
+        console.log("current", nextState);
         nextState = action.payload.reviews;
         return nextState;
       case RECEIVE_REVIEW:
         nextState[action.payload.review.id] = action.payload.review;
         return nextState;
       case REMOVE_REVIEW:
-          delete nextState[action.reviewId]
-          return nextState;
+        delete nextState[action.reviewId];
+        return nextState;
       default:
         return state;
     }

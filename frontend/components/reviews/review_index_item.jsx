@@ -39,7 +39,7 @@ class ReviewIndexItem extends React.Component {
         for (let i = 1; i < 6; i++) {
             const starCSS = review.rating >= i ? "filled" : "unfilled";
             reviewStars.push(
-                <span key={`r-stars-${i}`} className={`r-stars-${starCSS}`}></span>
+                <span key={`stars-${i}`} className={`stars-${starCSS}`}></span>
             )
         }
         
@@ -64,7 +64,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
               </div>
               <div className="r-star-date-wrapper">
-                <span className="r-stars">{reviewStars}</span>
+                <span className="stars">{reviewStars}</span>
                 <span className="r-activity-date">
                   {new Intl.DateTimeFormat("en-US", {
                     month: "long",

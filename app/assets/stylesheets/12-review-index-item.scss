@@ -69,7 +69,7 @@
     left: 64px;
 }
 
-// .r-stars {
+// .stars {
 //     color: #ffb400;
 //     cursor: pointer;
 //     display: inline-flex;
@@ -79,13 +79,13 @@
 //     -webkit-tap-highlight-color: transparent;
 // }
 
-.r-stars-filled::before {
+.stars-filled::before {
     content: "★";
     color: gold;
     margin: 0 1px;
 }
 
-.r-stars-unfilled::before {
+.stars-unfilled::before {
     content: "★";
     color: #d3d3d3;
     margin: 0 1px;

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchPark, fetchParkTrails } from "../../actions/park_actions";
+import { avgParkRating } from "../../reducers/selectors/selectors"
+
 
 const mSTP = (state, ownProps) => {
   // debugger
@@ -8,6 +10,7 @@ const mSTP = (state, ownProps) => {
   return {
     park: state.entities.parks[ownProps.match.params.parkId],
     trails: Object.values(state.entities.trails),
+    // avgRating: avgParkRating(reviews),
     //   loading: state.ui.loading.indexLoading,
   };
 };
@@ -43,12 +46,23 @@ class ParkShow extends React.Component {
       // debugger
       // console.log(this.props.park)
 
+      if (!this.props.park || !this.props.trails) return null;
 
       
-      const { park, trails } = this.props;
+      const { park, trails, avgRating } = this.props;
 
-     
-        if (!this.props.park || !this.props.trails) return null;
+      const reviewStars = [];
+
+      for (let i = 1; i < 6; i++) {
+        const starCSS = avgRating >= i ? "filled" : "unfilled";
+        reviewStars.push(
+          <span
+            key={`stars-${i}`}
+            className={`stars-${starCSS}`}
+          ></span>
+        );
+      }
+
 
         // const tagsArr = ["hiking", "forest", "nature-trips", "river"]
 
@@ -73,12 +87,12 @@ class ParkShow extends React.Component {
           return <img key={`${this.props.park.id}-${idx}`} src={url} className="park-photo"></img>
         })
 
-        const reviewStars = [];
-        for (let i = 1; i < 6; i++) {
-            reviewStars.push(<span key={i}>
-              <img className="star" src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"></img>
-            </span>)
-        }
+        // const reviewStars = [];
+        // for (let i = 1; i < 6; i++) {
+        //     reviewStars.push(<span key={i}>
+        //       <img className="star" src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"></img>
+        //     </span>)
+        // }
 
         return (
           <>

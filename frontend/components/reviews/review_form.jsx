@@ -55,13 +55,25 @@ class ReviewForm extends React.Component {
   postReview(e) {
     e.preventDefault();
 
+    console.log("okasdoskad ", this.props.trailConditions);
+    console.log('gag sigsd ids are ', this.state.tag_ids);
+    console.log(
+      "lel jnice",
+      this.state.tag_ids.map(
+        (tagName) =>
+          this.props.trailConditions.filter((o) => o.name === tagName)[0].id
+      )
+    );
     let newReview = {
-        rating: this.state.rating,
-        review: this.state.review,
-        activity_date: this.state.activity_date,
-        tag_ids: this.state.tag_ids,
-        user_id: this.props.userId,
-        trail_id: this.props.trail.id,
+      rating: this.state.rating,
+      review: this.state.review,
+      activity_date: this.state.activity_date,
+      tag_ids: this.state.tag_ids.map(
+        (tagName) =>
+          this.props.trailConditions.filter((o) => o.name === tagName)[0].id
+      ),
+      user_id: this.props.userId,
+      trail_id: this.props.trail.id,
     };
 
     this.props
