@@ -1,3 +1,9 @@
+.review-idx-wrapper {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+
 .review-idx-item-wrapper {
     // border: 2px solid red;
     padding-bottom: 16px;
@@ -6,7 +12,7 @@
 }
 
 .review-idx-item-header {
-    border: 2px solid red;
+    // border: 2px solid red;
 
     position: relative;
     height: 102px;
@@ -15,12 +21,12 @@
 }
 
 .review-idx-item-header {
-    border: 2px solid green;
+    // border: 2px solid green;
     
 }
 
 .r-user-photo > img {
-    border: 2px solid red;
+    // border: 2px solid red;
 
     display: inline-block;
     height: 48px;
@@ -33,7 +39,7 @@
 }
 
 .r-user-name-wrapper {
-    border: 2px solid blue;
+    // border: 2px solid blue;
 
     position: absolute;
     top: 0;
@@ -45,7 +51,7 @@
 }
 
 .r-user-name {
-    border: 2px solid red;
+    // border: 2px solid red;
 
     position: absolute;
     top: 0;
@@ -63,22 +69,34 @@
     left: 64px;
 }
 
-.r-stars {
-    color: #ffb400;
-    cursor: pointer;
-    display: inline-flex;
-    position: relative;
-    font-size: 1.5rem;
-    text-align: left;
-    -webkit-tap-highlight-color: transparent;
+// .r-stars {
+//     color: #ffb400;
+//     cursor: pointer;
+//     display: inline-flex;
+//     position: relative;
+//     font-size: 1.5rem;
+//     text-align: left;
+//     -webkit-tap-highlight-color: transparent;
+// }
+
+.r-stars-filled::before {
+    content: "★";
+    color: gold;
+    margin: 0 1px;
+}
+
+.r-stars-unfilled::before {
+    content: "★";
+    color: #d3d3d3;
+    margin: 0 1px;
+
 }
 
 .r-activity-date {
         font-size: 14px;
     color: #767676;
     position: relative;
-    top: -3px;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 .r-tag-wrapper {
@@ -111,14 +129,17 @@
 }
 
 .r-review-txt {
-    // display: block;
+    display: flex;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font: normal 12px/18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font:"proxima nova," Arial, sans-serif;
+    font-size: 16px;
     color: #414141;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    width: 80%;
+    // width: 80%;
+    padding: 0px 0px;
+    margin-right: 0px;
 }

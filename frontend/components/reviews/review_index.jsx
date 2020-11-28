@@ -9,14 +9,13 @@ class ReviewIndex extends React.Component {
     render() {
         if (!this.props.reviews) return null; 
 
-        const {reviews, reviewStars} = this.props
+        const {reviews} = this.props
         // console.log(reviews)
         const reviewIndexItems = reviews.map(review => {
             return (
                 <>
                     <ReviewIndexItem 
                         review={review} 
-                        reviewStars={reviewStars} 
                         key={review.id}
                     />
                 </>

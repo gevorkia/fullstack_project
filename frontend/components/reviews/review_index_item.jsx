@@ -22,14 +22,17 @@ class ReviewIndexItem extends React.Component {
 
     render() {
         // console.log("review_index_item", this.props)
-        const {review, reviewStars} = this.props;
-        // const kekw = review[review.userId].profilePicture;
-        {
-          /* {review.rating}
-                    {review.activityDate}
-                    {review.tags}
-                    {review.review} */
+        const {review} = this.props;
+
+        const reviewStars = [];
+    
+        for (let i = 1; i < 6; i++) {
+            const starCSS = review.rating >= i ? "filled" : "unfilled";
+            reviewStars.push(
+                <span key={`r-stars-${i}`} className={`r-stars-${starCSS}`}></span>
+            )
         }
+        
         const reviewDate = new Date(review.activityDate);
 
         const reviewer = review[review.userId]
@@ -53,7 +56,6 @@ class ReviewIndexItem extends React.Component {
               <div className="r-star-date-wrapper">
                 <span className="r-stars">{reviewStars}</span>
                 <span className="r-activity-date">
-                  {/* {review.activityDate} */}
                   {new Intl.DateTimeFormat("en-US", {
                     month: "long",
                     day: "numeric",
