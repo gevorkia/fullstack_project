@@ -19,7 +19,7 @@
     
 }
 
-.r-user-photo {
+.r-user-photo > img {
     border: 2px solid red;
 
     display: inline-block;
@@ -111,9 +111,14 @@
 }
 
 .r-review-txt {
-        display: block;
+    // display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font: normal 12px/18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #414141;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    width: 80%;
 }

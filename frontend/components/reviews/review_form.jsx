@@ -72,7 +72,9 @@ class ReviewForm extends React.Component {
   handleTagSelection(e) {
     e.preventDefault();
 
-    const newTagName = e.currentTarget.textContent;
+    const newTagName = e.target.textContent;
+    // console.log(e.target.textContent)
+
 
     if (!this.state.tag_ids.includes(newTagName)) {
       this.setState({
