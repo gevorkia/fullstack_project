@@ -15,7 +15,7 @@
     // border: 2px solid red;
 
     position: relative;
-    height: 102px;
+    // height: 102px;
     max-width: 100%;
     overflow: hidden;
 }
@@ -121,6 +121,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-right: 8px;
 }
 
 .r-review-txt-wrapper {

@@ -24,6 +24,16 @@ class ReviewIndexItem extends React.Component {
         // console.log("review_index_item", this.props)
         const {review} = this.props;
 
+        let reviewTagCloud = [];
+
+        if (review.tags !== undefined) {
+            reviewTagCloud = Object.values(review.tags).map(tag => {
+               return (
+                <span className="r-tag">{tag.name}</span>
+               )
+            })
+        }
+
         const reviewStars = [];
     
         for (let i = 1; i < 6; i++) {
@@ -59,13 +69,11 @@ class ReviewIndexItem extends React.Component {
                   {new Intl.DateTimeFormat("en-US", {
                     month: "long",
                     day: "numeric",
-                  }).format(reviewDate)},{" "}
-                  {reviewDate.getFullYear()}
+                  }).format(reviewDate)}
+                  , {reviewDate.getFullYear()}
                 </span>
               </div>
-              <div className="r-tag-wrapper">
-                <span className="r-tag">hiking</span>
-              </div>
+              <div className="r-tag-wrapper">{reviewTagCloud}</div>
             </div>
             <div className="r-review-txt-wrapper">
               <p className="r-review-txt">{review.review}</p>

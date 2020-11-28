@@ -105,7 +105,7 @@ class TrailIndexItemDetail extends React.Component {
                     {trail.difficulty}
                   </span>
                   <div className="review-stars">{reviewStars}</div>
-                  <p className="num-reviews">(3)</p>
+                  <p className="num-reviews">({reviews.length})</p>
                 </div>
                 <div className="park-name-wrapper">
                   <Link to={`/parks/${park.id}`} className="park-name">

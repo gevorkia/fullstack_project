@@ -269,12 +269,20 @@ f11 = Tag.create(name: "kid friendly", tag_type: "feature")
 f12 = Tag.create(name: "dog friendly", tag_type: "feature")
 
 
-o1 = Tag.create(name: "overgrown", tag_type: "obstacle")
-o2 = Tag.create(name: "rocky", tag_type: "obstacle")
-o3 = Tag.create(name: "scramble", tag_type: "obstacle")
-o4 = Tag.create(name: "fee", tag_type: "obstacle")
-o5 = Tag.create(name: "bugs", tag_type: "obstacle")
-o6 = Tag.create(name: "off trail", tag_type: "obstacle")
+o1 = Tag.create(name: "great!", tag_type: "obstacle")
+o2 = Tag.create(name: "overgrown", tag_type: "obstacle")
+o3 = Tag.create(name: "rocky", tag_type: "obstacle")
+o4 = Tag.create(name: "scramble", tag_type: "obstacle")
+o5 = Tag.create(name: "muddy", tag_type: "obstacle")
+o6 = Tag.create(name: "bugs", tag_type: "obstacle")
+o7 = Tag.create(name: "closed", tag_type: "obstacle")
+o8 = Tag.create(name: "flooded", tag_type: "obstacle")
+o9 = Tag.create(name: "icy", tag_type: "obstacle")
+o10 = Tag.create(name: "snow", tag_type: "obstacle")
+o11 = Tag.create(name: "washed out", tag_type: "obstacle")
+o12 = Tag.create(name: "no shade", tag_type: "obstacle")
+o13 = Tag.create(name: "bridge out", tag_type: "obstacle")
+o14 = Tag.create(name: "fee", tag_type: "obstacle")
 
 Taggable.destroy_all
 
