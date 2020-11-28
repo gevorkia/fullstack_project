@@ -4,7 +4,7 @@ import { deleteReview } from "../../actions/review_actions";
 
 const mSTP = (state, ownProps) => {
     return {
-        
+      currentUser: state.session.currentUser.id
     };
 };
 
@@ -17,12 +17,25 @@ const mDTP = (dispatch) => {
 
 class ReviewIndexItem extends React.Component {
     constructor(props) {
-        super(props)
+      super(props)
+      this.handleDelete = this.handleDelete.bind(this)
+    }
+
+    handleDelete(e) {
+      e.preventDefault();
+      const confirmAlert = confirm("Are you sure you want to delete this review?");
+
+      console.log(this.props.review.id)
+
+      if (confirmAlert) {
+        this.props.deleteReview(this.props.review.id)
+      }
+
     }
 
     render() {
         // console.log("review_index_item", this.props)
-        const {review} = this.props;
+        const {review, currentUser} = this.props;
 
         let reviewTagCloud = [];
 
@@ -46,6 +59,21 @@ class ReviewIndexItem extends React.Component {
         const reviewDate = new Date(review.activityDate);
 
         const reviewer = review[review.userId]
+        // console.log("review index item", this.props)
+        // console.log("reviewer", reviewer)
+
+        const reviewActions = (currentUser === reviewer.id ? (
+          <span>
+            <div className="r-delete" onClick={this.handleDelete}>
+              Delete
+            </div>
+            |
+            <div className="r-edit">
+              Edit
+            </div>
+          </span>
+        ) : null )
+
 
         return (
           <>
@@ -77,6 +105,9 @@ class ReviewIndexItem extends React.Component {
             </div>
             <div className="r-review-txt-wrapper">
               <p className="r-review-txt">{review.review}</p>
+            </div>
+            <div className="r-edit-delete-wrapper">
+              {reviewActions}
             </div>
           </>
         );
