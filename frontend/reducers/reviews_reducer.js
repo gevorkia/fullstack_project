@@ -20,8 +20,8 @@ const reviewsReducer = (state = {}, action) => {
         // if ('reviews' in action.payload) { 
         //   nextState = action.payload.reviews;
         // }
-        console.log("BADDd", action.payload);
-        console.log("current", nextState);
+        // console.log("BADDd", action.payload);
+        // console.log("current", nextState);
         nextState = action.payload.reviews;
         return nextState;
       case RECEIVE_REVIEW:
@@ -29,7 +29,7 @@ const reviewsReducer = (state = {}, action) => {
         return nextState;
       case REMOVE_REVIEW:
         // delete nextState[action.reviewId];
-        console.log(action.payload);
+        // console.log(action.payload);
         delete nextState[action.payload];
         return nextState;
       default:

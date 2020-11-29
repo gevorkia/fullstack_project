@@ -10,7 +10,7 @@ class TrailIndexItem extends React.Component {
     if (!this.props.trail) return null;
     
     const {trail, idx, parkName, avgRating, reviews} = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     // debugger
     const reviewStars = [];
 

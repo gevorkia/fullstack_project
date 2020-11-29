@@ -7,18 +7,14 @@ import { sortedTrailReviews } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
-  // const reviews = sortedTrailReviews(state, ownProps.match.params.trailId);
   const reviews = sortedTrailReviews(state);
   // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
     reviews: reviews,
-    // reviews: Object.values(state.entities.reviews),
     trailTags: Object.values(state.entities.tags),
     modal: state.ui.modal,
-    //   park: state.entities.parks[trail.parkId]
-    //   park: state.entities.parks[state.entities.trails[ownProps.match.params.trailId.park_id]]
   };
 };
 
@@ -27,7 +23,7 @@ const mDTP = (dispatch) => {
     fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
     fetchTrailReviews: (trailId) => dispatch(fetchTrailReviews(trailId)),
     fetchPark: (parkId) => dispatch(fetchPark(parkId)),
-    openModal: (modalType) => dispatch(openModal(modalType)),
+    openModal: (modalType, metadata) => dispatch(openModal(modalType, metadata)),
   };
 };
 
@@ -44,7 +40,6 @@ class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
     this.trailId = this.props.match.params.trailId;
-    console.log("LALA", this.props)
   }
 
 
@@ -72,8 +67,7 @@ class TrailIndexItemDetail extends React.Component {
     // if (!this.props.trail) return null;
     
     const {trail, park, reviews, trailTags, avgRating} = this.props;
-    // const {trail} = this.props;
-    console.log("trail item detail", this.props);
+    // console.log("trail item detail", this.props);
 
     const reviewStars = [];
 
@@ -100,8 +94,6 @@ class TrailIndexItemDetail extends React.Component {
     //     );
     // }
 
-    // const tags = ["Hiking", "Camping", "River", "Forest", "Wildflowers"]
-    // console.log(trailTags)
     const mappedTrailTags = trailTags.map((tag, idx) => {
       return (
         <span className="tag" key={`trailTag-${idx}`}>
@@ -202,7 +194,7 @@ class TrailIndexItemDetail extends React.Component {
                         Write Review
                       </button>
                       {/* only render review modal if modal state is set to "create_review" modal type */}
-                      {this.props.modal === "create_review" ? (
+                      {this.props.modal && this.props.modal.modalType === "create_review" ? (
                         <section className="review-idx-wrapper">
                           <div className="review-idx">
                             <ReviewModal trail={trail} />

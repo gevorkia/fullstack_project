@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => {
     errors: state.errors.review,
     activity: defaultActivity(state),
     activities: filteredTagsByType(state, "activity"),
-    // allTags:
     trailConditions: filteredTagsByType(state, "obstacle"),
   };
 };
@@ -31,12 +30,35 @@ const mDTP = (dispatch) => {
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
+    // console.log("review_form", this.props)
+    const {review} = this.props
 
+    // console.log("review_form", this.props.review)
+    if (review) {
+      console.log('######1',review)
+      console.log("######2", review.tags);
+    // console.log(
+    //   "TAGS",
+    //   Object.values(review.tags),
+    //   // Object.values(review.tags).length,
+    //   Object.values(review.tags).map(tag => tag.name)
+    // );
+    }
+
+    console.log(
+      "okk",
+      review && review.tags
+        ? Object.values(review.tags).map((tag) => tag.name)
+        : []
+    );
     this.state = {
-      rating: "",
-      review: "",
-      activity_date: "",
-      tag_ids: [],
+      rating: review ? review.rating : "",
+      review: review ? review.review : "",
+      activity_date: review ? review.activityDate : "",
+      // tag_ids: (review && ((Object.values(review.tags)).length > 0)) ? Object.values(review.tags.name) : [],
+      tag_ids: (review && review.tags) ? Object.values(review.tags).map(tag => tag.name) : [],
+      // tag_ids: [],
+      // tag_ids: (review && review.tags) ? (Object.values(review.tags.name)) : console.log("elseif"),
       activity: this.props.activity,
     };
 
@@ -55,15 +77,15 @@ class ReviewForm extends React.Component {
   postReview(e) {
     e.preventDefault();
 
-    console.log("okasdoskad ", this.props.trailConditions);
-    console.log('gag sigsd ids are ', this.state.tag_ids);
-    console.log(
-      "lel jnice",
-      this.state.tag_ids.map(
-        (tagName) =>
-          this.props.trailConditions.filter((o) => o.name === tagName)[0].id
-      )
-    );
+    // console.log("okasdoskad ", this.props.trailConditions);
+    // console.log('gag sigsd ids are ', this.state.tag_ids);
+    // console.log(
+    //   "lel jnice",
+    //   this.state.tag_ids.map(
+    //     (tagName) =>
+    //       this.props.trailConditions.filter((o) => o.name === tagName)[0].id
+    //   )
+    // );
     let newReview = {
       rating: this.state.rating,
       review: this.state.review,
@@ -119,6 +141,8 @@ class ReviewForm extends React.Component {
       }
     };
 
+    console.log('my selected tag naems are', this.state.tag_ids);
+    console.log("this.props.trailConditions", this.props.trailConditions);
     const trailConditionsTags = (
       <>
         {this.props.trailConditions.map((trailConditions) => (

@@ -43,12 +43,12 @@ class TrailIndex extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("props s are", this.props);
+    // console.log("props s are", this.props);
 
     if (this.props.trails && this.props.reviews.length === 0) {
-      console.log("bingoogoo");
+      // console.log("bingoogoo");
       Object.keys(this.props.trails).forEach((trailId) => {
-        console.log('nice trailild is ', trailId)
+        // console.log('nice trailild is ', trailId)
         this.props.fetchTrailReviews(this.props.trails[trailId].id);
       });
       //   console.log("ijijijijihguyfdfgd");
@@ -60,7 +60,7 @@ class TrailIndex extends React.Component {
 
   render() {
     // debugger
-    console.log(this.props);
+    // console.log(this.props);
     const { trails, parkName, avgRating, reviews } = this.props;
 
     return (

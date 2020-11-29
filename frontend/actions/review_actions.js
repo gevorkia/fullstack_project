@@ -71,7 +71,7 @@ export const updateReview = review => dispatch => {
 }
 
 export const deleteReview = reviewId => dispatch => {
-  console.log("deleting reivew", reviewId);
+  // console.log("deleting reivew", reviewId);
     return ReviewAPIUtil.deleteReview(reviewId)
         .then(() => dispatch(removeReview(reviewId)))
         // console.log("DELETEREVIEW")

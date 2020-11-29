@@ -1,19 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
+import { openModal } from "../../actions/modal_actions";
 import { deleteReview } from "../../actions/review_actions";
 
 const mSTP = (state, ownProps) => {
     return {
-      currentUser: state.session.currentUser.id
+      currentUser: state.session.currentUser.id,
+      modal: state.ui.modal
     };
 };
 
 const mDTP = (dispatch) => {
 
     return {
-        deleteReview: reviewId => dispatch(deleteReview(reviewId))
+      openModal: (modalType, metadata) => dispatch(openModal(modalType, metadata)),
+      deleteReview: reviewId => dispatch(deleteReview(reviewId))
     };
 };
+
+import ReviewModal from "../reviews/review_modal";
+
 
 class ReviewIndexItem extends React.Component {
     constructor(props) {
@@ -25,7 +31,7 @@ class ReviewIndexItem extends React.Component {
       e.preventDefault();
       const confirmAlert = confirm("Are you sure you want to delete this review?");
 
-      console.log(this.props.review.id)
+      // console.log(this.props.review.id)
 
       if (confirmAlert) {
         this.props.deleteReview(this.props.review.id)
@@ -35,14 +41,15 @@ class ReviewIndexItem extends React.Component {
 
     render() {
         // console.log("review_index_item", this.props)
-        const {review, currentUser} = this.props;
+
+        const {review, currentUser, trail} = this.props;
 
         let reviewTagCloud = [];
 
         if (review.tags !== undefined) {
             reviewTagCloud = Object.values(review.tags).map(tag => {
                return (
-                <span className="r-tag">{tag.name}</span>
+                <span className="r-tag" key={tag.id}>{tag.name}</span>
                )
             })
         }
@@ -60,19 +67,32 @@ class ReviewIndexItem extends React.Component {
 
         const reviewer = review[review.userId]
         // console.log("review index item", this.props)
+        // console.log("review", review)
         // console.log("reviewer", reviewer)
 
-        const reviewActions = (currentUser === reviewer.id ? (
-          <span>
-            <div className="r-delete" onClick={this.handleDelete}>
-              Delete
-            </div>
-            |
-            <div className="r-edit">
-              Edit
-            </div>
-          </span>
-        ) : null )
+        const reviewActions =
+          currentUser === reviewer.id ? (
+            <span>
+              <div className="r-delete" onClick={this.handleDelete}>
+                Delete
+              </div>
+              |
+              <div
+                className="r-edit"
+                onClick={() => this.props.openModal("edit_review", review.id)}
+              >
+                Edit
+              </div>
+              {this.props.modal &&
+              this.props.modal.modalType === "edit_review" && this.props.modal.metadata === review.id ? (
+                <section className="review-idx-wrapper">
+                  <div className="review-idx">
+                    <ReviewModal trail={trail} review={review} />
+                  </div>
+                </section>
+              ) : null}
+            </span>
+          ) : null;
 
 
         return (
