@@ -23,7 +23,7 @@ const mDTP = (dispatch) => {
     fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
     fetchTrailReviews: (trailId) => dispatch(fetchTrailReviews(trailId)),
     fetchPark: (parkId) => dispatch(fetchPark(parkId)),
-    openModal: (modalType, metadata) => dispatch(openModal(modalType, metadata)),
+    openModal: (modalType, id) => dispatch(openModal(modalType, id)),
   };
 };
 

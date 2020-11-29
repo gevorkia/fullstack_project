@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
 
     return {
-      openModal: (modalType, metadata) => dispatch(openModal(modalType, metadata)),
+      openModal: (modalType, id) => dispatch(openModal(modalType, id)),
       deleteReview: reviewId => dispatch(deleteReview(reviewId))
     };
 };
@@ -84,7 +84,7 @@ class ReviewIndexItem extends React.Component {
                 Edit
               </div>
               {this.props.modal &&
-              this.props.modal.modalType === "edit_review" && this.props.modal.metadata === review.id ? (
+              this.props.modal.modalType === "edit_review" && this.props.modal.id === review.id ? (
                 <section className="review-idx-wrapper">
                   <div className="review-idx">
                     <ReviewModal trail={trail} review={review} />

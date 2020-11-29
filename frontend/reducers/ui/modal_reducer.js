@@ -6,7 +6,7 @@ const modalReducer = (state = null, action) => {
       // console.log(action.modalType)
       return {
         modalType: action.modalType,
-        metadata: action.metadata,
+        id: action.id,
       };
     case CLOSE_MODAL:
       return null;

@@ -1,11 +1,11 @@
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 
-export const openModal = (modalType, metadata) => {
+export const openModal = (modalType, id) => {
   return {
     type: OPEN_MODAL,
     modalType,
-    metadata,
+    id,
   };
 };
 
