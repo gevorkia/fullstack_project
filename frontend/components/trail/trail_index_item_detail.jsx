@@ -3,14 +3,18 @@ import { connect } from "react-redux";
 import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
 import { openModal } from "../../actions/modal_actions";
+import { sortedTrailReviews } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
+  // const reviews = sortedTrailReviews(state, ownProps.match.params.trailId);
+  const reviews = sortedTrailReviews(state);
   // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
-    reviews: Object.values(state.entities.reviews),
+    reviews: reviews,
+    // reviews: Object.values(state.entities.reviews),
     trailTags: Object.values(state.entities.tags),
     modal: state.ui.modal,
     //   park: state.entities.parks[trail.parkId]
@@ -40,6 +44,7 @@ class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
     this.trailId = this.props.match.params.trailId;
+    console.log("LALA", this.props)
   }
 
 

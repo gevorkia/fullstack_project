@@ -37,3 +37,16 @@ export const avgParkRating = (reviews) => {
   const avg = sumRatings/(reviews.length)
   return avg
 }
+
+export const sortedTrailReviews = (state) => {
+  const reviews = Object.values(state.entities.reviews);
+  // console.log("selector", reviews)
+
+  const sortedReviews = reviews.sort((a, b) => {
+    if (a.activityDate > b.activityDate) return -1;
+    if (a.activityDate < b.activityDate) return 1;
+    return 0;
+  });
+  // console.log("sortedReviews", sortedReviews);
+  return sortedReviews;
+}
