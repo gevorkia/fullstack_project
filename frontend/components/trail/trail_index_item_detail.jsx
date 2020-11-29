@@ -34,6 +34,7 @@ import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
 import ReviewModal from "../reviews/review_modal";
 import ReviewIndex from "../reviews/review_index";
+import NearbyTrailsIndex from "./nearby_trails_index";
 
 
 class TrailIndexItemDetail extends React.Component {
@@ -194,7 +195,8 @@ class TrailIndexItemDetail extends React.Component {
                         Write Review
                       </button>
                       {/* only render review modal if modal state is set to "create_review" modal type */}
-                      {this.props.modal && this.props.modal.modalType === "create_review" ? (
+                      {this.props.modal &&
+                      this.props.modal.modalType === "create_review" ? (
                         <section className="review-idx-wrapper">
                           <div className="review-idx">
                             <ReviewModal trail={trail} />
@@ -204,10 +206,7 @@ class TrailIndexItemDetail extends React.Component {
                     </div>
                   </div>
                   <div className="review-index-wrapper">
-                    <ReviewIndex
-                      trail={trail}
-                      reviews={reviews}
-                    />
+                    <ReviewIndex trail={trail} reviews={reviews} />
                   </div>
                 </section>
               </article>
@@ -221,15 +220,23 @@ class TrailIndexItemDetail extends React.Component {
 
                   {/* <span>View Full Map</span> */}
                 </div>
-                {/* <TrailIndex park={park.id} /> */}
+                <section className="nearby-trails-sidebar">
+                  <div className="nearby-trails-sidebar-wrapper">
+                    <div className="nearby-trails">Nearby Trails</div>
+                    <div className="nearby-trails-index">
+                      {/* <TrailIndex park={park.id} /> */}
+                      <NearbyTrailsIndex 
+                        parkId={park.id} 
+                        parkName={park.name} 
+                        avgRating={avgRating}
+                        reviewsLength={reviews.length}
+                      />
+                    </div>
+                  </div>
+                </section>
               </article>
             </div>
           </div>
-          <article className="trail-sidebar">
-            <div className="nearby-trails-wrapper">
-              <h2 className="nearby-trails-header"></h2>
-            </div>
-          </article>
         </div>
       </>
     );

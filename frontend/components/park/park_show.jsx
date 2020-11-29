@@ -214,6 +214,7 @@ class ParkShow extends React.Component {
                     <TrailIndex
                       parkId={park.id}
                       parkName={park.name}
+                      // trails={trails}
                     />
                   </div>
                 </div>

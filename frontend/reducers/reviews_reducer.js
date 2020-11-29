@@ -22,8 +22,12 @@ const reviewsReducer = (state = {}, action) => {
         // }
         // console.log("BADDd", action.payload);
         // console.log("current", nextState);
-        nextState = action.payload.reviews;
-        return nextState;
+        if (action.payload.reviews) {
+          nextState = action.payload.reviews;
+          return nextState;
+        } else {
+          return state;
+        }
       case RECEIVE_REVIEW:
         nextState[action.payload.review.id] = action.payload.review;
         return nextState;
