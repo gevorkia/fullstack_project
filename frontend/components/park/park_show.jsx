@@ -72,12 +72,20 @@ class ParkShow extends React.Component {
       let staticTrailPins = "/";
 
       trails.forEach((trail, idx) => {
-        let trailPin = `pin-s+4D9709(${trail.lng},${trail.lat})`
-        staticTrailPins += trailPin
+        let trailPin = `pin-s+4D9709(${trail.lng},${trail.lat})`;
+        staticTrailPins += trailPin;
         if (idx !== trails.length - 1) {
           staticTrailPins += ",";
         }
       });
+
+      let parkMapZoom = "";
+
+      if (park.name === "Sequoia National Park") {
+        parkMapZoom = `8.80`;
+      } else if (park.name = "Big Sur") {
+        parkMapZoom = `12.80`;
+      }
 
       // const reviewStars = [];
       // for (let i = 1; i < 6; i++) {
@@ -117,7 +125,7 @@ class ParkShow extends React.Component {
               <div className="park-static-map">
                 <img
                   // src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticTrailPins}/${park.lng},${park.lat},12.80,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
-                  src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticTrailPins}/${park.lng},${park.lat},12.80,0/800x240?access_token=${window.mapboxAPIKey}`}
+                  src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticTrailPins}/${park.lng},${park.lat},${parkMapZoom},0/800x240?access_token=${window.mapboxAPIKey}`}
                   alt="park-map-preview"
                 />
               </div>
