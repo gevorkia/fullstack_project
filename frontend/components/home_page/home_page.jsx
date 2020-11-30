@@ -12,24 +12,54 @@ import SearchSuggestions from "../search/search_suggestions";
 
 class HomePage extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       searchText: "",
-      id: "dont-display-list"
-    }
+      id: "dont-display-list",
+      focused: false,
+    };
 
-    this.setSearchText = this.setSearchText.bind(this)
+    this.setSearchText = this.setSearchText.bind(this);
+    this.removeSearchText = this.removeSearchText.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   setSearchText(e) {
-    return e => this.setState({
+    console.log(e)
+    // e.preventDefault();
+    // console.log("setSearchTxt");
+    this.setState({
       searchText: e.target.value,
-      id: "display-search-list"
+      id: "display-search-list",
     });
   }
+  removeSearchText(e) {
+    // console.log("removeSearchTxt");
+    // return e => {
+      this.setState({
+        searchText: e.target.value,
+        id: "dont-display-list",
+      });
+    // }
+    // this.setSearchText();
+  }
 
+  handleFocus(e) {
+    // onFocus(e)
+    this.setState({ focused: true });
+    this.setSearchText(e);
+    console.log("focus")
+  }
   
+  handleBlur(e) {
+    // onBlur(e);
+    this.setState({ focused: false });
+    this.removeSearchText(e);
+    console.log("blur");
+    
+  }
 
   render() {
     return (
@@ -41,7 +71,7 @@ class HomePage extends React.Component {
             <div className="banner-container">
               <div className="banner-text">Find your next favorite trail</div>
               {/* <div className="input-holder-border"> */}
-              <div className="input-holder">
+              <form className="input-holder">
                 <div className="magnifying-glass">
                   <img
                     alt="logo"
@@ -54,19 +84,29 @@ class HomePage extends React.Component {
                   placeholder="Enter a park or trail name"
                   autoComplete="off"
                   aria-label="text search input"
-                  onChange={this.setSearchText()}
+                  onChange={this.setSearchText}
+                  // autoFocus
+                  onFocus={(e) => e.currentTarget.select()}
+                  onFocus={this.handleFocus}
+                  // onClick={this.setSearchText}
+                  // onMouseEnter={this.setSearchText}
+                  // onMouseLeave={this.removeSearchText}
                   // onChange={(e) => setSearchText(e.target.value)}
+                  // onChange={(e) => this.setSearchText(e)}
                   // event handler that sets state to whatever user enters
                 />
                 <div className="search-suggestions">
-                  <div className="suggestions-list-wrapper" id={this.state.id}>
-
-                  {/* passing in the value of the state as a prop */}
+                  <div
+                    className="suggestions-list-wrapper"
+                    id={this.state.id}
+                    onBlur={this.handleBlur}
+                  >
+                    {/* passing in the value of the state as a prop */}
                     <SearchSuggestions searchText={this.state.searchText} />
                   </div>
                 </div>
                 <button className="search-button">Search</button>
-              </div>
+              </form>
               {/* </div> */}
             </div>
           </div>
@@ -74,8 +114,9 @@ class HomePage extends React.Component {
             <h2>100,000+ trails. 20 million explorers. Endless memories.</h2>
             <p>
               The beauty of nature doesn’t need to be hard to find. Our goal is
-              simple - build the largest collection of hand-curated trail guides,
-              so you can explore the outdoors with confidence. Anytime. Anywhere.
+              simple - build the largest collection of hand-curated trail
+              guides, so you can explore the outdoors with confidence. Anytime.
+              Anywhere.
             </p>
             <Link className="bottom-signup" to="/signup">
               Sign up for free
@@ -83,12 +124,11 @@ class HomePage extends React.Component {
           </div>
           {/* </div> */}
         </div>
-
         {/* </div> */}
       </>
-    // </Layout>
-    )
-  } 
+      // </Layout>
+    );
+  }
 };
 
 export default HomePage
