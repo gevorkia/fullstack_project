@@ -124,7 +124,6 @@ class ParkShow extends React.Component {
               </section>
               <div className="park-static-map">
                 <img
-                  // src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticTrailPins}/${park.lng},${park.lat},12.80,0/800x240?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
                   src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static${staticTrailPins}/${park.lng},${park.lat},${parkMapZoom},0/800x240?access_token=${window.mapboxAPIKey}`}
                   alt="park-map-preview"
                 />

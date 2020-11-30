@@ -213,8 +213,7 @@ class TrailIndexItemDetail extends React.Component {
               <article className="trail-sidebar">
                 <div className="map-preview">
                   <img
-                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/pin-s+4D9709(${trail.lng},${trail.lat})/${trail.lng},${trail.lat},12,0/150x150@2x?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
-                    // src={`"https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s-l+000(${trail.lng},${trail.lat})/${trail.lng},${trail.lat},12/150x150?access_token=pk.eyJ1IjoiZ2V2b3JraWEiLCJhIjoiY2tnZ3hrdGxjMDAwdzJ0c2FldnNjYWRnZyJ9.WHAlo3XQoW9zZj9ObJ5qCQ`}
+                    src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/pin-s+4D9709(${trail.lng},${trail.lat})/${trail.lng},${trail.lat},13.5,0/400x300@2x?access_token=${window.mapboxAPIKey}`}
                     alt="map-preview"
                   />
 
@@ -225,9 +224,9 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="nearby-trails">Nearby Trails</div>
                     <div className="nearby-trails-index">
                       {/* <TrailIndex park={park.id} /> */}
-                      <NearbyTrailsIndex 
-                        parkId={park.id} 
-                        parkName={park.name} 
+                      <NearbyTrailsIndex
+                        parkId={park.id}
+                        parkName={park.name}
                         avgRating={avgRating}
                         reviewsLength={reviews.length}
                         currentTrailName={trail.name}
