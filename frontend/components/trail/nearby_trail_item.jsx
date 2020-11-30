@@ -24,39 +24,37 @@ class NearbyTrailItem extends React.Component {
         }
 
         return (
-        //   <div className="nt-item-wrapper">
-          <div className="trail-el-wrapper">
+          //   <div className="nt-item-wrapper">
+          <li className="nt-item-wrapper">
             <Link to={`/trails/${trail.id}`} className="nt-item-link">
-              <div className="trail-el">
-                <div className="trail-cover-photo">
-                  <img src={trail.coverPhotoUrl} alt={trail.name} />
-                </div>
-                <div className="trail-info-wrapper">
-                  <div className="trail-info">
-                    <h2 className="trail-name">
-                      #{trail.id} - {trail.name}
-                    </h2>
+              {/* <div className="nt-el"> */}
+              <div className="nt-el">
+                <img
+                  src={trail.coverPhotoUrl}
+                  alt={trail.name}
+                  className="nt-cover-photo"
+                ></img>
 
-                    <div className="trail-park-name">{parkName}</div>
-                    <div className="trail-info-sub">
+                {/* </div> */}
+                <div className="nt-info-wrapper">
+                  <div className="nt-info">
+                    <h2 className="nt-name">{trail.name}</h2>
+
+                    <div className="nt-park-name">{parkName}</div>
+                    <div className="nt-info-sub">
                       <div className={`trail-difficulty-${trail.difficulty}`}>
                         {trail.difficulty}
                       </div>
-                      <div className="review-stars">{reviewStars}</div>
+                      <div className="nt-review-stars">{reviewStars}</div>
 
-                      <div className="review-count">({reviewsLength})</div>
+                      <div className="nt-review-count">({reviewsLength})</div>
                     </div>
-                    <div className="trail-length">
-                      Length: {trail.length} mi
-                    </div>
-
-                    <p className="trail-summary">{trail.summary}</p>
-                    {/* <span className="show-more">Show more</span> */}
+                    <div className="nt-length">Length: {trail.length} mi</div>
                   </div>
                 </div>
               </div>
             </Link>
-          </div>
+          </li>
         );
     }
 };

@@ -1,0 +1,135 @@
+// ul > .nt-item-wrapper {
+//     list-style: none;
+//     border: none;
+// }
+
+li {
+    margin-bottom: 10px;
+     list-style-type: none; 
+}
+
+.nt-item-wrapper {
+    margin-bottom: 10px;
+}
+
+.nt-item-link {
+    text-decoration: none;
+}
+
+.nt-el {
+    display: block;
+    height: 240px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.08);
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.nt-cover-photo {
+    height: 50%;
+    object-fit: cover;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.nt-info-wrapper {
+    padding: 10px 16px;
+}
+
+.nt-info {
+
+}
+
+.nt-name {
+    color: #414141;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    height: 24px;
+    line-height: 24px;
+    letter-spacing: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.nt-park-name {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+        display: block;
+    // font-size: 14px;
+    height: 21px;
+    line-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #808080;
+}
+
+.nt-info-sub {
+    margin-top: 2px;
+    height: 18px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    height: 21px;
+    line-height: 21px;
+    letter-spacing: normal;
+    color: #767676;
+}
+
+// .nt-review-stars {
+//     margin-left: 8px;
+//     pointer-events: none;
+//     font-size: 1.875rem;
+//     color: #ffb400;
+//     cursor: pointer;
+//     display: inline-flex;
+//     position: relative;
+//     font-size: 1.5rem;
+//     text-align: left;
+//     -webkit-tap-highlight-color: transparent;
+// }
+
+.nt-review-count {
+    width: 24px;
+    height: 18px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    margin-left: 8px;
+    color: #808080;
+}
+
+.nt-length {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    color: #808080;
+}

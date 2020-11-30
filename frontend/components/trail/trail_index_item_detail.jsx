@@ -230,6 +230,7 @@ class TrailIndexItemDetail extends React.Component {
                         parkName={park.name} 
                         avgRating={avgRating}
                         reviewsLength={reviews.length}
+                        currentTrailName={trail.name}
                       />
                     </div>
                   </div>
