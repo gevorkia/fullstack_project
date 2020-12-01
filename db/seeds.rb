@@ -189,7 +189,7 @@ trail5 = Trail.create!(
 
 # https://www.alltrails.com/trail/us/california/high-sierra-trail-crescent-meadow-to-whitney-portal
 trail6 = Trail.create!(
-    name: "High Sierra Trail: Crescent Meadow to Whitney Portal",
+    name: "High Sierra Trail: Crescent Meadow to Whitney",
     difficulty: "strenuous",
     summary: "High Sierra Trail: Crescent Meadow to Whitney Portal is a 72 mile heavily trafficked point-to-point trail located near Stony Creek Village, California that features a lake and is rated as difficult. The trail offers a number of activity options and is best used from May until October.",
     description: "Each paragraph below roughly corresponds to a day on the trail, although there are many ways to break up the hike, and day hikes are also possible.
@@ -285,6 +285,8 @@ o13 = Tag.create(name: "bridge out", tag_type: "obstacle")
 o14 = Tag.create(name: "fee", tag_type: "obstacle")
 
 Taggable.destroy_all
+
+# ADD OBSTACLES TO EACH PARK FOR TRAIL CONDITIONS
 
 Taggable.create(tag_id: f12.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: a5.id, taggable_id: trail1.id, taggable_type: "Trail")
