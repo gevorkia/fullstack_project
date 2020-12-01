@@ -98,6 +98,8 @@ class ReviewForm extends React.Component {
       trail_id: this.props.trail.id,
     };
 
+    console.log(this.props.userId)
+
     this.props
       .createReview(newReview)
       .then(() => this.props.closeModal());
@@ -163,7 +165,7 @@ class ReviewForm extends React.Component {
     );
 
     return (
-      <form className="review-form-modal">
+      <form className="review-form-modal" onSubmit={this.postReview}>
         {/* <div className="review-form-modal" onClick={}> */}
         <div className="review-form-x-wrapper">
           <button className="review-form-x">
@@ -274,12 +276,13 @@ class ReviewForm extends React.Component {
               <div className="cancel-btn" onClick={this.props.closeModal}>
                 Cancel
               </div>
-              <div
+              <button
                 className="post-btn"
-                onClick={this.postReview}
+                // onClick={this.postReview}
+                type="submit"
               >
                 Post
-              </div>
+              </button>
             </div>
           </div>
         </div>
