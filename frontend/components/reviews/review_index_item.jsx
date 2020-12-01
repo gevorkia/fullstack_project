@@ -68,32 +68,33 @@ class ReviewIndexItem extends React.Component {
         const reviewer = review[review.userId]
         // console.log("review index item", this.props)
         // console.log("review", review)
-        // console.log("reviewer", reviewer)
+        console.log("reviewer", reviewer)
 
         const reviewActions =
-          currentUser === reviewer.id ? (
-            <span>
-              <div className="r-delete" onClick={this.handleDelete}>
-                Delete
-              </div>
-              |
-              <div
-                className="r-edit"
-                onClick={() => this.props.openModal("edit_review", review.id)}
-              >
-                Edit
-              </div>
-              {this.props.modal &&
-              this.props.modal.modalType === "edit_review" && this.props.modal.id === review.id ? (
-                <section className="review-idx-wrapper">
-                  <div className="review-idx">
-                    <ReviewModal trail={trail} review={review} />
-                  </div>
-                </section>
-              ) : null}
-            </span>
-          ) : null;
-
+      
+            currentUser === reviewer.id ? (
+              <span>
+                <div className="r-delete" onClick={this.handleDelete}>
+                  Delete
+                </div>
+                |
+                <div
+                  className="r-edit"
+                  onClick={() => this.props.openModal("edit_review", review.id)}
+                >
+                  Edit
+                </div>
+                {this.props.modal &&
+                this.props.modal.modalType === "edit_review" && this.props.modal.id === review.id ? (
+                  <section className="review-idx-wrapper">
+                    <div className="review-idx">
+                      <ReviewModal trail={trail} review={review} />
+                    </div>
+                  </section>
+                ) : null}
+              </span>
+            ) : null
+     
 
         return (
           <>

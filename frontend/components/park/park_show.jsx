@@ -6,12 +6,17 @@ import { avgParkRating } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   // debugger
+  console.log(state)
+  const reviews = Object.values(state.entities.reviews);
+  const totalReviews = reviews.length;
+  const trails = Object.values(state.entities.trails);
 
   return {
     park: state.entities.parks[ownProps.match.params.parkId],
-    trails: Object.values(state.entities.trails),
-    // avgRating: avgParkRating(reviews),
+    trails: trails,
+    avgParkRating: avgParkRating(reviews), 
     //   loading: state.ui.loading.indexLoading,
+    totalReviews
   };
 };
 
@@ -48,16 +53,16 @@ class ParkShow extends React.Component {
 
       if (!this.props.park || !this.props.trails) return null;
 
-      const { park, trails, avgRating } = this.props;
+      const { park, trails, avgParkRating, totalReviews } = this.props;
 
       const reviewStars = [];
 
       for (let i = 1; i < 6; i++) {
-        const starCSS = avgRating >= i ? "filled" : "unfilled";
+        const starCSS = avgParkRating >= i ? "filled" : "unfilled";
         reviewStars.push(
           <span key={`stars-${i}`} className={`stars-${starCSS}`}></span>
         );
-      }
+      } 
 
       const parkPhotos = this.props.park.photoUrls.map((url, idx) => {
         return (
@@ -87,13 +92,6 @@ class ParkShow extends React.Component {
         parkMapZoom = `12.80`;
       }
 
-      // const reviewStars = [];
-      // for (let i = 1; i < 6; i++) {
-      //     reviewStars.push(<span key={i}>
-      //       <img className="star" src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"></img>
-      //     </span>)
-      // }
-
       return (
         <>
           <SecNavBar park={park} />
@@ -111,8 +109,8 @@ class ParkShow extends React.Component {
                 </div>
               </div>
               <div className="ratings-wrapper">
-                <div className="ratings-star">{reviewStars}</div>
-                <div className="ratings-num">12 Reviews</div>
+                <span className="stars">{reviewStars}</span>
+                <div className="ratings-num">{totalReviews} Reviews</div>
               </div>
               <div className="park-text-wrapper">
                 <div className="park-summary">{park.summary}</div>

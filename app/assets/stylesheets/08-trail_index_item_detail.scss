@@ -70,6 +70,7 @@
     letter-spacing: normal;
     text-align: center;
     line-height: 1.42;
+    margin-right: 10px;
 }
 .trail-diff-moderate {
     background-color: #4bafe1;
@@ -85,6 +86,7 @@
     letter-spacing: normal;
     text-align: center;
     line-height: 1.42;
+    margin-right: 10px;
 }
 .trail-diff-strenuous {
     background-color: #676767;
@@ -100,6 +102,7 @@
     letter-spacing: normal;
     text-align: center;
     line-height: 1.42;
+    margin-right: 10px;
 }
 
 .review-stars {
@@ -569,3 +572,16 @@
 .nearby-trails-index {
 
 }
+
+// .review-stars-filled::before {
+//     content: "★";
+//     color: gold;
+//     margin: 0 1px;
+// }
+
+// .review-stars-unfilled::before {
+//     content: "★";
+//     color: #d3d3d3;
+//     margin: 0 1px;
+
+// }

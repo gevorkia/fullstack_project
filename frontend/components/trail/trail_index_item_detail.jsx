@@ -4,10 +4,14 @@ import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
 import { openModal } from "../../actions/modal_actions";
 import { sortedTrailReviews } from "../../reducers/selectors/selectors"
+import { avgTrailRating } from "../../reducers/selectors/selectors";
+
 
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
   const reviews = sortedTrailReviews(state);
+  const trailReviews = Object.values(state.entities.reviews);
+
   // debugger
   return {
     trail,
@@ -15,6 +19,7 @@ const mSTP = (state, ownProps) => {
     reviews: reviews,
     trailTags: Object.values(state.entities.tags),
     modal: state.ui.modal,
+    avgTrailRating: avgTrailRating(trailReviews),
   };
 };
 
@@ -62,18 +67,19 @@ class TrailIndexItemDetail extends React.Component {
   render() {
     if (!this.props.trail || !this.props.park || !this.props.reviews) return null;
 
-
+    
     // console.log('my reviews are ', this.props.reviews);
-
+    
     // if (!this.props.trail) return null;
     
-    const {trail, park, reviews, trailTags, avgRating} = this.props;
+    const {trail, park, reviews, trailTags, avgTrailRating} = this.props;
     // console.log("trail item detail", this.props);
-
+    // console.log(trailTags)
+    
     const reviewStars = [];
 
     for (let i = 1; i < 6; i++) {
-      const starCSS = avgRating >= i ? "filled" : "unfilled";
+      const starCSS = avgTrailRating >= i ? "filled" : "unfilled";
       reviewStars.push(
         <span
           key={`stars-${i}`}
@@ -81,19 +87,6 @@ class TrailIndexItemDetail extends React.Component {
         ></span>
       );
     }
-
-
-    // const reviewStars = [];
-    // for (let i = 1; i < 6; i++) {
-    //     reviewStars.push(
-    //     <span key={i}>
-    //         <img
-    //         className="star"
-    //         src="https://cdn-assets.alltrails.com/assets/packs/media/icons/icons_stars_active_lrg-940ee31d.svg"
-    //         ></img>
-    //     </span>
-    //     );
-    // }
 
     const mappedTrailTags = trailTags.map((tag, idx) => {
       return (
@@ -115,7 +108,7 @@ class TrailIndexItemDetail extends React.Component {
                   <span className={`trail-diff-${trail.difficulty}`}>
                     {trail.difficulty}
                   </span>
-                  <div className="review-stars">{reviewStars}</div>
+                  <div className="stars">{reviewStars}</div>
                   <p className="num-reviews">({reviews.length})</p>
                 </div>
                 <div className="park-name-wrapper">
@@ -227,7 +220,7 @@ class TrailIndexItemDetail extends React.Component {
                       <NearbyTrailsIndex
                         parkId={park.id}
                         parkName={park.name}
-                        avgRating={avgRating}
+                        // avgTrailRating={avgTrailRating}
                         reviewsLength={reviews.length}
                         currentTrailName={trail.name}
                       />

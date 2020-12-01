@@ -30,6 +30,10 @@ const reviewsReducer = (state = {}, action) => {
         }
       case RECEIVE_REVIEW:
         nextState[action.payload.review.id] = action.payload.review;
+        // const newObj = { ...action.payload.review };
+        // newObj[action.payload.review.userId] = {userinfo ogject};
+
+        // nextState[action.payload.review.id] = newObj;
         return nextState;
       case REMOVE_REVIEW:
         // delete nextState[action.reviewId];

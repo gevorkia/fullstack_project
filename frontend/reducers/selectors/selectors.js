@@ -30,12 +30,15 @@ export const avgTrailRating = (reviews) => {
 }
 
 export const avgParkRating = (reviews) => {
-  if (!reviews) return 0;
-  // console.log(reviews)
-  let sumRatings = 0;
-  reviews.forEach(review => (sumRatings += review.rating));
-  const avg = sumRatings/(reviews.length)
-  return avg
+  if (!reviews) {
+    return 0;
+  } else {
+    let sumRatings = 0;
+    reviews.forEach((review) => (sumRatings += review.rating));
+    const avg = sumRatings / reviews.length;
+    // console.log(avg)
+    return avg;
+  }
 }
 
 export const sortedTrailReviews = (state) => {

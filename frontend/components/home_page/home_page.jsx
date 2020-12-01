@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SearchSuggestions from "../search/search_suggestions";
 // import Layout from "../layout/layout"
@@ -10,6 +11,13 @@ import SearchSuggestions from "../search/search_suggestions";
 //   // React.useState is a react state hook for a single piece of state
 //   const [searchText, setSearchText] = React.useState('');
 
+const mSTP = (state) => {
+  return {
+    // currentUser: state.entities.session ? state.entities.session.currentUser : false,
+    currentUser: state.session.currentUser
+  };
+};
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +25,7 @@ class HomePage extends React.Component {
     this.state = {
       searchText: "",
       id: "dont-display-list",
-      focused: false,
+      focus: false,
     };
 
     this.setSearchText = this.setSearchText.bind(this);
@@ -27,7 +35,7 @@ class HomePage extends React.Component {
   }
 
   setSearchText(e) {
-    console.log(e)
+    console.log(e);
     // e.preventDefault();
     // console.log("setSearchTxt");
     this.setState({
@@ -35,33 +43,57 @@ class HomePage extends React.Component {
       id: "display-search-list",
     });
   }
+  
   removeSearchText(e) {
     // console.log("removeSearchTxt");
     // return e => {
-      this.setState({
-        searchText: e.target.value,
-        id: "dont-display-list",
-      });
+    this.setState({
+      searchText: e.target.value,
+      id: "dont-display-list",
+    });
     // }
     // this.setSearchText();
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (
+  //     prevState.isFocused &&
+  //     !this.state.isFocused &&
+  //     this.props.value !== this.state.value
+  //   ) {
+  //     //commit your change to value
+  //   }
+  // }
+
   handleFocus(e) {
     // onFocus(e)
-    this.setState({ focused: true });
+    e.preventDefault();
+
+    this.setState({ focus: true });
     this.setSearchText(e);
-    console.log("focus")
+    console.log("focus");
   }
-  
+
   handleBlur(e) {
     // onBlur(e);
-    this.setState({ focused: false });
+    e.preventDefault();
+    this.setState({ focus: true });
     this.removeSearchText(e);
     console.log("blur");
-    
+    //  if (!e.currentTarget.contains(document.activeElement)) {
+    //    console.log("table blurred");
+    //  }
+
+     if (!e.currentTarget.contains(e.relatedTarget)) {
+       console.log("blur event");
+     }
   }
 
   render() {
+    // console.log(this.props)
+
+    const { currentUser } = this.props;
+
     return (
       // <Layout>
       <>
@@ -71,7 +103,7 @@ class HomePage extends React.Component {
             <div className="banner-container">
               <div className="banner-text">Find your next favorite trail</div>
               {/* <div className="input-holder-border"> */}
-              <form className="input-holder">
+              <form className="input-holder" onBlur={this.handleBlur}>
                 <div className="magnifying-glass">
                   <img
                     alt="logo"
@@ -86,23 +118,20 @@ class HomePage extends React.Component {
                   aria-label="text search input"
                   onChange={this.setSearchText}
                   // autoFocus
-                  onFocus={(e) => e.currentTarget.select()}
+                  // onFocus={(e) => e.currentTarget.select()}
                   onFocus={this.handleFocus}
-                  // onClick={this.setSearchText}
+                  onClick={this.setSearchText}
+                  // onBlur={this.handleBlur}
                   // onMouseEnter={this.setSearchText}
-                  // onMouseLeave={this.removeSearchText}
+
                   // onChange={(e) => setSearchText(e.target.value)}
                   // onChange={(e) => this.setSearchText(e)}
                   // event handler that sets state to whatever user enters
                 />
                 <div className="search-suggestions">
-                  <div
-                    className="suggestions-list-wrapper"
-                    id={this.state.id}
-                    onBlur={this.handleBlur}
-                  >
+                  <div className="suggestions-list-wrapper" id={this.state.id}>
                     {/* passing in the value of the state as a prop */}
-                    <SearchSuggestions searchText={this.state.searchText} />
+                    <SearchSuggestions searchText={this.state.searchText} focus={this.state.focus}/>
                   </div>
                 </div>
                 <button className="search-button">Search</button>
@@ -118,9 +147,11 @@ class HomePage extends React.Component {
               guides, so you can explore the outdoors with confidence. Anytime.
               Anywhere.
             </p>
-            <Link className="bottom-signup" to="/signup">
-              Sign up for free
-            </Link>
+            {currentUser ? null : (
+              <Link className="bottom-signup" to="/signup">
+                Sign up for free
+              </Link>
+            )}
           </div>
           {/* </div> */}
         </div>
@@ -131,7 +162,7 @@ class HomePage extends React.Component {
   }
 };
 
-export default HomePage
+export default connect(mSTP)(HomePage);
 
 // images
     // <img

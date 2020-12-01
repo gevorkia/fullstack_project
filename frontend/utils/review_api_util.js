@@ -1,9 +1,12 @@
 export const fetchReviews = (id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/users/${id}/reviews`
+    // url: `/api/users/${id}/reviews`
+    url: `/api/trails/${id}/reviews`
+
   });
 };
+
 
 export const createReview = (review) => {
   return $.ajax({

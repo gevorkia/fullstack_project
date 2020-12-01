@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
     parkName: ownProps.parkName,
     trails: Object.values(state.entities.trails),
     reviews: reviews,
-    avgRating: avgTrailRating(reviews),
+    avgTrailRating: avgTrailRating(reviews),
   };
 };
 
@@ -61,7 +61,7 @@ class TrailIndex extends React.Component {
   render() {
     // debugger
     // console.log(this.props);
-    const { trails, parkName, avgRating, reviews } = this.props;
+    const { trails, parkName, avgTrailRating, reviews } = this.props;
 
     return (
       <ul className="trail-index">
@@ -71,7 +71,7 @@ class TrailIndex extends React.Component {
             trail={trail}
             idx={idx}
             parkName={parkName}
-            avgRating={avgRating}
+            avgTrailRating={avgTrailRating}
             reviews={reviews}
           />
         ))}

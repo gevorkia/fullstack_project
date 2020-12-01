@@ -21,15 +21,25 @@ const mDTP = (dispatch) => {
 class SearchSuggestions extends React.Component {
   constructor(props) {
     super(props);
+    this.changeFocus = this.changeFocus.bind(this)
+
+    this.state = {
+      focus: this.props.focus
+    };
   }
 
   componentDidMount() {
     this.props.fetchParks();
   }
 
+  changeFocus() {
+    console.log("change focus")
+    this.setState({ focus: false });
+  }
+
   render() {
-    // console.log(this.props.searchText);
-    const { parks, trails, searchText } = this.props;
+    console.log(this.props);
+    const { parks, trails, searchText, focus } = this.props;
     // console.log(searchText);
 
 
@@ -37,6 +47,7 @@ class SearchSuggestions extends React.Component {
 
     const suggestions = [];
     
+    console.log("parks", parks)
 
     parks
       .filter((park) => park.name.toLowerCase().includes(searchText))
@@ -55,12 +66,18 @@ class SearchSuggestions extends React.Component {
       .forEach((trail) => {
         suggestions.push(
           <li key={`trail-${trail.id}`} className="trail-suggestions">
-            <a href={`#/trails/${trail.id}`} className="suggestions-list">
+            <a
+              href={`#/trails/${trail.id}`}
+              className="suggestions-list"
+              onClick={this.changeFocus}
+            >
               {trail.name}
             </a>
           </li>
         );
       });
+
+      console.log(suggestions);
 
     return (
       // <div className="suggestions-list-wrapper">
