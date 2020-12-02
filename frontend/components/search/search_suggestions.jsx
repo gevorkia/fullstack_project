@@ -77,7 +77,7 @@ class SearchSuggestions extends React.Component {
         );
       });
 
-      console.log(suggestions);
+      // console.log(suggestions);
 
     return (
       // <div className="suggestions-list-wrapper">

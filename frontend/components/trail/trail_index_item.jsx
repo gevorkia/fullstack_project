@@ -29,25 +29,25 @@ class TrailIndexItem extends React.Component {
               <div className="trail-cover-photo">
                 <img src={trail.coverPhotoUrl} alt={trail.name} />
               </div>
-              <div className="trail-info-wrapper">
-                <div className="trail-info">
-                  <h2 className="trail-name">
-                    #{idx + 1} - {trail.name}
-                  </h2>
+              {/* <div className="trail-info-wrapper"> */}
+              <div className="trail-info">
+                <h2 className="trail-name">
+                  #{idx + 1} - {trail.name}
+                </h2>
 
-                  <div className="trail-park-name">{parkName}</div>
-                  <div className="trail-info-sub">
-                    <div className={`trail-difficulty-${trail.difficulty}`}>{trail.difficulty}</div>
-                    <div className="stars">{reviewStars}</div>
+                <div className="trail-park-name">{parkName}</div>
+                <div className="trail-info-sub">
+                  <div className={`trail-difficulty-${trail.difficulty}`}>{trail.difficulty}</div>
+                  <div className="stars">{reviewStars}</div>
 
-                    <div className="review-count">({reviews.length})</div>
-                  </div>
-                  <div className="trail-length">Length: {trail.length} mi</div>
-
-                  <p className="trail-summary">{trail.summary}</p>
-                  {/* <span className="show-more">Show more</span> */}
+                  <div className="review-count">({reviews.length})</div>
                 </div>
+                <div className="trail-length">Length: {trail.length} mi</div>
+
+                <p className="trail-summary">{trail.summary}</p>
+                {/* <span className="show-more">Show more</span> */}
               </div>
+              {/* </div> */}
             </div>
           </Link>
         </div>
