@@ -88,7 +88,7 @@ class ParkShow extends React.Component {
 
       if (park.name === "Sequoia National Park") {
         parkMapZoom = `8.80`;
-      } else if (park.name = "Big Sur") {
+      } else if (park.name === "Pfeiffer Big Sur State Park") {
         parkMapZoom = `12.80`;
       }
 

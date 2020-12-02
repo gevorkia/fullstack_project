@@ -27,22 +27,23 @@ class NearbyTrailsIndex extends React.Component {
 
     render() {
         // console.log(this.props.trails);
-        const { trails, parkName, reviewsLength, currentTrailName } = this.props
+        const { trails, parkName, reviewsLength, currentTrailName, avgTrailRating } = this.props
 
         const filteredTrails = trails.filter(t => t.name !== currentTrailName)
 
         return (
-            <>
-                {filteredTrails.map(trail => (
-                    <NearbyTrailItem 
-                        trail={trail} 
-                        key={trail.id}
-                        parkName={parkName}
-                        reviewsLength={reviewsLength}
-                    />
-                ))}
-            </>
-        )
+          <>
+            {filteredTrails.map((trail) => (
+              <NearbyTrailItem
+                trail={trail}
+                key={trail.id}
+                parkName={parkName}
+                reviewsLength={reviewsLength}
+                avgTrailRating={avgTrailRating}
+              />
+            ))}
+          </>
+        );
     }
 }
 

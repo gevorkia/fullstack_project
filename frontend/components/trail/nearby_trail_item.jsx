@@ -9,12 +9,12 @@ class NearbyTrailItem extends React.Component {
     render() {
         if (!this.props.trail) return null;
         
-        const {trail, parkName, avgRating, reviewsLength} = this.props;
+        const {trail, parkName, avgTrailRating, reviewsLength} = this.props;
 
         const reviewStars = [];
 
         for (let i = 1; i < 6; i++) {
-            const starCSS = avgRating >= i ? "filled" : "unfilled";
+            const starCSS = avgTrailRating >= i ? "filled" : "unfilled";
             reviewStars.push(
             <span
                 key={`stars-${i}`}
@@ -45,7 +45,7 @@ class NearbyTrailItem extends React.Component {
                       <div className={`trail-difficulty-${trail.difficulty}`}>
                         {trail.difficulty}
                       </div>
-                      <div className="nt-review-stars">{reviewStars}</div>
+                      <div className="stars">{reviewStars}</div>
 
                       <div className="nt-review-count">({reviewsLength})</div>
                     </div>

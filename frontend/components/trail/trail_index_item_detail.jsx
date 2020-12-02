@@ -220,7 +220,7 @@ class TrailIndexItemDetail extends React.Component {
                       <NearbyTrailsIndex
                         parkId={park.id}
                         parkName={park.name}
-                        // avgTrailRating={avgTrailRating}
+                        avgTrailRating={avgTrailRating}
                         reviewsLength={reviews.length}
                         currentTrailName={trail.name}
                       />

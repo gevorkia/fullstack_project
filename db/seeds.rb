@@ -16,12 +16,12 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 # User.create!(first_name: "", last_name: "", email: "", password: "")
 
-demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "trails890")
-user1 = User.create!(first_name: "Henry", last_name: "Thoreau", email: "HenryThoreau@walden.com", password: "Walden789")
-user2 = User.create!(first_name: "Jane", last_name: "Goodall", email: "JaneGoodall@primatologist.com", password: "37Goodall")
-user3 = User.create!(first_name: "Monte", last_name: "Melkonian", email: "MonteMelkonian@undefeated.com", password: "Duxov!2020")
-user4 = User.create!(first_name: "William", last_name: "Saroyan", email: "WilliamSaroyan@playwright.com", password: "Hayastan!")
-user5 = User.create!(first_name: "Diana", last_name: "Der Hovanessian", email: "DianaDerHovanessian@poetry.com", password: "Diaspora!")
+demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "password")
+user1 = User.create!(first_name: "Henry", last_name: "Thoreau", email: "HenryThoreau@walden.com", password: "password")
+user2 = User.create!(first_name: "Jane", last_name: "Goodall", email: "JaneGoodall@primatologist.com", password: "password")
+user3 = User.create!(first_name: "Monte", last_name: "Melkonian", email: "MonteMelkonian@undefeated.com", password: "password")
+user4 = User.create!(first_name: "William", last_name: "Saroyan", email: "WilliamSaroyan@playwright.com", password: "password")
+user5 = User.create!(first_name: "Diana", last_name: "Hovanesian", email: "DianaDerHovanessian@poetry.com", password: "password")
 
 henry = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/henry_thoreau.jpg")
 user1.profilePicture.attach(io: henry, filename: "henry_thoreau.jpg")
@@ -38,6 +38,8 @@ user4.profilePicture.attach(io: william, filename: "william_saroyan.jpg")
 diana = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/diana_hovanessian.jpg")
 user5.profilePicture.attach(io: diana, filename: "diana_hovanessian.jpg")
 
+# demo_user = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/hiker.png")
+# demo_user.profilePicture.attach(io: demo_user, filename: "hiker.png")
 
 Park.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('parks')
@@ -302,11 +304,11 @@ Taggable.create(tag_id: f1.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: f2.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: f5.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: f4.id, taggable_id: trail1.id, taggable_type: "Trail")
-Taggable.create(tag_id: o5.id, taggable_id: trail1.id, taggable_type: "Trail")
-Taggable.create(tag_id: o1.id, taggable_id: trail1.id, taggable_type: "Trail")
-Taggable.create(tag_id: o2.id, taggable_id: trail1.id, taggable_type: "Trail")
-Taggable.create(tag_id: o3.id, taggable_id: trail1.id, taggable_type: "Trail")
-Taggable.create(tag_id: o4.id, taggable_id: trail1.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o5.id, taggable_id: trail1.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o1.id, taggable_id: trail1.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o2.id, taggable_id: trail1.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o3.id, taggable_id: trail1.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o4.id, taggable_id: trail1.id, taggable_type: "Trail")
 
 Taggable.create(tag_id: f11.id, taggable_id: trail2.id, taggable_type: "Trail")
 Taggable.create(tag_id: a1.id, taggable_id: trail2.id, taggable_type: "Trail")
@@ -326,7 +328,6 @@ Taggable.create(tag_id: f3.id, taggable_id: trail3.id, taggable_type: "Trail")
 Taggable.create(tag_id: f1.id, taggable_id: trail3.id, taggable_type: "Trail")
 Taggable.create(tag_id: f4.id, taggable_id: trail3.id, taggable_type: "Trail")
 
-
 Taggable.create(tag_id: a5.id, taggable_id: trail4.id, taggable_type: "Trail")
 Taggable.create(tag_id: a4.id, taggable_id: trail4.id, taggable_type: "Trail")
 Taggable.create(tag_id: a1.id, taggable_id: trail4.id, taggable_type: "Trail")
@@ -334,10 +335,10 @@ Taggable.create(tag_id: f3.id, taggable_id: trail4.id, taggable_type: "Trail")
 Taggable.create(tag_id: f7.id, taggable_id: trail4.id, taggable_type: "Trail")
 Taggable.create(tag_id: f1.id, taggable_id: trail4.id, taggable_type: "Trail")
 Taggable.create(tag_id: f2.id, taggable_id: trail4.id, taggable_type: "Trail")
-Taggable.create(tag_id: o5.id, taggable_id: trail4.id, taggable_type: "Trail")
-Taggable.create(tag_id: o2.id, taggable_id: trail4.id, taggable_type: "Trail")
-Taggable.create(tag_id: o3.id, taggable_id: trail4.id, taggable_type: "Trail")
-Taggable.create(tag_id: o6.id, taggable_id: trail4.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o5.id, taggable_id: trail4.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o2.id, taggable_id: trail4.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o3.id, taggable_id: trail4.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o6.id, taggable_id: trail4.id, taggable_type: "Trail")
 
 Taggable.create(tag_id: a4.id, taggable_id: trail5.id, taggable_type: "Trail")
 Taggable.create(tag_id: a1.id, taggable_id: trail5.id, taggable_type: "Trail")
@@ -358,8 +359,8 @@ Taggable.create(tag_id: f1.id, taggable_id: trail6.id, taggable_type: "Trail")
 Taggable.create(tag_id: f2.id, taggable_id: trail6.id, taggable_type: "Trail")
 Taggable.create(tag_id: f5.id, taggable_id: trail6.id, taggable_type: "Trail")
 Taggable.create(tag_id: f4.id, taggable_id: trail6.id, taggable_type: "Trail")
-Taggable.create(tag_id: o2.id, taggable_id: trail6.id, taggable_type: "Trail")
-Taggable.create(tag_id: o3.id, taggable_id: trail6.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o2.id, taggable_id: trail6.id, taggable_type: "Trail")
+# Taggable.create(tag_id: o3.id, taggable_id: trail6.id, taggable_type: "Trail")
 Taggable.create(tag_id: f9.id, taggable_id: trail6.id, taggable_type: "Trail")
 
 Taggable.create(tag_id: f11.id, taggable_id: trail7.id, taggable_type: "Trail")
@@ -378,12 +379,91 @@ Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "Trail")
 
 # in rails c: Trail.first.tags
 
+# ADD TRAIL CONDITIONS (obstacles) for create review modal
+Taggable.create(tag_id: o1.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail1.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail1.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail2.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail2.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail3.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail3.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail4.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail4.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail5.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail5.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail6.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail6.id, taggable_type: "Trail")
+
+Taggable.create(tag_id: o1.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o2.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o3.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o4.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o5.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o6.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o7.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o8.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o9.id, taggable_id: trail7.id, taggable_type: "Trail")
+Taggable.create(tag_id: o10.id, taggable_id: trail7.id, taggable_type: "Trail")
+
+
 Review.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
 
-
+#trail1 reviews
 r1 = Review.create(
-    activity_date: "2020-09-13", 
+    activity_date: "2020-11-11", 
     rating: 5, 
     review: "Sad to hear it is now closed. This is a fantastic overnight hike that takes you into the hills to view a great cross section of the flora and fauna Big Sur has to offer. A glass of wine, a dip in the water and conversation with others was a great cap the day. I hope the restoration efforts are successful, and that the trail can reopen in a more sustainable manner.", 
     tag_ids: [a5.id, a4.id, a1.id], 
@@ -392,15 +472,186 @@ r1 = Review.create(
 )
 
 r2 = Review.create(
-    activity_date: "2020-09-13", 
+    activity_date: "2020-10-14", 
     rating: 5, 
     review: "Such a shame to hear of the overcrowding. I camped there in 1984, then again in 1992, very few people. I was hoping to go back, so it's sad to hear of the long term closure and the overcrowding there. In terms of the trail itself, it can be tough due to the switchbacks and inclines. You're apt to see fauna once it re-opens. Ahh, nature will recover!",
     tag_ids: [f4.id, a4.id, a10.id], 
     user_id: user4.id, 
     trail_id: trail1.id
 )
+r3 = Review.create(
+    activity_date: "2017-01-29", 
+    rating: 5, 
+    review: "Tough accent. Amazing views. Awesome camping.",
+    tag_ids: [a4.id, a2.id], 
+    user_id: user3.id, 
+    trail_id: trail1.id
+)
+r4 = Review.create(
+    activity_date: "2016-09-12", 
+    rating: 3, 
+    review: "Loved it but there's too much trash.",
+    tag_ids: [a2.id], 
+    user_id: user1.id, 
+    trail_id: trail1.id
+)
 
+# trail2 reviews
+r5 = Review.create(
+    activity_date: "2020-8-10", 
+    rating: 4, 
+    review: "Fine. Not bad. Need to cross the river so must be prepared for calf-depth wading.",
+    tag_ids: [a1.id], 
+    user_id: user3.id, 
+    trail_id: trail2.id
+)
+r6 = Review.create(
+    activity_date: "2019-07-21", 
+    rating: 5, 
+    review: "It is a nice trail and a lot of rocks climbing.  Nice view and cold water for swimming",
+    tag_ids: [a1.id], 
+    user_id: user2.id, 
+    trail_id: trail2.id
+)
+r7 = Review.create(
+    activity_date: "2019-03-03", 
+    rating: 5, 
+    review: "Delightful river walk",
+    tag_ids: [a1.id], 
+    user_id: user4.id, 
+    trail_id: trail2.id
+)
 
+# trail3 reviews
+r8 = Review.create(
+    activity_date: "2020-11-09", 
+    rating: 5, 
+    review: "Great scenic trail along the river redwoods",
+    tag_ids: [f1.id, a2.id], 
+    user_id: user5.id, 
+    trail_id: trail3.id
+)
+r9 = Review.create(
+    activity_date: "2020-07-26", 
+    rating: 4, 
+    review: "It’s $10 cash, exact change to park inside the park. We didn’t follow this trail exactly. There are a few easy short trails that all come together at different points. We did the Redwood Deck Trail, Warden’s Trail, and the River Path. They are not hikes, but walks through scenery you would expect at Big Sur. The Redwoods and their burn scars are always a sight to see. During our visit there were a lot of Steller Jays flying around too. Such gorgeous royal blue birds. We crossed over a bridge and were also able to cross over shallow parts of the river. It’s what you make of it. Beautiful, super easy, and short mini adventure.",
+    tag_ids: [a1.id], 
+    user_id: user2.id, 
+    trail_id: trail3.id
+)
+r10 = Review.create(
+    activity_date: "2019-03-19", 
+    rating: 4, 
+    review: "Pretty easy",
+    tag_ids: [a2.id], 
+    user_id: user3.id, 
+    trail_id: trail3.id
+)
+
+# trail4 reviews
+r11 = Review.create(
+    activity_date: "2020-08-21", 
+    rating: 5, 
+    review: "We did this as a day hike. The trail up to Cottonwood Lakes is beautiful and shaded with dense trees. If you have the time, plan on a night at Cottonwood Lakes. The views are simply amazing. We took Old Army Pass up and down. The push from Cottonwood Lakes to the summit is rocky, sandy, and gravely and makes for a tedious climb. All worth for the breathtaking views from the top.",
+    tag_ids: [a1.id, o1.id, o3.id, o4.id], 
+    user_id: user5.id, 
+    trail_id: trail4.id
+)
+r12 = Review.create(
+    activity_date: "2020-07-03", 
+    rating: 5, 
+    review: "Hiked new army in and old army out logging 22.15 miles taking the group 12 hours round trip. The views at the top and on the way of the lakes were spectacular and well worth the effort. The elevation was tough for both the two others in the group with one not making it up past 12,500 feet. Once you get to the cairns near the top its also mostly sand and tough to navigate so be prepared.",
+    tag_ids: [a1.id], 
+    user_id: user1.id, 
+    trail_id: trail4.id
+)
+r13 = Review.create(
+    activity_date: "2020-08-30", 
+    rating: 4, 
+    review: "Big time warning, the CA fires smoke came in seriously starting at noon.  By 2 pm, it was unbearable to hike up in the cottonwood lakes and below.  Lungs still recovering.  As everyone said, this hike is moderate until the last 2.4 miles uphill.  All in loose gravel and challenging to step.  I would say this is 80% as challenging as Whitney",
+    tag_ids: [o4.id], 
+    user_id: user4.id, 
+    trail_id: trail4.id
+)
+
+# trail5 reviews
+r14 = Review.create(
+    activity_date: "2020-10-14", 
+    rating: 5, 
+    review: "Sun beats down on the side of the draws  for the first half of the way up then it’s mostly shaded. You end at a waterfall which had a decent amount of flow. It was colder sitting out there because of the wind. Way back took us half the amount of time as it’s steadily downhill for most of it. Great for an easy day hike for the more experienced. Would be a little harder for new hikers.",
+    tag_ids: [a1.id], 
+    user_id: user3.id, 
+    trail_id: trail5.id
+)
+r15 = Review.create(
+    activity_date: "2020-11-26", 
+    rating: 4, 
+    review: "Started out fairly easy but the terrain gets interesting: narrow and rocky.  But a great hike all in all, the falls are like an oasis.",
+    tag_ids: [a1.id], 
+    user_id: user5.id, 
+    trail_id: trail5.id
+)
+r16 = Review.create(
+    activity_date: "2020-08-12", 
+    rating: 5, 
+    review: "Enjoyed the hike.  There is still water in the falls.  Take some time and explore around.  We found a cave by the upper pool.",
+    tag_ids: [a2.id, f8.id], 
+    user_id: user2.id, 
+    trail_id: trail5.id
+)
+
+# trail6 reviews
+r17 = Review.create(
+    activity_date: "2020-08-26", 
+    rating: 5, 
+    review: "Trail was in a perfect condition (maybe a bit muddy in a few places). Plenty of streams to refill water. Some mosquitoes at Junction Meadow, but not too crazy.
+
+    The trail itself is beautiful, stunning views, plenty of flowers and wildlife",
+    tag_ids: [a5.id, a1.id],
+    user_id: user2.id, 
+    trail_id: trail6.id
+)
+r18 = Review.create(
+    activity_date: "2020-07-16", 
+    rating: 5, 
+    review: "This trail was breathtaking in beauty and elevation. It was incredible. The hike was difficult in many places along the route, but far from impossible. I would highly recommend this trip for experienced hikers, and if you do go, say hello to Odin for me when you get to Valhalla! It certainly gave me a BAD case of mountain craving sickness. I would do it again for sure.",
+    tag_ids: [a5.id, o6.id, o8.id, o5.id, o3.id, a10.id], 
+    user_id: user5.id, 
+    trail_id: trail6.id
+)
+r19 = Review.create(
+    activity_date: "2019-08-25", 
+    rating: 5, 
+    review: "What an epic trip! This was a high snow/water year, so with that, it was also a high mosquito year!  One sketchy thing was the trail blowout above Hamilton Lakes! Yikes, we made it but whew!! The trail is well marked and the views are just breathtaking. Lots of elevation gain/loss so take your time and just enjoy the beauty. I would highly suggest recording your trip..used my cellphone but would have taken my time more to do more video with description/narrative.",
+    tag_ids: [a5.id], 
+    user_id: user3.id, 
+    trail_id: trail6.id
+)
+# trail7 reviews
+r20 = Review.create(
+    activity_date: "2020-11-27", 
+    rating: 5, 
+    review: "Magical hike off the beaten track among silent giants.",
+    tag_ids: [a1.id, f3.id], 
+    user_id: user5.id, 
+    trail_id: trail7.id
+)
+r21 = Review.create(
+    activity_date: "2020-10-30", 
+    rating: 5, 
+    review: "Great hike and great weather.  One of my all-time favorites.",
+    tag_ids: [a1.id], 
+    user_id: user4.id, 
+    trail_id: trail7.id
+)
+r22 = Review.create(
+    activity_date: "2020-08-08", 
+    rating: 5, 
+    review: "Great hike. Mostly shaded. It was 90+ in Three Rivers but pleasant on the trail. There are a lot of trails in this area and it can be easy to get confused. We downloaded the map which helped a lot. The high altitude definitely made it feel longer than 7 miles. Ate lunch at Tharp’s cabin which was a great spot. Pack water.",
+    tag_ids: [a2.id], 
+    user_id: user1.id, 
+    trail_id: trail7.id
+)
 
 # photos
 # attachments through console. only works in development, not production
@@ -409,7 +660,7 @@ r2 = Review.create(
 # trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
 # trail1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")
 
-
+# park photos
 
 bigsur1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_1.jpg")
 bigsur2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/big_sur_2.jpg")
@@ -427,16 +678,17 @@ park2.photos.attach(io: sequoia1, filename: "sequoia_1.png")
 park2.photos.attach(io: sequoia2, filename: "sequoia_2.png")
 park2.photos.attach(io: sequoia3, filename: "sequoia_3.jpg")
 
+# trail photos
+
 sykes1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_1.jpg")
-sykes2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_2.jpg")
-sykes3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_3.jpg")
-sykes4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_4.jpg")
+# sykes2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_2.jpg")
+# sykes3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_3.jpg")
+# sykes4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/sykes_4.jpg")
 
 trail1.coverPhoto.attach(io: sykes1, filename: "sykes_1.jpg")
-# trail1.photos.attach(io: sykes1, filename: "sykes_1.jpg")
-trail1.photos.attach(io: sykes2, filename: "sykes_2.jpg")
-trail1.photos.attach(io: sykes3, filename: "sykes_3.jpg")
-trail1.photos.attach(io: sykes4, filename: "sykes_4.jpg")
+# trail1.photos.attach(io: sykes2, filename: "sykes_2.jpg")
+# trail1.photos.attach(io: sykes3, filename: "sykes_3.jpg")
+# trail1.photos.attach(io: sykes4, filename: "sykes_4.jpg")
 
 river_gorge1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/river_gorge_1.jpg")
 trail2.coverPhoto.attach(io: river_gorge1, filename: "river_gorge_1.jpg")
@@ -447,13 +699,14 @@ trail3.coverPhoto.attach(io: nature_trail1, filename: "nature_trail_1.png")
 mount_langley1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_1.png")
 mount_langley2 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_2.png")
 mount_langley3 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_3.png")
-mount_langley4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_4.png")
+# mount_langley4 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/mount_langley_4.png")
 
 trail4.coverPhoto.attach(io: mount_langley1, filename: "mount_langley_1.png")
 # trail4.photos.attach(io: mount_langley1, filename: "mount_langley_1.png")
+# can't attach same photo to coverPhoto and separate, causes problems
 trail4.photos.attach(io: mount_langley2, filename: "mount_langley_2.png")
 trail4.photos.attach(io: mount_langley3, filename: "mount_langley_3.png")
-trail4.photos.attach(io: mount_langley4, filename: "mount_langley_4.png")
+# trail4.photos.attach(io: mount_langley4, filename: "mount_langley_4.png")
 
 marble_falls1 = open("https://mytrails-seeds.s3-us-west-1.amazonaws.com/marble_falls_1.png")
 trail5.coverPhoto.attach(io: marble_falls1, filename: "marble_falls_1.png") 

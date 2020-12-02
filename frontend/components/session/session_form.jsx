@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
   demoUserLogin() {
     const demoUser = {
       email: "demouser@trails.com",
-      password: "trails890",
+      password: "password",
     };
     this.props.processDemo(demoUser);
   }

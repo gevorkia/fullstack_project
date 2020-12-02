@@ -7,7 +7,7 @@
 MyTrails, an allTrails clone, is an application that allows users to find detailed information about parks and trails, view photos and reviews, and contribute reviews of trails they've completed. A park page includes general information about the park including photos, descriptions, a button to map directions to the park, and a list of top trails in the area.
 A trail page includes detailed information such as the difficulty, length, elevation gain, route type, and tag identifiers to quickly share trail features with users. Users will be able to read reviews as well as create, edit, and delete their own reviews.
 
-![Splash Page](./README-images/mytrails_splash.png?raw=true)
+![Splash Page](./images/mytrails_splash.png?raw=true)
 
 ## Technology 
 MyTrails was created using Ruby on Rails and a POSTgreSQL database on the backend. React and CSS are used for the frontend in conjuction with Redux for state management. Photos are stored in AWS S3. OpenMapBox is utilized for park and trail mapping. 

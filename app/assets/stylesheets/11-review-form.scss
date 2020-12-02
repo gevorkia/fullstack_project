@@ -206,11 +206,18 @@ input:checked ~ .review-star::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    outline: none;
 }
 
 .post-btn:hover {
     cursor: pointer;
     background-color: #69a041;
+}
+
+.post-btn:focus {
+    border: none;
+    outline: none;
 }
 
 input[type="date"] {
@@ -226,6 +233,7 @@ select {
     flex-wrap: wrap;
     padding: 12px 0 0;
     margin: auto 0;
+    margin-bottom: 8px;
 }
 
 .review-form-tag {
@@ -238,7 +246,7 @@ select {
     font-weight: 400;
     cursor: pointer;
     background: #fff;
-    margin-bottom: 0;
+    // margin-bottom: 8px;
     margin-right: 8px;  
 }
 

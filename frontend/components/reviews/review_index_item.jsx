@@ -5,8 +5,10 @@ import { deleteReview } from "../../actions/review_actions";
 
 const mSTP = (state, ownProps) => {
     return {
-      currentUser: state.session.currentUser.id,
-      modal: state.ui.modal
+      currentUser: state.session.currentUser
+        ? state.session.currentUser.id
+        : "",
+      modal: state.ui.modal,
     };
 };
 
@@ -95,16 +97,21 @@ class ReviewIndexItem extends React.Component {
               </span>
             ) : null
      
+        const profilePicture = reviewer.profilePicture ? (
+          <img
+            src={reviewer.profilePicture}
+            alt={`${reviewer.firstName} ${reviewer.lastName}`}
+          ></img>
+        ) : (
+          <img src={window.hiker} alt="demo-user"></img>
+        );
 
         return (
           <>
             <div className="review-idx-item-wrapper"></div>
             <div className="review-idx-item-header">
               <div className="r-user-photo">
-                <img
-                  src={reviewer.profilePicture}
-                  alt={`${reviewer.firstName} ${reviewer.lastName}`}
-                ></img>
+                {profilePicture}
               </div>
               <div className="r-user-name-wrapper">
                 {" "}
