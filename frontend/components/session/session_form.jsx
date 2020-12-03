@@ -39,7 +39,8 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state).then(() => this.props.history.push("/"));
   }
 
-  demoUserLogin() {
+  demoUserLogin(e) {
+    e.preventDefault();
     const demoUser = {
       email: "demouser@trails.com",
       password: "password",
