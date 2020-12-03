@@ -58,7 +58,7 @@ MyTrails was created using Ruby on Rails and a POSTgreSQL database on the backen
 
 * Users can edit their own review by clicking on the edit text underneath it. A modal pre-filled with their review information will pop up to allow for editing.
 
-* Users can delete a transaction by clicking on the delete text underneath their review.
+* Users can delete a review by clicking on the delete text underneath their review.
 
 
 ### Search Suggestions Component

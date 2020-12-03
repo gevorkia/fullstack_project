@@ -69,15 +69,22 @@ class HomePage extends React.Component {
     // onFocus(e)
     e.preventDefault();
 
+    if (this.state.focus) return;
+
     this.setState({ focus: true });
     this.setSearchText(e);
     console.log("focus");
   }
 
   handleBlur(e) {
+    if (!this.state.focus) {
+      return;
+    }
+
     // onBlur(e);
     e.preventDefault();
-    this.setState({ focus: true });
+    this.setState({ focus: false });
+    
     this.removeSearchText(e);
     console.log("blur");
     //  if (!e.currentTarget.contains(document.activeElement)) {
@@ -103,7 +110,11 @@ class HomePage extends React.Component {
             <div className="banner-container">
               <div className="banner-text">Find your next favorite trail</div>
               {/* <div className="input-holder-border"> */}
-              <form className="input-holder" >
+              <form
+                className="input-holder"
+                onFocus={this.handleFocus}
+                // onBlur={this.handleBlur}
+              >
                 <div className="magnifying-glass">
                   <img
                     alt="logo"
@@ -119,7 +130,8 @@ class HomePage extends React.Component {
                   onChange={this.setSearchText}
                   // autoFocus
                   // onFocus={(e) => e.currentTarget.select()}
-                  onFocus={this.handleFocus}
+                  // onFocus={this.handleFocus} // TODO: ME
+                  // onClick={this.setSearchText}
                   onClick={this.setSearchText}
                   // onBlur={this.handleBlur}
                   // onMouseEnter={this.setSearchText}
@@ -129,9 +141,15 @@ class HomePage extends React.Component {
                   // event handler that sets state to whatever user enters
                 />
                 <div className="search-suggestions">
-                  <div className="suggestions-list-wrapper" id={this.state.id}>
+                  <div
+                    className="suggestions-list-wrapper"
+                    id={this.state.id}
+                  >
                     {/* passing in the value of the state as a prop */}
-                    <SearchSuggestions searchText={this.state.searchText} focus={this.state.focus}/>
+                    <SearchSuggestions
+                      searchText={this.state.searchText}
+                      focus={this.state.focus}
+                    />
                   </div>
                 </div>
                 <button className="search-button">Search</button>

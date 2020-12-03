@@ -69,7 +69,7 @@ class SearchSuggestions extends React.Component {
             <a
               href={`#/trails/${trail.id}`}
               className="suggestions-list"
-              onClick={this.changeFocus}
+              // onClick={this.changeFocus}
             >
               {trail.name}
             </a>
