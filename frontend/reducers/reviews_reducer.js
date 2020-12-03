@@ -4,7 +4,7 @@ import {
     REMOVE_REVIEW,
     // RECEIVE_REVIEW_ERRORS
 } from "../actions/review_actions";
-import { RECEIVE_TRAIL_REVIEWS } from "../actions/trail_actions"
+// import { RECEIVE_TRAIL_REVIEWS } from "../actions/trail_actions"
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,22 +12,23 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
       case RECEIVE_REVIEWS:
-        nextState["reviews"] = action.payload.reviews;
+        // console.log("payload", action.payload)
+        nextState = action.payload.reviews;
         return nextState;
-      case RECEIVE_TRAIL_REVIEWS:
-        // console.log('receive trail reviews', action.payload)
-        // console.log('receive trail reviews', action.payload.reviews)
-        // if ('reviews' in action.payload) { 
-        //   nextState = action.payload.reviews;
-        // }
-        // console.log("BADDd", action.payload);
-        // console.log("current", nextState);
-        if (action.payload.reviews) {
-          nextState = action.payload.reviews;
-          return nextState;
-        } else {
-          return state;
-        }
+      // case RECEIVE_TRAIL_REVIEWS:
+      //   // console.log('receive trail reviews', action.payload)
+      //   // console.log('receive trail reviews', action.payload.reviews)
+      //   // if ('reviews' in action.payload) { 
+      //   //   nextState = action.payload.reviews;
+      //   // }
+      //   // console.log("BADDd", action.payload);
+      //   // console.log("current", nextState);
+      //   if (action.payload.reviews) {
+      //     nextState = action.payload.reviews;
+      //     return nextState;
+      //   } else {
+      //     return state;
+      //   }
       case RECEIVE_REVIEW:
         nextState[action.payload.review.id] = action.payload.review;
         // const newObj = { ...action.payload.review };

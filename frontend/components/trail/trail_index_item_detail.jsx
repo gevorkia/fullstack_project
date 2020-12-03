@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
 import { fetchPark } from "../../actions/park_actions";
+import { fetchTrail } from "../../actions/trail_actions";
+import { fetchReviews } from "../../actions/review_actions";
 import { openModal } from "../../actions/modal_actions";
 import { sortedTrailReviews } from "../../reducers/selectors/selectors"
 import { avgTrailRating } from "../../reducers/selectors/selectors";
@@ -10,14 +11,18 @@ import { avgTrailRating } from "../../reducers/selectors/selectors";
 const mSTP = (state, ownProps) => {
   const trail = state.entities.trails[ownProps.match.params.trailId];
   const reviews = sortedTrailReviews(state);
-  const trailReviews = Object.values(state.entities.reviews);
+  const filteredReviews = reviews.filter((r) => r.trailId === trail.id)
+  const trailReviews = Object.values(filteredReviews);
 
+  const filteredTrailTags = state.entities.tags;
+  
   // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
-    reviews: reviews,
-    trailTags: Object.values(state.entities.tags),
+    allReviews: reviews,
+    reviews: trail ? filteredReviews : null,
+    trailTags: Object.values(filteredTrailTags),
     modal: state.ui.modal,
     avgTrailRating: avgTrailRating(trailReviews),
   };
@@ -26,7 +31,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
-    fetchTrailReviews: (trailId) => dispatch(fetchTrailReviews(trailId)),
+    fetchReviews: () => dispatch(fetchReviews()),
     fetchPark: (parkId) => dispatch(fetchPark(parkId)),
     openModal: (modalType, id) => dispatch(openModal(modalType, id)),
   };
@@ -52,7 +57,7 @@ class TrailIndexItemDetail extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchTrail(this.trailId);
-        this.props.fetchTrailReviews(this.trailId);
+        this.props.fetchReviews();
 
         window.scrollTo(0, 0);
     }
@@ -72,8 +77,8 @@ class TrailIndexItemDetail extends React.Component {
     
     // if (!this.props.trail) return null;
     
-    const {trail, park, reviews, trailTags, avgTrailRating} = this.props;
-    // console.log("trail item detail", this.props);
+    const {trail, park, allReviews, reviews, trailTags, avgTrailRating} = this.props;
+    console.log("trail item detail", reviews);
     // console.log(trailTags)
     
     const reviewStars = [];
@@ -220,8 +225,9 @@ class TrailIndexItemDetail extends React.Component {
                       <NearbyTrailsIndex
                         parkId={park.id}
                         parkName={park.name}
-                        avgTrailRating={avgTrailRating}
-                        reviewsLength={reviews.length}
+                        // avgTrailRating={avgTrailRating}
+                        // reviewsLength={allReviews.length}
+                        allReviews={allReviews}
                         currentTrailName={trail.name}
                       />
                     </div>

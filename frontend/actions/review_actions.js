@@ -13,8 +13,6 @@ const receiveReviews = (payload) => {
   };
 };
 
-
-
 const receiveReview = (payload) => {
   return {
     type: RECEIVE_REVIEW,
@@ -50,8 +48,8 @@ const receiveReviewErrors = (errors) => {
 // inner (2nd) function parameter will always be dispatch
 // thunk middleware will capture these fxns before they hit our store, see that they're fxns and invoke them with store's dispatch fxn
 
-export const fetchReviews = (id) => dispatch => {
-  return ReviewAPIUtil.fetchReviews(id)
+export const fetchReviews = () => dispatch => {
+  return ReviewAPIUtil.fetchReviews()
     .then((reviews) => dispatch(receiveReviews(reviews))
     // dispatch (regular) action to the store that's gna send these reviews along
     // returns an action with all the reviews in it

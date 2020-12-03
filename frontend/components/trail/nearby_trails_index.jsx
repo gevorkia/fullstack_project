@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchParkTrails } from "../../actions/park_actions";
+import { avgTrailRating } from "../../reducers/selectors/selectors";
 
 const mSTP = (state, ownProps) => {
   return {
@@ -27,21 +28,28 @@ class NearbyTrailsIndex extends React.Component {
 
     render() {
         // console.log(this.props.trails);
-        const { trails, parkName, reviewsLength, currentTrailName, avgTrailRating } = this.props
+        // const { trails, parkName, reviewsLength, currentTrailName, avgTrailRating } = this.props
+        const { trails, parkName, currentTrailName, allReviews } = this.props
+
+        // console.log("reviews length", reviewsLength)
 
         const filteredTrails = trails.filter(t => t.name !== currentTrailName)
 
         return (
           <>
-            {filteredTrails.map((trail) => (
-              <NearbyTrailItem
-                trail={trail}
-                key={trail.id}
-                parkName={parkName}
-                reviewsLength={reviewsLength}
-                avgTrailRating={avgTrailRating}
-              />
-            ))}
+            {filteredTrails.map((trail) => {
+              const filteredReviews = allReviews.filter((r) => r.trailId === trail.id)
+
+              return (
+                <NearbyTrailItem
+                  trail={trail}
+                  key={trail.id}
+                  parkName={parkName}
+                  reviewsLength={filteredReviews.length}
+                  avgTrailRating={avgTrailRating(filteredReviews)}
+                />
+              );
+              })}
           </>
         );
     }

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchParkTrails } from "../../actions/park_actions";
-import { fetchTrail, fetchTrailReviews } from "../../actions/trail_actions";
+import { fetchTrail } from "../../actions/trail_actions";
+import { fetchReviews } from "../../actions/review_actions";
 import { avgTrailRating } from "../../reducers/selectors/selectors";
 
 const mSTP = (state, ownProps) => {
@@ -21,7 +22,7 @@ const mDTP = (dispatch) => {
   return {
     fetchParkTrails: (parkId) => dispatch(fetchParkTrails(parkId)),
     fetchTrail: (trailId) => dispatch(fetchTrail(trailId)),
-    fetchTrailReviews: (trailId) => dispatch(fetchTrailReviews(trailId)),
+    fetchReviews: () => dispatch(fetchReviews()),
   };
 };
 
@@ -34,12 +35,15 @@ class TrailIndex extends React.Component {
 
   componentDidMount() {
     // debugger
-    
     // this.props.fetchParkTrails(this.props.parkId);
     // this.props.fetchTrail(this.props.match.params.trailId);
     // if (this.props.park) {
-    // this.props.fetchTrailReviews(this.props.match.params.trailId);
+    this.props.fetchReviews();
     // }
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate() {
@@ -47,10 +51,10 @@ class TrailIndex extends React.Component {
 
     if (this.props.trails && this.props.reviews.length === 0) {
       // console.log("bingoogoo");
-      Object.keys(this.props.trails).forEach((trailId) => {
-        // console.log('nice trailild is ', trailId)
-        this.props.fetchTrailReviews(this.props.trails[trailId].id);
-      });
+      // Object.keys(this.props.trails).forEach((trailId) => {
+      //   // console.log('nice trailild is ', trailId)
+        this.props.fetchReviews();
+      // });
       //   console.log("ijijijijihguyfdfgd");
       //   this.props.fetchTrail(this.props.match.params.trailId);
       //   this.props.fetchTrailReviews(this.props.match.params.trailId);
@@ -72,7 +76,7 @@ class TrailIndex extends React.Component {
             idx={idx}
             parkName={parkName}
             avgTrailRating={avgTrailRating}
-            reviews={reviews}
+            reviews={reviews.filter((r) => r.trailId === trail.id)}
           />
         ))}
       </ul>

@@ -6,11 +6,11 @@ class Api::ReviewsController < ApplicationController
         # @userReviews = Review.includes(:taggables, :tags, :reviewer).where(user_id: params[:user_id])
         # @trailReviews = Review.includes(:taggables, :tags, :trail).where(trail_id: params[:trail_id])
         # debugger
-        @trail = Trail.find_by(id: params[:trail_id])
-        @reviews = Review.where(trail_id: params[:trail_id])
+        # @trail = Trail.find_by(id: params[:trail_id])
+        @reviews = Review.all
         # debugger
         @tags = Tag.all
-        render 'api/trails/show'
+        render 'api/reviews/index'
     end
 
     def create
@@ -24,6 +24,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
+        debugger
         @review = Review.find_by(id: params[:id])
 
         if @review.update(review_params)

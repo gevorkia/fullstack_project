@@ -103,7 +103,7 @@ class HomePage extends React.Component {
             <div className="banner-container">
               <div className="banner-text">Find your next favorite trail</div>
               {/* <div className="input-holder-border"> */}
-              <form className="input-holder" onBlur={this.handleBlur}>
+              <form className="input-holder" >
                 <div className="magnifying-glass">
                   <img
                     alt="logo"
