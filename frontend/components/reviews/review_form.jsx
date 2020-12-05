@@ -4,7 +4,7 @@ import { createReview, clearReviewErrors } from "../../actions/review_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 import {
-  defaultActivity,
+  // defaultActivity,
   filteredTagsByType,
   trailConditions
 } from "../../reducers/selectors/selectors";
@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
   return {
     userId: state.session.currentUser.id,
     errors: state.errors.review,
-    defaultActivity: defaultActivity(state),
+    // defaultActivity: defaultActivity(state),
     activities: filteredTagsByType(state, "activity"),
     trailConditions: filteredTagsByType(state, "obstacle"),
   };
@@ -51,6 +51,14 @@ class ReviewForm extends React.Component {
     //     ? Object.values(review.tags).map((tag) => tag.name)
     //     : []
     // );
+
+    //        const tagsArr2 = [this.props.defaultActivity].concat(
+    //          this.state.tag_ids
+    //        );
+
+    // console.log("tags", tagsArr2)
+
+    // console.log("review.tags", Object.values(review.tags));
     this.state = {
       rating: review ? review.rating : "",
       review: review ? review.review : "",
@@ -66,7 +74,7 @@ class ReviewForm extends React.Component {
       activity: review
         ? Object.values(review.tags).filter((o) => o.tagType === "activity")[0]
             .name
-        : this.props.defaultActivity,
+        : "hiking"
     };
 
     this.update = this.update.bind(this);
@@ -96,6 +104,26 @@ class ReviewForm extends React.Component {
 
     // console.log('tag_ids', this.state.tag_ids);
 
+    const { review } = this.props;
+
+        console.log(
+          "okk",
+          review && review.tags
+            ? Object.values(review.tags).map((tag) => tag.name)
+            : []
+        );
+
+        // const tagsArr2 = [this.props.defaultActivity].concat(
+        //   this.state.tag_ids
+        // );
+        const tagsArr2 = [this.state.activity].concat(
+          this.state.tag_ids
+        );
+
+        console.log("tags", tagsArr2);
+
+        // console.log("review.tags", Object.values(review.tags));
+
     const tagIds = this.state.tag_ids
       .map((tagName) => {
         const arr = this.props.trailConditions.filter(
@@ -111,9 +139,18 @@ class ReviewForm extends React.Component {
       })
       .filter((o) => o !== null); // Get rid of any null values we returned above
 
+    // const activityId = this.props.activities.filter(
+    //   (o) => o.name === this.state.activity
+    // )[0].id
+      // cant read prop. id of undefined ^^
+
     const activityId = this.props.activities.filter(
       (o) => o.name === this.state.activity
-    )[0].id;
+    )[0].id
+
+    console.log("this.state.activity", this.state.activity)
+
+    console.log("activityId", activityId) // returns undefined 
 
     let newReview = {
       rating: this.state.rating,
@@ -127,7 +164,8 @@ class ReviewForm extends React.Component {
       trail_id: this.props.trail.id,
     };
 
-    // console.log(this.props.userId);
+    console.log("userId", this.props.userId);
+    console.log("trail.id", this.props.trail.id);
 
     this.props
       .createReview(newReview)
@@ -138,15 +176,17 @@ class ReviewForm extends React.Component {
     e.preventDefault();
 
     const newTagName = e.target.textContent;
-    // console.log(e.target.textContent)
+    console.log("e.target.textContent", e.target.textContent)
 
 
     if (!this.state.tag_ids.includes(newTagName)) {
       this.setState({
         tag_ids: [...this.state.tag_ids, newTagName],
       });
+      console.log("tag_ids", this.state.tag_ids)
     } else {
       const filtered = this.state.tag_ids.filter(tagName => tagName !== newTagName)
+      console.log("filtered", filtered)
       this.setState({
         tag_ids: filtered
       })

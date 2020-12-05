@@ -1,10 +1,10 @@
-export const defaultActivity = (state) => {
-  const activity = Object.values(state.entities.tags)
-  activity.find((tag) => {
-      tag.name === "hiking"
-  });
-  return activity.id;
-};
+// export const defaultActivity = (state) => {
+//   const activity = Object.values(state.entities.tags)
+//   activity.find((tag) => {
+//       tag.name === "hiking"
+//   });
+//   return activity.id;
+// };
 
 export const filteredTagsByType = (state, tagType) => {
   const tags = Object.values(state.entities.tags);
