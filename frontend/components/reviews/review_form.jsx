@@ -35,8 +35,8 @@ class ReviewForm extends React.Component {
 
     // console.log("review_form", this.props.review)
     if (review) {
-      console.log('######1',review)
-      console.log("######2", review.tags);
+      // console.log('######1',review)
+      // console.log("######2", review.tags);
     // console.log(
     //   "TAGS",
     //   Object.values(review.tags),
@@ -45,12 +45,12 @@ class ReviewForm extends React.Component {
     // );
     }
 
-    console.log(
-      "okk",
-      review && review.tags
-        ? Object.values(review.tags).map((tag) => tag.name)
-        : []
-    );
+    // console.log(
+    //   "okk",
+    //   review && review.tags
+    //     ? Object.values(review.tags).map((tag) => tag.name)
+    //     : []
+    // );
     this.state = {
       rating: review ? review.rating : "",
       review: review ? review.review : "",
@@ -94,7 +94,7 @@ class ReviewForm extends React.Component {
     //   )
     // );
 
-    console.log('tag_ids', this.state.tag_ids);
+    // console.log('tag_ids', this.state.tag_ids);
 
     const tagIds = this.state.tag_ids
       .map((tagName) => {
@@ -127,7 +127,7 @@ class ReviewForm extends React.Component {
       trail_id: this.props.trail.id,
     };
 
-    console.log(this.props.userId);
+    // console.log(this.props.userId);
 
     this.props
       .createReview(newReview)

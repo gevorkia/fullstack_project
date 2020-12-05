@@ -6,7 +6,7 @@ import { avgParkRating } from "../../reducers/selectors/selectors"
 
 const mSTP = (state, ownProps) => {
   // debugger
-  console.log(state)
+  // console.log(state)
   const reviews = Object.values(state.entities.reviews);
   const totalReviews = reviews.length;
   const trails = Object.values(state.entities.trails);

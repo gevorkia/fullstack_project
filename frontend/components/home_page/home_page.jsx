@@ -35,35 +35,21 @@ class HomePage extends React.Component {
   }
 
   setSearchText(e) {
-    console.log(e);
+    // console.log(e);
     // e.preventDefault();
     // console.log("setSearchTxt");
     this.setState({
       searchText: e.target.value,
       id: "display-search-list",
     });
-  }
-  
+  };
+
   removeSearchText(e) {
-    // console.log("removeSearchTxt");
-    // return e => {
     this.setState({
       searchText: e.target.value,
       id: "dont-display-list",
     });
-    // }
-    // this.setSearchText();
-  }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (
-  //     prevState.isFocused &&
-  //     !this.state.isFocused &&
-  //     this.props.value !== this.state.value
-  //   ) {
-  //     //commit your change to value
-  //   }
-  // }
+  };
 
   handleFocus(e) {
     // onFocus(e)
@@ -76,24 +62,30 @@ class HomePage extends React.Component {
     console.log("focus");
   }
 
+  // grab related target
+  // obtain path from target .getAttribute("href")
+  // this.props.history.push to push to the path from the target
+  // won't need a-tags
+
   handleBlur(e) {
+    // console.log(e.currentTarget);
+    // console.log(e.target);
+    // console.log(e.relatedTarget);
+    
+    e.preventDefault();
+
     if (!this.state.focus) {
       return;
     }
 
-    // onBlur(e);
-    e.preventDefault();
-    this.setState({ focus: false });
-    
-    this.removeSearchText(e);
-    console.log("blur");
-    //  if (!e.currentTarget.contains(document.activeElement)) {
-    //    console.log("table blurred");
-    //  }
-
-     if (!e.currentTarget.contains(e.relatedTarget)) {
-       console.log("blur event");
-     }
+    if (e.relatedTarget) {
+      const path = e.relatedTarget.getAttribute("href")
+      this.props.history.push(path);
+    } else {
+      this.setState({ focus: false });
+      this.removeSearchText(e);
+      console.log("blur");
+    }
   }
 
   render() {
@@ -113,7 +105,7 @@ class HomePage extends React.Component {
               <form
                 className="input-holder"
                 onFocus={this.handleFocus}
-                // onBlur={this.handleBlur}
+                onBlur={this.handleBlur}
               >
                 <div className="magnifying-glass">
                   <img
@@ -141,13 +133,11 @@ class HomePage extends React.Component {
                   // event handler that sets state to whatever user enters
                 />
                 <div className="search-suggestions">
-                  <div
-                    className="suggestions-list-wrapper"
-                    id={this.state.id}
-                  >
+                  <div className="suggestions-list-wrapper" id={this.state.id}>
                     {/* passing in the value of the state as a prop */}
                     <SearchSuggestions
                       searchText={this.state.searchText}
+                      // not currently using focus in child component
                       focus={this.state.focus}
                     />
                   </div>

@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
   const trailReviews = Object.values(filteredReviews);
 
   const filteredTrailTags = state.entities.tags;
-  
+
   // debugger
   return {
     trail,
@@ -78,7 +78,7 @@ class TrailIndexItemDetail extends React.Component {
     // if (!this.props.trail) return null;
     
     const {trail, park, allReviews, reviews, trailTags, avgTrailRating} = this.props;
-    console.log("trail item detail", reviews);
+    // console.log("trail item detail", reviews);
     // console.log(trailTags)
     
     const reviewStars = [];

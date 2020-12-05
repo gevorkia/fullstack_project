@@ -13,6 +13,9 @@ class SecNavBar extends React.Component {
     };
 
     this.setSearchText = this.setSearchText.bind(this);
+    this.removeSearchText = this.removeSearchText.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   // componentDidMount() {
@@ -20,19 +23,58 @@ class SecNavBar extends React.Component {
   // }
 
   setSearchText(e) {
-    console.log("secNavsearchtxt");
+    // console.log("secNavsearchtxt");
     e.preventDefault();
     this.setState({
       searchText: e.target.value,
       id: "display-search-list",
     });
+  };
+
+  removeSearchText(e) {
+    this.setState({
+      searchText: e.target.value,
+      id: "dont-display-list",
+    });
+  };
+
+  handleFocus(e) {
+    // onFocus(e)
+    e.preventDefault();
+
+    if (this.state.focus) return;
+
+    this.setState({ focus: true });
+    this.setSearchText(e);
+    console.log("focus");
+  }
+
+  handleBlur(e) {
+    // console.log(e.currentTarget);
+    // console.log(e.target);
+    // console.log(e.relatedTarget);
+
+    e.preventDefault();
+
+    if (!this.state.focus) {
+      return;
+    }
+
+    if (e.relatedTarget) {
+      const path = e.relatedTarget.getAttribute("href");
+      this.props.history.push(path);
+    } else {
+      this.setState({ focus: false });
+      this.removeSearchText(e);
+      console.log("blur");
+    }
   }
 
   render() {
     const { park } = this.props;
 
     if (!park) return null;
-    console.log(this.state.id)
+    // console.log(this.state.id)
     return (
       <>
         <section className="sec-nav-wrapper">
@@ -59,7 +101,9 @@ class SecNavBar extends React.Component {
                   autoComplete="off"
                   aria-label="text search input"
                   onChange={this.setSearchText}
-                ></input>
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleBlur}
+                />
                 <button className="secNav-search-button">
                   <div className="secNav-magnifying-glass"></div>
                 </button>

@@ -70,7 +70,7 @@ class ReviewIndexItem extends React.Component {
         const reviewer = review[review.userId]
         // console.log("review index item", this.props)
         // console.log("review", review)
-        console.log("reviewer", reviewer)
+        // console.log("reviewer", reviewer)
 
         const reviewActions =
       

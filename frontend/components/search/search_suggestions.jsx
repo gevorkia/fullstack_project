@@ -21,7 +21,7 @@ const mDTP = (dispatch) => {
 class SearchSuggestions extends React.Component {
   constructor(props) {
     super(props);
-    this.changeFocus = this.changeFocus.bind(this)
+    // this.changeFocus = this.changeFocus.bind(this)
 
     this.state = {
       focus: this.props.focus
@@ -32,13 +32,13 @@ class SearchSuggestions extends React.Component {
     this.props.fetchParks();
   }
 
-  changeFocus() {
-    console.log("change focus")
-    this.setState({ focus: false });
-  }
+  // changeFocus() {
+  //   console.log("change focus")
+  //   this.setState({ focus: false });
+  // }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { parks, trails, searchText, focus } = this.props;
     // console.log(searchText);
 
@@ -47,7 +47,7 @@ class SearchSuggestions extends React.Component {
 
     const suggestions = [];
     
-    console.log("parks", parks)
+    // console.log("parks", parks)
 
     parks
       .filter((park) => park.name.toLowerCase().includes(searchText))
