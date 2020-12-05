@@ -7,6 +7,9 @@ const tagsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_TRAIL:
+      // console.log("receivetrailtagsreducer", action.payload.trail.tags);
+      nextState = action.payload.trail.tags
+      return nextState;
     case RECEIVE_REVIEWS:
       nextState = action.payload.tags;
       return nextState;

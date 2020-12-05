@@ -16,6 +16,14 @@ json.trails do
             json.extract! trail, :id, :name, :difficulty, :summary, :description, :length, :elevation_gain, :route_type, :usage, :park_id, :lat, :lng
             json.coverPhotoUrl url_for(trail.coverPhoto)
             # json.photoUrls trail.photos.map { |file| url_for(file) }
+            
+            json.tags do 
+                trail.tags.each do |tag|
+                    json.set! tag.id do
+                        json.extract! tag, :id, :name, :tag_type
+                    end
+                end
+            end
         end 
     end
 end

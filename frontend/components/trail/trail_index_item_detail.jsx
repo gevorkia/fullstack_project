@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
   const filteredReviews = reviews.filter((r) => r.trailId === trail.id)
   const trailReviews = Object.values(filteredReviews);
 
-  const filteredTrailTags = state.entities.tags;
+  // const filteredTrailTags = state.entities.trails.tags;
+  // console.log("tags in detail", filteredTrailTags)
 
   // debugger
   return {
@@ -22,7 +23,7 @@ const mSTP = (state, ownProps) => {
     park: trail ? state.entities.parks[trail.parkId] : null,
     allReviews: reviews,
     reviews: trail ? filteredReviews : null,
-    trailTags: Object.values(filteredTrailTags),
+    // trailTags: Object.values(filteredTrailTags),
     modal: state.ui.modal,
     avgTrailRating: avgTrailRating(trailReviews),
   };
@@ -77,7 +78,7 @@ class TrailIndexItemDetail extends React.Component {
     
     // if (!this.props.trail) return null;
     
-    const {trail, park, allReviews, reviews, trailTags, avgTrailRating} = this.props;
+    const {trail, park, allReviews, reviews, avgTrailRating} = this.props;
     // console.log("trail item detail", reviews);
     // console.log(trailTags)
     
@@ -93,13 +94,24 @@ class TrailIndexItemDetail extends React.Component {
       );
     }
 
-    const mappedTrailTags = trailTags.map((tag, idx) => {
-      return (
-        <span className="tag" key={`trailTag-${idx}`}>
-          <span className="big-rounded-active">{tag.name}</span>
-        </span>
-      );
-    })
+    console.log(trail.tags);
+    // console.log(Object.values(trail.tags));
+
+
+    let mappedTrailTags = [];
+    
+    if (trail.tags) {
+      const trailTags = Object.values(trail.tags);
+  
+      mappedTrailTags = trailTags.map((tag, idx) => {
+        return (
+          <span className="tag" key={`trailTag-${idx}`}>
+            <span className="big-rounded-active">{tag.name}</span>
+          </span>
+        );
+      })
+
+    }
 
     return (
       <>
