@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createReview, clearReviewErrors } from "../../actions/review_actions";
+import { createReview, updateReview } from "../../actions/review_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 import {
@@ -22,6 +22,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     createReview: (review) => dispatch(createReview(review)),
+    updateReview: (review) => dispatch(updateReview(review)),
     closeModal: () => dispatch(closeModal()),
   };
 };
@@ -74,11 +75,13 @@ class ReviewForm extends React.Component {
       activity: review
         ? Object.values(review.tags).filter((o) => o.tagType === "activity")[0]
             .name
-        : "hiking"
+        : "hiking",
+      // editable: false
     };
 
     this.update = this.update.bind(this);
     this.postReview = this.postReview.bind(this);
+    this.editReview = this.editReview.bind(this);
     this.handleTagSelection = this.handleTagSelection.bind(this);
   }
 
@@ -148,9 +151,9 @@ class ReviewForm extends React.Component {
       (o) => o.name === this.state.activity
     )[0].id
 
-    console.log("this.state.activity", this.state.activity)
+    // console.log("this.state.activity", this.state.activity)
 
-    console.log("activityId", activityId) // returns undefined 
+    // console.log("activityId", activityId) // returns undefined 
 
     let newReview = {
       rating: this.state.rating,
@@ -164,12 +167,62 @@ class ReviewForm extends React.Component {
       trail_id: this.props.trail.id,
     };
 
-    console.log("userId", this.props.userId);
-    console.log("trail.id", this.props.trail.id);
+    // console.log("userId", this.props.userId);
+    // console.log("trail.id", this.props.trail.id);
 
+    // console.log("post, this.state.editable", this.state.editable);
+    
     this.props
       .createReview(newReview)
-      .then(() => this.props.closeModal());
+      .then(() => this.props.closeModal())
+      // .then(() => this.setState({ editable: true }))
+
+    // console.log("post, this.state.editable", this.state.editable);
+  }
+
+  editReview(e) {
+    e.preventDefault();
+
+
+
+    const tagIds = this.state.tag_ids
+      .map((tagName) => {
+        const arr = this.props.trailConditions.filter(
+          (o) => o.name === tagName
+        );
+
+        if (arr.length === 0) {
+          // Our tagName likely isn't for an obstacle, so ignore it
+          return null;
+        }
+
+        return arr[0].id;
+      })
+      .filter((o) => o !== null); // Get rid of any null values we returned above
+
+    const activityId = this.props.activities.filter(
+      (o) => o.name === this.state.activity
+    )[0].id;
+
+    let editedReview = {
+      id: this.props.review.id,
+      rating: this.state.rating,
+      review: this.state.review,
+      activity_date: this.state.activity_date,
+      tag_ids: [
+        ...tagIds,
+        activityId, // Include the selected activity as a tag
+      ],
+      user_id: this.props.userId,
+      trail_id: this.props.trail.id,
+    };
+
+        console.log("edit, review id", editedReview.id);
+
+    this.props
+        .updateReview(editedReview)
+        .then(() => this.props.closeModal())
+        // .then(() => this.setState({ editable: false }))
   }
 
   handleTagSelection(e) {
@@ -231,8 +284,23 @@ class ReviewForm extends React.Component {
       </>
     );
 
+    const modalButton = (!this.props.isEditing) ? (
+      <>
+        <button className="post-btn" onClick={this.postReview} type="submit">
+          Post
+        </button>
+      </>
+    ) : (
+      <>
+        <button className="post-btn" onClick={this.editReview} type="submit">
+          Edit
+        </button>
+      </>
+    );
+
     return (
-      <form className="review-form-modal" onSubmit={this.postReview}>
+      // <form className="review-form-modal" onSubmit={this.postReview}>
+      <form className="review-form-modal">
         {/* <div className="review-form-modal" onClick={}> */}
         <div className="review-form-x-wrapper">
           <button className="review-form-x">
@@ -307,7 +375,7 @@ class ReviewForm extends React.Component {
               <div className="review-form-subheader">Activity</div>
               <select
                 onChange={this.update("activity")}
-                className="activity-dropdown"      
+                className="activity-dropdown"
                 value={this.state.activity}
                 // required
               >
@@ -343,13 +411,16 @@ class ReviewForm extends React.Component {
               <div className="cancel-btn" onClick={this.props.closeModal}>
                 Cancel
               </div>
-              <button
+
+              {modalButton}
+
+              {/* <button
                 className="post-btn"
                 // onClick={this.postReview}
                 type="submit"
               >
                 Post
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

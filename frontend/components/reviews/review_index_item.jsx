@@ -90,7 +90,7 @@ class ReviewIndexItem extends React.Component {
                 this.props.modal.modalType === "edit_review" && this.props.modal.id === review.id ? (
                   <section className="review-idx-wrapper">
                     <div className="review-idx">
-                      <ReviewModal trail={trail} review={review} />
+                      <ReviewModal trail={trail} review={review} isEditing />
                     </div>
                   </section>
                 ) : null}

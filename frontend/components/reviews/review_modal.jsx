@@ -31,7 +31,7 @@ const ReviewModal = (props) => {
         className="modal-child"
         onClick={(e) => e.stopPropagation()}
       >
-          <ReviewForm trail={props.trail} review={props.review}/>
+          <ReviewForm trail={props.trail} review={props.review} isEditing={props.isEditing} />
       </div>
     </div>
   );

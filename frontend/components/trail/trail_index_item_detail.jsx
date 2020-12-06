@@ -209,7 +209,7 @@ class TrailIndexItemDetail extends React.Component {
                       this.props.modal.modalType === "create_review" ? (
                         <section className="review-idx-wrapper">
                           <div className="review-idx">
-                            <ReviewModal trail={trail} />
+                            <ReviewModal trail={trail} isEditing={false} />
                           </div>
                         </section>
                       ) : null}

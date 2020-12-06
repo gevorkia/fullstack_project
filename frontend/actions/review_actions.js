@@ -64,7 +64,7 @@ export const createReview = review => dispatch => {
 
 export const updateReview = review => dispatch => {
     return ReviewAPIUtil.updateReview(review)
-        .then((review) => dispatch(receiveReview(review)))
+        .then((updatedReview) => dispatch(receiveReview(updatedReview)))
         .fail((errors) => dispatch(receiveReviewErrors(errors.responseJSON)));
 }
 
