@@ -47,15 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.fetchPark = fetchPark;
   // window.fetchParkTrails = fetchParkTrails;
 
-  // 1. thunk action creators
-  window.fetchReviews = fetchReviews;
-  window.createReview = createReview;
-  window.updateReview = updateReview;
-  window.deleteReview = deleteReview;
+  // // 1. thunk action creators
+  // window.fetchReviews = fetchReviews;
+  // window.createReview = createReview;
+  // window.updateReview = updateReview;
+  // window.deleteReview = deleteReview;
 
-  // 2. state tests
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // // 2. state tests
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 });
 
 // to reset the primary key sequence for the seeds file
