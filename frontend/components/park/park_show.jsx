@@ -7,9 +7,10 @@ import { avgParkRating } from "../../reducers/selectors/selectors"
 const mSTP = (state, ownProps) => {
   // debugger
   // console.log(state)
+  const parks = state.entities.parks
   const park = state.entities.parks[ownProps.match.params.parkId]
   const reviews = Object.values(state.entities.reviews);
-  console.log("reviews", reviews);
+  // console.log("reviews", reviews);
   const parkReviews = reviews.filter(o => {
     if (park.id === 1) {
         return [1, 2, 3].includes(o.trailId);
@@ -21,6 +22,7 @@ const mSTP = (state, ownProps) => {
   const trails = Object.values(state.entities.trails);
 
   return {
+    parks,
     park,
     trails: trails,
     avgParkRating: avgParkRating(parkReviews), 
@@ -62,7 +64,7 @@ class ParkShow extends React.Component {
 
       if (!this.props.park || !this.props.trails) return null;
 
-      const { park, trails, avgParkRating, totalReviews } = this.props;
+      const { parks, park, trails, avgParkRating, totalReviews } = this.props;
 
       const reviewStars = [];
 
@@ -103,7 +105,10 @@ class ParkShow extends React.Component {
 
       return (
         <>
-          <SecNavBar park={park} />
+          <SecNavBar 
+            // parks={parks} 
+            park={park}
+          />
           <section className="park-content-wrapper">
             <section className="park-content">
               <div className="photo-carousel-wrapper">

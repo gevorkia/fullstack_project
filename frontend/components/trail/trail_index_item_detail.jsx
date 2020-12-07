@@ -94,7 +94,7 @@ class TrailIndexItemDetail extends React.Component {
       );
     }
 
-    console.log(trail.tags);
+    // console.log(trail.tags);
     // console.log(Object.values(trail.tags));
 
 

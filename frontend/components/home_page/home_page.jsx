@@ -59,7 +59,7 @@ class HomePage extends React.Component {
 
     this.setState({ focus: true });
     this.setSearchText(e);
-    console.log("focus");
+    // console.log("focus");
   }
 
   // grab related target

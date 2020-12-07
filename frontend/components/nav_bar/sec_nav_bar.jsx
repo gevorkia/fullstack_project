@@ -66,7 +66,7 @@ class SecNavBar extends React.Component {
     } else {
       this.setState({ focus: false });
       this.removeSearchText(e);
-      console.log("blur");
+      // console.log("blur");
     }
   }
 
