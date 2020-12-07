@@ -7,14 +7,23 @@ import { avgParkRating } from "../../reducers/selectors/selectors"
 const mSTP = (state, ownProps) => {
   // debugger
   // console.log(state)
+  const park = state.entities.parks[ownProps.match.params.parkId]
   const reviews = Object.values(state.entities.reviews);
-  const totalReviews = reviews.length;
+  console.log("reviews", reviews);
+  const parkReviews = reviews.filter(o => {
+    if (park.id === 1) {
+        return [1, 2, 3].includes(o.trailId);
+    } else {
+        return [4, 5, 6, 7].includes(o.trailId);
+    }
+  });
+  const totalReviews = parkReviews.length;
   const trails = Object.values(state.entities.trails);
 
   return {
-    park: state.entities.parks[ownProps.match.params.parkId],
+    park,
     trails: trails,
-    avgParkRating: avgParkRating(reviews), 
+    avgParkRating: avgParkRating(parkReviews), 
     //   loading: state.ui.loading.indexLoading,
     totalReviews
   };

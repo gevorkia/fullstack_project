@@ -4,7 +4,7 @@ MyTrails, an AllTrails clone, is an application that allows users to find detail
 
 A trail page includes detailed information such as the difficulty, length, elevation gain, route type, and tag identifiers to quickly share trail features with users. Users will be able to read reviews as well as create, edit, and delete their own reviews.
 
-### Live site: [MyTrails](https://mytrails-app.herokuapp.com/)
+### Live: [MyTrails](https://mytrails-app.herokuapp.com/)
 
 ![Splash Page](./images/mytrails_splash.png?raw=true)
 
@@ -62,6 +62,7 @@ MyTrails was created using Ruby on Rails and a POSTgreSQL database on the backen
 
 * Users can delete a review by clicking on the delete text underneath their review.
 
+## Code Snippets
 
 ### Search Suggestions Component
 
