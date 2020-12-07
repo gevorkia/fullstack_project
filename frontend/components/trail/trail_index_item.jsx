@@ -37,15 +37,18 @@ class TrailIndexItem extends React.Component {
 
                 <div className="trail-park-name">{parkName}</div>
                 <div className="trail-info-sub">
-                  <div className={`trail-difficulty-${trail.difficulty}`}>{trail.difficulty}</div>
+                  <div className={`trail-difficulty-${trail.difficulty}`}>
+                    {trail.difficulty}
+                  </div>
                   <div className="stars">{reviewStars}</div>
 
                   <div className="review-count">({reviews.length})</div>
                 </div>
                 <div className="trail-length">Length: {trail.length} mi</div>
-
-                <p className="trail-summary">{trail.summary}</p>
-                {/* <span className="show-more">Show more</span> */}
+                <div className="trail-summary-wrapper ">
+                  <p className="trail-summary">{trail.summary}</p>
+                  <span className="show-more">Show more</span>
+                </div>
               </div>
               {/* </div> */}
             </div>
