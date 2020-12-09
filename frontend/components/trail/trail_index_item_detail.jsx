@@ -26,6 +26,7 @@ const mSTP = (state, ownProps) => {
     // trailTags: Object.values(filteredTrailTags),
     modal: state.ui.modal,
     avgTrailRating: avgTrailRating(trailReviews),
+    currentUser: state.session.currentUser
   };
 };
 
@@ -110,8 +111,35 @@ class TrailIndexItemDetail extends React.Component {
           </span>
         );
       })
-
     }
+
+    const writeReview = (
+      <>
+        {this.props.currentUser ? (
+          <div className="trail-review-btn-wrapper">
+            <div className="review-blurb">
+              Share your thoughts about the trail so others know what
+              to expect!
+            </div>
+            <button
+              className="trail-review-btn"
+              onClick={() => this.props.openModal("create_review")}
+            >
+              Write Review
+            </button>
+            {/* only render review modal if modal state is set to "create_review" modal type */}
+            {this.props.modal &&
+            this.props.modal.modalType === "create_review" ? (
+              <section className="review-idx-wrapper">
+                <div className="review-idx">
+                  <ReviewModal trail={trail} isEditing={false} />
+                </div>
+              </section>
+            ) : null}
+          </div>
+          ) : null} 
+      </>
+    )    
 
     return (
       <>
@@ -192,8 +220,9 @@ class TrailIndexItemDetail extends React.Component {
                     <div className="trail-reviews">Reviews</div>
                   </div>
                   <div className="reviews-subheader-wrapper">
+                    {writeReview}
                     {/* <div className="avg-rating">Reviewstars</div> */}
-                    <div className="trail-review-btn-wrapper">
+                    {/* <div className="trail-review-btn-wrapper">
                       <div className="review-blurb">
                         Share your thoughts about the trail so others know what
                         to expect!
@@ -203,9 +232,9 @@ class TrailIndexItemDetail extends React.Component {
                         onClick={() => this.props.openModal("create_review")}
                       >
                         Write Review
-                      </button>
+                      </button> */}
                       {/* only render review modal if modal state is set to "create_review" modal type */}
-                      {this.props.modal &&
+                      {/* {this.props.modal &&
                       this.props.modal.modalType === "create_review" ? (
                         <section className="review-idx-wrapper">
                           <div className="review-idx">
@@ -213,7 +242,7 @@ class TrailIndexItemDetail extends React.Component {
                           </div>
                         </section>
                       ) : null}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="review-index-wrapper">
                     <ReviewIndex trail={trail} reviews={reviews} />
