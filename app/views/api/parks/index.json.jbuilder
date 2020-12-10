@@ -1,5 +1,6 @@
 json.parks(@parks) do |park|
     json.extract! park, :id, :name, :summary, :description, :location, :acreage, :contact, :website, :lat, :lng
+    json.photoUrls park.photos.map { |file| url_for(file) }
     json.trails(park.trails) do |trail|
         json.extract! trail, :id, :name, :difficulty, :summary, :description, :length, :elevation_gain, :route_type, :usage, :park_id, :lat, :lng
         json.tags do 

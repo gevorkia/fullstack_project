@@ -26,6 +26,9 @@ const parksReducer = (state = {}, action) => {
         let trails = [];
         action.payload.parks.forEach((park) => {
           trails = trails.concat(park.trails);
+          
+          // SPOOKY EXPERIMENTAL TODO:
+          nextState[park.id] = park;
         })
 
         nextState['parks'] = action.payload.parks;

@@ -8,7 +8,10 @@ const mSTP = (state, ownProps) => {
   // debugger
   // console.log(state)
   const parks = state.entities.parks
+  console.log('GHORMESHABIZ', parks);
   const park = state.entities.parks[ownProps.match.params.parkId]
+  console.log("AXXX JIGYARSS", ownProps.match.params.parkId);
+  console.log("AXXX XAXPERS", park);
   const reviews = Object.values(state.entities.reviews);
   // console.log("reviews", reviews);
   const parkReviews = reviews.filter(o => {

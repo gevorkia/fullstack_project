@@ -36,7 +36,7 @@ class HomePage extends React.Component {
 
   setSearchText(e) {
     // console.log(e);
-    // e.preventDefault();
+    e.preventDefault();
     // console.log("setSearchTxt");
     this.setState({
       searchText: e.target.value,
@@ -138,7 +138,7 @@ class HomePage extends React.Component {
                     <SearchSuggestions
                       searchText={this.state.searchText}
                       // not currently using focus in child component
-                      focus={this.state.focus}
+                      // focus={this.state.focus}
                     />
                   </div>
                 </div>

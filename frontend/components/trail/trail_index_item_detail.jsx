@@ -9,15 +9,13 @@ import { avgTrailRating } from "../../reducers/selectors/selectors";
 
 
 const mSTP = (state, ownProps) => {
+  console.log("khely bad", ownProps);
+
   const trail = state.entities.trails[ownProps.match.params.trailId];
   const reviews = sortedTrailReviews(state);
-  const filteredReviews = reviews.filter((r) => r.trailId === trail.id)
-  const trailReviews = Object.values(filteredReviews);
+  const filteredReviews = trail ? reviews.filter((r) => r.trailId === trail.id) : [];
+  const trailReviews = filteredReviews ? Object.values(filteredReviews) : [];
 
-  // const filteredTrailTags = state.entities.trails.tags;
-  // console.log("tags in detail", filteredTrailTags)
-
-  // debugger
   return {
     trail,
     park: trail ? state.entities.parks[trail.parkId] : null,
@@ -53,6 +51,7 @@ class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
     this.trailId = this.props.match.params.trailId;
+    console.log(this.trailId)
   }
 
 
@@ -69,6 +68,11 @@ class TrailIndexItemDetail extends React.Component {
         if (!this.props.park && this.props.trail) {
           this.props.fetchPark(this.props.trail.parkId);
         }
+
+        // if (!this.props.trail) {
+        //   this.props.fetchTrail(this.trailId);
+        //   this.props.fetchReviews();
+        // }
     }
 
   render() {

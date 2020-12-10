@@ -22,6 +22,10 @@ class SecNavBar extends React.Component {
   //     //  this.props.fetchPark(this.props.match.params.parkId);
   // }
 
+  // componentWillUnmount() {
+  //   this.setState({ id: "dont-display-list" });
+  // }
+
   setSearchText(e) {
     // console.log("secNavsearchtxt");
     e.preventDefault();
@@ -46,7 +50,8 @@ class SecNavBar extends React.Component {
 
     this.setState({ focus: true });
     this.setSearchText(e);
-    console.log("focus");
+    // this.setState({ id: "dont-display-list" });
+    // console.log("focus");
   }
 
   handleBlur(e) {
@@ -56,13 +61,13 @@ class SecNavBar extends React.Component {
 
     e.preventDefault();
 
-    if (!this.state.focus) {
-      return;
-    }
+    if (!this.state.focus) return;
 
     if (e.relatedTarget) {
-      const path = e.relatedTarget.getAttribute("href");
-      this.props.history.push(path);
+      // console.log(e.relatedTarget)
+      // const path = e.relatedTarget.getAttribute("href");
+      // this.props.history.push(path);
+      // this.setState({id: "dont-display-list"})
     } else {
       this.setState({ focus: false });
       this.removeSearchText(e);
@@ -93,7 +98,11 @@ class SecNavBar extends React.Component {
               </div>
             </div>
             <div className="right-wrapper">
-              <div className="secNav-input-holder">
+              <form
+                className="secNav-input-holder"
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                >
                 <input
                   className="secNav-search-bar"
                   type="text"
@@ -101,8 +110,9 @@ class SecNavBar extends React.Component {
                   autoComplete="off"
                   aria-label="text search input"
                   onChange={this.setSearchText}
-                  onFocus={this.handleFocus}
-                  onBlur={this.handleBlur}
+                  onClick={this.setSearchText}
+                  // onFocus={this.handleFocus}
+                  // onBlur={this.handleBlur}
                 />
                 <button className="secNav-search-button">
                   <div className="secNav-magnifying-glass"></div>
@@ -115,7 +125,7 @@ class SecNavBar extends React.Component {
                     <SearchSuggestions searchText={this.state.searchText} />
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </section>
