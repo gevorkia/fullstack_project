@@ -45,7 +45,6 @@ export const loginUser = (user) => {
 export const logoutUser = () => {
     return dispatch => {
         return SessionAPIUtil.logout()
-            // anon function below instead of user?
             .then( () => {
                 return dispatch(logoutCurrentUser())
             })

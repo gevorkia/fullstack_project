@@ -40,10 +40,8 @@ export const fetchPark = parkId => {
 
 export const fetchParks = () => {
     return dispatch => {
-        // debugger
         return ParkAPIUtil.fetchParks()
             .then(parks => {
-                // debugger
                 return dispatch(receiveParks(parks))
             });
     };
@@ -51,10 +49,8 @@ export const fetchParks = () => {
 
 export const fetchParkTrails = parkId => {
     return dispatch => {
-        // debugger
         return ParkAPIUtil.fetchParkTrails(parkId)
             .then(trails => {
-                // debugger
                 return dispatch(receiveParkTrails(trails))
             })
     }

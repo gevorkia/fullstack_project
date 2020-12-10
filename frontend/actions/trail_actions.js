@@ -1,7 +1,6 @@
 import * as TrailAPIUtil from "../utils/trail_api_util";
 
 export const RECEIVE_TRAIL = "RECEIVE_TRAIL";
-// export const RECEIVE_TRAIL_REVIEWS = "RECEIVE_TRAIL_REVIEWS";
 
 const receiveTrail = (payload) => {
     // debugger
@@ -10,14 +9,6 @@ const receiveTrail = (payload) => {
         payload
     }
 }
-
-// const receiveTrailReviews = (payload) => {
-//   return {
-//     type: RECEIVE_TRAIL_REVIEWS,
-//     payload,
-//   };
-// };
-
 
 // thunk action creators
 
@@ -32,9 +23,3 @@ export const fetchTrail = trailId => {
     };
 };
 
-// export const fetchTrailReviews = (trailId) => (dispatch) => {
-//   // console.log("hiihihi okk actionss");
-//   return TrailAPIUtil.fetchTrailReviews(trailId).then((reviews) =>
-//     dispatch(receiveTrailReviews(reviews))
-//   );
-// };

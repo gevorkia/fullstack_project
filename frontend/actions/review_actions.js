@@ -4,7 +4,6 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
-// export const CLEAR_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 
 const receiveReviews = (payload) => {
   return {
@@ -36,13 +35,6 @@ const receiveReviewErrors = (errors) => {
   };
 };
 
-// const receiveClearReviewErrors = () => {
-//   return {
-//     type: CLEAR_REVIEW_ERRORS,
-//   };
-// };
-
-
 // thunk action creators
 // functions that return other functions. the 1st function, provide parameters needed to make AJAX request
 // inner (2nd) function parameter will always be dispatch
@@ -72,9 +64,5 @@ export const deleteReview = reviewId => dispatch => {
   // console.log("deleting reivew", reviewId);
     return ReviewAPIUtil.deleteReview(reviewId)
         .then(() => dispatch(removeReview(reviewId)))
-        // console.log("DELETEREVIEW")
 }
 
-// export const clearReviewErrors = () => (dispatch) => {
-//   return dispatch(receiveClearReviewErrors());
-// };

@@ -1,16 +1,7 @@
-// export const defaultActivity = (state) => {
-//   const activity = Object.values(state.entities.tags)
-//   activity.find((tag) => {
-//       tag.name === "hiking"
-//   });
-//   return activity.id;
-// };
-
 export const filteredTagsByType = (state, tagType) => {
   const tags = Object.values(state.entities.tags);
-  const filteredTags = tags.filter((tag) => {
-    // console.log(tag)
 
+  const filteredTags = tags.filter((tag) => {
     return tag.tagType === tagType;
   });
   
@@ -24,7 +15,7 @@ export const avgTrailRating = (reviews) => {
   let sumRatings = 0;
   
   reviews.forEach(review => (sumRatings += review.rating));
-  
+
   const avg = sumRatings/(reviews.length)
   return avg
 }
@@ -36,7 +27,6 @@ export const avgParkRating = (reviews) => {
     let sumRatings = 0;
     reviews.forEach((review) => (sumRatings += review.rating));
     const avg = sumRatings / reviews.length;
-    // console.log(avg)
     return avg;
   }
 }
