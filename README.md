@@ -68,31 +68,73 @@ MyTrails was created using Ruby on Rails and a POSTgreSQL database on the backen
 
 I created a separate component for search suggestions that renders a list when the user interacts with the search bar. An event handler is used to set a new state with the user's input values which are further used to filter search suggestions. The id within the HTML input element is also changed in the new state, allowing CSS styling to display the search suggestion elements only when the state has updated.
 
+
 ```js
-Home Page Component
+  //Home Page Component
 
-setSearchText(e) {
-    return e => this.setState({
-      searchText: e.target.value,
-      id: "display-search-list"
-    });
-  }
-
-// in render function
+  <form
+    className="input-holder"
+    onFocus={this.handleFocus}
+    onBlur={this.handleBlur}
+  >
+    <div className="magnifying-glass">
+      <img
+        alt="logo"
+        src="https://cdn-assets.alltrails.com/assets/icons/search-gray-086ffadf121a7eb1f0487dcd1d7279b4.svg"
+      />
+    </div>
     <input
-        className="home-search-bar"
-        type="text"
-        placeholder="Enter a park or trail name"
-        autoComplete="off"
-        aria-label="text search input"
-        onChange={this.setSearchText()}
+      className="home-search-bar"
+      type="text"
+      placeholder="Enter a park or trail name"
+      autoComplete="off"
+      aria-label="text search input"
+      onChange={this.setSearchText}
+      onClick={this.setSearchText}
     />
     <div className="search-suggestions">
-        <div className="suggestions-list-wrapper" id={this.state.id}>
-        <SearchSuggestions searchText={this.state.searchText} />
-        </div>
+      <div className="suggestions-list-wrapper" id={this.state.id}>
+        <SearchSuggestions
+          searchText={this.state.searchText}
+        />
+      </div>
     </div>
+    <button className="search-button">Search</button>
+  </form>
 ```
+
+I encountered a bug that would not allow me to use the built-in onBlur while simultaneously linking to the link connected to the list item. The onBlur was overriding the onFocus. To remedy this, I used jQuery to extract the path from the relatedTarget and push that path into the history.
+
+```js
+
+setSearchText(e) {
+    e.preventDefault();
+    this.setState({
+      searchText: e.target.value,
+      id: "display-search-list",
+    });
+  };
+
+  handleFocus(e) {
+    e.preventDefault();
+    if (this.state.focus) return;
+    this.setState({ focus: true });
+    this.setSearchText(e);
+  }
+
+  handleBlur(e) {
+    e.preventDefault();
+    if (!this.state.focus) return;
+    if (e.relatedTarget) {
+      const path = e.relatedTarget.getAttribute("href")
+      this.props.history.push(path);
+    } else {
+      this.setState({ focus: false });
+      this.removeSearchText(e);
+    }
+  }
+```
+
 
 ### Secondary Nav Component
 
