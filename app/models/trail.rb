@@ -41,11 +41,3 @@ class Trail < ApplicationRecord
     has_many_attached :photos
     has_one_attached :coverPhoto
 end
-
-    # has_many :reviews,
-    #     foreign_key: :review_id,
-    #     class_name: "Review"   
-        
-    # has_many :photos,
-    #     foreign_key: ,
-    #     class_name: ""

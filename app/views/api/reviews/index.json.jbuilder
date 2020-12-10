@@ -1,4 +1,3 @@
-
 json.taggable do
     @reviews.each do |review|
         review.taggables.each do |taggable|

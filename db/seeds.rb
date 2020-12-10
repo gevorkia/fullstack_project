@@ -8,13 +8,13 @@
 
 
 # to reset primary_key Ids
+# ActiveRecord::Base.connection.reset_pk_sequence!('table_name')
 
 require 'open-uri'
 
 
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
-# User.create!(first_name: "", last_name: "", email: "", password: "")
 
 demo_user = User.create!(first_name: "demo", last_name: "user", email: "demouser@trails.com", password: "password")
 user1 = User.create!(first_name: "Henry", last_name: "Thoreau", email: "HenryThoreau@walden.com", password: "password")
@@ -287,8 +287,7 @@ o13 = Tag.create(name: "bridge out", tag_type: "obstacle")
 o14 = Tag.create(name: "fee", tag_type: "obstacle")
 
 Taggable.destroy_all
-
-# ADD OBSTACLES TO EACH PARK FOR TRAIL CONDITIONS
+ActiveRecord::Base.connection.reset_pk_sequence!('taggables')
 
 Taggable.create(tag_id: f12.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: a5.id, taggable_id: trail1.id, taggable_type: "Trail")
@@ -371,15 +370,9 @@ Taggable.create(tag_id: f2.id, taggable_id: trail7.id, taggable_type: "Trail")
 Taggable.create(tag_id: f5.id, taggable_id: trail7.id, taggable_type: "Trail")
 Taggable.create(tag_id: f4.id, taggable_id: trail7.id, taggable_type: "Trail")
 
-# taggable1 = Taggable.create!(taggable_type: "Trail", tag_id: tag2.id, taggable_id: trail1.id )
-# taggable2 = Taggable.create!(taggable_type: "Park", tag_id: tag1.id, taggable_id: park1.id )
-# taggable3 = Taggable.create!(taggable_type: "Trail", tag_id: tag1.id, taggable_id: trail1.id )
-
-# picture1 = Picture.create!(name: "Jack's picture", pictureable_id: employee1.id, pictureable_type: "Employee")
 
 # in rails c: Trail.first.tags
 
-# ADD TRAIL CONDITIONS (obstacles) for create review modal
 Taggable.create(tag_id: o1.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: o2.id, taggable_id: trail1.id, taggable_type: "Trail")
 Taggable.create(tag_id: o3.id, taggable_id: trail1.id, taggable_type: "Trail")
@@ -655,6 +648,7 @@ r22 = Review.create(
 
 # photos
 # attachments through console. only works in development, not production
+# used AWS once testing in console complete
 # park1.photos.attach(io: File.open("/Users/Lili/Desktop/big_sur/big_sur_1.jpg"), filename: "big_sur_1.jpg")
 
 # trail1.coverPhoto.attach(io: File.open("/Users/Lili/Desktop/big_sur/sykes/sykes_1.jpg"), filename: "sykes_1.jpg")

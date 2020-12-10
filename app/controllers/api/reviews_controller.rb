@@ -1,14 +1,7 @@
 class Api::ReviewsController < ApplicationController
-    # before_action :require_logged_in
 
     def index
-        # find all reviews associated with a specific user
-        # @userReviews = Review.includes(:taggables, :tags, :reviewer).where(user_id: params[:user_id])
-        # @trailReviews = Review.includes(:taggables, :tags, :trail).where(trail_id: params[:trail_id])
-        # debugger
-        # @trail = Trail.find_by(id: params[:trail_id])
         @reviews = Review.all
-        # debugger
         @tags = Tag.all
         render 'api/reviews/index'
     end
@@ -25,7 +18,6 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = Review.find_by(id: params[:id])
-        # debugger
 
         if @review.update(review_params)
             render :show
@@ -35,9 +27,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        # debugger
         @review = Review.find_by(id: params[:id])
-        # console.log(@review)
         @review.destroy
     end
 
