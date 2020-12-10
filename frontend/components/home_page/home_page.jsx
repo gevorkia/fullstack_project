@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SearchSuggestions from "../search/search_suggestions";
-// import Layout from "../layout/layout"
 
 // const HomePage = () => {
 //   // react hook for functional components only
@@ -35,9 +34,7 @@ class HomePage extends React.Component {
   }
 
   setSearchText(e) {
-    // console.log(e);
     e.preventDefault();
-    // console.log("setSearchTxt");
     this.setState({
       searchText: e.target.value,
       id: "display-search-list",
@@ -52,7 +49,6 @@ class HomePage extends React.Component {
   };
 
   handleFocus(e) {
-    // onFocus(e)
     e.preventDefault();
 
     if (this.state.focus) return;
@@ -62,21 +58,15 @@ class HomePage extends React.Component {
     // console.log("focus");
   }
 
-  // grab related target
-  // obtain path from target .getAttribute("href")
-  // this.props.history.push to push to the path from the target
-  // won't need a-tags
+  // handleBlur(e) testing
+  // console.log(e.currentTarget);
+  // console.log(e.target);
+  // console.log(e.relatedTarget);
 
   handleBlur(e) {
-    // console.log(e.currentTarget);
-    // console.log(e.target);
-    // console.log(e.relatedTarget);
-    
     e.preventDefault();
 
-    if (!this.state.focus) {
-      return;
-    }
+    if (!this.state.focus) return;
 
     if (e.relatedTarget) {
       const path = e.relatedTarget.getAttribute("href")
@@ -84,24 +74,20 @@ class HomePage extends React.Component {
     } else {
       this.setState({ focus: false });
       this.removeSearchText(e);
-      console.log("blur");
+      // console.log("blur");
     }
   }
 
   render() {
-    // console.log(this.props)
 
     const { currentUser } = this.props;
 
     return (
-      // <Layout>
       <>
         <div className="home-content">
-          {/* <div className="home-page"> */}
           <div className="home-page-background">
             <div className="banner-container">
               <div className="banner-text">Find your next favorite trail</div>
-              {/* <div className="input-holder-border"> */}
               <form
                 className="input-holder"
                 onFocus={this.handleFocus}
@@ -119,32 +105,20 @@ class HomePage extends React.Component {
                   placeholder="Enter a park or trail name"
                   autoComplete="off"
                   aria-label="text search input"
-                  onChange={this.setSearchText}
-                  // autoFocus
-                  // onFocus={(e) => e.currentTarget.select()}
-                  // onFocus={this.handleFocus} // TODO: ME
-                  // onClick={this.setSearchText}
-                  onClick={this.setSearchText}
-                  // onBlur={this.handleBlur}
-                  // onMouseEnter={this.setSearchText}
-
-                  // onChange={(e) => setSearchText(e.target.value)}
-                  // onChange={(e) => this.setSearchText(e)}
                   // event handler that sets state to whatever user enters
+                  onChange={this.setSearchText}
+                  onClick={this.setSearchText}
                 />
                 <div className="search-suggestions">
                   <div className="suggestions-list-wrapper" id={this.state.id}>
                     {/* passing in the value of the state as a prop */}
                     <SearchSuggestions
                       searchText={this.state.searchText}
-                      // not currently using focus in child component
-                      // focus={this.state.focus}
                     />
                   </div>
                 </div>
                 <button className="search-button">Search</button>
               </form>
-              {/* </div> */}
             </div>
           </div>
           <div className="text-body">
@@ -161,38 +135,15 @@ class HomePage extends React.Component {
               </Link>
             )}
           </div>
-          {/* </div> */}
         </div>
-        {/* </div> */}
       </>
-      // </Layout>
     );
   }
 };
 
 export default connect(mSTP)(HomePage);
 
-// images
-    // <img
-    //   className="home-page-img"
-    //   src="https://www.travelweekly.com/uploadedImages/All_TW_Art/2018/0108/T0101PATAGONIA1_C_AA.jpg?n=4554"
-    // />
-    // <img
-    //   className="home-page-img"
-    //   src="https://ultimateadventures.com/wp-content/uploads/2018/10/Ultimate-Patagonia-Hiking-Camping-Holiday.jpg"
-    // />
-
-    // <img
-    //   className="home-page-img"
-    //   src="https://bookatrekking.com/data/images/2018/09/w-trek-patagonia-torres-del-paine-trekking-hiking__header.jpg"
-    // />
-
-
-
-
-
-
-
+// functional component before converting to class
 
 // const HomePage = ({curentUser, logoutUser}) => {
 //       const sessionLinks = () => (

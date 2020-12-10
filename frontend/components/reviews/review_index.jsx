@@ -10,7 +10,7 @@ class ReviewIndex extends React.Component {
         if (!this.props.reviews) return null; 
 
         const {reviews, trail} = this.props
-        // console.log("reivewINDEX",this.props)
+
         const reviewIndexItems = reviews.map(review => {
             return (
                 <ReviewIndexItem 
@@ -21,7 +21,6 @@ class ReviewIndex extends React.Component {
             )
         })
 
-        // console.log("review index", this.props)
         return (
           <div className="review-idx-wrapper">
             {reviewIndexItems}

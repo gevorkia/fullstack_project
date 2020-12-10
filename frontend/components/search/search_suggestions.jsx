@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import { fetchParks } from "../../actions/park_actions";
 
 const mSTP = (state, ownProps) => {
-  // debugger
-
-  // console.log("mtstp", state.entities.parks);
   return {
     parks: state.entities.parks.parks,
     trails: state.entities.parks.trails,
@@ -21,32 +18,18 @@ const mDTP = (dispatch) => {
 class SearchSuggestions extends React.Component {
   constructor(props) {
     super(props);
-    // this.changeFocus = this.changeFocus.bind(this)
-
-    this.state = {
-      focus: this.props.focus
-    };
   }
 
   componentDidMount() {
     this.props.fetchParks();
   }
 
-  // changeFocus() {
-  //   console.log("change focus")
-  //   this.setState({ focus: false });
-  // }
-
   render() {
-    // console.log(this.props);
-    const { parks, trails, searchText, focus } = this.props;
-    // console.log(searchText);
-
+    const { parks, trails, searchText } = this.props;
 
     if (!parks || !trails ) return null;
 
     const suggestions = [];
-    
     // console.log("parks", parks)
 
     parks
@@ -69,7 +52,6 @@ class SearchSuggestions extends React.Component {
             <a
               href={`#/trails/${trail.id}`}
               className="suggestions-list"
-              // onClick={this.changeFocus}
             >
               {trail.name}
             </a>
@@ -80,9 +62,7 @@ class SearchSuggestions extends React.Component {
       // console.log(suggestions);
 
     return (
-      // <div className="suggestions-list-wrapper">
         <ul className="sugg-list">{suggestions}</ul>
-      // </div>
     );
   }
 }

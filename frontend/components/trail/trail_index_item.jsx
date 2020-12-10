@@ -10,8 +10,7 @@ class TrailIndexItem extends React.Component {
     if (!this.props.trail) return null;
     
     const {trail, idx, parkName, avgTrailRating, reviews} = this.props;
-    // console.log(this.props);
-    // debugger
+
     const reviewStars = [];
 
     for (let i = 1; i < 6; i++) {
@@ -29,7 +28,6 @@ class TrailIndexItem extends React.Component {
               <div className="trail-cover-photo">
                 <img src={trail.coverPhotoUrl} alt={trail.name} />
               </div>
-              {/* <div className="trail-info-wrapper"> */}
               <div className="trail-info">
                 <h2 className="trail-name">
                   #{idx + 1} - {trail.name}
@@ -50,7 +48,6 @@ class TrailIndexItem extends React.Component {
                   <span className="show-more">Show more</span>
                 </div>
               </div>
-              {/* </div> */}
             </div>
           </Link>
         </div>

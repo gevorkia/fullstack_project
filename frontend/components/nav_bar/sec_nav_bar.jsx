@@ -43,7 +43,6 @@ class SecNavBar extends React.Component {
   };
 
   handleFocus(e) {
-    // onFocus(e)
     e.preventDefault();
 
     if (this.state.focus) return;
@@ -79,7 +78,7 @@ class SecNavBar extends React.Component {
     const { park } = this.props;
 
     if (!park) return null;
-    // console.log(this.state.id)
+
     return (
       <>
         <section className="sec-nav-wrapper">
@@ -111,8 +110,6 @@ class SecNavBar extends React.Component {
                   aria-label="text search input"
                   onChange={this.setSearchText}
                   onClick={this.setSearchText}
-                  // onFocus={this.handleFocus}
-                  // onBlur={this.handleBlur}
                 />
                 <button className="secNav-search-button">
                   <div className="secNav-magnifying-glass"></div>

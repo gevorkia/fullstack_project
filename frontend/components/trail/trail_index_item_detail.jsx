@@ -9,7 +9,7 @@ import { avgTrailRating } from "../../reducers/selectors/selectors";
 
 
 const mSTP = (state, ownProps) => {
-  console.log("khely bad", ownProps);
+  // console.log("trail_detail ownProps", ownProps);
 
   const trail = state.entities.trails[ownProps.match.params.trailId];
   const reviews = sortedTrailReviews(state);
@@ -21,7 +21,6 @@ const mSTP = (state, ownProps) => {
     park: trail ? state.entities.parks[trail.parkId] : null,
     allReviews: reviews,
     reviews: trail ? filteredReviews : null,
-    // trailTags: Object.values(filteredTrailTags),
     modal: state.ui.modal,
     avgTrailRating: avgTrailRating(trailReviews),
     currentUser: state.session.currentUser
@@ -39,8 +38,6 @@ const mDTP = (dispatch) => {
 
 
 import { Link } from "react-router-dom";
-// import TrailIndexItemDetailMap from "./trail_index_item_detail_map";
-import TrailIndex from "./trail_index"
 import SecNavBar from "../nav_bar/sec_nav_bar";
 import ReviewModal from "../reviews/review_modal";
 import ReviewIndex from "../reviews/review_index";
@@ -51,12 +48,11 @@ class TrailIndexItemDetail extends React.Component {
   constructor(props) {
     super(props)
     this.trailId = this.props.match.params.trailId;
-    console.log(this.trailId)
+    // console.log(this.trailId)
   }
 
 
     componentDidMount() {
-        // debugger
         this.props.fetchTrail(this.trailId);
         this.props.fetchReviews();
 
@@ -77,15 +73,8 @@ class TrailIndexItemDetail extends React.Component {
 
   render() {
     if (!this.props.trail || !this.props.park || !this.props.reviews) return null;
-
-    
-    // console.log('my reviews are ', this.props.reviews);
-    
-    // if (!this.props.trail) return null;
     
     const {trail, park, allReviews, reviews, avgTrailRating} = this.props;
-    // console.log("trail item detail", reviews);
-    // console.log(trailTags)
     
     const reviewStars = [];
 
@@ -98,10 +87,6 @@ class TrailIndexItemDetail extends React.Component {
         ></span>
       );
     }
-
-    // console.log(trail.tags);
-    // console.log(Object.values(trail.tags));
-
 
     let mappedTrailTags = [];
     
@@ -225,28 +210,6 @@ class TrailIndexItemDetail extends React.Component {
                   </div>
                   <div className="reviews-subheader-wrapper">
                     {writeReview}
-                    {/* <div className="avg-rating">Reviewstars</div> */}
-                    {/* <div className="trail-review-btn-wrapper">
-                      <div className="review-blurb">
-                        Share your thoughts about the trail so others know what
-                        to expect!
-                      </div>
-                      <button
-                        className="trail-review-btn"
-                        onClick={() => this.props.openModal("create_review")}
-                      >
-                        Write Review
-                      </button> */}
-                      {/* only render review modal if modal state is set to "create_review" modal type */}
-                      {/* {this.props.modal &&
-                      this.props.modal.modalType === "create_review" ? (
-                        <section className="review-idx-wrapper">
-                          <div className="review-idx">
-                            <ReviewModal trail={trail} isEditing={false} />
-                          </div>
-                        </section>
-                      ) : null}
-                    </div> */}
                   </div>
                   <div className="review-index-wrapper">
                     <ReviewIndex trail={trail} reviews={reviews} />
@@ -266,12 +229,9 @@ class TrailIndexItemDetail extends React.Component {
                   <div className="nearby-trails-sidebar-wrapper">
                     <div className="nearby-trails">Nearby Trails</div>
                     <div className="nearby-trails-index">
-                      {/* <TrailIndex park={park.id} /> */}
                       <NearbyTrailsIndex
                         parkId={park.id}
                         parkName={park.name}
-                        // avgTrailRating={avgTrailRating}
-                        // reviewsLength={allReviews.length}
                         allReviews={allReviews}
                         currentTrailName={trail.name}
                       />

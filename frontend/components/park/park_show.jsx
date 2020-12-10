@@ -3,17 +3,16 @@ import { connect } from "react-redux";
 import { fetchPark, fetchParkTrails } from "../../actions/park_actions";
 import { avgParkRating } from "../../reducers/selectors/selectors"
 
-
+// ownProps are props passed from parent to child components, and obtained from url
 const mSTP = (state, ownProps) => {
-  // debugger
-  // console.log(state)
+
   const parks = state.entities.parks
-  console.log('GHORMESHABIZ', parks);
   const park = state.entities.parks[ownProps.match.params.parkId]
-  console.log("AXXX JIGYARSS", ownProps.match.params.parkId);
-  console.log("AXXX XAXPERS", park);
   const reviews = Object.values(state.entities.reviews);
+
+  // console.log(state)
   // console.log("reviews", reviews);
+  
   const parkReviews = reviews.filter(o => {
     if (park.id === 1) {
         return [1, 2, 3].includes(o.trailId);
@@ -29,7 +28,6 @@ const mSTP = (state, ownProps) => {
     park,
     trails: trails,
     avgParkRating: avgParkRating(parkReviews), 
-    //   loading: state.ui.loading.indexLoading,
     totalReviews
   };
 };
@@ -42,7 +40,6 @@ const mDTP = (dispatch) => {
 };
 
 
-import SearchSuggestions from "../search/search_suggestions";
 import TrailIndex from "../trail/trail_index";
 import SecNavBar from "../nav_bar/sec_nav_bar";
 
@@ -52,19 +49,14 @@ class ParkShow extends React.Component {
     }
 
     componentDidMount() {
-      // debugger
       this.props.fetchPark(this.props.match.params.parkId);
       this.props.fetchParkTrails(this.props.match.params.parkId);
       
-      // debugger;
       // console.log(this.props)
-      
+      // props may not be present here, console.log in render to obtain info
     }
 
     render() {
-      // debugger
-      // console.log(this.props.park)
-
       if (!this.props.park || !this.props.trails) return null;
 
       const { parks, park, trails, avgParkRating, totalReviews } = this.props;
@@ -116,7 +108,6 @@ class ParkShow extends React.Component {
             <section className="park-content">
               <div className="photo-carousel-wrapper">
                 <div className="photo-carousel">
-                  {/* PHOTO CAROUSEL */}
                   {parkPhotos}
                 </div>
               </div>
@@ -195,7 +186,6 @@ class ParkShow extends React.Component {
                   <h2 className="trails-header-text">
                     Top Trails ({trails.length})
                   </h2>
-                  {/* <TrailIndex trails={trails} parkName={park.name} /> */}
                   <TrailIndex
                     parkId={park.id}
                     parkName={park.name}

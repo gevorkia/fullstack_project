@@ -27,11 +27,7 @@ class NearbyTrailsIndex extends React.Component {
     }
 
     render() {
-        // console.log(this.props.trails);
-        // const { trails, parkName, reviewsLength, currentTrailName, avgTrailRating } = this.props
         const { trails, parkName, currentTrailName, allReviews } = this.props
-
-        // console.log("reviews length", reviewsLength)
 
         const filteredTrails = trails.filter(t => t.name !== currentTrailName)
 

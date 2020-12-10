@@ -16,8 +16,7 @@ export const fetchTrail = trailId => {
     return dispatch => {
         return TrailAPIUtil.fetchTrail(trailId)
             .then(trail => {
-                // debugger
-                console.log('GOT MY TRAIL', trail);
+                // console.log('GOT MY TRAIL', trail);
                 return dispatch(receiveTrail(trail));
             });
     };

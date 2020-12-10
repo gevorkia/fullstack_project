@@ -38,12 +38,9 @@ class ReviewIndexItem extends React.Component {
       if (confirmAlert) {
         this.props.deleteReview(this.props.review.id)
       }
-
     }
 
     render() {
-        // console.log("review_index_item", this.props)
-
         const {review, currentUser, trail} = this.props;
 
         let reviewTagCloud = [];
@@ -66,7 +63,6 @@ class ReviewIndexItem extends React.Component {
         }
         
         const reviewDate = new Date(review.activityDate);
-
         const reviewer = review[review.userId]
         // console.log("review index item", this.props)
         // console.log("review", review)

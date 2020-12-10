@@ -1,27 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  createReview,
-  updateReview,
-} from "../../actions/review_actions";
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../../actions/modal_actions";
 import ReviewForm from "./review_form";
-
-const mSTP = (state, ownProps) => {
-  return {
-    
-  };
-};
 
 const mDTP = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    // submitReview: (review) => dispatch(createReview(review)),
-    // editReview: (review) => dispatch(updateReview(review)),
   };
 };
-
-
 
 const ReviewModal = (props) => {
   return(
@@ -37,4 +23,4 @@ const ReviewModal = (props) => {
   );
 };
 
-export default connect(mSTP, mDTP)(ReviewModal);
+export default connect(null, mDTP)(ReviewModal);

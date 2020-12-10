@@ -8,7 +8,6 @@ import { avgTrailRating } from "../../reducers/selectors/selectors";
 const mSTP = (state, ownProps) => {
   const reviews = Object.values(state.entities.reviews);
 
-  // debugger
   return {
     parkId: ownProps.parkId,
     parkName: ownProps.parkName,
@@ -34,12 +33,7 @@ class TrailIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    // this.props.fetchParkTrails(this.props.parkId);
-    // this.props.fetchTrail(this.props.match.params.trailId);
-    // if (this.props.park) {
     this.props.fetchReviews();
-    // }
   }
 
   componentDidMount() {
@@ -47,24 +41,12 @@ class TrailIndex extends React.Component {
   }
 
   componentDidUpdate() {
-    // console.log("props s are", this.props);
-
     if (this.props.trails && this.props.reviews.length === 0) {
-      // console.log("bingoogoo");
-      // Object.keys(this.props.trails).forEach((trailId) => {
-      //   // console.log('nice trailild is ', trailId)
         this.props.fetchReviews();
-      // });
-      //   console.log("ijijijijihguyfdfgd");
-      //   this.props.fetchTrail(this.props.match.params.trailId);
-      //   this.props.fetchTrailReviews(this.props.match.params.trailId);
-      //   //   this.props.fetchPark(this.props.trail.parkId);
     }
   }
 
   render() {
-    // debugger
-    // console.log(this.props);
     const { trails, parkName, avgTrailRating, reviews } = this.props;
 
     return (

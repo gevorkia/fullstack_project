@@ -25,18 +25,14 @@ class NearbyTrailItem extends React.Component {
     }
 
     return (
-      //   <div className="nt-item-wrapper">
       <li className="nt-item-wrapper">
         <Link to={`/trails/${trail.id}`} className="nt-item-link">
-          {/* <div className="nt-el"> */}
           <div className="nt-el">
             <img
               src={trail.coverPhotoUrl}
               alt={trail.name}
               className="nt-cover-photo"
             ></img>
-
-            {/* </div> */}
             <div className="nt-info-wrapper">
               <div className="nt-info">
                 <h2 className="nt-name">{trail.name}</h2>
@@ -47,7 +43,6 @@ class NearbyTrailItem extends React.Component {
                     {trail.difficulty}
                   </div>
                   <div className="stars">{reviewStars}</div>
-
                   <div className="nt-review-count">({reviewsLength})</div>
                 </div>
                 <div className="nt-length">Length: {trail.length} mi</div>

@@ -1,10 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    //create location state to keep track of all fields of form we'll be building
+    // create location state to keep track of all fields of form we'll be building
 
     this.state = {
       first_name: "",
@@ -67,16 +66,6 @@ class SessionForm extends React.Component {
 
   render() {
    
-    // console.log(this.props)
-
-    // const linkToggle = () => {
-    //   if (this.props.formType === "Sign Up") {
-    //     return "Already have an account?"
-    //   } else {
-    //     return "Don't have an account?"
-    //   }
-    // }
-
     let errors = null;
     if (this.props.errors) {
       errors = this.props.errors.map((error, idx) => {
@@ -85,9 +74,7 @@ class SessionForm extends React.Component {
     }
 
     const printErrors = (error) => {
-      // debugger
       if (this.props.errors.includes(error)) {
-        // debugger
         return (
           <ul className="popup-errors">
             {error}
@@ -161,7 +148,6 @@ class SessionForm extends React.Component {
                 Explore the trails as a
                 <a onClick={this.demoUserLogin}> demo user</a>
               </p>
-              {/* <div className="pop-up-bottom"></div> */}
           </form>
           </div>
         </div>
