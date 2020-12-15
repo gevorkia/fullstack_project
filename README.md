@@ -136,7 +136,45 @@ setSearchText(e) {
 ```
 
 
-### Secondary Nav Component
+### Review Form 
 
-Users can search for parks or trails in the search bar on the splash page and within the secondary navigation bar that is displayed elsewhere on the site but not the splash page. To keep code concise, I broke down the navigation search bar into a separate component (secondary navigation). Props were passed through from the parent component.
+Users can select tags associated with trail conditions when creating a review. If they change their mind while completing the review or want to edit the form, unselecting the tag allows for that slice of state to re-render seamlessly. Dynamic CSS classes that indicate tag selection, or therelackof, illustrate the change for the user.
+
+```js
+  handleTagSelection(e) {
+    e.preventDefault();
+
+    const newTagName = e.target.textContent;
+
+    if (!this.state.tag_ids.includes(newTagName)) {
+      this.setState({
+        tag_ids: [...this.state.tag_ids, newTagName],
+      });
+    } else {
+      const filtered = this.state.tag_ids.filter(tagName => tagName !== newTagName)
+
+      this.setState({
+        tag_ids: filtered
+      })
+    }
+  }
+
+    const trailConditionsTags = (
+      <>
+        {this.props.trailConditions.map((trailConditions) => (
+          <span
+            key={trailConditions.id}
+            onClick={this.handleTagSelection}
+            className={
+              this.state.tag_ids.includes(trailConditions.name)
+                ? "review-form-tag-selected"
+                : "review-form-tag"
+            }
+          >
+            {trailConditions.name}
+          </span>
+        ))}
+      </>
+    );
+```
 
