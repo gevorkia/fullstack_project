@@ -140,6 +140,30 @@ setSearchText(e) {
 
 Users can select tags associated with trail conditions when creating a review. If they change their mind while completing the review or want to edit the form, unselecting the tag allows for that slice of state to re-render seamlessly. Dynamic CSS classes that indicate tag selection, or therelackof, illustrate the change for the user.
 
+In render:
+
+```js
+  const trailConditionsTags = (
+    <>
+      {this.props.trailConditions.map((trailConditions) => (
+        <span
+          key={trailConditions.id}
+          onClick={this.handleTagSelection}
+          className={
+            this.state.tag_ids.includes(trailConditions.name)
+              ? "review-form-tag-selected"
+              : "review-form-tag"
+          }
+        >
+          {trailConditions.name}
+        </span>
+      ))}
+    </>
+  );
+```
+
+Event handler:
+
 ```js
   handleTagSelection(e) {
     e.preventDefault();
@@ -158,23 +182,5 @@ Users can select tags associated with trail conditions when creating a review. I
       })
     }
   }
-
-    const trailConditionsTags = (
-      <>
-        {this.props.trailConditions.map((trailConditions) => (
-          <span
-            key={trailConditions.id}
-            onClick={this.handleTagSelection}
-            className={
-              this.state.tag_ids.includes(trailConditions.name)
-                ? "review-form-tag-selected"
-                : "review-form-tag"
-            }
-          >
-            {trailConditions.name}
-          </span>
-        ))}
-      </>
-    );
 ```
 
